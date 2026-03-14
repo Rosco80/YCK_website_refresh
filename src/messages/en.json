@@ -1,0 +1,201 @@
+{
+  "Hero": {
+    "title": "Treating Chronic Pain Since 1979",
+    "heritageHeadline": "源自少林伤科传统",
+    "description": "YAPCHANKOR has treated chronic joint and muscle pain since 1979 using an approach shaped by Shaolin injury medicine, proprietary clinical formulations, and integrative rehabilitation. Our focus is not just temporary relief, but structured recovery and long-term pain resolution.",
+    "primaryCTA": "Book Clinical Assessment",
+    "secondaryCTA": "Explore Our Method"
+  },
+  "TrustBar": {
+    "since": "Since 1979",
+    "validation": "Monash-linked scientific validation",
+    "formulation": "Proprietary clinical formulation",
+    "approach": "Integrative rehabilitation approach"
+  },
+  "Navigation": {
+    "method": "Our Method",
+    "formulations": "Clinical Formulations",
+    "locations": "Locations",
+    "insights": "Insights",
+    "bookAssessment": "Book Clinical Assessment"
+  },
+  "RollingHook": {
+    "staticHeading": "We Treat",
+    "subtext": "Many patients come to us after trying other treatments without lasting relief.",
+    "cta": "Book Clinical Assessment",
+    "condition1": "chronic back pain",
+    "condition2": "knee osteoarthritis",
+    "condition3": "frozen shoulder",
+    "condition4": "sciatica",
+    "condition5": "slipped disc",
+    "condition6": "hip pain"
+  },
+  "Differentiation": {
+    "title": "Built from Real Injuries — Not Just Theory",
+    "heritage": "源自少林伤科传统",
+    "description": "Shaolin medicine developed through treating sprains, tears, and chronic pain in real people. That practical tradition continues at YAPCHANKOR today.",
+    "transition": "Rather than relying on one method alone, our treatment combines:",
+    "point1": "hands-on therapy",
+    "point2": "structured rehabilitation",
+    "point3": "inflammation management",
+    "conclusion": "to support long-term recovery."
+  },
+  "WhyChooseUs": {
+    "title": "Why Patients Choose Us",
+    "subtitle": "Not Just Physio. Not Just Chiropractic. Not Just TCM.",
+    "description": "Most clinics rely on a single method. At YAPCHANKOR, treatment combines multiple approaches shaped by Shaolin injury medicine and refined through decades of modern clinical practice.",
+    "item1": "Manual Therapy",
+    "item2": "Structured Rehab",
+    "item3": "Clinical Formulation"
+  },
+  "ScientificProof": {
+    "title": "Scientifically Studied. Clinically Proven.",
+    "heritage": "数十年临床经验积累",
+    "description": "Our proprietary herbal formulation has been used in clinical practice for decades and later inspired the PainFix topical pain relief range.",
+    "monashStudy": "Laboratory research conducted with Monash University studied its anti-inflammatory properties at the cellular level.",
+    "findingsTitle": "Key findings included:",
+    "finding1": "reduced inflammatory markers",
+    "finding2": "support for tissue recovery processes",
+    "finding3": "measurable biological activity in lab testing",
+    "graphicCaption": "Laboratory research conducted with Monash University"
+  },
+  "Compatibility": {
+    "title": "Works Alongside Modern Medical Care",
+    "description": "YAPCHANKOR treatment is often used alongside physiotherapy, medical treatment, and post-surgical rehabilitation.",
+    "support": "Our role is not to replace other care, but to support recovery through an integrated approach.",
+    "physio": "Physiotherapy",
+    "imaging": "Medical Imaging",
+    "rehab": "Rehabilitation"
+  },
+  "ClinicalResults": {
+    "title": "Results in Real Patients",
+    "subtitle": "Patients usually come after trying other treatments without lasting relief.",
+    "cta": "Schedule Assessment",
+    "kneeTitle": "Chronic Knee Osteoarthritis",
+    "kneeProblem": "Difficulty walking and climbing stairs",
+    "kneeResult": "improved mobility and reduced pain",
+    "backTitle": "Lower Back Pain / Slipped Disc",
+    "backProblem": "Persistent discomfort and stiffness",
+    "backResult": "improved movement and daily function",
+    "shoulderTitle": "Frozen Shoulder",
+    "shoulderProblem": "Restricted movement and night pain",
+    "shoulderResult": "improved range and stability"
+  },
+  "ProblemReframe": {
+    "title": "Resolving Pain at the Source",
+    "quote": "Temporary relief is easy. Lasting resolution requires identifying the real driver of your chronic pain.",
+    "headline": "Pain Relief Is Temporary. Resolution Requires A Method.",
+    "problemTitle": "The Symptom Trap",
+    "problemText": "Most treatments focus on masking the immediate pain without addressing why it keeps returning.",
+    "standardTitle": "Standard Care",
+    "standardText": "Traditional approaches often rely on temporary suppression rather than functional resolution.",
+    "solutionTitle": "The YAPCHANKOR Method",
+    "solutionText": "A structured system designed to identify and treat the source, restoring long-term function.",
+    "videoPlaceholder": "Clinical Video Story",
+    "benefit1Title": "Beyond Temporary Fixes",
+    "benefit1Text": "Many patients cycle through short-term fixes that only mask symptoms. We look deeper.",
+    "benefit2Title": "Identify the Real Driver",
+    "benefit2Text": "YAPCHANKOR focuses on identifying the real driver of chronic pain through structured assessment.",
+    "benefit3Title": "Structured Recovery",
+    "benefit3Text": "The goal is structured improvement and long-term resolution, not just surface-level management."
+  },
+  "Method": {
+    "title": "The YAPCHANKOR Method",
+    "subtitle": "A Structured Path to Pain Resolution",
+    "step1Title": "Step 1: Clinical Assessment",
+    "step1Text": "A comprehensive evaluation to understand your pain history and functional limitations.",
+    "step2Title": "Step 2: Pain Source Identification",
+    "step2Text": "Pinpointing the exact driver of your chronic pain rather than just treating symptoms.",
+    "step3Title": "Step 3: Targeted Hands-On + Formulation Strategy",
+    "step3Text": "Combining expert manual therapy with our proprietary clinical herbal formulations.",
+    "step4Title": "Step 4: Rehabilitation and Recovery Progression",
+    "step4Text": "A structured plan to restore function and ensure long-term recovery."
+  },
+  "ClinicalFormulation": {
+    "headline": "From Heritage Formulation to Modern Clinical Support",
+    "description": "Our clinical formulas have been used for decades to support patient recovery. Today, this heritage meets modern science through our PainFix range, bridging tradition and clinical validation.",
+    "heritageTitle": "Shaolin Heritage",
+    "heritageText": "Rooted in centuries-old injury medicine, refined through clinical practice since 1979.",
+    "modernTitle": "Scientific Relevance",
+    "modernText": "KKM-registered and studied for its anti-inflammatory properties.",
+    "cta": "Learn About Our Science"
+  },
+  "ScientificValidation": {
+    "headline": "Scientific Validation Behind Clinical Practice",
+    "description": "Our methods and formulations are backed by scientific research and collaborations with leading institutions.",
+    "monashTitle": "Monash University Collaboration",
+    "monashText": "Laboratory-linked research studying the anti-inflammatory activity of our formulations at the cellular level.",
+    "markerTitle": "Anti-inflammatory Activity",
+    "markerText": "Significant reduction in biologically measurable anti-inflammatory markers observed in cellular studies.",
+    "recoveryTitle": "Tissue Recovery",
+    "recoveryText": "Research supports the role of our clinical formulations in supporting natural tissue recovery processes."
+  },
+  "Outcomes": {
+    "headline": "Real-World Outcomes",
+    "description": "We treat a wide range of chronic conditions with a focus on functional improvement and long-term recovery.",
+    "condition1Title": "Knee Osteoarthritis",
+    "condition1Problem": "Chronic pain and limited mobility.",
+    "condition1Result": "Improved joint function and significant pain reduction.",
+    "condition2Title": "Slipped Disc / Lower Back Pain",
+    "condition2Problem": "Acute or chronic spinal pain with nerve involvement.",
+    "condition2Result": "Restored spinal mobility and relief from nerve symptoms.",
+    "condition3Title": "Frozen Shoulder",
+    "condition3Problem": "Stiffness and severe pain in the shoulder joint.",
+    "condition3Result": "Restored range of motion and pain-free movement."
+  },
+  "Branches": {
+    "headline": "Our Branches",
+    "description": "Visit us at any of our four clinical locations for a professional assessment and treatment.",
+    "ctaView": "View Branch",
+    "ctaBook": "Book Here",
+    "ampang": "Ampang",
+    "okr": "Old Klang Road",
+    "shahAlam": "Shah Alam",
+    "subangJaya": "Subang Jaya",
+    "addressPlaceholder": "Clinic Address Placeholder"
+  },
+  "Insights": {
+    "headline": "Insights from Clinical Practice",
+    "description": "We regularly publish practical insights on chronic pain, recovery, and injury management based on decades of treating real patients.",
+    "cta": "View All Articles",
+    "article1_cat": "CLINICAL INSIGHT",
+    "article1_title": "Why Chronic Pain Often Doesn’t Improve",
+    "article1_desc": "Many cases persist when underlying structural and inflammatory causes remain unresolved.",
+    "article2_cat": "RECOVERY SCIENCE",
+    "article2_title": "The Role of Inflammation in Tissue Healing",
+    "article2_desc": "How managing localized inflammation is critical for long-term functional recovery.",
+    "article3_cat": "PRACTICAL ADVISE",
+    "article3_title": "Understanding Structural Drivers of Pain",
+    "article3_desc": "Moving beyond symptomatic relief to address the physical source of discomfort."
+  },
+  "FAQ": {
+    "headline": "Frequently Asked Questions",
+    "description": "Find answers to common questions about the YAPCHANKOR Method and our treatment approach.",
+    "q1": "How long is a typical treatment session?",
+    "a1": "A typical session lasts approximately 60 to 90 minutes, depending on the complexity of your condition.",
+    "q2": "What is the cost of a clinical assessment?",
+    "a2": "Our clinical assessment starts from a base rate. Please contact your preferred branch for the latest pricing details.",
+    "q3": "Do I need a referral to visit your clinic?",
+    "a3": "No referral is needed. You can book an assessment directly with us.",
+    "q4": "How many sessions do I need for recovery?",
+    "a4": "The number of sessions varies per individual. After your assessment, our clinicians will provide a personalized treatment plan."
+  },
+  "FinalCTA": {
+    "headline": "Start with a Proper Assessment",
+    "description": "Persistent or recurring pain often needs structured treatment rather than short-term relief.",
+    "ctaBook": "Book Clinical Assessment",
+    "heritage": "传承少林伤科智慧，结合现代临床实践，自1979年。"
+  },
+  "Footer": {
+    "tagline": "Specialized Chronic Pain Treatment Since 1979.",
+    "servicesTitle": "Services",
+    "locationsTitle": "Locations",
+    "companyTitle": "Company",
+    "legalTitle": "Legal",
+    "copyright": "© 2024 YAPCHANKOR. All rights reserved.",
+    "socialTitle": "Follow Us",
+    "newsletterTitle": "Newsletter",
+    "newsletterPlaceholder": "Your email address",
+    "newsletterButton": "Subscribe"
+  }
+}

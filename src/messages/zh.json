@@ -1,0 +1,201 @@
+{
+  "Hero": {
+    "title": "自 1979 年以来治疗慢性疼痛",
+    "heritageHeadline": "源自少林伤科传统",
+    "description": "自 1979 年以来，YAPCHANKOR 结合少林伤科医药、专利临床配方和综合康复方案，专注于治疗慢性关节和肌肉疼痛。我们的目标不仅是暂时缓解，而是结构化康复和长期的疼痛解决。",
+    "primaryCTA": "预约临床评估",
+    "secondaryCTA": "了解我们的疗法"
+  },
+  "TrustBar": {
+    "since": "始于 1979 年",
+    "validation": "莫纳什大学相关的科学验证",
+    "formulation": "专利临床配方",
+    "approach": "综合康复方案"
+  },
+  "Navigation": {
+    "method": "我们的疗法",
+    "formulations": "临床配方",
+    "locations": "分院地址",
+    "insights": "专业见解",
+    "bookAssessment": "预约临床评估"
+  },
+  "RollingHook": {
+    "staticHeading": "我们的诊疗范围",
+    "subtext": "许多患者在尝试了其他疗法但未能获得持久缓解后，选择了我们。",
+    "cta": "预约临床评估",
+    "condition1": "慢性腰背痛",
+    "condition2": "膝关节骨性关节炎",
+    "condition3": "肩周炎",
+    "condition4": "坐骨神经痛",
+    "condition5": "椎间盘突出",
+    "condition6": "髋关节疼痛"
+  },
+  "Differentiation": {
+    "title": "源于真实的损伤 — 而非仅仅是理论",
+    "heritage": "源自少林伤科传统",
+    "description": "少林伤科是在治疗真实人物的扭伤、撕裂和慢性疼痛过程中发展而来的。这种实用的传统今天在 YAPCHANKOR 得以延续。",
+    "transition": "我们的治疗并非仅依靠单一方法，而是结合了：",
+    "point1": "手法治疗",
+    "point2": "结构化康复",
+    "point3": "炎症管理",
+    "conclusion": "以支持长期康复。"
+  },
+  "WhyChooseUs": {
+    "title": "为什么患者选择我们",
+    "subtitle": "不只是物理治疗。不只是脊椎按摩。不只是中医治疗。",
+    "description": "大多数诊所依赖单一方法。在 YAPCHANKOR，治疗结合了少林伤科医药所形成的多种方法，并通过数十年的现代临床实践不断完善。",
+    "item1": "手法治疗",
+    "item2": "结构化康复",
+    "item3": "临床配方"
+  },
+  "ScientificProof": {
+    "title": "科学研究。临床证明。",
+    "heritage": "数十年临床经验积累",
+    "description": "我们的专利草本配方已在临床实践中使用数十年，随后启发了 PainFix 局部镇痛系列产品。",
+    "monashStudy": "与莫纳什大学合作进行的实验室研究在细胞水平上研究了其抗炎特性。",
+    "findingsTitle": "主要发现包括：",
+    "finding1": "减少炎症标记物",
+    "finding2": "支持组织恢复过程",
+    "finding3": "实验室测试中可测量的生物活性",
+    "graphicCaption": "与莫纳什大学联合进行的实验室研究"
+  },
+  "Compatibility": {
+    "title": "与现代医疗护理协同工作",
+    "description": "YAPCHANKOR 的治疗经常与物理治疗、医疗护理和术后康复协同进行。",
+    "support": "我们的作用不是取代其他护理，而是通过综合方法支持康复。",
+    "physio": "物理治疗",
+    "imaging": "医学影像",
+    "rehab": "康复治疗"
+  },
+  "ClinicalResults": {
+    "title": "真实患者的治疗效果",
+    "subtitle": "患者通常是在尝试了其他治疗方法但未能获得持久缓解后才来到我们这里的。",
+    "cta": "预约评估",
+    "kneeTitle": "慢性膝关节骨性关节炎",
+    "kneeProblem": "行走和爬楼梯困难",
+    "kneeResult": "提高活动能力，减轻疼痛",
+    "backTitle": "腰痛 / 椎间盘突出",
+    "backProblem": "持续的不适和僵硬感",
+    "backResult": "改善运动和日常功能",
+    "shoulderTitle": "肩周炎",
+    "shoulderProblem": "活动受限且夜间疼痛",
+    "shoulderResult": "改善活动范围和稳定性"
+  },
+  "ProblemReframe": {
+    "title": "从源头解决疼痛",
+    "quote": "暂时缓解很容易。长期的解决需要识别慢性疼痛的真正驱动因素。",
+    "headline": "止痛只是暂时的。解决疼痛需要一套科学的方法。",
+    "problemTitle": "症状陷阱",
+    "problemText": "大多数疗法侧重于掩盖眼前的疼痛，而没有解决疼痛反复出现的原因。",
+    "standardTitle": "标准护理",
+    "standardText": "传统方法往往依赖于暂时性的抑制，而不是功能性解决。",
+    "solutionTitle": "YAPCHANKOR 疗法",
+    "solutionText": "专为识别和治疗根源而设计的结构化系统，旨在恢复长期功能。",
+    "videoPlaceholder": "临床视频故事",
+    "benefit1Title": "超越临时解决方案",
+    "benefit1Text": "许多患者循环于只能掩盖症状的短期修复中。我们深入探究。",
+    "benefit2Title": "识破真正的痛因",
+    "benefit2Text": "YAPCHANKOR 专注于通过结构化评估识别慢性疼痛的真正驱动因素。",
+    "benefit3Title": "结构化康复",
+    "benefit3Text": "我们的目标是结构化的改善和长期的疼痛解决，而不仅仅是表面水平的管理。"
+  },
+  "Method": {
+    "title": "YAPCHANKOR 疗法",
+    "subtitle": "解决疼痛的结构化之路",
+    "step1Title": "第 1 步：临床评估",
+    "step1Text": "全面的评估，以了解您的疼痛史和功能限制。",
+    "step2Title": "第 2 步：识破痛因",
+    "step2Text": "精准定位慢性疼痛的确切驱动因素，而非仅仅治疗症状。",
+    "step3Title": "第 3 步：针对性手法 + 配方策略",
+    "step3Text": "将专业的手法治疗与我们的专利临床草本配方相结合。",
+    "step4Title": "第 4 步：康复与恢复进展",
+    "step4Text": "一套结构化的计划，旨在恢复功能并确保长期康复。"
+  },
+  "ClinicalFormulation": {
+    "headline": "从传承配方到现代临床支持",
+    "description": "几十年来，我们的临床配方一直用于支持患者康复。今天，这种传承通过我们的 PainFix 系列与现代科学相结合，架起了传统与临床验证之间的桥梁。",
+    "heritageTitle": "少林传承",
+    "heritageText": "根植于数世纪之久的伤科医药，自 1979 年起在临床实践中不断完善。",
+    "modernTitle": "科学相关性",
+    "modernText": "经 KKM 注册，并对其抗炎特性进行了深入研究。",
+    "cta": "了解我们的科学"
+  },
+  "ScientificValidation": {
+    "headline": "临床实践背后的科学验证",
+    "description": "我们的疗法和配方得到了科学研究以及与领先机构合作的支持。",
+    "monashTitle": "莫纳什大学合作",
+    "monashText": "与实验室相关的研究，在细胞水平上研究我们配方的抗炎活性。",
+    "markerTitle": "抗炎活性",
+    "markerText": "在细胞研究中观察到生物学上可测量的抗炎标志物显著减少。",
+    "recoveryTitle": "组织恢复",
+    "recoveryText": "研究支持我们的临床配方在支持自然组织恢复过程中的作用。"
+  },
+  "Outcomes": {
+    "headline": "真实诊疗结果",
+    "description": "我们治疗各种慢性病症，专注于功能改善和长期康复。",
+    "condition1Title": "膝关节骨性关节炎",
+    "condition1Problem": "慢性疼痛和活动受限。",
+    "condition1Result": "关节功能改善，疼痛显著减轻。",
+    "condition2Title": "椎间盘突出 / 腰痛",
+    "condition2Problem": "伴有神经受累的急性或慢性脊柱疼痛。",
+    "condition2Result": "脊柱活动度恢复，神经症状缓解。",
+    "condition3Title": "肩周炎",
+    "condition3Problem": "肩关节僵硬和剧烈疼痛。",
+    "condition3Result": "关节活动范围恢复，运动无痛。"
+  },
+  "Branches": {
+    "headline": "分院地址",
+    "description": "欢迎光临我们的四家分院，接受专业的评估和治疗。",
+    "ctaView": "查看分院",
+    "ctaBook": "立即预约",
+    "ampang": "安邦 (Ampang)",
+    "okr": "旧巴生路 (Old Klang Road)",
+    "shahAlam": "莎阿南 (Shah Alam)",
+    "subangJaya": "梳邦再也 (Subang Jaya)",
+    "addressPlaceholder": "分院地址占位符"
+  },
+  "Insights": {
+    "headline": "临床实践见解",
+    "description": "我们定期发布关于慢性疼痛、康复和损伤管理的实用见解，这些见解均基于数十年治疗真实患者的经验。",
+    "cta": "查看所有文章",
+    "article1_cat": "临床见解",
+    "article1_title": "为什么慢性疼痛往往得不到改善",
+    "article1_desc": "当潜在的结构性原因和炎症原因未得到解决时，许多病例会持续存在。",
+    "article2_cat": "康复科学",
+    "article2_title": "炎症在组织愈合中的作用",
+    "article2_desc": "如何管理局部炎症对于长期的功能恢复至关重要。",
+    "article3_cat": "实用建议",
+    "article3_title": "了解疼痛的结构性驱动因素",
+    "article3_desc": "超越症状缓解，解决导致不适的物理根源。"
+  },
+  "FAQ": {
+    "headline": "常见问题",
+    "description": "查找关于 YAPCHANKOR 疗法和我们治疗方法的常见问题解答。",
+    "q1": "典型的治疗阶段通常持续多久？",
+    "a1": "典型的治疗阶段大约持续 60 到 90 分钟，具体取决于您病情的复杂程度。",
+    "q2": "临床评估的费用是多少？",
+    "a2": "我们的临床评估从基础费率开始。请联系您首选的分院以获取最新的价格详情。",
+    "q3": "到贵诊所就诊需要转诊信吗？",
+    "a3": "不需要转诊。您可以直接向我们预约评估。",
+    "q4": "我需要多少次治疗才能康复？",
+    "a4": "所需的治疗次数因人而异。在评估之后，我们的临床医生将提供个性化的治疗计划。"
+  },
+  "FinalCTA": {
+    "headline": "从专业的临床评估开始",
+    "description": "持续性或反复发作的疼痛往往需要结构化的治疗，而不仅仅是短期的缓解。",
+    "ctaBook": "预约临床评估",
+    "heritage": "传承少林伤科智慧，结合现代临床实践，自1979年。"
+  },
+  "Footer": {
+    "tagline": "自 1979 年以来专注于慢性疼痛治疗。",
+    "servicesTitle": "服务",
+    "locationsTitle": "分院",
+    "companyTitle": "公司",
+    "legalTitle": "法律",
+    "copyright": "© 2024 YAPCHANKOR。保留所有权利。",
+    "socialTitle": "关注我们",
+    "newsletterTitle": "邮件订阅",
+    "newsletterPlaceholder": "您的电子邮件地址",
+    "newsletterButton": "订阅"
+  }
+}
