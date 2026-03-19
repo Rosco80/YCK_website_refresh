@@ -26,8 +26,8 @@ export function RollingHook() {
   }, [conditions.length]);
 
   return (
-    <section className="bg-brand-bg py-24 lg:py-40 border-y border-brand-teal/5 relative">
-      <div className="container mx-auto px-4 text-center">
+    <section className="bg-brand-bg py-16 lg:py-24 border-y border-brand-teal/5 relative">
+      <div className="container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Static Heading */}
           <motion.h2 
@@ -35,13 +35,13 @@ export function RollingHook() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base lg:text-lg font-bold text-brand-teal/60 uppercase tracking-widest mb-8"
+            className="text-4xl lg:text-7xl font-bold text-brand-teal/40 uppercase tracking-tight -mb-3 lg:-mb-10"
           >
             {t("staticHeading")}
           </motion.h2>
 
           {/* Rotating Condition */}
-          <div className="h-32 lg:h-48 flex items-center justify-center overflow-hidden relative mb-12">
+          <div className="h-24 lg:h-40 flex items-center justify-center overflow-hidden relative mb-4">
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
@@ -49,7 +49,7 @@ export function RollingHook() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
-                className="text-4xl lg:text-8xl font-bold text-brand-teal capitalize leading-tight tracking-tight px-4"
+                className="text-4xl lg:text-7xl font-bold text-brand-teal capitalize leading-tight tracking-tight px-4"
               >
                 {conditions[index]}
               </motion.div>
@@ -57,15 +57,27 @@ export function RollingHook() {
           </div>
 
           {/* Subtext */}
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg lg:text-xl text-brand-teal-deep/60 mb-12 max-w-2xl mx-auto leading-relaxed font-medium italic"
-          >
-            {t("subtext")}
-          </motion.p>
+          <div className="mb-12 max-w-4xl mx-auto space-y-8">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="text-xl lg:text-2xl text-brand-teal-deep/70 leading-relaxed font-medium italic"
+            >
+              {t("subtext")}
+            </motion.p>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="text-base lg:text-lg text-brand-teal-deep/60 leading-relaxed max-w-3xl mx-auto"
+            >
+              {t("secondaryText")}
+            </motion.p>
+          </div>
 
           {/* CTA */}
           <motion.div
@@ -75,7 +87,7 @@ export function RollingHook() {
             transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <Button 
-              className="rounded-full px-12 h-14 text-sm uppercase tracking-widest font-bold"
+              className="rounded-full px-12 h-14 text-sm uppercase tracking-widest font-bold shadow-brand-premium"
               id="cta_rolling_hook_click"
             >
               {t("cta")}

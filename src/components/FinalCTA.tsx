@@ -9,7 +9,7 @@ export function FinalCTA() {
   const t = useTranslations("FinalCTA");
 
   return (
-    <section className="bg-brand-teal-deep py-16 lg:py-40 relative overflow-hidden">
+    <section className="bg-brand-teal-deep py-16 lg:py-32 relative overflow-hidden">
       {/* Subtle Background Texture */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-0 right-0 w-200 h-200 bg-brand-gold/20 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3" />

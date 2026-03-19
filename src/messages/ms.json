@@ -1,16 +1,16 @@
 {
   "Hero": {
-    "title": "Merawat Sakit Kronik Sejak 1979",
+    "title": "Perubatan Shaolin Terbukti pada Pesakit Sebenar Sejak 1979",
     "heritageHeadline": "源自少林伤科传统",
-    "description": "YAPCHANKOR telah merawat sakit sendi dan otot kronik sejak 1979 menggunakan pendekatan yang dibentuk oleh perubatan kecederaan Shaolin, formulasi klinikal proprietari, dan pemulihan integratif. Fokus kami bukan sekadar kelegaan sementara, tetapi pemulihan berstruktur dan resolusi kesakitan jangka panjang.",
+    "description1": "Sejak 1979, YAPCHANKOR telah merawat sakit sendi dan otot kronik menggunakan pendekatan praktikal yang berakar dalam perubatan kecederaan Shaolin.",
     "primaryCTA": "Tempah Penilaian Klinikal",
     "secondaryCTA": "Terokai Kaedah Kami"
   },
   "TrustBar": {
-    "since": "Sejak 1979",
-    "validation": "Validasi saintifik berkaitan Monash",
-    "formulation": "Formulasi klinikal proprietari",
-    "approach": "Pendekatan pemulihan integratif"
+    "item1": { "title": "Sejak 1979", "sub": "Warisan Dipercayai" },
+    "item2": { "title": "50,000+", "sub": "Pesakit Dirawat" },
+    "item3": { "title": "Kajian Lab", "sub": "Universiti Monash" },
+    "item4": { "title": "Berdaftar KKM", "sub": "Diiktiraf PainFix" }
   },
   "Navigation": {
     "method": "Kaedah Kami",
@@ -22,6 +22,7 @@
   "RollingHook": {
     "staticHeading": "Kami Merawat",
     "subtext": "Ramai pesakit datang kepada kami selepas mencuba rawatan lain tanpa kelegaan yang berterusan.",
+    "secondaryText": "Formulasi herba proprietari kami telah digunakan di klinik kami selama beberapa dekad dan kemudiannya memberi inspirasi kepada rangkaian pelepasan kesakitan topikal PainFix, kini berdaftar dengan Kementerian Kesihatan Malaysia (KKM). Sifat anti-radangnya telah dikaji melalui penyelidikan makmal yang dijalankan bersama Universiti Monash.",
     "cta": "Tempah Penilaian Klinikal",
     "condition1": "sakit belakang kronik",
     "condition2": "osteoartritis lutut",
@@ -148,11 +149,39 @@
     "description": "Lawati kami di mana-mana daripada empat lokasi klinikal kami untuk penilaian dan rawatan profesional.",
     "ctaView": "Lihat Cawangan",
     "ctaBook": "Tempah Di Sini",
-    "ampang": "Ampang",
-    "okr": "Old Klang Road",
-    "shahAlam": "Shah Alam",
-    "subangJaya": "Subang Jaya",
-    "addressPlaceholder": "Alamat Cawangan Placeholder"
+    "ctaDirections": "Dapatkan Arah",
+    "ampang": {
+      "name": "Ampang",
+      "address": "No. 11 Jalan AWF 1, Ampang Waterfront, 68000 Ampang, SELANGOR",
+      "phone": "+603-42801395",
+      "hoursLines": "10 pagi hingga 8 malam (Isnin-Jumaat) | 9 pagi hingga 5 petang (Sabtu)",
+      "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.146706%2C101.7659892",
+      "googleMapsUrl": "https://maps.app.goo.gl/2YHRvN9u7T6Me53E8"
+    },
+    "okr": {
+      "name": "Old Klang Road",
+      "address": "KS-3 Taman Evergreen, Batu 4, Jalan Klang Lama, 58100 Kuala Lumpur",
+      "phone": "+603-7983 3276 / +603-7972 5559",
+      "hoursLines": "10 pagi hingga 8 malam (Isnin-Jumaat) | 9 pagi hingga 5 petang (Sabtu)",
+      "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.09828%2C101.6735192",
+      "googleMapsUrl": "https://maps.app.goo.gl/kjkFp6vEKaqihqPx6"
+    },
+    "shahAlam": {
+      "name": "Shah Alam",
+      "address": "50, Jalan Bola Tampar 13/14, Seksyen 13, 40100 Shah Alam",
+      "phone": "+603-5510 1966",
+      "hoursLines": "10 pagi hingga 8 malam (Isnin-Jumaat) | 9 pagi hingga 5 petang (Sabtu)",
+      "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.0816396%2C101.54005",
+      "googleMapsUrl": "https://maps.app.goo.gl/RW4fnUDEjex7SYHb8"
+    },
+    "subangJaya": {
+      "name": "Subang Jaya",
+      "address": "W-07-0 (Ground Floor), West Wing, Subang Square Business Centre, Jalan SS 15/4G, 47500 Subang Jaya.",
+      "phone": "+603-5613 2229",
+      "hoursLines": "10 pagi hingga 8 malam (Isnin-Jumaat) | 9 pagi hingga 5 petang (Sabtu)",
+      "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.0777696%2C101.5885731",
+      "googleMapsUrl": "https://maps.app.goo.gl/qi4F839EpNhnbBFQ7"
+    }
   },
   "Insights": {
     "headline": "Wawasan daripada Amalan Klinikal",

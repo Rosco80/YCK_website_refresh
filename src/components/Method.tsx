@@ -86,6 +86,7 @@ export function Method() {
           </div>
         </div>
       </div>
+
     </section>
   );
 }

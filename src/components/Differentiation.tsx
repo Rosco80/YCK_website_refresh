@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
 
 export function Differentiation() {
   const t = useTranslations("Differentiation");
@@ -14,7 +13,7 @@ export function Differentiation() {
   ];
 
   return (
-    <section className="bg-white py-16 lg:py-40 overflow-hidden">
+    <section className="bg-white py-16 lg:py-32 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
           {/* Left Content */}
@@ -29,7 +28,7 @@ export function Differentiation() {
                 {t("title")}
               </h2>
               
-              <p className="text-sm sm:text-base lg:text-lg font-bold text-brand-gold uppercase tracking-[0.2em] mb-8">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-medium text-brand-gold uppercase tracking-[0.2em] mb-10">
                 {t("heritage")}
               </p>
 
@@ -41,14 +40,20 @@ export function Differentiation() {
                   
                   <ul className="space-y-4">
                     {points.map((point, i) => (
-                      <li key={i} className="flex items-center space-x-3">
-                        <CheckCircle2 className="w-6 h-6 text-brand-gold shrink-0" />
+                      <li key={i} className="flex items-center space-x-4">
+                        <img 
+                          src="/lines_circle-removebg-preview.png" 
+                          alt="" 
+                          className="w-5 h-5 lg:w-6 lg:h-6 shrink-0 object-contain drop-shadow-sm" 
+                        />
                         <span className="capitalize">{point}</span>
                       </li>
                     ))}
                   </ul>
                   
-                  <p className="text-brand-teal font-bold pt-4">{t("conclusion")}</p>
+                  <p className="text-xl lg:text-3xl font-bold text-brand-teal pt-8 tracking-tight border-t border-brand-teal/10">
+                    {t("conclusion")}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -73,6 +78,7 @@ export function Differentiation() {
           </div>
         </div>
       </div>
+
     </section>
   );
 }

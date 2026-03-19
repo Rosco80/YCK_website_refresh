@@ -1,16 +1,16 @@
 {
   "Hero": {
-    "title": "自 1979 年以来治疗慢性疼痛",
+    "title": "少林医药：自1979年起在真实患者身上得到验证",
     "heritageHeadline": "源自少林伤科传统",
-    "description": "自 1979 年以来，YAPCHANKOR 结合少林伤科医药、专利临床配方和综合康复方案，专注于治疗慢性关节和肌肉疼痛。我们的目标不仅是暂时缓解，而是结构化康复和长期的疼痛解决。",
+    "description1": "自 1979 年以来，YAPCHANKOR 采用植根于少林伤科医学的实用疗法，专注于治疗慢性关节和肌肉疼痛。",
     "primaryCTA": "预约临床评估",
     "secondaryCTA": "了解我们的疗法"
   },
   "TrustBar": {
-    "since": "始于 1979 年",
-    "validation": "莫纳什大学相关的科学验证",
-    "formulation": "专利临床配方",
-    "approach": "综合康复方案"
+    "item1": { "title": "自 1979 年", "sub": "受信赖的传承" },
+    "item2": { "title": "50,000+", "sub": "治愈患者" },
+    "item3": { "title": "实验室研究", "sub": "莫纳什大学" },
+    "item4": { "title": "KKM 注册", "sub": "PainFix 认证" }
   },
   "Navigation": {
     "method": "我们的疗法",
@@ -22,6 +22,7 @@
   "RollingHook": {
     "staticHeading": "我们的诊疗范围",
     "subtext": "许多患者在尝试了其他疗法但未能获得持久缓解后，选择了我们。",
+    "secondaryText": "我们的专利草本配方已在诊所中使用数十年，并由此启发了 PainFix 局部镇痛系列产品——该系列现已在马来西亚卫生部（KKM）完成注册。其抗炎特性已通过与莫纳什大学联合开展的实验室研究得到验证。",
     "cta": "预约临床评估",
     "condition1": "慢性腰背痛",
     "condition2": "膝关节骨性关节炎",
@@ -148,11 +149,39 @@
     "description": "欢迎光临我们的四家分院，接受专业的评估和治疗。",
     "ctaView": "查看分院",
     "ctaBook": "立即预约",
-    "ampang": "安邦 (Ampang)",
-    "okr": "旧巴生路 (Old Klang Road)",
-    "shahAlam": "莎阿南 (Shah Alam)",
-    "subangJaya": "梳邦再也 (Subang Jaya)",
-    "addressPlaceholder": "分院地址占位符"
+    "ctaDirections": "获取路线",
+    "ampang": {
+      "name": "安邦 (Ampang)",
+      "address": "No. 11 Jalan AWF 1, Ampang Waterfront, 68000 Ampang, SELANGOR",
+      "phone": "+603-42801395",
+      "hoursLines": "上午 10:00 - 晚上 8:00 (周一至周五) | 上午 9:00 - 下午 5:00 (周六)",
+      "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.146706%2C101.7659892",
+      "googleMapsUrl": "https://maps.app.goo.gl/2YHRvN9u7T6Me53E8"
+    },
+    "okr": {
+      "name": "旧巴生路 (Old Klang Road)",
+      "address": "KS-3 Taman Evergreen, Batu 4, Jalan Klang Lama, 58100 Kuala Lumpur",
+      "phone": "+603-7983 3276 / +603-7972 5559",
+      "hoursLines": "上午 10:00 - 晚上 8:00 (周一至周五) | 上午 9:00 - 下午 5:00 (周六)",
+      "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.09828%2C101.6735192",
+      "googleMapsUrl": "https://maps.app.goo.gl/kjkFp6vEKaqihqPx6"
+    },
+    "shahAlam": {
+      "name": "莎阿南 (Shah Alam)",
+      "address": "50, Jalan Bola Tampar 13/14, Seksyen 13, 40100 Shah Alam",
+      "phone": "+603-5510 1966",
+      "hoursLines": "上午 10:00 - 晚上 8:00 (周一至周五) | 上午 9:00 - 下午 5:00 (周六)",
+      "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.0816396%2C101.54005",
+      "googleMapsUrl": "https://maps.app.goo.gl/RW4fnUDEjex7SYHb8"
+    },
+    "subangJaya": {
+      "name": "梳邦再也 (Subang Jaya)",
+      "address": "W-07-0 (Ground Floor), West Wing, Subang Square Business Centre, Jalan SS 15/4G, 47500 Subang Jaya.",
+      "phone": "+603-5613 2229",
+      "hoursLines": "上午 10:00 - 晚上 8:00 (周一至周五) | 上午 9:00 - 下午 5:00 (周六)",
+      "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.0777696%2C101.5885731",
+      "googleMapsUrl": "https://maps.app.goo.gl/qi4F839EpNhnbBFQ7"
+    }
   },
   "Insights": {
     "headline": "临床实践见解",

@@ -2,41 +2,40 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Hand, Activity, FlaskConical } from "lucide-react";
 
 export function WhyChooseUs() {
   const t = useTranslations("WhyChooseUs");
 
   const features = [
     {
-      icon: <Hand className="w-10 h-10 lg:w-12 lg:h-12 text-brand-teal mb-6" />,
+      icon: "/manual therapy.png",
       label: t("item1"),
     },
     {
-      icon: <Activity className="w-10 h-10 lg:w-12 lg:h-12 text-brand-teal mb-6" />,
+      icon: "/structuredrehab.png",
       label: t("item2"),
     },
     {
-      icon: <FlaskConical className="w-10 h-10 lg:w-12 lg:h-12 text-brand-teal mb-6" />,
+      icon: "/clinicalformulation.png",
       label: t("item3"),
     },
   ];
 
   return (
-    <section className="bg-brand-bg py-16 lg:py-40">
+    <section className="bg-brand-bg py-16 lg:py-24 border-y border-brand-teal/5 relative">
       <div className="container mx-auto px-6 text-center">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h2 className="text-[10px] lg:text-base font-bold text-brand-gold uppercase tracking-[0.25em] mb-6">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-brand-gold uppercase tracking-[0.2em] mb-10">
               {t("title")}
             </h2>
             
-            <h3 className="text-3xl lg:text-5xl font-bold text-brand-teal mb-6 lg:mb-8 leading-tight">
+            <h3 className="text-2xl lg:text-4xl font-bold text-brand-teal mb-8 lg:mb-12 leading-tight max-w-5xl mx-auto">
               {t("subtitle")}
             </h3>
 
@@ -54,8 +53,12 @@ export function WhyChooseUs() {
                   transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                   className="flex flex-col items-center group"
                 >
-                  <div className="p-8 rounded-full bg-white shadow-clinical mb-4 transition-transform group-hover:scale-110 duration-500">
-                    {feature.icon}
+                  <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full bg-white shadow-clinical mb-4 transition-transform group-hover:scale-105 duration-500 flex items-center justify-center p-8">
+                    <img 
+                      src={feature.icon} 
+                      alt={feature.label}
+                      className="w-full h-full object-contain mix-multiply" 
+                    />
                   </div>
                   <span className="text-sm lg:text-base font-bold text-brand-teal-deep uppercase tracking-widest mt-4">
                     {feature.label}

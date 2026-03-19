@@ -24,6 +24,8 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const localeLabels: Record<string, string> = { en: "EN", ms: "BM", zh: "中文" };
+
   const handleLanguageChange = (newLocale: string) => {
     router.replace(pathname, { locale: newLocale });
     setIsMobileMenuOpen(false);
@@ -48,15 +50,12 @@ export function Header() {
         isScrolled ? "h-16" : "h-20"
       )}>
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-3 group relative z-50">
+        <Link href="/" className="flex items-center relative z-50">
           <img 
-            src="/images/logo/emblem.jpg" 
+            src="/images/logo/logo no back with dots.png" 
             alt="YAPCHANKOR" 
-            className="h-10 w-10 rounded-full transition-transform group-hover:scale-[1.05] object-contain shadow-sm"
+            className="h-12 w-auto object-contain transition-transform hover:scale-[1.03]"
           />
-          <span className="text-xl font-bold tracking-tight text-brand-teal whitespace-nowrap hidden sm:inline">
-            YAP<span className="text-brand-gold">CHAN</span>KOR
-          </span>
         </Link>
 
         {/* Desktop Nav */}
@@ -83,7 +82,7 @@ export function Header() {
                     : "text-brand-teal-deep/40 hover:text-brand-teal hover:bg-brand-teal/5"
                 )}
               >
-                {l}
+                {localeLabels[l] ?? l}
               </button>
             ))}
           </div>

@@ -17,8 +17,8 @@ export function FAQ() {
   ];
 
   return (
-    <section className="bg-brand-bg py-24 lg:py-32">
-      <div className="container mx-auto px-4">
+    <section className="bg-brand-bg py-16 lg:py-24">
+      <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}

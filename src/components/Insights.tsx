@@ -30,8 +30,8 @@ export function Insights() {
   ];
 
   return (
-    <section className="bg-brand-bg py-16 lg:py-40">
-      <div className="container mx-auto px-6">
+    <section className="bg-brand-bg py-16 lg:py-24 relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 lg:mb-24 gap-8">
           <div className="max-w-3xl text-left">
             <motion.h2 

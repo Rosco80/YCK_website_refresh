@@ -100,6 +100,7 @@ export function ProblemReframe() {
           </div>
         </div>
       </div>
+
     </section>
   );
 }

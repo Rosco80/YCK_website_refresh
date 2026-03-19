@@ -1,6 +1,5 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { ClinicalFormulation } from "@/components/ClinicalFormulation";
 import { Branches } from "@/components/Branches";
 import { Insights } from "@/components/Insights";
 import { FAQ } from "@/components/FAQ";
@@ -26,7 +25,6 @@ export default function Home() {
         <Compatibility />
         <ClinicalResults />
         <Insights />
-        <ClinicalFormulation />
         <Branches />
         <FAQ />
         <FinalCTA />

@@ -1,16 +1,16 @@
 {
   "Hero": {
-    "title": "Treating Chronic Pain Since 1979",
+    "title": "Shaolin Medicine Proven in Real Patients Since 1979",
     "heritageHeadline": "源自少林伤科传统",
-    "description": "YAPCHANKOR has treated chronic joint and muscle pain since 1979 using an approach shaped by Shaolin injury medicine, proprietary clinical formulations, and integrative rehabilitation. Our focus is not just temporary relief, but structured recovery and long-term pain resolution.",
+    "description1": "Since 1979, YAPCHANKOR has treated chronic joint and muscle pain using a practical approach rooted in Shaolin injury medicine.",
     "primaryCTA": "Book Clinical Assessment",
     "secondaryCTA": "Explore Our Method"
   },
   "TrustBar": {
-    "since": "Since 1979",
-    "validation": "Monash-linked scientific validation",
-    "formulation": "Proprietary clinical formulation",
-    "approach": "Integrative rehabilitation approach"
+    "item1": { "title": "Since 1979", "sub": "Trusted Heritage" },
+    "item2": { "title": "50,000+", "sub": "Patients Treated" },
+    "item3": { "title": "Lab Research", "sub": "Monash University" },
+    "item4": { "title": "KKM Registered", "sub": "PainFix Certified" }
   },
   "Navigation": {
     "method": "Our Method",
@@ -22,6 +22,7 @@
   "RollingHook": {
     "staticHeading": "We Treat",
     "subtext": "Many patients come to us after trying other treatments without lasting relief.",
+    "secondaryText": "Our proprietary herbal formulation has been used in our clinics for decades and later inspired the PainFix topical pain relief range, now registered with Malaysia's Ministry of Health (KKM). Its anti-inflammatory properties were studied through laboratory research conducted with Monash University.",
     "cta": "Book Clinical Assessment",
     "condition1": "chronic back pain",
     "condition2": "knee osteoarthritis",
@@ -148,11 +149,39 @@
     "description": "Visit us at any of our four clinical locations for a professional assessment and treatment.",
     "ctaView": "View Branch",
     "ctaBook": "Book Here",
-    "ampang": "Ampang",
-    "okr": "Old Klang Road",
-    "shahAlam": "Shah Alam",
-    "subangJaya": "Subang Jaya",
-    "addressPlaceholder": "Clinic Address Placeholder"
+    "ctaDirections": "Get Directions",
+    "ampang": {
+      "name": "Ampang",
+      "address": "No. 11 Jalan AWF 1, Ampang Waterfront, 68000 Ampang, SELANGOR",
+      "phone": "+603-42801395",
+      "hoursLines": "10am to 8pm (Mon-Fri) | 9am to 5pm (Sat)",
+      "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.146706%2C101.7659892",
+      "googleMapsUrl": "https://maps.app.goo.gl/2YHRvN9u7T6Me53E8"
+    },
+    "okr": {
+      "name": "Old Klang Road",
+      "address": "KS-3 Taman Evergreen, Batu 4, Jalan Klang Lama, 58100 Kuala Lumpur",
+      "phone": "+603-7983 3276 / +603-7972 5559",
+      "hoursLines": "10am to 8pm (Mon-Fri) | 9am to 5pm (Sat)",
+      "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.09828%2C101.6735192",
+      "googleMapsUrl": "https://maps.app.goo.gl/kjkFp6vEKaqihqPx6"
+    },
+    "shahAlam": {
+      "name": "Shah Alam",
+      "address": "50, Jalan Bola Tampar 13/14, Seksyen 13, 40100 Shah Alam",
+      "phone": "+603-5510 1966",
+      "hoursLines": "10am to 8pm (Mon-Fri) | 9am to 5pm (Sat)",
+      "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.0816396%2C101.54005",
+      "googleMapsUrl": "https://maps.app.goo.gl/RW4fnUDEjex7SYHb8"
+    },
+    "subangJaya": {
+      "name": "Subang Jaya",
+      "address": "W-07-0 (Ground Floor), West Wing, Subang Square Business Centre, Jalan SS 15/4G, 47500 Subang Jaya.",
+      "phone": "+603-5613 2229",
+      "hoursLines": "10am to 8pm (Mon-Fri) | 9am to 5pm (Sat)",
+      "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.0777696%2C101.5885731",
+      "googleMapsUrl": "https://maps.app.goo.gl/qi4F839EpNhnbBFQ7"
+    }
   },
   "Insights": {
     "headline": "Insights from Clinical Practice",
