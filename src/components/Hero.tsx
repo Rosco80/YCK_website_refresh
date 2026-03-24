@@ -28,7 +28,7 @@ export function Hero() {
       {/* Background Layer with Cinematic Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/hero_cinematic.png" 
+          src="/images/yck_home_hero.png" 
           alt="Hands-on treatment at YAPCHANKOR" 
           className="w-full h-full object-cover opacity-60"
         />
