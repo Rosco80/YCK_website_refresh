@@ -226,5 +226,38 @@
     "newsletterTitle": "Newsletter",
     "newsletterPlaceholder": "Your email address",
     "newsletterButton": "Subscribe"
+  },
+  "MethodPage": {
+    "hero": {
+      "title": "Our Method",
+      "subtitle": "Bridging Traditional Wisdom and Modern Clinical Science"
+    },
+    "whoWeAre": {
+      "title": "Who We Are",
+      "text1": "YAPCHANKOR is more than a clinic; it is the custodian of a centuries-old heritage in injury medicine. Founded on the principles of Shaolin traditional care, we have evolved into a modern clinical practice that serves thousands of patients across Malaysia.",
+      "text2": "Our team of specialized clinicians combines hands-on expertise with a deep understanding of functional recovery, ensuring that every patient receives care that is both rooted in tradition and validated by modern standards."
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "step1": "Clinical Assessment",
+      "step1Desc": "We begin with a thorough evaluation of your condition, identifying the functional limitations and pain drivers unique to you.",
+      "step2": "Targeted Treatment",
+      "step2Desc": "Our clinicians apply specialized manual therapy techniques alongside our proprietary clinical formulations to manage inflammation.",
+      "step3": "Structured Rehab",
+      "step3Desc": "We guide you through a personalized rehabilitation program designed to restore strength, mobility, and long-term function."
+    },
+    "whyItWorks": {
+      "title": "Why It Works",
+      "reason1": "Dual-Action Approach",
+      "reason1Desc": "By combining external clinical formulations with structured physical therapy, we address both the structural and inflammatory components of pain.",
+      "reason2": "Evidence-Based Heritage",
+      "reason2Desc": "Our methods are refined through decades of clinical practice and supported by laboratory research conducted with Monash University.",
+      "reason3": "Functional Recovery",
+      "reason3Desc": "We don't just mask symptoms; we focus on restoring your body's ability to move and heal naturally."
+    },
+    "history": {
+      "title": "A Proud History",
+      "text": "Since 1979, YAPCHANKOR has been at the forefront of chronic pain treatment in Malaysia. What began as a small practice rooted in Shaolin injury medicine has grown into a trusted clinical institution, having treated over 50,000 patients with a commitment to excellence and functional outcomes."
+    }
   }
 }

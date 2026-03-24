@@ -226,5 +226,38 @@
     "newsletterTitle": "Surat Berita",
     "newsletterPlaceholder": "Alamat e-mel anda",
     "newsletterButton": "Langgan"
+  },
+  "MethodPage": {
+    "hero": {
+      "title": "Kaedah Kami",
+      "subtitle": "Merapatkan Kebijaksanaan Tradisional dan Sains Klinikal Moden"
+    },
+    "whoWeAre": {
+      "title": "Siapa Kami",
+      "text1": "YAPCHANKOR adalah lebih daripada sekadar klinik; ia adalah penjaga warisan berabad-abad dalam perubatan kecederaan. Ditubuhkan berasaskan prinsip penjagaan tradisional Shaolin, kami telah berkembang menjadi amalan klinikal moden yang berkhidmat kepada beribu-ribu pesakit di seluruh Malaysia.",
+      "text2": "Pasukan klinikal pakar kami menggabungkan kepakaran hands-on dengan pemahaman mendalam tentang pemulihan fungsi, memastikan setiap pesakit menerima penjagaan yang berteraskan tradisi dan divalidasi oleh piawaian moden."
+    },
+    "howItWorks": {
+      "title": "Bagaimana Ia Berfungsi",
+      "step1": "Penilaian Klinikal",
+      "step1Desc": "Kami bermula dengan penilaian menyeluruh tentang keadaan anda, mengenal pasti had fungsi dan pemacu kesakitan yang unik untuk anda.",
+      "step2": "Rawatan Sasaran",
+      "step2Desc": "Pakar klinikal kami menggunakan teknik terapi manual khusus bersama formulasi klinikal proprietari kami untuk menguruskan keradangan.",
+      "step3": "Rehabilitasi Berstruktur",
+      "step3Desc": "Kami membimbing anda melalui program rehabilitasi peribadi yang direka untuk memulihkan kekuatan, mobiliti, dan fungsi jangka panjang."
+    },
+    "whyItWorks": {
+      "title": "Mengapa Ia Berkesan",
+      "reason1": "Pendekatan Dwi-Tindakan",
+      "reason1Desc": "Dengan menggabungkan formulasi klinikal luaran dengan terapi fizikal berstruktur, kami menangani kedua-dua komponen struktur dan keradangan kesakitan.",
+      "reason2": "Warisan Berasaskan Bukti",
+      "reason2Desc": "Kaedah kami diperhalusi melalui dekad amalan klinikal dan disokong oleh penyelidikan makmal yang dijalankan bersama Universiti Monash.",
+      "reason3": "Pemulihan Fungsi",
+      "reason3Desc": "Kami bukan sahaja menutup simptom; kami menumpukan pada memulihkan keupayaan tubuh anda untuk bergerak dan sembuh secara semulajadi."
+    },
+    "history": {
+      "title": "Sejarah Yang Dibanggakan",
+      "text": "Sejak 1979, YAPCHANKOR telah berada di barisan hadapan dalam rawatan kesakitan kronik di Malaysia. Apa yang bermula sebagai amalan kecil yang berakar umbi dalam perubatan kecederaan Shaolin telah berkembang menjadi institusi klinikal yang dipercayai, telah merawat lebih 50,000 pesakit dengan komitmen terhadap kecemerlangan dan hasil fungsi."
+    }
   }
 }
