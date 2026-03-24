@@ -234,30 +234,28 @@
     },
     "whoWeAre": {
       "title": "Siapa Kami",
-      "text1": "YAPCHANKOR adalah lebih daripada sekadar klinik; ia adalah penjaga warisan berabad-abad dalam perubatan kecederaan. Ditubuhkan berasaskan prinsip penjagaan tradisional Shaolin, kami telah berkembang menjadi amalan klinikal moden yang berkhidmat kepada beribu-ribu pesakit di seluruh Malaysia.",
-      "text2": "Pasukan klinikal pakar kami menggabungkan kepakaran hands-on dengan pemahaman mendalam tentang pemulihan fungsi, memastikan setiap pesakit menerima penjagaan yang berteraskan tradisi dan divalidasi oleh piawaian moden."
+      "text1": "Sejak 1979, YAPCHANKOR telah membantu lebih 20,000 pesakit dengan jayanya, kebanyakannya dengan masalah otot dan sendi yang paling kronik seperti slipped disc, osteoarthritis lutut, dan bahu beku.",
+      "text2": "Terdapat faedah perubatan sebenar dalam ubat kami, yang memberikan terapi paling pantas, paling cekap dan kos efektif untuk sakit otot dan sendi kronik hari ini."
     },
     "howItWorks": {
       "title": "Bagaimana Ia Berfungsi",
-      "step1": "Penilaian Klinikal",
-      "step1Desc": "Kami bermula dengan penilaian menyeluruh tentang keadaan anda, mengenal pasti had fungsi dan pemacu kesakitan yang unik untuk anda.",
-      "step2": "Rawatan Sasaran",
-      "step2Desc": "Pakar klinikal kami menggunakan teknik terapi manual khusus bersama formulasi klinikal proprietari kami untuk menguruskan keradangan.",
-      "step3": "Rehabilitasi Berstruktur",
-      "step3Desc": "Kami membimbing anda melalui program rehabilitasi peribadi yang direka untuk memulihkan kekuatan, mobiliti, dan fungsi jangka panjang."
+      "intro": "Perubatan moden telah menghasilkan banyak keajaiban dalam merawat masalah kesihatan manusia. Walau bagaimanapun, dalam bidang sakit otot dan sendi kronik, kebanyakan rawatan mempunyai kelemahan yang ketara.",
+      "downside1": "Ubat penahan sakit moden menyekat isyarat kesakitan tanpa merawat punca utama, dengan kesan sampingan yang teruk pada perut atau jantung anda.",
+      "downside2": "Ramai penyedia perkhidmatan seperti kiropraktor, osteopat, dan ahli fisioterapi memberikan sedikit kelegaan, tetapi tiada seorang pun daripada mereka memberikan penawar sepenuhnya, dan ramai yang mahal untuk kelegaan jangka pendek.",
+      "solution": "Kami percaya kami mempunyai penyelesaian yang lebih baik. Dengan menggabungkan Perubatan Herba Shaolin yang unik, yang membantu mengurangkan keradangan dan meningkatkan penyembuhan, bersama-sama dengan fisioterapi moden, kami telah menghasilkan hasil yang lebih baik untuk pesakit sakit kronik dalam tempoh masa yang lebih cepat."
     },
     "whyItWorks": {
       "title": "Mengapa Ia Berkesan",
-      "reason1": "Pendekatan Dwi-Tindakan",
-      "reason1Desc": "Dengan menggabungkan formulasi klinikal luaran dengan terapi fizikal berstruktur, kami menangani kedua-dua komponen struktur dan keradangan kesakitan.",
-      "reason2": "Warisan Berasaskan Bukti",
-      "reason2Desc": "Kaedah kami diperhalusi melalui dekad amalan klinikal dan disokong oleh penyelidikan makmal yang dijalankan bersama Universiti Monash.",
-      "reason3": "Pemulihan Fungsi",
-      "reason3Desc": "Kami bukan sahaja menutup simptom; kami menumpukan pada memulihkan keupayaan tubuh anda untuk bergerak dan sembuh secara semulajadi."
+      "science": "Walaupun Perubatan Tradisional Cina sering dilayan dengan skeptikal, banyak herba Cina telah dikaji dengan teliti. Formula istimewa kami telah terbukti mempunyai faedah positif seperti ciri anti-keradangan dan regeneratif.",
+      "evidence": "Dalam bidang sakit kronik, tidak ada penipuan terhadap pesakit. Kami menggunakan cara objektif untuk mengukur tahap kesakitan dan penambahbaikan dalam pergerakan berfungsi, memastikan rawatan itu benar-benar berkesan.",
+      "placebo": "Malah kesan plasebo, sekuat mana pun, tidak dapat menghasilkan penawar jangka panjang. Kaedah kami memberi tumpuan kepada aktiviti biologi yang boleh diukur dan pemulihan berfungsi."
     },
     "history": {
       "title": "Sejarah Yang Dibanggakan",
-      "text": "Sejak 1979, YAPCHANKOR telah berada di barisan hadapan dalam rawatan kesakitan kronik di Malaysia. Apa yang bermula sebagai amalan kecil yang berakar umbi dalam perubatan kecederaan Shaolin telah berkembang menjadi institusi klinikal yang dipercayai, telah merawat lebih 50,000 pesakit dengan komitmen terhadap kecemerlangan dan hasil fungsi."
+      "text": "YAPCHANKOR membawa kelegaan semulajadi dan tanpa pembedahan dengan senaman terapeutik kami, tampalan kecederaan sukan dan ubat-ubatan proprietari. Keturunan kami dikesan kembali ke Kuil Shaolin, di mana nenek moyang mempelajari formula rahsia untuk merawat kecederaan, akhirnya menubuhkan Tabib Yap Chan Kor pada tahun 1979.",
+      "detail1": "Kajian perubatan dan seni mempertahankan diri sangat berkait rapat di China kuno. Guru seni mempertahankan diri memerlukan pengetahuan anatomi dan pertolongan cemas.",
+      "detail2": "Leluhur YAPCHANKOR, Yap Feng Qi, yang berlatih di Kuil Shaolin dan mempelajari formula rahsia untuk rawatan kecederaan luar.",
+      "conclusion": "Hari ini, kami menggabungkan perubatan dan teknik Cina purba dengan penggunaan ahli fisioterapi terlatih, membawa tradisi panjang ini dengan penilaian moden untuk memastikan pemulihan yang lebih cepat dan jangka panjang."
     }
   }
 }

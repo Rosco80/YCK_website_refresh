@@ -70,17 +70,11 @@ export default function MethodPage() {
                   {t("whoWeAre.title")}
                 </div>
                 <h2 className="text-3xl lg:text-6xl font-bold mb-8 text-brand-teal-deep leading-tight">
-                  Custodian of a <span className="text-brand-gold">Centuries-Old</span> Heritage
+                  Over <span className="text-brand-gold">20,000</span> Patients Helped Since 1979
                 </h2>
                 <div className="space-y-6 text-lg text-brand-teal-deep/70 font-medium leading-relaxed">
                   <p>{t("whoWeAre.text1")}</p>
                   <p>{t("whoWeAre.text2")}</p>
-                </div>
-                
-                <div className="mt-12 flex flex-col sm:flex-row gap-6">
-                  <Button className="bg-brand-teal hover:bg-brand-teal-deep text-white rounded-full px-10 h-14 uppercase tracking-widest font-bold shadow-clinical hover:shadow-clinical-hover transition-all">
-                    Discover Our Story
-                  </Button>
                 </div>
               </motion.div>
               
@@ -93,66 +87,70 @@ export default function MethodPage() {
               >
                 <div className="relative aspect-3/4 max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
                   <img 
-                    src="/images/method_portrait_placeholder.png" 
-                    className="w-full h-full object-cover grayscale-20 group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                    src="/images/yck-about.png" 
+                    className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                     alt="Who We Are - Portrait"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-brand-teal-deep/30 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 p-6 glassmorphism rounded-2xl border border-white/20 shadow-lg backdrop-blur-md">
-                    <p className="text-brand-teal-deep text-sm font-bold tracking-tight mb-1">FOUNDED 1979</p>
-                    <p className="text-brand-gold text-xs font-bold uppercase tracking-widest">A legacy of clinical excellence</p>
-                  </div>
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Section 3: How It Works (3 Steps) */}
+        {/* Section 3: How It Works (Narrative Style) */}
         <section className="py-24 lg:py-40 bg-zinc-900 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-gold/5 blur-[120px] rounded-full translate-x-1/2" />
           
           <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center max-w-3xl mx-auto mb-20 lg:mb-32">
+            <div className="max-w-4xl mx-auto">
               <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={revealVariants}
+                className="text-center mb-16 lg:mb-24"
               >
                 <h2 className="text-3xl lg:text-7xl font-bold mb-8 text-brand-gold tracking-tight">{t("howItWorks.title")}</h2>
-                <div className="h-1 w-24 bg-brand-gold mx-auto rounded-full" />
+                <p className="text-xl lg:text-2xl text-white/80 leading-relaxed italic">{t("howItWorks.intro")}</p>
               </motion.div>
-            </div>
 
-            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-              <StepCard 
-                icon={<ShieldCheck className="w-8 h-8 text-brand-gold" />}
-                title={t("howItWorks.step1")}
-                desc={t("howItWorks.step1Desc")}
-                number="01"
-                delay={0.1}
-              />
-              <StepCard 
-                icon={<Microscope className="w-8 h-8 text-brand-gold" />}
-                title={t("howItWorks.step2")}
-                desc={t("howItWorks.step2Desc")}
-                number="02"
-                delay={0.3}
-              />
-              <StepCard 
-                icon={<CheckCircle2 className="w-8 h-8 text-brand-gold" />}
-                title={t("howItWorks.step3")}
-                desc={t("howItWorks.step3Desc")}
-                number="03"
-                delay={0.5}
-              />
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+                <motion.div 
+                   initial="hidden"
+                   whileInView="visible"
+                   viewport={{ once: true }}
+                   variants={revealVariants}
+                   className="space-y-8"
+                >
+                  <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
+                    <p className="text-white/70 leading-relaxed text-lg">{t("howItWorks.downside1")}</p>
+                  </div>
+                  <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
+                    <p className="text-white/70 leading-relaxed text-lg">{t("howItWorks.downside2")}</p>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                   initial="hidden"
+                   whileInView="visible"
+                   viewport={{ once: true }}
+                   variants={revealVariants}
+                   transition={{ delay: 0.3 }}
+                   className="p-10 lg:p-14 rounded-3xl bg-brand-gold text-brand-teal-deep shadow-2xl"
+                >
+                  <h3 className="text-2xl lg:text-4xl font-black mb-8 uppercase tracking-tight">Our Better Solution</h3>
+                  <p className="text-xl lg:text-2xl font-bold leading-relaxed">
+                    {t("howItWorks.solution")}
+                  </p>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Section 4: Why It Works (Landscape Images) */}
-        <section className="py-24 lg:py-40 bg-brand-bg">
+        <section className="py-24 lg:py-40 bg-brand-bg text-brand-teal-deep">
           <div className="container mx-auto px-6">
             <div className="text-center mb-20 lg:mb-32">
               <motion.h2 
@@ -160,7 +158,7 @@ export default function MethodPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={revealVariants}
-                className="text-3xl lg:text-7xl font-bold text-brand-teal-deep mb-6 tracking-tight"
+                className="text-3xl lg:text-7xl font-bold mb-6 tracking-tight"
               >
                 {t("whyItWorks.title")}
               </motion.h2>
@@ -169,17 +167,28 @@ export default function MethodPage() {
 
             <div className="space-y-24 lg:space-y-40">
               <WhyReason 
-                title={t("whyItWorks.reason1")}
-                desc={t("whyItWorks.reason1Desc")}
-                image="/images/method_landscape_1_placeholder.png"
+                title="Scientific Rigor"
+                desc={t("whyItWorks.science")}
+                image="/images/yck-about-who-768x361.jpg"
                 reverse={false}
               />
               <WhyReason 
-                title={t("whyItWorks.reason2")}
-                desc={t("whyItWorks.reason2Desc")}
-                image="/images/method_landscape_2_placeholder.png"
+                title="Objective Results"
+                desc={t("whyItWorks.evidence")}
+                image="/images/yck-about.png"
                 reverse={true}
               />
+              <motion.div 
+                initial="hidden" 
+                whileInView="visible" 
+                viewport={{ once: true }} 
+                variants={revealVariants}
+                className="max-w-3xl mx-auto text-center pt-12"
+              >
+                <p className="text-lg lg:text-2xl text-brand-teal-deep/60 italic font-medium">
+                  {t("whyItWorks.placebo")}
+                </p>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -194,16 +203,28 @@ export default function MethodPage() {
               variants={revealVariants}
               className="max-w-5xl mx-auto"
             >
-              <div className="grid lg:grid-cols-12 gap-12 items-center">
+              <div className="grid lg:grid-cols-12 gap-12 items-start">
                 <div className="lg:col-span-1 text-brand-gold opacity-30 hidden lg:block">
                   <History className="w-24 h-24" />
                 </div>
                 <div className="lg:col-span-11">
-                  <h2 className="text-3xl lg:text-6xl font-black mb-10 text-brand-gold tracking-tight">
+                  <h2 className="text-3xl lg:text-6xl font-black mb-12 text-brand-gold tracking-tight lowercase">
                     {t("history.title")}
                   </h2>
-                  <div className="text-xl lg:text-3xl font-medium text-white/80 leading-relaxed border-l-4 border-brand-gold pl-8 lg:pl-16 italic">
-                    {t("history.text")}
+                  
+                  <div className="space-y-12 text-lg lg:text-2xl text-white/80 font-medium leading-relaxed">
+                    <p className="text-2xl lg:text-4xl text-white font-bold leading-tight mb-16">{t("history.text")}</p>
+                    <div className="grid sm:grid-cols-2 gap-12">
+                       <div className="border-l-2 border-brand-gold pl-6">
+                         <p>{t("history.detail1")}</p>
+                       </div>
+                       <div className="border-l-2 border-brand-gold pl-6">
+                         <p>{t("history.detail2")}</p>
+                       </div>
+                    </div>
+                    <p className="pt-12 text-brand-gold font-bold">
+                      {t("history.conclusion")}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -217,26 +238,7 @@ export default function MethodPage() {
   );
 }
 
-function StepCard({ icon, title, desc, number, delay }: { icon: React.ReactNode; title: string; desc: string; number: string; delay: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay, duration: 0.8 }}
-      className="bg-white/5 border border-white/10 p-10 lg:p-14 rounded-3xl hover:bg-white/10 transition-all group relative overflow-hidden"
-    >
-      <div className="absolute top-0 right-0 p-6 text-6xl font-black text-white/5 group-hover:text-brand-gold/10 transition-colors pointer-events-none">
-        {number}
-      </div>
-      <div className="w-16 h-16 rounded-2xl bg-brand-gold/10 flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-500">
-        {icon}
-      </div>
-      <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-brand-gold tracking-tight">{title}</h3>
-      <p className="text-white/60 font-medium leading-relaxed text-lg">{desc}</p>
-    </motion.div>
-  );
-}
+
 
 function WhyReason({ title, desc, image, reverse }: { title: string; desc: string; image: string; reverse: boolean }) {
   return (

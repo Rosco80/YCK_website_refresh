@@ -234,30 +234,28 @@
     },
     "whoWeAre": {
       "title": "Who We Are",
-      "text1": "YAPCHANKOR is more than a clinic; it is the custodian of a centuries-old heritage in injury medicine. Founded on the principles of Shaolin traditional care, we have evolved into a modern clinical practice that serves thousands of patients across Malaysia.",
-      "text2": "Our team of specialized clinicians combines hands-on expertise with a deep understanding of functional recovery, ensuring that every patient receives care that is both rooted in tradition and validated by modern standards."
+      "text1": "Since 1979, YAPCHANKOR has helped over 20,000 patients successfully, many with the most chronic muscle and joint problems like slipped discs, knee osteoarthritis, and frozen shoulders.",
+      "text2": "There is a real medical benefit in our medicine, which delivers the fastest, most efficient and cost-effective therapy for chronic muscle and joint pain today."
     },
     "howItWorks": {
       "title": "How It Works",
-      "step1": "Clinical Assessment",
-      "step1Desc": "We begin with a thorough evaluation of your condition, identifying the functional limitations and pain drivers unique to you.",
-      "step2": "Targeted Treatment",
-      "step2Desc": "Our clinicians apply specialized manual therapy techniques alongside our proprietary clinical formulations to manage inflammation.",
-      "step3": "Structured Rehab",
-      "step3Desc": "We guide you through a personalized rehabilitation program designed to restore strength, mobility, and long-term function."
+      "intro": "Modern medicine has produced many miracles in treating humanity's health problems. However, in the area of chronic muscle and joint pain, most treatments have significant downsides.",
+      "downside1": "Modern painkillers block pain signals without treating the root cause, at the expense of severe side effects to your stomach or heart.",
+      "downside2": "Many service providers like chiropractors, osteopaths, and physiotherapists provide some relief, but none of them provides a cure-all, and many are expensive for short-term relief.",
+      "solution": "We believe we have a better solution. By combining a unique Shaolin Herbal Medicine, which helps reduce inflammation and boosts healing, together with modern physiotherapy, we have produced better results for chronic pain patients in a faster time frame."
     },
     "whyItWorks": {
       "title": "Why It Works",
-      "reason1": "Dual-Action Approach",
-      "reason1Desc": "By combining external clinical formulations with structured physical therapy, we address both the structural and inflammatory components of pain.",
-      "reason2": "Evidence-Based Heritage",
-      "reason2Desc": "Our methods are refined through decades of clinical practice and supported by laboratory research conducted with Monash University.",
-      "reason3": "Functional Recovery",
-      "reason3Desc": "We don't just mask symptoms; we focus on restoring your body's ability to move and heal naturally."
+      "science": "While Traditional Chinese Medicine is often treated skeptically, many Chinese herbs have been studied rigorously. Our special formula has been shown to have positive benefits like anti-inflammation and regenerative properties.",
+      "evidence": "In the area of chronic pain, there is no deceiving the patient. We use objective ways to measure pain levels and improvements in functional movement, ensuring the treatment is truly working.",
+      "placebo": "Even the placebo effect, as strong as it is, cannot produce a long-term cure. Our methods focus on measurable biological activity and functional recovery."
     },
     "history": {
       "title": "A Proud History",
-      "text": "Since 1979, YAPCHANKOR has been at the forefront of chronic pain treatment in Malaysia. What began as a small practice rooted in Shaolin injury medicine has grown into a trusted clinical institution, having treated over 50,000 patients with a commitment to excellence and functional outcomes."
+      "text": "YAPCHANKOR brings natural and non-surgical relief with our therapeutic exercises, sports injury patches and proprietary medicines. Our lineage traces back to the Shaolin Temple, where ancestors learned secret formulas for treating injuries, eventually establishing Tabib Yap Chan Kor in 1979.",
+      "detail1": "The study of medicine and martial arts were very closely linked in ancient China. Martial arts teachers needed a knowledge of anatomy and first aid.",
+      "detail2": "It was YAPCHANKOR's ancestor, Yap Feng Qi, who trained at the Shaolin Temple and learned secret formulas for the treatment of external injuries.",
+      "conclusion": "Today, we blend ancient Chinese medicine and techniques with the use of trained physiotherapists, bringing forth this long tradition with modern assessments to ensure faster and long-term recovery."
     }
   }
 }
