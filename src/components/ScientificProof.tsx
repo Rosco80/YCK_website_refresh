@@ -13,8 +13,34 @@ export function ScientificProof() {
     t("finding3"),
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "Laboratory Evaluation of Anti-Inflammatory Efficacy in YAPCHANKOR Clinical Formulations",
+    "author": {
+      "@type": "Organization",
+      "name": "Monash University Research Collaboration"
+    },
+    "headline": t("monashStudy"),
+    "description": t("description"),
+    "about": [
+      {
+        "@type": "MedicalCondition",
+        "name": "Chronic Inflammation"
+      },
+      {
+        "@type": "MedicalProcedure",
+        "name": "Phytotherapy"
+      }
+    ]
+  };
+
   return (
     <section className="bg-white py-16 lg:py-32 relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
           {/* Left Content */}
@@ -59,7 +85,7 @@ export function ScientificProof() {
               className="bg-brand-bg rounded-2xl p-8 shadow-clinical group overflow-hidden flex items-center justify-center"
             >
               <img
-                src="/images/painfix_professional.jpg"
+                src="/images/painfix_professional.webp"
                 alt="PainFix Recovery Range - Clinical Formulation"
                 className="w-full h-auto max-h-120 object-contain transition-transform duration-500 group-hover:scale-105"
               />

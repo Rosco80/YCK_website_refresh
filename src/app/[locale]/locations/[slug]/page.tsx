@@ -12,18 +12,18 @@ import { useParams } from "next/navigation";
 // Clinician data with generated images
 const cliniciansByBranch: Record<string, any[]> = {
   ampang: [
-    { name: "Siti Aminah", title: "Senior Physiotherapist", bio: "With 12 years of clinical expertise, Siti specializes in advanced manual therapy and the Shaolin-inspired YAPCHANKOR treatment protocols.", image: "/images/physio_1_aminah_1774383175059.png" },
-    { name: "David Wong", title: "Lead Physiotherapist", bio: "A specialist in musculoskeletal recovery, David focuses on chronic pain management and functional movement restoration.", image: "/images/physio_2_david_1774383191416.png" }
+    { name: "Siti Aminah", title: "Senior Physiotherapist", bio: "With 12 years of clinical expertise, Siti specializes in advanced manual therapy and the Shaolin-inspired YAPCHANKOR treatment protocols.", image: "/images/physio_1_aminah_1774383175059.webp" },
+    { name: "David Wong", title: "Lead Physiotherapist", bio: "A specialist in musculoskeletal recovery, David focuses on chronic pain management and functional movement restoration.", image: "/images/physio_2_david_1774383191416.webp" }
   ],
   okr: [
-    { name: "John Doe", title: "Senior Consultant", bio: "Expert in spinal health and structural alignment, John has helped thousands find relief from persistent back and neck issues.", image: "/images/physio_3_john_1774383210507.png" },
-    { name: "Sarah Lee", title: "Senior Physiotherapist", bio: "Sarah's patient-centered approach combines traditional wisdom with modern rehabilitation science for optimal recovery.", image: "/images/physio_4_sarah_1774383227342.png" }
+    { name: "Lim Wei Kiat", title: "Senior Consultant", bio: "With over 15 years of experience in spinal health and structural alignment, Wei Kiat has successfully treated thousands of patients with complex musculoskeletal issues.", image: "/images/physio_3_john_1774383210507.webp" },
+    { name: "Noraini binti Hassan", title: "Senior Physiotherapist", bio: "Noraini's clinical approach integrates advanced rehabilitation science with the YAPCHANKOR heritage method for comprehensive patient recovery.", image: "/images/physio_4_sarah_1774383227342.webp" }
   ],
   shahAlam: [
-     { name: "Ahmad Faizal", title: "Senior Physiotherapist", bio: "Specializing in sports injury and post-surgical rehabilitation, Ahmad is dedicated to helping patients achieve peak physical function.", image: "/images/physio_5_faizal_1774383244652.png" }
+     { name: "Ahmad Faizal", title: "Senior Physiotherapist", bio: "Specializing in sports injury and post-surgical rehabilitation, Ahmad is dedicated to helping patients achieve peak physical function.", image: "/images/physio_5_faizal_1774383244652.webp" }
   ],
   subangJaya: [
-     { name: "Michelle Tan", title: "Senior Physiotherapist", bio: "Michelle focuses on holistic recovery, utilizing the YAPCHANKOR method to resolve deep-seated inflammatory pain.", image: "/images/physio_6_michelle_1774383259951.png" }
+     { name: "Michelle Tan", title: "Senior Physiotherapist", bio: "Michelle focuses on holistic recovery, utilizing the YAPCHANKOR method to resolve deep-seated inflammatory pain.", image: "/images/physio_6_michelle_1774383259951.webp" }
   ]
 };
 

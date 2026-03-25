@@ -28,9 +28,9 @@ export function Hero() {
       {/* Background Layer with Cinematic Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/yck_home_hero.png" 
-          alt="Hands-on treatment at YAPCHANKOR" 
-          className="w-full h-full object-cover opacity-60"
+          src="/images/yck_home_hero.webp" 
+          alt="Physiotherapy treatment"
+          className="w-full h-full object-cover transition-transform duration-1000 scale-[1.02] group-hover:scale-105"
         />
         {/* Darkened overlay for better text readability */}
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/30 to-black/60" />

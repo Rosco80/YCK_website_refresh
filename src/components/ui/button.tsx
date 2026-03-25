@@ -15,7 +15,7 @@ const buttonVariants = cva(
         outline:
           "border border-brand-teal/20 bg-transparent text-brand-teal hover:bg-brand-teal/5 hover:border-brand-teal/40 active:scale-[0.98]",
         secondary:
-          "bg-brand-gold text-brand-teal-deep shadow-sm hover:bg-brand-gold-dark active:scale-[0.98]",
+          "bg-brand-gold text-brand-teal-deep shadow-[0_10px_30px_-10px_rgba(197,160,105,0.5)] hover:bg-brand-gold-dark hover:shadow-[0_15px_35px_-10px_rgba(197,160,105,0.6)] hover:scale-[1.02] active:scale-[0.98] border border-brand-gold/20",
         ghost: "hover:bg-brand-teal/5 text-brand-teal-deep",
         link: "text-brand-teal underline-offset-4 hover:underline",
       },

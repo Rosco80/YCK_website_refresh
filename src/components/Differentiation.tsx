@@ -69,9 +69,9 @@ export function Differentiation() {
               className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-clinical"
             >
               <img 
-                src="/images/differentiation_rehab.png" 
+                src="/images/differentiation_rehab.webp" 
                 alt="Structured Rehabilitation at YAPCHANKOR" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover px-8 py-2"
               />
               <div className="absolute inset-0 bg-linear-to-t from-brand-teal-deep/10 to-transparent" />
             </motion.div>

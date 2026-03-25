@@ -18,6 +18,24 @@ export function RollingHook() {
     t("condition6"),
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "YAPCHANKOR Physiotherapy & Hub",
+    "medicalSpecialty": ["Physiotherapy", "TraditionalChineseMedicine"],
+    "knowsAbout": conditions.map(condition => ({
+      "@type": "MedicalCondition",
+      "name": condition,
+      "associatedAnatomy": {
+        "@type": "AnatomicalStructure",
+        "name": condition.includes("back") ? "Spine" : 
+              condition.includes("knee") ? "Knee" : 
+              condition.includes("shoulder") ? "Shoulder" : 
+              condition.includes("hip") ? "Hip" : "Musculoskeletal System"
+      }
+    }))
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % conditions.length);
@@ -27,18 +45,16 @@ export function RollingHook() {
 
   return (
     <section className="bg-brand-bg py-16 lg:py-24 border-y border-brand-teal/5 relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Static Heading */}
-          <motion.h2 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl lg:text-7xl font-bold text-brand-teal/40 uppercase tracking-tight -mb-3 lg:-mb-10"
-          >
+          <h2 className="text-4xl lg:text-7xl font-bold text-brand-teal/40 uppercase tracking-tight -mb-3 lg:-mb-10">
             {t("staticHeading")}
-          </motion.h2>
+          </h2>
 
           {/* Rotating Condition */}
           <div className="h-24 lg:h-40 flex items-center justify-center overflow-hidden relative mb-4">

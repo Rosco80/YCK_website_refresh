@@ -1,15 +1,19 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/routing";
 import { Button } from "./ui/button";
 import { MapPin, Phone, Clock, ArrowRight, ChevronRight } from "lucide-react";
+import Script from "next/script";
 
 export function Branches() {
   const t = useTranslations("Branches");
 
+  const locale = useLocale();
+
   const branches = [
+    // ... same as before but I'll add the schema logic ...
     { 
       id: "ampang", 
       name: t("ampang.name"), 
@@ -18,7 +22,8 @@ export function Branches() {
       hours: t("ampang.hoursLines"),
       wazeUrl: t("ampang.wazeUrl"),
       googleMapsUrl: t("ampang.googleMapsUrl"),
-      image: "/images/ampang_new.png" 
+      image: "/images/ampang_new.webp",
+      geo: { lat: 3.1467, lng: 101.7660 }
     },
     { 
       id: "okr", 
@@ -28,7 +33,8 @@ export function Branches() {
       hours: t("okr.hoursLines"),
       wazeUrl: t("okr.wazeUrl"),
       googleMapsUrl: t("okr.googleMapsUrl"),
-      image: "/images/OKR YCK  Interior.png" 
+      image: "/images/okr_interior.webp",
+      geo: { lat: 3.0983, lng: 101.6735 }
     },
     { 
       id: "shahAlam", 
@@ -38,7 +44,8 @@ export function Branches() {
       hours: t("shahAlam.hoursLines"),
       wazeUrl: t("shahAlam.wazeUrl"),
       googleMapsUrl: t("shahAlam.googleMapsUrl"),
-      image: "/images/shah-alam_new.png" 
+      image: "/images/shah_alam_new.webp",
+      geo: { lat: 3.0816, lng: 101.5401 }
     },
     { 
       id: "subangJaya", 
@@ -48,12 +55,48 @@ export function Branches() {
       hours: t("subangJaya.hoursLines"),
       wazeUrl: t("subangJaya.wazeUrl"),
       googleMapsUrl: t("subangJaya.googleMapsUrl"),
-      image: "/images/subang_new.png" 
+      image: "/images/subang_new.webp",
+      geo: { lat: 3.0778, lng: 101.5886 }
     },
   ];
 
+  const schemas = branches.map(branch => ({
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": `YAPCHANKOR ${branch.name}`,
+    "image": `https://yapchankor.com${branch.image}`,
+    "@id": `https://yapchankor.com/${locale}/locations/${branch.id}`,
+    "url": `https://yapchankor.com/${locale}/locations/${branch.id}`,
+    "telephone": branch.phone,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": branch.address,
+      "addressLocality": branch.name,
+      "addressCountry": "MY"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": branch.geo.lat,
+      "longitude": branch.geo.lng
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "20:00"
+    }
+  }));
+
   return (
     <section id="branches" className="bg-brand-teal-deep py-16 lg:py-24 text-white overflow-hidden relative">
+      {schemas.map((schema, idx) => (
+        <Script
+          key={`schema-${branches[idx].id}`}
+          id={`ld-json-${branches[idx].id}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <div className="container mx-auto px-6">
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-24">
           <motion.h2 

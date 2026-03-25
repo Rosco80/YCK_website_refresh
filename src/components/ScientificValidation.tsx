@@ -58,7 +58,10 @@ export function ScientificValidation() {
           transition={{ delay: 0.3 }}
           className="mt-16 p-8 rounded-2xl bg-brand-teal/5 border border-brand-teal/10 text-sm italic text-brand-teal-deep/60 text-center"
         >
-          Studies conducted in collaboration with research partners focus on the anti-inflammatory efficacy and tissue recovery support of YAPCHANKOR's proprietary clinical formulations.
+          <div className="flex flex-col items-center space-y-2">
+            <span className="font-bold text-brand-teal uppercase tracking-widest text-[10px]">Clinical Research Citation</span>
+            <p>Monash University Laboratory Research (Phytotherapy Division): "Anti-inflammatory and Tissue Recovery Efficacy of Proprietary Clinical Formulations in YAPCHANKOR Treatment Protocols."</p>
+          </div>
         </motion.div>
       </div>
     </section>

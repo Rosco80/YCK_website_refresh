@@ -37,8 +37,19 @@ const gotham = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "YAPCHANKOR | Premium Pain Treatment & Physiotherapy Since 1979",
+  title: {
+    template: "%s | YAPCHANKOR",
+    default: "YAPCHANKOR | Premium Pain Treatment & Physiotherapy Since 1979",
+  },
   description: "YAPCHANKOR specializes in chronic pain resolution using the Shaolin injury medicine method, proprietary clinical formulations, and integrative rehabilitation.",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en": "/en",
+      "ms": "/ms",
+      "zh": "/zh",
+    },
+  },
 };
 
 export default async function RootLayout({

@@ -54,12 +54,12 @@ export function Header() {
           <img 
             src="/images/painfix_cream-removebg-preview.png" 
             alt="YAPCHANKOR" 
-            className="h-12 w-auto object-contain transition-transform hover:scale-[1.03]"
+            className="h-14 lg:h-16 w-auto object-contain transition-transform hover:scale-[1.03]"
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center space-x-10 text-xs uppercase tracking-widest font-bold text-brand-teal-deep/60">
+        <nav className="hidden lg:flex items-center space-x-6 xl:space-x-10 text-[10px] xl:text-xs uppercase tracking-widest font-bold text-brand-teal-deep/60">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-brand-teal transition-colors">
               {link.label}

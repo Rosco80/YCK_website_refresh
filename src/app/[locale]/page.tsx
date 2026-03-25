@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Branches } from "@/components/Branches";
@@ -11,6 +12,11 @@ import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { ScientificProof } from "@/components/ScientificProof";
 import { Compatibility } from "@/components/Compatibility";
 import { ClinicalResults } from "@/components/ClinicalResults";
+
+export const metadata: Metadata = {
+  title: "Shaolin-Based Physiotherapy & Chronic Pain Treatment",
+  description: "Experience the unique Shaolin heritage method for chronic pain resolution. We treat back pain, knee osteoarthritis, frozen shoulder, and more since 1979.",
+};
 
 export default function Home() {
   return (

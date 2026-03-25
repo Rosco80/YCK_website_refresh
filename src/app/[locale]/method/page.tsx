@@ -23,8 +23,28 @@ export default function MethodPage() {
     }
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TherapeuticProcedure",
+    "name": "The YAPCHANKOR Method",
+    "alternateName": ["Shaolin-Based Physiotherapy", "Integrated Pain Resolution"],
+    "description": t("hero.subtitle"),
+    "procedureType": "PhysicalTherapy",
+    "relevantSpecialty": ["Physiotherapy", "TraditionalChineseMedicine"],
+    "howItWorks": [
+      t("Method.step1Title"),
+      t("Method.step2Title"),
+      t("Method.step3Title"),
+      t("Method.step4Title")
+    ]
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       
       <main className="grow">
@@ -87,7 +107,7 @@ export default function MethodPage() {
               >
                 <div className="relative aspect-3/4 max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
                   <img 
-                    src="/images/about-history.jpg" 
+                    src="/images/about-history.webp" 
                     className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                     alt="Who We Are - Portrait"
                   />
@@ -169,13 +189,13 @@ export default function MethodPage() {
               <WhyReason 
                 title="Scientific Rigor"
                 desc={t("whyItWorks.science")}
-                image="/images/yck-about-who-768x361.jpg"
+                image="/images/yck-about-who-768x361.webp"
                 reverse={false}
               />
               <WhyReason 
                 title="Objective Results"
                 desc={t("whyItWorks.evidence")}
-                image="/images/yck-about.png"
+                image="/images/yck-about.webp"
                 reverse={true}
               />
               <motion.div 
