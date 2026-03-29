@@ -119,7 +119,7 @@ function TrustItem({ title, sub, showDivider }: { title: string; sub: string; sh
     )}>
       <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center p-3.5 shadow-inner group-hover:bg-brand-gold/20 transition-colors shrink-0">
         <img 
-          src="/Untitled_design-removebg-preview.webp" 
+          src="/images/Untitled_design-removebg-preview.webp" 
           alt="" 
           className="w-full h-full object-contain brightness-110" 
         />
