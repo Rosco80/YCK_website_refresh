@@ -28,7 +28,7 @@ export function Hero() {
       {/* Background Layer with Cinematic Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/yck_home_hero.png" 
+          src="/images/yck_home_hero.webp" 
           alt="Physiotherapy treatment"
           className="w-full h-full object-cover transition-transform duration-1000 scale-[1.02] group-hover:scale-105"
         />
@@ -119,7 +119,7 @@ function TrustItem({ title, sub, showDivider }: { title: string; sub: string; sh
     )}>
       <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center p-3.5 shadow-inner group-hover:bg-brand-gold/20 transition-colors shrink-0">
         <img 
-          src="/Untitled_design-removebg-preview.png" 
+          src="/Untitled_design-removebg-preview.webp" 
           alt="" 
           className="w-full h-full object-contain brightness-110" 
         />

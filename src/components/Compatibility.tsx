@@ -7,9 +7,9 @@ export function Compatibility() {
   const t = useTranslations("Compatibility");
 
   const trustIcons = [
-    { icon: "/Screenshot_2026-03-19_211516-removebg-preview.png", label: t("physio") },
-    { icon: "/Screenshot_2026-03-19_211529-removebg-preview.png", label: t("imaging") },
-    { icon: "/Screenshot_2026-03-19_211457-removebg-preview.png", label: t("rehab") },
+    { icon: "/Screenshot_2026-03-19_211516-removebg-preview.webp", label: t("physio") },
+    { icon: "/Screenshot_2026-03-19_211529-removebg-preview.webp", label: t("imaging") },
+    { icon: "/Screenshot_2026-03-19_211457-removebg-preview.webp", label: t("rehab") },
   ];
 
   return (

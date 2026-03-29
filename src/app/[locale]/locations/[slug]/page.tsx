@@ -54,10 +54,10 @@ export default function LocationPage() {
     googleMapsUrl = t(`${branchId}.googleMapsUrl`);
     
     // Custom images for branches
-    if (branchId === 'ampang') branchImage = "/images/ampang_new.png";
-    if (branchId === 'okr') branchImage = "/images/OKR YCK  Interior.png";
-    if (branchId === 'shahAlam') branchImage = "/images/shah-alam_new.png";
-    if (branchId === 'subangJaya') branchImage = "/images/subang_new.png";
+    if (branchId === 'ampang') branchImage = "/images/ampang_new.webp";
+    if (branchId === 'okr') branchImage = "/images/OKR YCK  Interior.webp";
+    if (branchId === 'shahAlam') branchImage = "/images/shah-alam_new.webp";
+    if (branchId === 'subangJaya') branchImage = "/images/subang_new.webp";
   } catch (e) {
     return (
       <div className="min-h-screen flex flex-col bg-brand-bg items-center justify-center p-10">

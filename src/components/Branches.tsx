@@ -22,7 +22,7 @@ export function Branches() {
       hours: t("ampang.hoursLines"),
       wazeUrl: t("ampang.wazeUrl"),
       googleMapsUrl: t("ampang.googleMapsUrl"),
-      image: "/images/ampang_new.png",
+      image: "/images/ampang_new.webp",
       geo: { lat: 3.1467, lng: 101.7660 }
     },
     { 
@@ -33,7 +33,7 @@ export function Branches() {
       hours: t("okr.hoursLines"),
       wazeUrl: t("okr.wazeUrl"),
       googleMapsUrl: t("okr.googleMapsUrl"),
-      image: "/images/OKR YCK  Interior.png",
+      image: "/images/OKR YCK  Interior.webp",
       geo: { lat: 3.0983, lng: 101.6735 }
     },
     { 
@@ -44,7 +44,7 @@ export function Branches() {
       hours: t("shahAlam.hoursLines"),
       wazeUrl: t("shahAlam.wazeUrl"),
       googleMapsUrl: t("shahAlam.googleMapsUrl"),
-      image: "/images/shah-alam_new.png",
+      image: "/images/shah-alam_new.webp",
       geo: { lat: 3.0816, lng: 101.5401 }
     },
     { 
@@ -55,7 +55,7 @@ export function Branches() {
       hours: t("subangJaya.hoursLines"),
       wazeUrl: t("subangJaya.wazeUrl"),
       googleMapsUrl: t("subangJaya.googleMapsUrl"),
-      image: "/images/subang_new.png",
+      image: "/images/subang_new.webp",
       geo: { lat: 3.0778, lng: 101.5886 }
     },
   ];

@@ -85,7 +85,7 @@ export function ScientificProof() {
               className="bg-brand-bg rounded-2xl p-8 shadow-clinical group overflow-hidden flex items-center justify-center"
             >
               <img
-                src="/images/painfix_professional.jpg"
+                src="/images/painfix_professional.webp"
                 alt="PainFix Recovery Range - Clinical Formulation"
                 className="w-full h-auto max-h-120 object-contain transition-transform duration-500 group-hover:scale-105"
               />

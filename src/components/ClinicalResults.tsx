@@ -13,19 +13,19 @@ export function ClinicalResults() {
       title: t("kneeTitle"),
       problem: t("kneeProblem"),
       result: t("kneeResult"),
-      image: "/images/outcome_knee_poster.png",
+      image: "/images/outcome_knee_poster.webp",
     },
     {
       title: t("backTitle"),
       problem: t("backProblem"),
       result: t("backResult"),
-      image: "/images/outcome_back_poster.png",
+      image: "/images/outcome_back_poster.webp",
     },
     {
       title: t("shoulderTitle"),
       problem: t("shoulderProblem"),
       result: t("shoulderResult"),
-      image: "/images/outcome_shoulder_poster.png",
+      image: "/images/outcome_shoulder_poster.webp",
     },
   ];
 

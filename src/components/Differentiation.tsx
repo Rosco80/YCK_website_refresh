@@ -42,7 +42,7 @@ export function Differentiation() {
                     {points.map((point, i) => (
                       <li key={i} className="flex items-center space-x-4">
                         <img 
-                          src="/lines_circle-removebg-preview.png" 
+                          src="/lines_circle-removebg-preview.webp" 
                           alt="" 
                           className="w-5 h-5 lg:w-6 lg:h-6 shrink-0 object-contain drop-shadow-sm" 
                         />

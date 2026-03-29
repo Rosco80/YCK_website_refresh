@@ -8,15 +8,15 @@ export function WhyChooseUs() {
 
   const features = [
     {
-      icon: "/manual therapy.png",
+      icon: "/manual therapy.webp",
       label: t("item1"),
     },
     {
-      icon: "/structuredrehab.png",
+      icon: "/structuredrehab.webp",
       label: t("item2"),
     },
     {
-      icon: "/clinicalformulation.png",
+      icon: "/clinicalformulation.webp",
       label: t("item3"),
     },
   ];
