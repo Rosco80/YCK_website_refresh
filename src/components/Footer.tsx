@@ -84,7 +84,7 @@ export function Footer() {
               </div>
             </a>
             <p className="text-[10px] text-white/20 uppercase tracking-[0.15em] font-bold leading-relaxed">
-              Join 5,000+ subscribers for clinical health insights.
+              {t("newsletterSubscribers")}
             </p>
           </div>
         </div>
