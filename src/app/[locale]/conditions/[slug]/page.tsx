@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle2, ShieldCheck, Activity } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { conditionSlugs, ConditionSlug } from "@/data/conditions";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string, slug: string }> }) {
   const { locale, slug } = await params;
@@ -46,8 +47,11 @@ export default async function ConditionDetail({
 
   // At the moment, since this is an RSC, we can fetch useTranslations directly inside server components in Next-Intl
   const t = await getTranslations("Conditions");
+  const tw = await getTranslations("WhatsApp");
   const title = t(`list.${slug}.title`);
   const desc = t(`list.${slug}.desc`);
+
+  const whatsappUrl = getWhatsAppUrl(tw("conditionMessage", { condition: title }));
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -179,11 +183,11 @@ export default async function ConditionDetail({
                 <ShieldCheck className="w-12 h-12 text-brand-gold mb-6" />
                 <h3 className="text-2xl font-bold text-brand-teal-deep mb-4">{t("readyCure")} {title.toLowerCase()}?</h3>
                 <p className="text-brand-teal-deep/60 mb-10 font-medium">{t("bookAssessment")}</p>
-                <Link href="/#branches">
-                  <Button className="w-full bg-brand-teal hover:bg-brand-teal-deep text-white h-16 rounded-2xl text-base font-bold uppercase tracking-widest shadow-xl transition-transform hover:scale-[1.02]">
+                <Button asChild className="w-full bg-brand-teal hover:bg-brand-teal-deep text-white h-16 rounded-2xl text-base font-bold uppercase tracking-widest shadow-xl transition-transform hover:scale-[1.02]">
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                     {t("btnBook")}
-                  </Button>
-                </Link>
+                  </a>
+                </Button>
                 <div className="mt-6 flex justify-center text-xs font-bold text-brand-teal-deep/30 uppercase tracking-widest">
                   {t("noReferral")}
                 </div>

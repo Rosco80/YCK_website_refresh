@@ -4,6 +4,7 @@ import { Link } from "@/i18n/routing";
 import { Button } from "./ui/button";
 import { MapPin, Phone, Clock, ArrowRight, ChevronRight } from "lucide-react";
 import Script from "next/script";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export function Branches() {
   const t = useTranslations("Branches");
@@ -11,7 +12,6 @@ export function Branches() {
   const locale = useLocale();
 
   const branches = [
-    // ... same as before but I'll add the schema logic ...
     { 
       id: "ampang", 
       name: t("ampang.name"), 
@@ -130,6 +130,9 @@ export function Branches() {
 }
 
 function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, image, index, ctaView, ctaBook, ctaDirections }: { id: string; name: string; address: string; phone: string; hours: string; wazeUrl: string; googleMapsUrl: string; image: string; index: number; ctaView: string; ctaBook: string; ctaDirections: string }) {
+  const tw = useTranslations("WhatsApp");
+  const whatsappUrl = getWhatsAppUrl(tw("branchMessage", { branch: name }));
+
   return (
     <div 
       className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-all group flex flex-col h-full shadow-2xl"
@@ -182,10 +185,12 @@ function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, i
 
         <div className="space-y-3 pt-4 border-t border-white/5">
           <Button 
+            asChild
             className="w-full bg-brand-gold hover:bg-brand-gold-dark text-brand-teal-deep font-bold rounded-xl h-11 lg:h-12 uppercase tracking-widest text-xs"
-            id={`cta_book_branch_${index}_click`}
           >
-            {ctaBook}
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" id={`cta_book_branch_${index}_click`}>
+              {ctaBook}
+            </a>
           </Button>
           <Link 
             href={`/locations/${id}`}

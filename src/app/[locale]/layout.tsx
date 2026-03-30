@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import localFont from "next/font/local";
 import "../globals.css";
+import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 
 const bandaRegular = localFont({
   src: "../fonts/Banda.ttf",
@@ -90,6 +91,7 @@ export default async function RootLayout({
         />
         <NextIntlClientProvider messages={messages} locale={locale}>
           {children}
+          <WhatsAppWidget />
         </NextIntlClientProvider>
       </body>
     </html>

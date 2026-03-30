@@ -32,6 +32,12 @@
     "conditions": "Sakit & Keadaan",
     "bookAssessment": "Tempah Penilaian Klinikal"
   },
+  "WhatsApp": {
+    "defaultMessage": "Halo YAPCHANKOR, saya ingin menempah penilaian.",
+    "branchMessage": "Halo YAPCHANKOR, saya ingin menempah penilaian di cawangan {branch}.",
+    "conditionMessage": "Halo YAPCHANKOR, saya ingin menempah penilaian untuk {condition}.",
+    "clinicianMessage": "Halo YAPCHANKOR, saya ingin menempah janji temu dengan {name} di cawangan {branch}."
+  },
   "RollingHook": {
     "staticHeading": "Kami Merawat",
     "subtext": "Ramai pesakit datang kepada kami selepas mencuba rawatan lain tanpa kelegaan yang berterusan.",

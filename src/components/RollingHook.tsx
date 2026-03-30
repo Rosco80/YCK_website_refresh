@@ -3,10 +3,12 @@
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { Button } from "./ui/button";
 
 export function RollingHook() {
   const t = useTranslations("RollingHook");
+  const tw = useTranslations("WhatsApp");
   const [index, setIndex] = useState(0);
 
   const conditions = [
@@ -38,7 +40,7 @@ export function RollingHook() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % conditions.length);
+      setIndex((prev: number) => (prev + 1) % conditions.length);
     }, 3000); // 3 seconds per condition
     return () => clearInterval(timer);
   }, [conditions.length]);
@@ -103,10 +105,12 @@ export function RollingHook() {
             transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <Button 
+              asChild
               className="rounded-full px-12 h-14 text-sm uppercase tracking-widest font-bold shadow-brand-premium"
-              id="cta_rolling_hook_click"
             >
-              {t("cta")}
+              <a href={getWhatsAppUrl(tw("conditionMessage", { condition: conditions[index] }))} target="_blank" rel="noopener noreferrer" id="cta_rolling_hook_click">
+                {t("cta")}
+              </a>
             </Button>
           </motion.div>
         </div>

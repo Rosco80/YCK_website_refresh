@@ -5,10 +5,11 @@ import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Clock, ArrowLeft, ExternalLink, Navigation, Map as MapIcon } from "lucide-react";
+import { MapPin, Phone, Clock, ArrowLeft, ExternalLink, Navigation, Map as MapIcon, ShieldCheck } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 import { useParams } from "next/navigation";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 // Clinician data with generated images
 const cliniciansByBranch: Record<string, any[]> = {
@@ -32,10 +33,25 @@ export default function LocationPage() {
   const { slug } = useParams();
   const t = useTranslations("Branches");
   const navT = useTranslations("Navigation");
+  const tw = useTranslations("WhatsApp");
   const locale = useLocale();
   
   // Ensure slug is a string
-  const branchId = typeof slug === 'string' ? slug : Array.isArray(slug) ? slug[0] : "";
+  const slugStr = typeof slug === 'string' ? slug : Array.isArray(slug) ? slug[0] : "";
+  
+  // Map slug to translation key
+  const slugMap: Record<string, string> = {
+    "ampang": "ampang",
+    "old-klang-road": "okr",
+    "shah-alam": "shahAlam",
+    "subang-jaya": "subangJaya",
+    // Keep internal IDs as fallback
+    "okr": "okr",
+    "shahAlam": "shahAlam",
+    "subangJaya": "subangJaya"
+  };
+
+  const branchId = slugMap[slugStr] || slugStr;
   
   // Try to get branch data
   let branchName = "";
@@ -166,63 +182,77 @@ export default function LocationPage() {
                     >
                       <MapIcon className="w-5 h-5 text-brand-teal/40 group-hover:text-brand-teal transition-colors" />
                       <span>Google Maps</span>
-                      <ExternalLink className="w-4 h-4 text-brand-gold" />
+                      <ExternalLink className="text-brand-gold group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>
                 </div>
               </div>
 
-              <aside className="bg-brand-bg p-10 rounded-[2.5rem] border border-brand-teal/5 sticky top-24">
-                <h3 className="text-2xl font-bold text-brand-teal-deep mb-6">Book an Assessment</h3>
-                <p className="text-brand-teal-deep/60 mb-8 font-medium">Ready to start your recovery? Schedule a professional assessment at our {branchName} clinic today.</p>
-                <Button className="w-full bg-brand-teal hover:bg-brand-teal-deep text-white h-16 rounded-2xl text-base font-bold uppercase tracking-widest shadow-xl">
-                  {navT("bookAssessment")}
-                </Button>
-                <p className="mt-6 text-center text-xs font-bold text-brand-teal-deep/30 uppercase tracking-widest">No Referral Needed</p>
+              <aside className="lg:col-span-1">
+                <div className="bg-brand-teal/5 rounded-3xl p-8 sticky top-24">
+                  <h3 className="text-2xl font-bold text-brand-teal-deep mb-6">Book an Appointment</h3>
+                  <p className="text-brand-teal-deep/60 mb-8 font-medium">Ready to start your recovery? Schedule a professional assessment at our {branchName} clinic today.</p>
+                  <Button asChild className="w-full bg-brand-teal hover:bg-brand-teal-deep text-white h-14 rounded-xl text-xs font-black uppercase tracking-widest shadow-clinical hover:shadow-clinical-hover transition-all">
+                    <a href={getWhatsAppUrl(tw("branchMessage", { branch: branchName }))} target="_blank" rel="noopener noreferrer">
+                      {navT("bookAssessment")}
+                    </a>
+                  </Button>
+                  <div className="mt-8 pt-8 border-t border-brand-teal/10 flex items-center space-x-4">
+                    <div className="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center shrink-0">
+                      <ShieldCheck className="w-6 h-6 text-brand-gold" />
+                    </div>
+                    <p className="text-[10px] font-bold text-brand-teal-deep/40 uppercase tracking-widest">No Referral Needed • KKM Registered</p>
+                  </div>
+                </div>
               </aside>
             </div>
           </div>
         </section>
 
-        {/* Physios Section */}
+        {/* Clinicians Section */}
         {physios.length > 0 && (
-          <section className="py-24 bg-brand-bg">
-            <div className="container mx-auto px-6">
-              <div className="max-w-4xl mb-16">
-                <h2 className="text-3xl lg:text-6xl font-black text-brand-teal-deep mb-6 tracking-tight">Meet Our <span className="text-brand-gold">Clinicians</span></h2>
-                <p className="text-xl text-brand-teal-deep/60 font-medium leading-relaxed">
-                  Our team at {branchName} consists of highly trained physiotherapists specializing in the YAPCHANKOR method.
+          <section className="py-24 bg-brand-bg relative overflow-hidden">
+            <div className="container mx-auto px-6 relative z-10">
+              <div className="text-center max-w-3xl mx-auto mb-20">
+                <h2 className="text-3xl lg:text-6xl font-black text-brand-teal-deep mb-6 tracking-tight">Meet Our <span className="text-brand-gold">Specialists</span></h2>
+                <p className="text-lg lg:text-xl text-brand-teal-deep/60 font-medium leading-relaxed">
+                  Our clinicians are experts in the Shaolin heritage method and modern musculoskeletal science.
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 {physios.map((physio, idx) => (
-                  <motion.div
+                  <motion.div 
                     key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="bg-white rounded-[2.5rem] p-8 border border-brand-teal/5 shadow-xl hover:shadow-2xl transition-all group flex flex-col items-center text-center"
+                    className="bg-white rounded-[3rem] p-8 lg:p-12 border border-brand-teal/5 shadow-2xl hover:shadow-clinical-hover transition-all group flex flex-col md:flex-row items-center md:items-start gap-8"
                   >
-                    <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden mb-8 border-8 border-brand-bg shadow-inner relative">
+                    <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-3xl overflow-hidden shrink-0 shadow-inner border-4 border-brand-bg relative">
                       <Image 
                         src={physio.image} 
-                        className="object-cover transition-transform duration-500 group-hover:scale-110" 
-                        fill
-                        sizes="(min-width: 1024px) 33vw, 100vw"
                         alt={physio.name} 
+                        fill
+                        sizes="(min-width: 1024px) 25vw, 100vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
                       />
-                      <div className="absolute inset-0 bg-brand-teal-deep/10 group-hover:opacity-0 transition-opacity" />
                     </div>
-                    <h3 className="text-2xl font-bold text-brand-teal-deep mb-2">{physio.name}</h3>
-                    <p className="text-brand-gold font-bold uppercase tracking-widest text-xs mb-6">{physio.title}</p>
-                    <p className="text-brand-teal-deep/60 font-medium leading-relaxed mb-10 grow">
-                      {physio.bio}
-                    </p>
-                    <Button className="w-full bg-brand-bg hover:bg-brand-teal text-brand-teal-deep hover:text-white border border-brand-teal/10 h-12 rounded-xl text-xs font-black uppercase tracking-widest transition-all">
-                      Book with {physio.name.split(' ')[0]}
-                    </Button>
+                    <div className="text-center md:text-left flex flex-col h-full">
+                      <div className="mb-6">
+                        <h3 className="text-2xl font-black text-brand-teal-deep mb-1">{physio.name}</h3>
+                        <p className="text-xs font-bold text-brand-gold uppercase tracking-[0.2em]">{physio.title}</p>
+                      </div>
+                      <p className="text-brand-teal-deep/60 font-medium leading-relaxed mb-8 grow italic">
+                        "{physio.bio}"
+                      </p>
+                      <Button asChild className="w-full bg-black hover:bg-brand-teal-deep text-white h-12 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-xl transition-all">
+                        <a href={getWhatsAppUrl(tw("clinicianMessage", { name: physio.name, branch: branchName }))} target="_blank" rel="noopener noreferrer">
+                          Book Appointment
+                        </a>
+                      </Button>
+                    </div>
                   </motion.div>
                 ))}
               </div>

@@ -1,9 +1,12 @@
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export function FinalCTA() {
   const t = useTranslations("FinalCTA");
+  const tw = useTranslations("WhatsApp");
+  const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
 
   return (
     <section className="bg-brand-teal-deep py-16 lg:py-32 relative overflow-hidden">
@@ -23,17 +26,21 @@ export function FinalCTA() {
               {t("description")}
             </p>
             
-            <div 
-              className="inline-block w-full sm:w-auto"
+            <Button 
+              asChild
+              className="w-full sm:w-auto px-10 sm:px-12 h-14 sm:h-18 text-base lg:text-xl font-bold bg-white text-brand-teal-deep hover:bg-white/90 rounded-full shadow-2xl transition-all duration-300 uppercase tracking-widest min-w-0 sm:min-w-[320px]"
             >
-              <Button 
-                className="w-full sm:w-auto px-10 sm:px-12 h-14 sm:h-18 text-base lg:text-xl font-bold bg-white text-brand-teal-deep hover:bg-white/90 rounded-full shadow-2xl transition-all duration-300 uppercase tracking-widest min-w-0 sm:min-w-[320px]"
+              <a 
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 id="cta_final_assessment_click"
+                className="inline-flex items-center justify-center"
               >
                 {t("ctaBook")}
                 <ChevronRight className="ml-2 w-5 h-5 lg:w-6 lg:h-6" />
-              </Button>
-            </div>
+              </a>
+            </Button>
 
             <div className="mt-16 lg:mt-20 pt-12 lg:pt-16 border-t border-white/10">
               <p className="text-[10px] lg:text-sm border-white tracking-[0.3em] font-bold text-white uppercase opacity-40">

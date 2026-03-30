@@ -32,6 +32,12 @@
     "conditions": "治疗范围",
     "bookAssessment": "预约门诊评估"
   },
+  "WhatsApp": {
+    "defaultMessage": "您好 YAPCHANKOR，我想预约临床评估。",
+    "branchMessage": "您好 YAPCHANKOR，我想预约在 {branch} 分行的临床评估。",
+    "conditionMessage": "您好 YAPCHANKOR，我想预约 {condition} 的临床评估。",
+    "clinicianMessage": "您好 YAPCHANKOR，我想预约与 {branch} 分行的 {name} 医生的门诊。"
+  },
   "RollingHook": {
     "staticHeading": "我们的诊疗范围",
     "subtext": "许多患者在尝试了其他疗法但未能获得持久缓解后，选择了我们。",

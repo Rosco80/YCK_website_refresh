@@ -2,11 +2,13 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export function Hero() {
   const t = useTranslations("Hero");
   const tb = useTranslations("TrustBar");
+  const tw = useTranslations("WhatsApp");
+  const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
 
   return (
     <section 
@@ -43,12 +45,14 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 lg:mb-20 text-center">
               <Button 
-                size="lg"
-                className="bg-brand-gold hover:bg-brand-gold/90 text-brand-teal-deep rounded-full px-12 h-14 lg:h-16 text-sm lg:text-lg uppercase tracking-widest font-bold shadow-2xl transition-all hover:scale-105"
-                id="cta_book_hero_click"
-              >
-                {t("primaryCTA")}
-              </Button>
+                  asChild
+                  size="lg"
+                  className="bg-brand-gold hover:bg-brand-gold/90 text-brand-teal-deep rounded-full px-12 h-14 lg:h-16 text-sm lg:text-lg uppercase tracking-widest font-bold shadow-2xl transition-all hover:scale-105"
+                >
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" id="cta_book_hero_click">
+                    {t("primaryCTA")}
+                  </a>
+                </Button>
               <Button 
                 size="lg"
                 variant="outline"

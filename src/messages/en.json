@@ -32,6 +32,12 @@
     "conditions": "Conditions We Treat",
     "bookAssessment": "Book Clinical Assessment"
   },
+  "WhatsApp": {
+    "defaultMessage": "Hello YAPCHANKOR, I would like to book an assessment.",
+    "branchMessage": "Hello YAPCHANKOR, I would like to book an assessment at the {branch} branch.",
+    "conditionMessage": "Hello YAPCHANKOR, I would like to book an assessment for {condition}.",
+    "clinicianMessage": "Hello YAPCHANKOR, I would like to book an appointment with {name} at the {branch} branch."
+  },
   "RollingHook": {
     "staticHeading": "We Treat",
     "subtext": "Many patients come to us after trying other treatments without lasting relief.",

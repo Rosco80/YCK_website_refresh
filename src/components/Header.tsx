@@ -8,14 +8,18 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export function Header() {
   const t = useTranslations("Navigation");
+  const tw = useTranslations("WhatsApp");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,10 +97,12 @@ export function Header() {
           </div>
 
           <Button 
+            asChild
             className="hidden sm:flex rounded-full px-7 h-11 text-xs uppercase tracking-wider bg-brand-teal text-white hover:bg-brand-teal-deep"
-            id="cta_book_header_click"
           >
-            {t("bookAssessment")}
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" id="cta_book_header_click">
+              {t("bookAssessment")}
+            </a>
           </Button>
 
           {/* Mobile Menu Toggle */}
@@ -137,10 +143,12 @@ export function Header() {
 
         <div className="mt-auto">
           <Button 
+            asChild
             className="w-full rounded-2xl h-14 text-sm font-bold uppercase tracking-widest bg-brand-teal text-white shadow-clinical-hover"
-            onClick={() => setIsMobileMenuOpen(false)}
           >
-            {t("bookAssessment")}
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+              {t("bookAssessment")}
+            </a>
           </Button>
         </div>
       </motion.div>
