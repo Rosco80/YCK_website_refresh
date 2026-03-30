@@ -4,12 +4,15 @@ import { Footer } from '@/components/Footer';
 import { Link } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
 import { ArrowRight, Calendar } from 'lucide-react';
+import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Insights & Articles | YAPCHANKOR Pain Clinic',
   description: 'Clinical insights on chronic pain, rehabilitation, and injury management from YAPCHANKOR.'
 };
+
+export const revalidate = 3600; // 1-hour Incremental Static Regeneration cache
 
 export default async function InsightsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -44,10 +47,12 @@ export default async function InsightsPage({ params }: { params: Promise<{ local
                   className="group bg-white rounded-4xl overflow-hidden border border-brand-teal/5 shadow-md hover:shadow-xl transition-all flex flex-col h-full"
                 >
                   <div className="aspect-video relative overflow-hidden bg-brand-teal/5">
-                    <img 
+                    <Image 
                       src={insight.imageUrl} 
                       alt={insight.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
                   <div className="p-8 flex flex-col grow">

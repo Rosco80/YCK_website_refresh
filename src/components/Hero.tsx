@@ -1,8 +1,5 @@
-"use client";
-
 import { useTranslations } from "next-intl";
-import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 
@@ -10,27 +7,20 @@ import { Button } from "./ui/button";
 export function Hero() {
   const t = useTranslations("Hero");
   const tb = useTranslations("TrustBar");
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
     <section 
-      ref={containerRef}
       className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-black pt-32 pb-24 lg:pt-12 lg:pb-24"
     >
       {/* Background Layer with Cinematic Image */}
       <div className="absolute inset-0 z-0">
-        <img 
+        <Image 
           src="/images/yck_home_hero.webp" 
           alt="Physiotherapy treatment"
-          className="w-full h-full object-cover transition-transform duration-1000 scale-[1.02] group-hover:scale-105"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover transition-transform duration-1000 scale-[1.02] group-hover:scale-105"
         />
         {/* Darkened overlay for better text readability - Increased opacity */}
         <div className="absolute inset-0 bg-linear-to-b from-black/85 via-black/50 to-black/80" />
@@ -38,11 +28,7 @@ export function Hero() {
 
       <div className="container mx-auto px-6 z-10 text-center">
         <div className="max-w-4xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          >
+          <div>
             <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold leading-[1.05] text-white mb-6 tracking-tight drop-shadow-md">
               {t("title")}
             </h1>
@@ -71,14 +57,11 @@ export function Hero() {
                 {t("secondaryCTA")}
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Trust Bar - Expanded & Integrated */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
+        <div
           className="max-w-7xl mx-auto border-t border-white/15 pt-16 mt-16"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-0">
@@ -102,7 +85,7 @@ export function Hero() {
               showDivider
             />
           </div>
-        </motion.div>
+        </div>
       </div>
       
       {/* Subtle Bottom Blend */}
@@ -117,11 +100,13 @@ function TrustItem({ title, sub, showDivider }: { title: string; sub: string; sh
       "flex items-center space-x-6 px-4 sm:px-6 lg:px-10 group transition-all justify-center sm:justify-start",
       showDivider && "lg:border-l lg:border-white/10"
     )}>
-      <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center p-3.5 shadow-inner group-hover:bg-brand-gold/20 transition-colors shrink-0">
-        <img 
+      <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center shadow-inner group-hover:bg-brand-gold/20 transition-colors shrink-0 relative overflow-hidden">
+        <Image 
           src="/images/Untitled_design-removebg-preview.webp" 
           alt="" 
-          className="w-full h-full object-contain brightness-110" 
+          fill
+          sizes="64px"
+          className="object-contain brightness-110 p-3.5" 
         />
       </div>
       <div className="text-left">

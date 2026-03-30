@@ -1,8 +1,6 @@
-"use client";
-
 import { Check } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function ScientificProof() {
   const t = useTranslations("ScientificProof");
@@ -44,12 +42,7 @@ export function ScientificProof() {
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
           {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          >
+          <div>
             <h2 className="text-3xl lg:text-5xl font-bold text-brand-teal leading-tight mb-4 text-center lg:text-left">
               {t("title")}
             </h2>
@@ -72,45 +65,43 @@ export function ScientificProof() {
                 ))}
               </div>
             </div>
-          </motion.div>
+            </div>
 
           {/* Right Visuals */}
           <div className="w-full space-y-12">
             {/* ... visuals section ... */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            <div
               className="bg-brand-bg rounded-2xl p-8 shadow-clinical group overflow-hidden flex items-center justify-center"
             >
-              <img
+              <Image
                 src="/images/painfix_professional.webp"
                 alt="PainFix Recovery Range - Clinical Formulation"
+                width={800}
+                height={800}
                 className="w-full h-auto max-h-120 object-contain transition-transform duration-500 group-hover:scale-105"
               />
-            </motion.div>
+            </div>
 
             {/* Monash Graphics - Hidden on mobile for optimization */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            <div
               className="hidden lg:block bg-brand-bg rounded-2xl p-6 lg:p-8 border border-brand-teal/5 shadow-clinical"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <div className="bg-white p-2 rounded-lg shadow-sm">
-                  <img
+                  <Image
                     src="/images/monash_test_1.png"
                     alt="Monash Study Result 1"
+                    width={400}
+                    height={400}
                     className="w-full h-auto object-contain"
                   />
                 </div>
                 <div className="bg-white p-2 rounded-lg shadow-sm">
-                  <img
+                  <Image
                     src="/images/monash_test_2.png"
                     alt="Monash Study Result 2"
+                    width={400}
+                    height={400}
                     className="w-full h-auto object-contain"
                   />
                 </div>
@@ -118,7 +109,7 @@ export function ScientificProof() {
               <p className="text-sm font-bold text-brand-teal/60 uppercase tracking-widest leading-relaxed text-center lg:text-left">
                 {t("graphicCaption")}
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

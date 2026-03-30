@@ -79,7 +79,10 @@ export async function getInsights(): Promise<Insight[]> {
       };
     });
   } catch (error) {
-    console.error("Failed to fetch Substack Insights:", error);
+    // ⚠️ CIRCUIT BREAKER: Trap fetch failures gracefully. 
+    // This prevents local development or production initial-build crashes 
+    // if the Substack API is temporarily unreachable.
+    console.error("[Circuit Breaker] Failed to fetch Substack Insights. Suppressing error to keep Homepage stable.", error);
     return [];
   }
 }

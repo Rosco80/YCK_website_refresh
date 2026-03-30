@@ -1,7 +1,5 @@
-"use client";
-
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function WhyChooseUs() {
   const t = useTranslations("WhyChooseUs");
@@ -25,12 +23,7 @@ export function WhyChooseUs() {
     <section className="bg-brand-bg py-16 lg:py-24 border-y border-brand-teal/5 relative">
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          >
+          <div>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-brand-gold uppercase tracking-[0.2em] mb-10">
               {t("title")}
             </h2>
@@ -45,28 +38,26 @@ export function WhyChooseUs() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
               {features.map((feature, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                   className="flex flex-col items-center group"
                 >
-                  <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full bg-white shadow-clinical mb-4 transition-transform group-hover:scale-105 duration-500 flex items-center justify-center p-8">
-                    <img 
+                  <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full bg-white shadow-clinical mb-4 transition-transform group-hover:scale-105 duration-500 flex items-center justify-center p-8 relative">
+                    <Image 
                       src={feature.icon} 
                       alt={feature.label}
-                      className="w-full h-full object-contain mix-multiply" 
+                      fill
+                      sizes="192px"
+                      className="object-contain mix-multiply p-8" 
                     />
                   </div>
                   <span className="text-sm lg:text-base font-bold text-brand-teal-deep uppercase tracking-widest mt-4">
                     {feature.label}
                   </span>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,7 +1,4 @@
-"use client";
-
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 
@@ -18,12 +15,7 @@ export function FinalCTA() {
 
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          >
+          <div>
             <h2 className="text-3xl lg:text-6xl font-bold text-white mb-6 lg:mb-8 leading-tight">
               {t("headline")}
             </h2>
@@ -31,9 +23,7 @@ export function FinalCTA() {
               {t("description")}
             </p>
             
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+            <div 
               className="inline-block w-full sm:w-auto"
             >
               <Button 
@@ -43,14 +33,14 @@ export function FinalCTA() {
                 {t("ctaBook")}
                 <ChevronRight className="ml-2 w-5 h-5 lg:w-6 lg:h-6" />
               </Button>
-            </motion.div>
+            </div>
 
             <div className="mt-16 lg:mt-20 pt-12 lg:pt-16 border-t border-white/10">
               <p className="text-[10px] lg:text-sm border-white tracking-[0.3em] font-bold text-white uppercase opacity-40">
                 {t("heritage")}
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

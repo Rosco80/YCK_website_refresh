@@ -1,7 +1,6 @@
-"use client";
-
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import { Link } from "@/i18n/routing";
 import { Facebook, Instagram, Linkedin, Twitter, ArrowRight } from "lucide-react";
 
 export function Footer() {
@@ -13,21 +12,17 @@ export function Footer() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 mb-20 lg:mb-24">
           {/* Brand Info */}
           <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="mb-8"
-            >
+            <div className="mb-8">
               <div className="bg-white p-6 rounded-2xl inline-block shadow-clinical">
-                <img 
+                <Image 
                   src="/images/logo/wordmark_stacked.jpg" 
-                  alt="YAPCHANKOR Clinical" 
+                  alt="YAPCHANKOR Clinical logo" 
+                  width={240}
+                  height={96}
                   className="h-20 lg:h-24 w-auto object-contain" 
                 />
               </div>
-            </motion.div>
+            </div>
             <p className="text-white/50 leading-relaxed mb-10 max-w-xs font-medium italic text-sm lg:text-base">
               {t("tagline")}
             </p>
@@ -44,10 +39,10 @@ export function Footer() {
             <div>
               <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold mb-8 text-brand-gold/80">{t("servicesTitle")}</h4>
               <ul className="space-y-4 text-[13px] font-medium text-white/40">
-                <li><FooterLink href="#">Back Pain</FooterLink></li>
-                <li><FooterLink href="#">Knee Pain</FooterLink></li>
-                <li><FooterLink href="#">Shoulder Pain</FooterLink></li>
-                <li><FooterLink href="#">Physiotherapy</FooterLink></li>
+                <li><FooterLink href="/conditions/back-pain">Back Pain</FooterLink></li>
+                <li><FooterLink href="/conditions/knee-pain">Knee Pain</FooterLink></li>
+                <li><FooterLink href="/conditions/shoulder-pain">Shoulder Pain</FooterLink></li>
+                <li><FooterLink href="/conditions/slipped-disc">Slipped Disc</FooterLink></li>
               </ul>
             </div>
             <div>
@@ -113,10 +108,10 @@ function SocialIcon({ icon, href }: { icon: React.ReactNode; href: string }) {
   );
 }
 
-function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+function FooterLink({ href, children }: { href: any; children: React.ReactNode }) {
   return (
-    <a href={href} className="hover:text-brand-gold transition-colors block">
+    <Link href={href} className="hover:text-brand-gold transition-colors block">
       {children}
-    </a>
+    </Link>
   );
 }

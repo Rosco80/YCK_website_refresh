@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations, useLocale } from "next-intl";
+import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -77,9 +78,12 @@ export default function LocationPage() {
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
           <div className="absolute inset-0 z-0 opacity-30">
-            <img 
+            <Image 
               src={branchImage} 
-              className="w-full h-full object-cover"
+              className="object-cover"
+              fill
+              sizes="100vw"
+              priority
               alt={branchName}
             />
             <div className="absolute inset-0 bg-linear-to-b from-brand-teal-deep/80 via-transparent to-brand-teal-deep" />
@@ -202,9 +206,11 @@ export default function LocationPage() {
                     className="bg-white rounded-[2.5rem] p-8 border border-brand-teal/5 shadow-xl hover:shadow-2xl transition-all group flex flex-col items-center text-center"
                   >
                     <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden mb-8 border-8 border-brand-bg shadow-inner relative">
-                      <img 
+                      <Image 
                         src={physio.image} 
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                        className="object-cover transition-transform duration-500 group-hover:scale-110" 
+                        fill
+                        sizes="(min-width: 1024px) 33vw, 100vw"
                         alt={physio.name} 
                       />
                       <div className="absolute inset-0 bg-brand-teal-deep/10 group-hover:opacity-0 transition-opacity" />

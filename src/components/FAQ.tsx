@@ -62,9 +62,11 @@ export function FAQ() {
               <button 
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full py-6 flex items-center justify-between text-left group"
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
               >
                 <span className="text-xl font-bold text-brand-teal group-hover:text-brand-gold transition-colors">{faq.q}</span>
-                <div className="shrink-0 ml-4 text-brand-gold">
+                <div className="shrink-0 ml-4 text-brand-gold" aria-hidden="true">
                   {openIndex === index ? <Minus size={24} /> : <Plus size={24} />}
                 </div>
               </button>
@@ -77,6 +79,8 @@ export function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
+                    id={`faq-answer-${index}`}
+                    role="region"
                   >
                     <div className="pb-8 text-brand-teal-deep/70 leading-relaxed text-lg">
                       {faq.a}

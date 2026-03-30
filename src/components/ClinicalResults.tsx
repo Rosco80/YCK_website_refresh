@@ -1,7 +1,5 @@
-"use client";
-
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 
@@ -32,40 +30,33 @@ export function ClinicalResults() {
   return (
     <section className="bg-white py-16 lg:py-32">
       <div className="container mx-auto px-6 lg:px-8 text-center">
-        <motion.div
+        <div
           className="text-center max-w-3xl mx-auto mb-12 lg:mb-24">
-          <motion.h2 
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          <h2 
             className="text-2xl sm:text-3xl lg:text-5xl font-bold text-brand-teal mb-6"
           >
             {t("title")}
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          </h2>
+          <p 
             className="text-base lg:text-xl text-brand-teal-deep/60 font-medium"
           >
             {t("subtitle")}
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12 lg:mb-24">
           {results.map((item, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="group bg-brand-bg rounded-3xl overflow-hidden shadow-clinical flex flex-col h-full ring-1 ring-brand-teal/5 text-left"
             >
               <div className="aspect-3/4 overflow-hidden relative bg-white p-4 flex items-center justify-center">
-                <img 
+                <Image 
                   src={item.image} 
                   alt={item.title} 
-                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-contain transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-brand-teal-deep/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </div>
@@ -85,15 +76,11 @@ export function ClinicalResults() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        <div 
           className="text-center"
         >
           <Button 
@@ -103,7 +90,7 @@ export function ClinicalResults() {
             {t("cta")}
             <ChevronRight className="ml-2 w-5 h-5" />
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

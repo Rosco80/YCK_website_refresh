@@ -1,7 +1,5 @@
-"use client";
-
 import { useTranslations, useLocale } from "next-intl";
-import { motion } from "framer-motion";
+import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { Button } from "./ui/button";
 import { MapPin, Phone, Clock, ArrowRight, ChevronRight } from "lucide-react";
@@ -99,24 +97,12 @@ export function Branches() {
       ))}
       <div className="container mx-auto px-6">
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-24">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl lg:text-7xl font-bold mb-6 lg:mb-8 text-brand-gold tracking-tight"
-          >
+          <h2 className="text-3xl lg:text-7xl font-bold mb-6 lg:mb-8 text-brand-gold tracking-tight">
             {t("headline")}
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base lg:text-xl text-white/70 max-w-2xl mx-auto font-medium leading-relaxed"
-          >
+          </h2>
+          <p className="text-base lg:text-xl text-white/70 max-w-2xl mx-auto font-medium leading-relaxed">
             {t("description")}
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -145,15 +131,11 @@ export function Branches() {
 
 function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, image, index, ctaView, ctaBook, ctaDirections }: { id: string; name: string; address: string; phone: string; hours: string; wazeUrl: string; googleMapsUrl: string; image: string; index: number; ctaView: string; ctaBook: string; ctaDirections: string }) {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+    <div 
       className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-all group flex flex-col h-full shadow-2xl"
     >
       <div className="h-48 lg:h-56 overflow-hidden relative">
-        <img src={image} alt={name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+        <Image src={image} alt={name} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
         <div className="absolute inset-0 bg-linear-to-t from-brand-teal-deep to-transparent opacity-60" />
       </div>
       <div className="p-6 lg:p-10 flex flex-col grow">
@@ -214,6 +196,6 @@ function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, i
           </Link>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

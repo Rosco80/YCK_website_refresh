@@ -1,7 +1,5 @@
-"use client";
-
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export function ProblemReframe() {
@@ -10,11 +8,7 @@ export function ProblemReframe() {
   return (
     <section className="bg-white text-brand-teal-deep py-24 lg:py-32">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+        <div
           className="max-w-2xl mb-16"
         >
           <h2 className="text-4xl lg:text-6xl font-bold text-brand-teal mb-8 tracking-tight">
@@ -23,7 +17,7 @@ export function ProblemReframe() {
           <div className="space-y-8 text-lg font-medium text-brand-teal-deep/70 leading-relaxed italic">
             <p>"{t("quote")}"</p>
           </div>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-20">
           <div className="space-y-12">
@@ -46,18 +40,16 @@ export function ProblemReframe() {
 
           {/* Video/Visual Sticky */}
           <div className="lg:sticky lg:top-32 h-fit">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            <div 
               className="relative aspect-video rounded-3xl overflow-hidden bg-brand-teal/5 border border-brand-teal/10 group shadow-2xl"
             >
               <div className="absolute inset-0">
-                <img 
+                <Image 
                   src="/images/video-thumb.png" 
-                  alt="Clinical Treatment Video" 
-                  className="w-full h-full object-cover opacity-30"
+                  alt="Clinical Treatment Video"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover opacity-30"
                 />
               </div>
               {/* Video Placeholder */}
@@ -66,19 +58,16 @@ export function ProblemReframe() {
                   <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-current border-b-8 border-b-transparent ml-1" />
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Scrolling Content Column */}
           <div>
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            <h2 
               className="text-4xl lg:text-5xl font-bold leading-tight mb-16 text-brand-gold"
             >
               {t("headline")}
-            </motion.h2>
+            </h2>
 
             <div className="space-y-16 lg:space-y-24">
               <BenefitSection 
@@ -107,10 +96,7 @@ export function ProblemReframe() {
 
 function BenefitSection({ number, title, text }: { number: string; title: string; text: string }) {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+    <div 
       className="max-w-xl"
     >
       <div className="text-brand-gold font-mono text-xl mb-4 opacity-50">{number}</div>
@@ -118,7 +104,7 @@ function BenefitSection({ number, title, text }: { number: string; title: string
       <p className="text-lg text-brand-teal-deep/70 leading-relaxed font-medium">
         {text}
       </p>
-    </motion.div>
+    </div>
   );
 }
 
@@ -130,11 +116,7 @@ function ReframeCard({ title, text, type }: { title: string; text: string; type:
   };
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+    <div 
       className={cn("p-8 rounded-2xl transition-all hover:shadow-[0_20px_40px_-20px_rgba(1,102,94,0.15)] group", styles[type])}
     >
       <h3 className={cn("text-xl font-bold mb-3 transition-colors", 
@@ -145,6 +127,6 @@ function ReframeCard({ title, text, type }: { title: string; text: string; type:
       <p className="text-brand-teal-deep/70 leading-relaxed font-medium">
         {text}
       </p>
-    </motion.div>
+    </div>
   );
 }

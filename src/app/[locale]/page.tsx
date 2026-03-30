@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description: "Experience the unique Shaolin heritage method for chronic pain resolution. We treat back pain, knee osteoarthritis, frozen shoulder, and more since 1979.",
 };
 
+export const revalidate = 3600; // Cache and statically regenerate the homepage every hour
+
 import { getInsights } from "@/lib/substack";
 
 export default async function Home() {

@@ -5,6 +5,7 @@ import { Link, routing, usePathname, useRouter } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -32,6 +33,7 @@ export function Header() {
   };
 
   const navLinks = [
+    { href: "/conditions", label: t("conditions") },
     { href: "/method", label: t("method") },
     { href: "/formulations", label: t("formulations") },
     { href: "/#branches", label: t("locations") },
@@ -51,9 +53,12 @@ export function Header() {
       )}>
         {/* Logo */}
         <Link href="/" className="flex items-center relative z-50">
-          <img 
+          <Image 
             src="/images/painfix_cream-removebg-preview.png" 
-            alt="YAPCHANKOR" 
+            alt="YAPCHANKOR Clinic Logo" 
+            width={240}
+            height={64}
+            priority
             className="h-14 lg:h-16 w-auto object-contain transition-transform hover:scale-[1.03]"
           />
         </Link>
@@ -98,8 +103,10 @@ export function Header() {
           <button 
             className="lg:hidden p-2 text-brand-teal relative z-50 ml-1"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMobileMenuOpen}
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X size={28} aria-hidden="true" /> : <Menu size={28} aria-hidden="true" />}
           </button>
         </div>
       </div>

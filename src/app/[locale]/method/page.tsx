@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion, Variants } from "framer-motion";
+import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -10,6 +11,7 @@ import { cn } from "@/lib/utils";
 
 export default function MethodPage() {
   const t = useTranslations("MethodPage");
+  const tMethod = useTranslations("Method");
   
   const revealVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -32,10 +34,10 @@ export default function MethodPage() {
     "procedureType": "PhysicalTherapy",
     "relevantSpecialty": ["Physiotherapy", "TraditionalChineseMedicine"],
     "howItWorks": [
-      t("Method.step1Title"),
-      t("Method.step2Title"),
-      t("Method.step3Title"),
-      t("Method.step4Title")
+      tMethod("step1Title"),
+      tMethod("step2Title"),
+      tMethod("step3Title"),
+      tMethod("step4Title")
     ]
   };
 
@@ -51,9 +53,12 @@ export default function MethodPage() {
         {/* Section 1: Hero Section */}
         <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
           <div className="absolute inset-0 z-0 opacity-20">
-            <img 
+            <Image 
               src="/images/hero_cinematic.png" 
-              className="w-full h-full object-cover"
+              className="object-cover"
+              fill
+              sizes="100vw"
+              priority
               alt=""
             />
             <div className="absolute inset-0 bg-linear-to-b from-brand-teal-deep/80 via-transparent to-brand-teal-deep" />
@@ -106,9 +111,11 @@ export default function MethodPage() {
                 className="order-1 lg:order-2"
               >
                 <div className="relative aspect-3/4 max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
-                  <img 
+                  <Image 
                     src="/images/about-history.webp" 
-                    className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
+                    className="object-cover transition-all duration-700 hover:scale-105"
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     alt="Who We Are - Portrait"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-brand-teal-deep/30 to-transparent" />
@@ -285,9 +292,11 @@ function WhyReason({ title, desc, image, reverse }: { title: string; desc: strin
         )}
       >
         <div className="relative aspect-video rounded-[2.5rem] overflow-hidden group border-12 border-white/50 bg-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)]">
-          <img 
+          <Image 
             src={image} 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+            className="object-cover transition-transform duration-700 group-hover:scale-105" 
+            fill
+            sizes="(min-width: 1024px) 66vw, 100vw"
             alt={title} 
           />
           <div className="absolute inset-0 bg-brand-teal-deep/5 group-hover:bg-transparent transition-colors duration-500" />

@@ -62,11 +62,32 @@ export default async function RootLayout({
   const { locale } = await params;
   const messages = await getMessages();
 
+  const medicalClinicJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "YAPCHANKOR Pain Treatment Centre",
+    "url": "https://yapchankor.com",
+    "description": "Specialists in chronic pain resolution using Shaolin-based physiotherapy and proprietary clinical formulations since 1979.",
+    "medicalSpecialty": [
+      "Physiotherapy",
+      "Musculoskeletal",
+      "Pain Management"
+    ],
+    "availableService": [
+      { "@type": "MedicalTherapy", "name": "Shaolin Physiotherapy" },
+      { "@type": "MedicalTherapy", "name": "Chronic Pain Treatment" }
+    ]
+  };
+
   return (
     <html lang={locale}>
       <body
         className={`${bandaRegular.variable} ${gotham.variable} font-sans antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicJsonLd) }}
+        />
         <NextIntlClientProvider messages={messages} locale={locale}>
           {children}
         </NextIntlClientProvider>

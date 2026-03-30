@@ -1,7 +1,4 @@
-"use client";
-
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
 
 export function Method() {
   const t = useTranslations("Method");
@@ -12,11 +9,7 @@ export function Method() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Text Content Column */}
           <div className="order-2 lg:order-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            <div
               className="mb-16"
             >
               <h2 className="text-4xl lg:text-6xl font-bold text-brand-teal mb-6 tracking-tight">
@@ -25,7 +18,7 @@ export function Method() {
               <p className="text-xl text-brand-teal-deep/70 max-w-xl leading-relaxed font-medium">
                 {t("subtitle")}
               </p>
-            </motion.div>
+            </div>
 
             <div className="space-y-16">
               <MethodStep 
@@ -57,11 +50,7 @@ export function Method() {
 
           {/* Sticky Visual Column */}
           <div className="lg:sticky lg:top-32 h-fit order-1 lg:order-2">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            <div 
               className="relative aspect-square rounded-full border-2 border-brand-teal/5 p-12 flex items-center justify-center bg-white shadow-[0_32px_64px_-16px_rgba(1,102,94,0.08)]"
             >
               {/* Method Circle Graphic - Subtle & Weighted */}
@@ -82,7 +71,7 @@ export function Method() {
               <StepIndicator pos="right" num="2" />
               <StepIndicator pos="bottom" num="3" />
               <StepIndicator pos="left" num="4" />
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
@@ -93,11 +82,7 @@ export function Method() {
 
 function MethodStep({ num, title, text, delay }: { num: string; title: string; text: string; delay: number }) {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+    <div 
       className="group flex gap-8 items-start"
     >
       <span className="text-sm font-bold text-brand-gold/40 tracking-widest mt-2">{num}</span>
@@ -109,7 +94,7 @@ function MethodStep({ num, title, text, delay }: { num: string; title: string; t
           {text}
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

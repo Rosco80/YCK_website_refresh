@@ -4,6 +4,7 @@ import { Footer } from '@/components/Footer';
 import { Link } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Calendar } from 'lucide-react';
+import Image from 'next/image';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -16,6 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: insight.snippet,
   };
 }
+
+export const revalidate = 3600; // Cache and statically regenerate the detail pages hourly
 
 // Removed generateStaticParams temporarily for debugging 404
 
@@ -31,19 +34,43 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
     notFound();
   }
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "headline": insight.title,
+    "description": insight.snippet,
+    "url": `https://yapchankor.com/${locale}/insights/${insight.slug}`,
+    "datePublished": insight.pubDate,
+    "publisher": {
+      "@type": "MedicalClinic",
+      "name": "YAPCHANKOR Pain Treatment Centre",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://yapchankor.com/logo.png"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg font-inter">
       <Header />
       
       <main className="grow">
-        <article className="pb-32">
+        <article className="pb-32" itemScope itemType="https://schema.org/MedicalWebPage">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+          />
           {/* Header Section */}
           <div className="bg-brand-teal-deep text-white pt-24 pb-32 relative overflow-hidden">
             <div className="absolute inset-0 opacity-20">
-              <img 
+              <Image 
                 src={insight.imageUrl} 
                 alt="" 
-                className="w-full h-full object-cover blur-sm"
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover blur-sm"
               />
               <div className="absolute inset-0 bg-brand-teal-deep/80" />
             </div>
@@ -51,6 +78,7 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
               <Link 
                 href="/insights" 
                 className="inline-flex items-center text-brand-gold hover:text-white transition-colors mb-10 text-xs font-bold uppercase tracking-widest"
+                aria-label="Back to Clinical Insights"
               >
                 <ArrowLeft size={14} className="mr-2" /> Back to Insights
               </Link>
@@ -58,7 +86,7 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
                  <Calendar size={14} />
                  {new Date(insight.pubDate).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' })}
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-8 drop-shadow-lg">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-8 drop-shadow-lg" itemProp="headline">
                 {insight.title}
               </h1>
             </div>
@@ -67,6 +95,15 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
           {/* Content Section */}
           <div className="container mx-auto px-6 max-w-3xl -mt-16 relative z-20">
             <div className="bg-white rounded-4xl p-8 md:p-12 lg:p-16 shadow-xl border border-brand-teal/5">
+              
+              {/* AI Summary Block (AEO Optimization) */}
+              <div className="bg-brand-bg/50 rounded-2xl p-6 sm:p-8 mb-12 border-l-4 border-brand-gold">
+                <h2 className="text-sm font-bold text-brand-gold uppercase tracking-widest mb-3">Key Takeaways</h2>
+                <p className="text-brand-teal-deep/80 leading-relaxed font-medium" itemProp="description">
+                  {insight.snippet}
+                </p>
+              </div>
+
               <div 
                 className="
                   text-brand-teal-deep/80 text-lg leading-relaxed
