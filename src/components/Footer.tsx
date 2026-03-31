@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
-import { Facebook, Instagram, Linkedin, Twitter, ArrowRight } from "lucide-react";
+import { Facebook, Instagram, Youtube, ArrowRight } from "lucide-react";
 
 export function Footer() {
   const t = useTranslations("Footer");
@@ -27,10 +27,26 @@ export function Footer() {
               {t("tagline")}
             </p>
             <div className="flex space-x-5">
-              <SocialIcon icon={<Facebook size={18} />} href="#" />
-              <SocialIcon icon={<Instagram size={18} />} href="#" />
-              <SocialIcon icon={<Twitter size={18} />} href="#" />
-              <SocialIcon icon={<Linkedin size={18} />} href="#" />
+              <SocialIcon icon={<Facebook size={18} />} href="https://www.facebook.com/Yapchankor/" />
+              <SocialIcon icon={<Instagram size={18} />} href="https://www.instagram.com/yapchankor/" />
+              <SocialIcon 
+                icon={
+                  <svg 
+                    width="18" 
+                    height="18" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                  </svg>
+                } 
+                href="https://www.tiktok.com/@yapchankor?_r=1&_t=ZS-94qAfgWTPZV" 
+              />
+              <SocialIcon icon={<Youtube size={18} />} href="https://www.youtube.com/channel/UCunC7aMz009FoaBNVzDZREA" />
             </div>
           </div>
 
