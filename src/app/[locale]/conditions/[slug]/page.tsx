@@ -8,6 +8,7 @@ import { ArrowLeft, CheckCircle2, ShieldCheck, Activity } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { conditionSlugs, ConditionSlug } from "@/data/conditions";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { ConditionTestimonials } from "@/components/ConditionTestimonials";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string, slug: string }> }) {
   const { locale, slug } = await params;
@@ -195,6 +196,8 @@ export default async function ConditionDetail({
             </div>
           </div>
         </section>
+        
+        <ConditionTestimonials slug={slug} />
       </main>
       
       <Footer />

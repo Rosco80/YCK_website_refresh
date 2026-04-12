@@ -19,17 +19,19 @@ async function hydrateTitles(lang, outPath) {
   console.log(`Translating titles and descriptions for [${lang}]...`);
   
   for (const slug in enData.Conditions.list) {
-    if (fileData.Conditions.list[slug]) {
-      // Fetch the English source strings
-      const sourceTitle = enData.Conditions.list[slug].title;
-      const sourceDesc = enData.Conditions.list[slug].desc;
-      
-      // Only translate if they are exactly matching English (meaning we missed them)
-      fileData.Conditions.list[slug].title = await translateText(sourceTitle, lang);
-      fileData.Conditions.list[slug].desc = await translateText(sourceDesc, lang);
-      
-      console.log(` >> Translated [${slug}] titles to ${lang}`);
+    if (!fileData.Conditions.list[slug]) {
+      fileData.Conditions.list[slug] = {};
+      console.log(` >> Initializing missing slug [${slug}]`);
     }
+    
+    // Fetch the English source strings
+    const sourceTitle = enData.Conditions.list[slug].title;
+    const sourceDesc = enData.Conditions.list[slug].desc;
+    
+    fileData.Conditions.list[slug].title = await translateText(sourceTitle, lang);
+    fileData.Conditions.list[slug].desc = await translateText(sourceDesc, lang);
+    
+    console.log(` >> Translated [${slug}] titles to ${lang}`);
   }
   
   fs.writeFileSync(outPath, JSON.stringify(fileData, null, 2));

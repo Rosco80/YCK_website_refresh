@@ -22,20 +22,23 @@ async function hydrateTranslate(lang, outPath) {
   console.log(`Starting dynamic API translation matrix for [${lang}]...`);
   
   for (const slug in rawData) {
-    if (fileData.Conditions.list[slug]) {
-      const cleanStep3 = rawData[slug].step3
-        .replace(/View Testimonials.*$/i, '')
-        .replace(/book an appointment.*$/i, '')
-        .replace(/Michael is a US citizen.*$/i, '')
-        .trim();
-
-      fileData.Conditions.list[slug].intro = await translateText(rawData[slug].intro, lang);
-      fileData.Conditions.list[slug].step1 = await translateText(rawData[slug].step1, lang);
-      fileData.Conditions.list[slug].step2 = await translateText(rawData[slug].step2, lang);
-      fileData.Conditions.list[slug].step3 = await translateText(cleanStep3, lang);
-      
-      console.log(` >> Translated [${slug}] to ${lang}`);
+    if (!fileData.Conditions.list[slug]) {
+      fileData.Conditions.list[slug] = {};
+      console.log(` >> Initializing missing slug [${slug}]`);
     }
+
+    const cleanStep3 = rawData[slug].step3
+      .replace(/View Testimonials.*$/i, '')
+      .replace(/book an appointment.*$/i, '')
+      .replace(/Michael is a US citizen.*$/i, '')
+      .trim();
+
+    fileData.Conditions.list[slug].intro = await translateText(rawData[slug].intro, lang);
+    fileData.Conditions.list[slug].step1 = await translateText(rawData[slug].step1, lang);
+    fileData.Conditions.list[slug].step2 = await translateText(rawData[slug].step2, lang);
+    fileData.Conditions.list[slug].step3 = await translateText(cleanStep3, lang);
+    
+    console.log(` >> Translated [${slug}] to ${lang}`);
   }
   
   fs.writeFileSync(outPath, JSON.stringify(fileData, null, 2));

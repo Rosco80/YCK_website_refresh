@@ -31,6 +31,7 @@
     "insights": "Insights",
     "faq": "FAQ",
     "conditions": "Conditions We Treat",
+    "testimonials": "Real Recovery Stories",
     "bookAssessment": "Book Clinical Assessment"
   },
   "WhatsApp": {
@@ -375,8 +376,7 @@
       "intro": "Modern medicine has produced many miracles in treating humanity's health problems. However, in the area of chronic muscle and joint pain, most treatments have significant downsides.",
       "downside1": "Modern painkillers block pain signals without treating the root cause, at the expense of severe side effects to your stomach or heart.",
       "downside2": "Many service providers like chiropractors, osteopaths, and physiotherapists provide some relief, but none of them provides a cure-all, and many are expensive for short-term relief.",
-      "solution": "We believe we have a better solution. By combining a unique Shaolin Herbal Medicine, which helps reduce inflammation and boosts healing, together with modern physiotherapy, we have produced better results for chronic pain patients in a faster time frame.",
-      "downside3": "test downside"
+      "solution": "We believe we have a better solution. By combining a unique Shaolin Herbal Medicine, which helps reduce inflammation and boosts healing, together with modern physiotherapy, we have produced better results for chronic pain patients in a faster time frame."
     },
     "whyItWorks": {
       "title": "Why It Works",
@@ -393,13 +393,23 @@
       "migration": "From 1916 to 1930, his descendants moved to Malaya to teach kung-fu, including Yap Chan Kor’s father, Yap Shu Shen, who became the grandmaster of the Chin Woo Stadium, training and treating people for over 50 years.",
       "founding": "A revered healer, he passed on his teachings to his son, Yap Chan Kor, who established Tabib Yap Chan Kor in 1979.",
       "conclusion": "Today, we blend ancient Chinese medicine and techniques with the use of trained physiotherapists, bringing forth this long tradition with modern assessments to ensure faster and long-term recovery."
-    },
-    "Legal": {
-      "privacyPolicy": "Privacy Policy",
-      "termsOfService": "Terms of Service",
-      "legalDisclosure": "Legal Disclosure",
-      "updated": "Last Updated: March 2026",
-      "disclaimer": "The information on this website is for educational purposes and should not be used as a substitute for professional medical advice, diagnosis, or treatment."
     }
+  },
+  "Legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "legalDisclosure": "Legal Disclosure",
+    "updated": "Last Updated: March 2026",
+    "disclaimer": "The information on this website is for educational purposes and should not be used as a substitute for professional medical advice, diagnosis, or treatment."
+  },
+  "Testimonials": {
+    "title": "Real Recovery Stories",
+    "subtitle": "Clinical outcomes and patient experiences from our specialized chronic pain treatment.",
+    "heroTitle": "Patient Success Stories",
+    "heroSubtitle": "Proven outcomes across thousands of chronic pain cases using the Shaolin Method since 1979.",
+    "categories": "Filter by Condition",
+    "noResults": "No specific cases found for this category yet.",
+    "viewAll": "All Recovery Stories",
+    "readOriginal": "Read Original Case"
   }
 }
