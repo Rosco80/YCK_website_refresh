@@ -4,9 +4,10 @@ import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle2, ShieldCheck, Activity } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ShieldCheck, Activity, ChevronDown } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { conditionSlugs, ConditionSlug } from "@/data/conditions";
+import { getConditionsContent } from "@/data/conditions-content";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { ConditionTestimonials } from "@/components/ConditionTestimonials";
 
@@ -40,8 +41,8 @@ export default async function ConditionDetail({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
-  
+  const { locale, slug } = await params;
+
   if (!conditionSlugs.includes(slug as ConditionSlug)) {
     notFound();
   }
@@ -51,6 +52,7 @@ export default async function ConditionDetail({
   const tw = await getTranslations("WhatsApp");
   const title = t(`list.${slug}.title`);
   const desc = t(`list.${slug}.desc`);
+  const conditionData = getConditionsContent(locale)[slug];
 
   const whatsappUrl = getWhatsAppUrl(tw("conditionMessage", { condition: title }));
 
@@ -182,7 +184,7 @@ export default async function ConditionDetail({
               
               <aside className="lg:col-span-4 bg-brand-bg p-10 lg:p-14 rounded-[3rem] border border-brand-teal/10 shadow-xl sticky top-24 mt-12 lg:mt-0">
                 <ShieldCheck className="w-12 h-12 text-brand-gold mb-6" />
-                <h3 className="text-2xl font-bold text-brand-teal-deep mb-4">{t("readyCure")} {title.toLowerCase()}?</h3>
+                <h3 className="text-2xl font-bold text-brand-teal-deep mb-4">{t("readyCure", { condition: title.toLowerCase() })}</h3>
                 <p className="text-brand-teal-deep/60 mb-10 font-medium">{t("bookAssessment")}</p>
                 <Button asChild className="w-full bg-brand-teal hover:bg-brand-teal-deep text-white h-16 rounded-2xl text-base font-bold uppercase tracking-widest shadow-xl transition-transform hover:scale-[1.02]">
                   <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
@@ -196,7 +198,164 @@ export default async function ConditionDetail({
             </div>
           </div>
         </section>
-        
+
+        {/* Why It Doesn't Improve Section */}
+        {conditionData && (
+          <section className="py-24 bg-brand-teal/5 border-t border-brand-teal/10">
+            <div className="container mx-auto px-6">
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-3xl lg:text-5xl font-bold text-brand-teal-deep mb-8">
+                  {t("whyDoesntImprove", { condition: title })}
+                </h2>
+                <p className="text-lg font-medium text-brand-teal-deep/70 leading-relaxed">
+                  {conditionData.whyNotImprove}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* What Causes It Section */}
+        {conditionData && (
+          <section className="py-24 bg-white border-t border-brand-teal/5">
+            <div className="container mx-auto px-6">
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-3xl lg:text-5xl font-bold text-brand-teal-deep mb-12">
+                  {t("whatCausing")}
+                </h2>
+                <div className="space-y-3">
+                  {conditionData.whatCauses.map((cause, idx) => (
+                    <div key={idx} className="flex gap-4 items-start">
+                      <div className="shrink-0 w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-sm font-bold mt-1">
+                        •
+                      </div>
+                      <p className="text-lg font-medium text-brand-teal-deep/70">{cause}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Approach Section */}
+        {conditionData && (
+          <section className="py-24 bg-brand-teal/5 border-t border-brand-teal/10">
+            <div className="container mx-auto px-6">
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-3xl lg:text-5xl font-bold text-brand-teal-deep mb-8">
+                  {t("ourApproach")}
+                </h2>
+                <p className="text-lg font-medium text-brand-teal-deep/70 leading-relaxed mb-8">
+                  {conditionData.approach}
+                </p>
+                <div className="bg-white rounded-2xl p-8 border border-brand-teal/10">
+                  <p className="text-sm font-bold text-brand-gold uppercase tracking-widest mb-4">{t("weCombine")}</p>
+                  <ul className="space-y-4">
+                    {conditionData.approachPoints.map((point, idx) => (
+                      <li key={idx} className="flex gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-brand-gold shrink-0 mt-0.5" />
+                        <span className="text-base font-medium text-brand-teal-deep/70">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Expectation Section */}
+        {conditionData && (
+          <section className="py-24 bg-white border-t border-brand-teal/5">
+            <div className="container mx-auto px-6">
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-3xl lg:text-5xl font-bold text-brand-teal-deep mb-8">
+                  {t("whatToExpect")}
+                </h2>
+                <p className="text-lg font-medium text-brand-teal-deep/70 leading-relaxed">
+                  {conditionData.expectation}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* When to Seek Assessment */}
+        {conditionData && (
+          <section className="py-24 bg-brand-teal/5 border-t border-brand-teal/10">
+            <div className="container mx-auto px-6">
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-3xl lg:text-5xl font-bold text-brand-teal-deep mb-12">
+                  {t("whenToSeekTitle")}
+                </h2>
+                <p className="text-lg font-medium text-brand-teal-deep/70 mb-8">
+                  {t("ifYourCondition")}
+                </p>
+                <div className="space-y-3">
+                  {conditionData.whenToSeek.map((condition, idx) => (
+                    <div key={idx} className="flex gap-4 items-start">
+                      <div className="shrink-0 w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-sm font-bold mt-1">
+                        •
+                      </div>
+                      <p className="text-lg font-medium text-brand-teal-deep/70">{condition}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-lg font-medium text-brand-teal-deep/70 mt-8">
+                  {t("clinicalAssessmentNote")}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* FAQs Section */}
+        {conditionData && (
+          <section className="py-24 bg-white border-t border-brand-teal/5">
+            <div className="container mx-auto px-6">
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-3xl lg:text-5xl font-bold text-brand-teal-deep mb-12">
+                  {t("faqTitle")}
+                </h2>
+                <div className="space-y-6">
+                  {conditionData.faqs.map((faq, idx) => (
+                    <div key={idx} className="border-b border-brand-teal/10 pb-6 last:border-0 last:pb-0">
+                      <h3 className="text-xl font-bold text-brand-teal-deep mb-3">{faq.question}</h3>
+                      <p className="text-base font-medium text-brand-teal-deep/70 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Related Conditions */}
+        {conditionData && conditionData.relatedConditions.length > 0 && (
+          <section className="py-24 bg-brand-teal/5 border-t border-brand-teal/10">
+            <div className="container mx-auto px-6">
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-3xl lg:text-5xl font-bold text-brand-teal-deep mb-12">
+                  {t("relatedConditionsTitle")}
+                </h2>
+                <div className="space-y-3">
+                  {conditionData.relatedConditions.map((relatedSlug, idx) => (
+                    <Link
+                      key={idx}
+                      href={`/conditions/${relatedSlug}`}
+                      className="flex items-center justify-between p-4 bg-white rounded-xl border border-brand-teal/10 hover:border-brand-gold/30 hover:bg-brand-gold/5 transition-all"
+                    >
+                      <span className="font-medium text-brand-teal-deep">{t(`list.${relatedSlug}.title`)}</span>
+                      <ChevronDown className="w-5 h-5 text-brand-gold rotate-[-90deg]" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         <ConditionTestimonials slug={slug} />
       </main>
       

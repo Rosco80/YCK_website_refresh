@@ -1,5 +1,32 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Link } from "@/i18n/routing";
+
+function renderDescriptionWithLinks(text: string): (string | React.ReactElement)[] {
+  const conditionLinks = [
+    { text: "back pain", href: "/conditions/back-pain" },
+    { text: "knee pain", href: "/conditions/knee-pain" },
+    { text: "shoulder injuries", href: "/conditions/shoulder-pain" },
+  ];
+
+  let parts: (string | React.ReactElement)[] = [text];
+
+  conditionLinks.forEach(({ text: condText, href }) => {
+    parts = parts.flatMap(part => {
+      if (typeof part !== "string") return part;
+      const regex = new RegExp(`(${condText})`, "gi");
+      if (!regex.test(part)) return part;
+
+      return part.split(new RegExp(`(${condText})`, "i")).map((segment, i) =>
+        segment.toLowerCase() === condText.toLowerCase()
+          ? <Link key={`${href}-${i}`} href={href} className="text-brand-teal hover:text-brand-teal-deep underline transition-colors">{segment}</Link>
+          : segment
+      );
+    });
+  });
+
+  return parts;
+}
 
 export function WhyChooseUs() {
   const t = useTranslations("WhyChooseUs");
@@ -32,9 +59,11 @@ export function WhyChooseUs() {
               {t("subtitle")}
             </h3>
 
-            <p className="text-base lg:text-xl text-brand-teal-deep/70 mb-12 lg:mb-20 max-w-3xl mx-auto leading-relaxed font-medium">
-              {t("description")}
-            </p>
+            <div className="text-base lg:text-xl text-brand-teal-deep/70 mb-12 lg:mb-20 max-w-3xl mx-auto leading-relaxed font-medium space-y-4">
+              {t("description").split("\n\n").map((paragraph, i) => (
+                <p key={i}>{renderDescriptionWithLinks(paragraph)}</p>
+              ))}
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
               {features.map((feature, i) => (

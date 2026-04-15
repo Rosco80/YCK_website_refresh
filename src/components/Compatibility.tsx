@@ -5,7 +5,7 @@ export function Compatibility() {
   const t = useTranslations("Compatibility");
 
   const trustIcons = [
-    { icon: "/images/Screenshot_2026-03-19_211516-removebg-preview.webp", label: t("physio") },
+    { icon: "/images/Screenshot_2026-04-16_003855-removebg-preview.png", label: t("physio") },
     { icon: "/images/Screenshot_2026-03-19_211529-removebg-preview.webp", label: t("imaging") },
     { icon: "/images/Screenshot_2026-03-19_211457-removebg-preview.webp", label: t("rehab") },
   ];
@@ -31,12 +31,12 @@ export function Compatibility() {
                   className="flex flex-col items-center space-y-5"
                 >
                   <div className="w-20 h-20 rounded-full bg-white shadow-clinical flex items-center justify-center transition-transform duration-300 hover:scale-110">
-                    <Image 
-                      src={item.icon} 
+                    <Image
+                      src={item.icon}
                       alt={item.label}
                       width={56}
                       height={56}
-                      className="w-14 h-14 object-contain opacity-90 brightness-110 drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)]" 
+                      className="w-14 h-14 object-contain opacity-90 brightness-110 drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)]"
                     />
                   </div>
                   <span className="text-sm font-bold text-brand-teal/50 uppercase tracking-[0.2em] leading-relaxed">

@@ -54,25 +54,25 @@ export function Header() {
     )}>
       <div className={cn(
         "container mx-auto flex items-center justify-between px-6 transition-all duration-500",
-        isScrolled ? "h-16" : "h-24 lg:h-28"
+        isScrolled ? "h-20" : "h-44 lg:h-48 pt-4"
       )}>
         {/* Logo */}
         <Link href="/" className="flex items-center relative z-50">
-          <Image 
-            src="/images/painfix_cream-removebg-preview.png" 
-            alt="YAPCHANKOR Clinic Logo" 
-            width={320}
-            height={90}
+          <Image
+            src="/images/painfix_cream-removebg-preview.png"
+            alt="YAPCHANKOR Clinic Logo"
+            width={138}
+            height={154}
             priority
             className={cn(
-              "w-auto object-contain transition-all duration-500 hover:scale-[1.03]",
-              isScrolled ? "h-12 lg:h-14" : "h-18 lg:h-22"
+              "object-contain transition-all duration-500 hover:scale-[1.03]",
+              isScrolled ? "h-[67px] lg:h-[77px] w-auto" : "h-[154px] w-[138px]"
             )}
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center space-x-6 xl:space-x-10 text-[10px] xl:text-xs uppercase tracking-widest font-bold text-brand-teal-deep/60">
+        <nav className="hidden xl:flex items-center space-x-5 2xl:space-x-8 text-[10px] xl:text-xs uppercase tracking-wider font-bold text-brand-teal-deep/60">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-brand-teal transition-colors">
               {link.label}
@@ -110,8 +110,8 @@ export function Header() {
           </Button>
 
           {/* Mobile Menu Toggle */}
-          <button 
-            className="lg:hidden p-2 text-brand-teal relative z-50 ml-1"
+          <button
+            className="xl:hidden p-2 text-brand-teal relative z-50 ml-1"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isMobileMenuOpen}

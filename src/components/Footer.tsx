@@ -8,7 +8,7 @@ export function Footer() {
   const t = useTranslations("Footer");
   const tNav = useTranslations("Navigation");
   const tWhatsApp = useTranslations("WhatsApp");
-  const tLegal = useTranslations("MethodPage.Legal");
+  const tLegal = useTranslations("Legal");
 
   return (
     <footer className="bg-brand-teal-deep text-white pt-16 pb-12 border-t border-white/5 font-inter">

@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Link } from "@/i18n/routing";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { Button } from "./ui/button";
 
@@ -19,6 +20,15 @@ export function RollingHook() {
     t("condition5"),
     t("condition6"),
   ];
+
+  const conditionMap: Record<string, string> = {
+    "chronic back pain": "/conditions/back-pain",
+    "knee osteoarthritis": "/conditions/knee-pain",
+    "frozen shoulder": "/conditions/shoulder-pain",
+    "sciatica": "/conditions/sciatica",
+    "slipped disc": "/conditions/slipped-disc",
+    "hip pain": "/conditions/hip-pain",
+  };
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -67,9 +77,13 @@ export function RollingHook() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
-                className="text-4xl lg:text-7xl font-bold text-brand-teal capitalize leading-tight tracking-tight px-4"
               >
-                {conditions[index]}
+                <Link
+                  href={conditionMap[conditions[index]] || "/conditions"}
+                  className="text-4xl lg:text-7xl font-bold text-brand-teal capitalize leading-tight tracking-tight px-4 hover:text-brand-teal-deep transition-colors"
+                >
+                  {conditions[index]}
+                </Link>
               </motion.div>
             </AnimatePresence>
           </div>

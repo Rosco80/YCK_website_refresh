@@ -20,8 +20,8 @@
       "sub": "Univ. Monash"
     },
     "item4": {
-      "title": "Daftar KKM",
-      "sub": "Diluluskan PainFix"
+      "title": "Rangkaian PainFix",
+      "sub": "Pelepas sakit berdaftar KKM"
     }
   },
   "Navigation": {
@@ -65,7 +65,7 @@
   "WhyChooseUs": {
     "title": "Kenapa Pesakit Memilih Kami",
     "subtitle": "Bukan sekadar fisioterapi. Bukan sekadar kiropraktik. Bukan sekadar Perubatan Cina.",
-    "description": "Kebanyakan klinik bergantung kepada satu kaedah sahaja. Di YAPCHANKOR, rawatan menggabungkan pelbagai pendekatan yang dimungkinkan oleh perubatan kecederaan Shaolin kami, yang diperhalusi melalui amalan klinikal moden selama beberapa dekad.",
+    "description": "Kebanyakan klinik bergantung kepada satu kaedah apabila merawat keadaan seperti sakit belakang, sakit lutut atau kecederaan bahu.\n\nDi YAPCHANKOR, rawatan menggabungkan pelbagai pendekatan yang dibentuk oleh perubatan kecederaan Shaolin dan disempurnakan melalui puluhan tahun amalan klinikal moden.",
     "item1": "Terapi Manual",
     "item2": "Pemulihan Berstruktur",
     "item3": "Formulasi Klinikal"
@@ -76,15 +76,15 @@
     "description": "Formulasi herba proprietari kami telah digunakan dalam amalan klinikal selama berdekad-dekad, kemudiannya memberi inspirasi kepada rangkaian analgesik topikal PainFix.",
     "monashStudy": "Kajian makmal dengan Universiti Monash mengkaji ciri-ciri anti-keradangan pada tahap selular.",
     "findingsTitle": "Penemuan Utama Termasuk:",
-    "finding1": "Pengurangan penanda keradangan",
-    "finding2": "Sokongan proses pemulihan tisu",
-    "finding3": "Bioaktiviti yang boleh diukur dalam ujian makmal",
+    "finding1": "Menekan penanda keradangan utama",
+    "finding2": "Tindakan anti-keradangan yang konsisten di semua peringkat yang diuji",
+    "finding3": "Bukan toksin dengan lebih daripada 90% daya maju sel disahkan",
     "graphicCaption": "Kajian makmal bersama Universiti Monash"
   },
   "Compatibility": {
     "title": "Bekerja Selari dengan Penjagaan Perubatan Moden",
-    "description": "Rawatan YAPCHANKOR sering dijalankan selari dengan fisioterapi, penjagaan perubatan, dan pemulihan selepas pembedahan.",
-    "support": "Peranan kami bukan untuk menggantikan penjagaan lain tetapi untuk menyokong pemulihan melalui pendekatan integratif.",
+    "description": "Rawatan YAPCHANKOR sering dijalankan selari dengan fisioterapi, penjagaan perubatan, dan pemulihan selepas pembedahan. Peranan kami bukan untuk menggantikan penjagaan lain tetapi untuk menyokong pemulihan melalui pendekatan integratif.",
+    "support": "Garis panduan klinikal moden mengesyorkan memulai dengan rawatan konservatif, tanpa invasif sebelum mempertimbangkan suntikan atau pembedahan. Di YAPCHANKOR, kami menggabungkan fisioterapi dengan formulasi herbal berasaskan Shaolin kami untuk menyokong pemulihan dengan cara yang terstruktur dan praktikal.",
     "physio": "Fisioterapi",
     "imaging": "Imejan Perubatan",
     "rehab": "Pemulihan"
@@ -264,6 +264,16 @@
     "btnBook": "Tempah Penilaian",
     "noReferral": "Tanpa Rujukan Diperlukan",
     "viewTreatment": "Lihat Rawatan",
+    "whyDoesntImprove": "Mengapa {condition} sering tidak bertambah baik",
+    "whatCausing": "Apakah yang mungkin menyebabkan keadaan anda",
+    "ourApproach": "Pendekatan kami",
+    "weCombine": "Kami menggabungkan",
+    "whatToExpect": "Apa yang perlu dijangkakan",
+    "whenToSeekTitle": "Bila perlu mendapatkan penilaian",
+    "ifYourCondition": "Jika keadaan anda:",
+    "clinicalAssessmentNote": "Penilaian klinikal dapat membantu menentukan pendekatan yang sesuai.",
+    "faqTitle": "Soalan lazim",
+    "relatedConditionsTitle": "Keadaan berkaitan",
     "list": {
       "back-pain": {
         "title": "Terapi Sakit Belakang",
@@ -360,6 +370,30 @@
         "step1": "Semasa lawatan pertama anda kepada kami untuk terapi osteoarthritis anda, ahli fisioterapi kami akan melakukan pemeriksaan fizikal, untuk memeriksa kesakitan, bengkak dan untuk mengukur julat pergerakan aktif dan pasif sendi anda. Kami juga akan meminta anda menilai kesakitan anda pada skala sifar hingga 10 dan membincangkan sejauh mana anda berfungsi dengan kesakitan anda. Kami menumpukan pada hasil sebenar untuk pesakit kami, jadi kami berusaha keras untuk mengukur kemajuan anda sepanjang rawatan kami, kadangkala dengan foto dan video juga. Jika anda telah berjumpa doktor atau mencuba sebarang rawatan lain, adalah berguna jika anda membawa laporan atau sebarang imbasan X-ray, MRI atau CT yang mungkin anda miliki.",
         "step2": "Terapi osteoarthritis kami untuk pinggul, lutut, belakang, bahu atau tangan anda, adalah cara yang unik dan berkesan yang hanya boleh didapati di YAPCHANKOR. Ini kerana walaupun banyak tempat menawarkan fisioterapi untuk pesakit osteoarthritis (OA), mereka tidak menggabungkannya dengan patch perubatan Cina kami yang terbukti. Kami akan menggunakan tampalan kami pada sendi anda yang terjejas, dan ia berfungsi dengan mengurangkan keradangan dan kesakitan, serta memudahkan penyembuhan. Pakar fisioterapi kami juga akan menggunakan pelbagai teknik seperti haba, SEPULUH (stimulasi elektrik), dan ultrasound untuk merehatkan sendi anda dan otot serta tisu lembut di sekelilingnya. Urutan akan digunakan apabila sesuai. Selepas setiap sesi, kami akan menggunakan tampalan ubat kami, yang perlu anda pakai selama sekurang-kurangnya 12 jam. Apabila kesakitan dan keradangan anda berkurangan, ahli fisioterapi kami akan mengajar anda pelbagai senaman gerakan untuk meningkatkan mobiliti sendi terjejas anda. Kami juga akan mengajar anda bagaimana untuk menguatkan otot sekeliling dan tisu lembut seperti ligamen dan tendon untuk menyokong sendi artritis. Dengan OA, adalah sangat penting untuk anda kerap melakukan senaman ini untuk mengekalkan dan meningkatkan pemulihan yang anda lihat daripada rawatan kami.",
         "step3": "Osteoartritis adalah keadaan kronik yang boleh berlaku apabila badan kita semakin tua. Walaupun kami percaya terapi kami memberikan hasil yang lebih cepat daripada apa-apa lagi di luar sana, kadangkala ia mungkin tidak cukup pantas jika anda sendiri yang mengalami kesakitan. Walau bagaimanapun, pesakit kami melaporkan melihat kemajuan sekitar 7 hingga 10 sesi atau sekitar seminggu rawatan. Seberapa cepat anda pulih akan bergantung kepada pelbagai faktor, seperti keterukan awal osteoarthritis anda, berapa lama atau kronik keadaannya, sama ada anda rajin melakukan senaman yang kami cadangkan dan kekerapan anda kembali untuk rawatan. Testimonial Osteoartritis Hip dengan Kemajuan Gaya Berjalan Sebelum dan Selepas:"
+      },
+      "sciatica": {
+        "title": "Rawatan Sciatica",
+        "desc": "Kelegaan bertarget untuk sakit saraf yang memancar dari bawah belakang ke kaki.",
+        "intro": "Sciatica adalah keadaan di mana sakit memancar dari bawah belakang melalui pantat dan ke dalam kaki. Ia biasanya disebabkan oleh iritasi atau pemampatan saraf siatik — saraf terpanjang dalam tubuh. Sakit boleh berkisar dari sakit tumpul hingga sensasi terbakar yang tajam.",
+        "step1": "Lawatan pertama anda bermula dengan penilaian fizikal oleh ahli fisioterapi kami yang bersertifikat. Kami menilai belakang bawah anda, pergerakan pinggul, penglibatan saraf, dan bagaimana keadaan ini menjejaskan aktiviti harian anda. Jika anda mempunyai imbasan X-ray, MRI atau CT yang ada, bawakan bersama.",
+        "step2": "Pelan rawatan anda menggabungkan fisioterapi langsung, pemulihan terpandu, dan formulasi herba klinikal kami. Teknik khusus dipilih berdasarkan keadaan dan peringkat pemulihan anda.",
+        "step3": "Apabila keadaan anda meningkat, kami membimbing anda melalui senaman untuk menguatkan otot belakang dan pinggul bawah, meningkatkan mobiliti, dan mengurangkan tekanan pada saraf siatik. Konsistensi dengan senaman ini penting untuk mengekalkan pemulihan dan mengurangkan terulang semula."
+      },
+      "hip-pain": {
+        "title": "Rawatan Sakit Pinggul",
+        "desc": "Pulihkan mobiliti pinggul dan kurangkan sakit dengan terapi berfungsi yang disasarkan.",
+        "intro": "Sakit pinggul boleh menjejaskan cara anda berjalan, duduk, berdiri, dan bergerak sepanjang hari. Seiring masa, malah aktiviti mudah seperti mendaki tangga, bangun dari kerusi, atau bertukar di katil boleh menjadi tidak selesa. Berbeza dengan sakit lutut, sakit pinggul sering lebih sukar dipinkan — dan ramai pesakit mendapati ia berterusan walaupun berehat atau rawatan asas.",
+        "step1": "Lawatan pertama anda bermula dengan penilaian fizikal oleh ahli fisioterapi kami yang bersertifikat. Kami menilai pergerakan pinggul anda, corak sakit, dan bagaimana keadaan ini menjejaskan aktiviti harian anda. Kami juga menilai kawasan berkaitan seperti belakang bawah dan lutut, kerana ini sering menyumbang kepada sakit pinggul. Jika anda mempunyai imbasan X-ray, MRI atau CT yang ada, bawakan bersama.",
+        "step2": "Pelan rawatan anda menggabungkan fisioterapi langsung, pemulihan terpandu, dan formulasi herba klinikal kami. Teknik khusus dipilih berdasarkan keadaan dan peringkat pemulihan anda.",
+        "step3": "Apabila keadaan anda meningkat, kami membimbing anda melalui senaman untuk menguatkan otot di sekitar pinggul dan meningkatkan corak pergerakan. Ini penting untuk mengekalkan pemulihan dan mengurangkan terulang semula."
+      },
+      "elbow-pain": {
+        "title": "Rawatan Sakit Siku",
+        "desc": "Penjagaan bertarget untuk siku tenis, siku pemain golf dan kecederaan terikan berulang.",
+        "intro": "Sakit siku boleh membuat aktiviti harian mudah menjadi sukar — mengangkat objek, menaip, menggenggam, atau malah memegang cawan boleh mencetuskan ketidakselesaan. Dua keadaan yang paling biasa adalah siku tenis (lateral epicondylitis) — sakit pada siku luar dan siku pemain golf (medial epicondylitis) — sakit pada siku dalam. Keadaan ini sering disebabkan oleh terikan berulang bukan kecederaan tunggal.",
+        "step1": "Lawatan pertama anda bermula dengan penilaian fizikal oleh ahli fisioterapi kami yang bersertifikat. Kami memeriksa siku, lengan bawah, dan pergelangan tangan anda, menilai titik sakit, had pergerakan, dan bagaimana keadaan ini menjejaskan aktiviti harian anda. Jika anda mempunyai imbasan yang ada, bawakan bersama.",
+        "step2": "Pelan rawatan anda menggabungkan fisioterapi langsung, pemulihan terpandu, dan formulasi herba klinikal kami. Teknik khusus dipilih berdasarkan keadaan dan peringkat pemulihan anda.",
+        "step3": "Apabila keadaan anda meningkat, kami membimbing anda melalui senaman untuk menguatkan otot lengan bawah dan meningkatkan toleransi beban. Ini penting untuk mencegah terulang semula apabila anda kembali ke aktiviti kerja atau sukan."
       }
     }
   },
@@ -395,14 +429,14 @@
       "migration": "Dari 1916 hingga 1930, keturunannya berpindah ke Malaya untuk mengajar kung-fu, termasuk bapa Yap Chan Kor, Yap Shu Shen, yang menjadi mahaguru Stadium Chin Woo, melatih dan merawat orang selama lebih 50 tahun.",
       "founding": "Seorang penyembuh yang dihormati, beliau mewariskan ajarannya kepada anaknya, Yap Chan Kor, yang menubuhkan Tabib Yap Chan Kor pada tahun 1979.",
       "conclusion": "Hari ini, kami menggabungkan perubatan dan teknik Cina purba dengan penggunaan ahli fisioterapi terlatih, membawa tradisi panjang ini dengan penilaian moden untuk memastikan pemulihan yang lebih cepat dan jangka panjang."
-    },
-    "Legal": {
-      "privacyPolicy": "Dasar Privasi",
-      "termsOfService": "Syarat Perkhidmatan",
-      "legalDisclosure": "Penafian Undang-undang",
-      "updated": "Terakhir Dikemas Kini: Mac 2026",
-      "disclaimer": "Maklumat di laman web ini adalah untuk tujuan pendidikan dan tidak boleh digunakan sebagai pengganti nasihat perubatan profesional, diagnosis, atau rawatan."
     }
+  },
+  "Legal": {
+    "privacyPolicy": "Dasar Privasi",
+    "termsOfService": "Syarat Perkhidmatan",
+    "legalDisclosure": "Penafian Undang-undang",
+    "updated": "Terakhir Dikemas Kini: Mac 2026",
+    "disclaimer": "Maklumat di laman web ini adalah untuk tujuan pendidikan dan tidak boleh digunakan sebagai pengganti nasihat perubatan profesional, diagnosis, atau rawatan."
   },
   "Testimonials": {
     "title": "Kisah Pemulihan Sebenar",

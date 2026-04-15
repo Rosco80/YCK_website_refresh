@@ -20,8 +20,8 @@
       "sub": "Monash University"
     },
     "item4": {
-      "title": "KKM Registered",
-      "sub": "PainFix Certified"
+      "title": "PainFix Range",
+      "sub": "KKM registered pain relief"
     }
   },
   "Navigation": {
@@ -65,7 +65,7 @@
   "WhyChooseUs": {
     "title": "Why Patients Choose Us",
     "subtitle": "Not Just Physio. Not Just Chiropractic. Not Just TCM.",
-    "description": "Most clinics rely on a single method. At YAPCHANKOR, treatment combines multiple approaches shaped by Shaolin injury medicine and refined through decades of modern clinical practice.",
+    "description": "Most clinics rely on a single method when treating conditions like back pain, knee pain or shoulder injuries.\n\nAt YAPCHANKOR, treatment combines multiple approaches shaped by Shaolin injury medicine and refined through decades of modern clinical practice.",
     "item1": "Manual Therapy",
     "item2": "Structured Rehab",
     "item3": "Clinical Formulation"
@@ -76,15 +76,15 @@
     "description": "Our proprietary herbal formulation has been used in clinical practice for decades and later inspired the PainFix topical pain relief range.",
     "monashStudy": "Laboratory research conducted with Monash University studied its anti-inflammatory properties at the cellular level.",
     "findingsTitle": "Key findings included:",
-    "finding1": "reduced inflammatory markers",
-    "finding2": "support for tissue recovery processes",
-    "finding3": "measurable biological activity in lab testing",
+    "finding1": "Suppresses key inflammatory markers",
+    "finding2": "Consistent anti-inflammatory action across all stages tested",
+    "finding3": "Non-toxic with over 90% cell viability confirmed",
     "graphicCaption": "Laboratory research conducted with Monash University"
   },
   "Compatibility": {
     "title": "Works Alongside Modern Medical Care",
-    "description": "YAPCHANKOR treatment is often used alongside physiotherapy, medical treatment, and post-surgical rehabilitation.",
-    "support": "Our role is not to replace other care, but to support recovery through an integrated approach.",
+    "description": "YAPCHANKOR treatment is often used alongside physiotherapy, medical treatment, and post-surgical rehabilitation. Our role is not to replace other care, but to support recovery through an integrated approach.",
+    "support": "Modern clinical guidelines recommend starting with conservative, non-invasive treatment before considering injections or surgery. At YAPCHANKOR, we combine physiotherapy with our Shaolin-based herbal formulation to support recovery in a structured and practical way.",
     "physio": "Physiotherapy",
     "imaging": "Medical Imaging",
     "rehab": "Rehabilitation"
@@ -257,11 +257,21 @@
     "assessDiagnose": "Assess & Diagnose",
     "integrativeTherapy": "Integrative Therapy",
     "resultsRegimen": "Results & Regimen",
-    "readyCure": "Ready to cure your",
+    "readyCure": "Ready to treat your {condition}?",
     "bookAssessment": "Book a certified clinical assessment with our physiotherapy specialists today.",
     "btnBook": "Book Assessment",
     "noReferral": "No Referral Required",
     "viewTreatment": "View Treatment",
+    "whyDoesntImprove": "Why {condition} often doesn't improve",
+    "whatCausing": "What may be causing your condition",
+    "ourApproach": "Our approach",
+    "weCombine": "We combine",
+    "whatToExpect": "What to expect",
+    "whenToSeekTitle": "When to seek assessment",
+    "ifYourCondition": "If your condition:",
+    "clinicalAssessmentNote": "A clinical assessment can help determine the appropriate approach.",
+    "faqTitle": "Frequently asked questions",
+    "relatedConditionsTitle": "Related conditions",
     "list": {
       "back-pain": {
         "title": "Back Pain Therapy",
@@ -358,6 +368,30 @@
         "step1": "During your first visit to us for your osteoarthritis therapy, our physiotherapist will perform a physical exam, to check for pain, swelling and to measure your joint’s active and passive range of motion. We will also ask you to rate your pain on a scale of zero to 10 and discuss how well you’re functioning with your pain. We focus on real results for our patient, so we make a strong effort to measure your progress throughout our treatment, sometimes with photos and videos too. If you have already seen a doctor or tried any other treatments, it will be helpful if you brought the report or any X-ray, MRIs or CT scans that you may have.",
         "step2": "Our osteoarthritis therapy for your hip, knee, back, shoulder or hand, is a unique and effective way that can only be found at YAPCHANKOR. This is because while many places offer physiotherapy for osteoarthritis (OA) patients, they do not combine it with our proven Chinese medicine patches. We will apply our patches on your affected joints, and they work by reducing inflammation and pain, and facilitate healing. Our physiotherapists will also use various techniques such as heat, TENs (electrical stimulation), and ultrasound to relax your joint and the muscles and soft tissues around it. Massage will be used when appropriate. After each session, we will apply our medicine patches, which you need to wear for at least 12 hours.When your pain and inflammation reduces, our physiotherapists will teach you a range of motion exercises to increase the mobility of your affected joint. We will also teach you how to strengthen the surrounding muscles and soft tissues like ligaments and tendons to support the arthritic joint. With OA, it is very important that you regularly perform these exercises to maintain and improve the recovery you see from our treatment.",
         "step3": "Osteoarthritis is a chronic condition that can happen when our bodies age. Even though we believe our therapy provides faster results than anything else out there, sometimes it may not be fast enough if you are the one suffering with the pain. However, our patients report seeing progress around 7 to 10 sessions or around a week of treatment. How quickly you recover will depend on various factors, such as the initial severity of your osteoarthritis, how old or chronic the condition is, whether you are diligent with the exercises we recommend and how often you come back for treatment.Hip Osteoarthritis Testimonial with Before and After Walking Gait Progress:"
+      },
+      "sciatica": {
+        "title": "Sciatica Treatment",
+        "desc": "Targeted relief for nerve pain radiating from the lower back to the leg.",
+        "intro": "Sciatica is a condition where pain radiates from the lower back down through the buttock and into the leg. It is typically caused by irritation or compression of the sciatic nerve — the longest nerve in the body. The pain can range from a dull ache to a sharp, burning sensation.",
+        "step1": "Your first visit begins with a physical assessment by our certified physiotherapists. We evaluate your lower back, hip movement, nerve involvement, and how the condition is affecting your daily activities. If you have existing X-rays, MRIs or CT scans, bring them along.",
+        "step2": "Your treatment plan combines hands-on physiotherapy, guided rehabilitation, and our clinical herbal formulation. Specific techniques are selected based on your condition and stage of recovery.",
+        "step3": "As your condition improves, we guide you through exercises to strengthen your lower back and hip muscles, improve mobility, and reduce pressure on the sciatic nerve. Consistency with these exercises is essential to maintaining recovery and reducing recurrence."
+      },
+      "hip-pain": {
+        "title": "Hip Pain Treatment",
+        "desc": "Restore hip mobility and reduce pain with targeted functional therapy.",
+        "intro": "Hip pain can affect how you walk, sit, stand, and move throughout the day. Over time, even simple activities like climbing stairs, getting out of a chair, or turning in bed can become uncomfortable. Unlike knee pain, hip pain is often harder to pinpoint — and many patients find that it persists despite rest or basic treatment.",
+        "step1": "Your first visit begins with a physical assessment by our certified physiotherapists. We evaluate your hip movement, pain patterns, and how the condition is affecting your daily activities. We also assess related areas such as the lower back and knees, as these often contribute to hip pain. If you have existing X-rays, MRIs or CT scans, bring them along.",
+        "step2": "Your treatment plan combines hands-on physiotherapy, guided rehabilitation, and our clinical herbal formulation. Specific techniques are selected based on your condition and stage of recovery.",
+        "step3": "As your condition improves, we guide you through exercises to strengthen the muscles around the hip and improve movement patterns. This is essential for maintaining recovery and reducing recurrence."
+      },
+      "elbow-pain": {
+        "title": "Elbow Pain Treatment",
+        "desc": "Targeted care for tennis elbow, golfer's elbow and repetitive strain injuries.",
+        "intro": "Elbow pain can make simple daily activities difficult — lifting objects, typing, gripping, or even holding a cup can trigger discomfort. Two of the most common conditions are tennis elbow (lateral epicondylitis) — pain on the outer elbow and golfer's elbow (medial epicondylitis) — pain on the inner elbow. These conditions are often caused by repetitive strain rather than a single injury.",
+        "step1": "Your first visit begins with a physical assessment by our certified physiotherapists. We examine your elbow, forearm, and wrist, assess pain points, movement limitations, and how the condition is affecting your daily activities. If you have existing imaging, bring it along.",
+        "step2": "Your treatment plan combines hands-on physiotherapy, guided rehabilitation, and our clinical herbal formulation. Specific techniques are selected based on your condition and stage of recovery.",
+        "step3": "As your condition improves, we guide you through exercises to strengthen the forearm muscles and improve load tolerance. This is essential for preventing recurrence when you return to work or sports activities."
       }
     }
   },
