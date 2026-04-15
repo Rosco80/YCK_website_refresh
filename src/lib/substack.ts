@@ -19,8 +19,8 @@ const parser = new Parser({
 
 export async function getInsights(): Promise<Insight[]> {
   try {
-    const response = await fetch('https://yckpainclinic.substack.com/feed', { 
-      cache: 'no-store' // Ensure we don't hit stale local Next.js cache 
+    const response = await fetch('https://yckpainclinic.substack.com/feed', {
+      next: { revalidate: 3600 } // Cache for 1 hour; allows static sitemap generation
     });
     
     if (!response.ok) {
