@@ -571,10 +571,7 @@ const conditionsContentEn = {
       "Has not improved with previous treatment",
       "Has you considering injections as the next step"
     ],
-    relatedConditions: [
-      { name: "Sprained Ankle Treatment", slug: "sprained-ankle" },
-      { name: "Knee Pain Treatment", slug: "knee-pain" }
-    ]
+    relatedConditions: ["sprained-ankle", "knee-pain"]
   },
   "lower-back-pain": {
     title: "Lower Back Pain Treatment In Malaysia",
@@ -944,11 +941,7 @@ const conditionsContentEn = {
       "Is spreading to your lower back or knees",
       "Has not improved with previous treatment"
     ],
-    relatedConditions: [
-      { name: "Hip Osteoarthritis Treatment", slug: "osteoarthritis" },
-      { name: "Knee Pain Treatment", slug: "knee-pain" },
-      { name: "Lower Back Pain Treatment", slug: "lower-back-pain" }
-    ]
+    relatedConditions: ["osteoarthritis", "knee-pain", "lower-back-pain"]
   },
   "elbow-pain": {
     title: "Elbow Pain Treatment In Malaysia",
