@@ -6,6 +6,13 @@
     "primaryCTA": "Tempah Penilaian Klinikal",
     "secondaryCTA": "Ketahui Kaedah Kami"
   },
+  "Home": {
+    "ConditionsGrid": {
+      "title": "Masalah yang Kami Rawat",
+      "subtitle": "Penjagaan klinikal pakar yang dibentuk oleh 40 tahun pengalaman rawatan.",
+      "viewMore": "Teroka"
+    }
+  },
   "TrustBar": {
     "item1": {
       "title": "Sejak 1979",
@@ -25,13 +32,15 @@
     }
   },
   "Navigation": {
-    "method": "Kaedah Kami",
-    "formulations": "Formulasi Klinikal",
+    "home": "Laman Utama",
+    "method": "Kaedah",
+    "formulations": "Sains Kami",
     "locations": "Lokasi Kami",
     "insights": "Wawasan",
     "faq": "FAQ",
-    "conditions": "Apa yang kami rawat",
-    "testimonials": "Kisah Pemulihan Sebenar",
+    "conditions": "Perkhidmatan",
+    "solutions": "Penyelesaian",
+    "testimonials": "Testimoni",
     "bookAssessment": "Tempah Penilaian Klinikal"
   },
   "WhatsApp": {
@@ -358,10 +367,10 @@
       "lower-back-pain": {
         "title": "Terapi Sakit Pinggang Bawah",
         "desc": "Intervensi yang lebih mendalam untuk masalah lumbar untuk memulihkan kefungsian penuh bahagian bawah belakang.",
-        "intro": "Sakit belakang bahagian bawah menjejaskan kawasan belakang di bawah sangkar rusuk, dipanggil kawasan lumbar. Ia boleh disebabkan oleh pelbagai keadaan seperti ketegangan otot atau ligamen, cakera tergelincir, arthritis, ketidakteraturan rangka seperti scoliosis, atau osteoporosis, yang boleh menyebabkan keretakan mampatan. Kesakitan boleh berkisar dari sakit yang membosankan, kepada sensasi menikam yang tajam. Rasa kebas atau kesemutan di bawah kaki anda juga merupakan gejala biasa, terutamanya dengan sciatica, apabila saraf sciatic anda dimampatkan oleh tisu yang meradang di bahagian bawah punggung anda. Sakit pinggang adalah salah satu sebab terbesar untuk terlepas kerja. Sekiranya kesakitan anda berterusan selama lebih daripada 3 bulan, ia dianggap kronik. Di YAPCHANKOR, kami telah membantu beribu-ribu pesakit kami yang mendapatkan rawatan sakit pinggang di Malaysia untuk mencapai pemulihan sebenar. Kami tahu betul bahawa sakit pinggang boleh menyebabkan anda hilang tidur, sukar berjalan atau berdiri, bersukan, terlepas kerja dan menjejaskan kuasa pendapatan anda. Kami juga tahu bahawa anda mungkin telah mencuba rawatan lain yang tidak berkesan dan berasa kecewa kerana kesakitan tidak hilang.",
-        "step1": "Apabila anda melawat kami untuk terapi sakit belakang, kami akan memeriksa kawasan anda yang terjejas terlebih dahulu. Untuk rawatan sciatica, ini termasuk memeriksa kawasan punggung anda. Pemeriksaan ini akan dilakukan oleh ahli fisioterapi bertauliah. Kami ingin menilai keupayaan anda untuk duduk, berdiri, berjalan dan mengangkat kaki anda. Kami juga akan meminta anda menilai kesakitan anda pada skala sifar hingga 10 dan membincangkan sejauh mana anda berfungsi dengan kesakitan anda. Penilaian kami akan membantu kami menentukan dari mana kesakitan itu datang, sejauh mana kesakitan anda telah mengehadkan fungsi dan pergerakan anda dan sama ada anda mengalami kekejangan otot. Sakit belakang boleh disebabkan oleh banyak faktor, dan kami ingin memahami betapa seriusnya keadaan anda. Jika anda telah berjumpa doktor atau mencuba sebarang rawatan lain, adalah berguna jika anda membawa laporan atau sebarang imbasan X-ray, MRI atau CT yang mungkin anda miliki. Jika anda mengesyaki patah tulang, sila berjumpa doktor terlebih dahulu untuk mendapatkan X-ray atau MRI, kerana kami tidak mempunyai kemudahan ini.",
-        "step2": "Terapi sakit belakang bawah kami tidak melibatkan manipulasi atau pembedahan yang menyakitkan. Sakit belakang adalah salah satu daripada keadaan paling biasa yang kami rawat, dan tompok perubatan Cina proprietari kami sangat berkesan untuk mengurangkan kesakitan dan keradangan. Kami menggunakan tampalan ini selepas setiap sesi di belakang anda. Kami juga menggunakan pelbagai rawatan fisioterapi, seperti teknik urutan / pelepasan otot, haba, SEPULUH (stimulasi elektrik), dan ultrasound untuk merehatkan otot belakang bawah dan tisu lembut anda semasa setiap sesi. Untuk hasil yang terbaik, anda harus memakai patch kami selama sekurang-kurangnya 12 jam, kerana ia membantu memudahkan penyembuhan, dan telah terbukti secara saintifik mempunyai kesan anti-radang yang kuat. Pelan pemulihan kami adalah komprehensif – kami mula-mula menyelesaikan kesakitan, kemudian memudahkan proses penyembuhan dan membantu anda menguatkan belakang anda untuk kekuatan jangka panjang. Pakar fisioterapi kami akan mengajar anda senaman pengukuhan dan fleksibiliti untuk meningkatkan teras anda, iaitu otot belakang dan perut anda, dan untuk memperbaiki postur anda. Dengan kerap melakukan senaman ini, anda akan dapat mengekalkan dan meningkatkan pemulihan yang anda lihat daripada rawatan kami.",
-        "step3": "Anda biasanya akan mula melihat kesakitan anda berkurangan dalam 3 sesi pertama. Seberapa cepat anda pulih akan bergantung kepada pelbagai faktor, seperti keterukan awal sakit belakang bawah anda, berapa lama atau kronik keadaannya, sama ada anda rajin melakukan senaman yang kami cadangkan dan kekerapan anda kembali untuk rawatan. Dalam sejarah hampir 40 tahun kami, kami mencapai pemulihan jangka panjang terbaik untuk pesakit kami apabila mereka melengkapkan rejimen yang disyorkan kami."
+        "intro": "Sakit belakang bahagian bawah menjejaskan kawasan belakang di bawah sangkar rusuk, dipanggil kawasan lumbar. Ia boleh disebabkan oleh pelbagai keadaan seperti ketegangan otot atau ligamen, <link>cakera tergelincir</link>, arthritis, ketidakteraturan rangka seperti scoliosis, atau osteoporosis. Jika kesakitan anda berterusan selama lebih daripada 3 bulan, ia dianggap <chronic>sakit kronik</chronic>. Di YAPCHANKOR, kami telah membantu beribu-ribu pesakit untuk mencapai pemulihan sebenar tanpa pembedahan.",
+        "step1": "Apabila anda melawat kami untuk terapi sakit belakang, kami akan memeriksa kawasan anda yang terjejas terlebih dahulu. Untuk rawatan <link>sciatica</link>, ini termasuk memeriksa kawasan punggung anda. Pemeriksaan ini akan dilakukan oleh ahli fisioterapi bertauliah. Kami ingin menilai keupayaan anda untuk duduk, berdiri, berjalan dan mengangkat kaki anda.",
+        "step2": "Terapi sakit belakang bawah kami tidak melibatkan manipulasi atau pembedahan yang menyakitkan. Formulasi herba proprietari kami sangat berkesan untuk mengurangkan keradangan. Pelan pemulihan kami adalah komprehensif – kami mula-mula menyelesaikan kesakitan, kemudian memudahkan proses penyembuhan dan membantu anda menguatkan belakang anda.",
+        "step3": "Anda biasanya akan mula melihat kesakitan anda berkurangan dalam 3 sesi pertama. Berapa cepat anda pulih bergantung kepada pelbagai faktor, termasuk betapa konsisten anda dengan senaman rehabilitasi yang disyorkan."
       },
       "osteoarthritis": {
         "title": "Terapi Osteoartritis",
@@ -395,52 +404,89 @@
         "step2": "Pelan rawatan anda menggabungkan fisioterapi langsung, pemulihan terpandu, dan formulasi herba klinikal kami. Teknik khusus dipilih berdasarkan keadaan dan peringkat pemulihan anda.",
         "step3": "Apabila keadaan anda meningkat, kami membimbing anda melalui senaman untuk menguatkan otot lengan bawah dan meningkatkan toleransi beban. Ini penting untuk mencegah terulang semula apabila anda kembali ke aktiviti kerja atau sukan."
       },
-      "post-surgery": {
+      "post-surgery-rehab": {
         "title": "Pemulihan Selepas Pembedahan",
-        "desc": "Pemulihan daripada kecederaan atau pembedahan tidak berakhir apabila prosedur atau rawatan awal selesai."
+        "desc": "Pemulihan daripada kecederaan atau pembedahan tidak berakhir apabila prosedur atau rawatan awal selesai.",
+        "intro": "Fasa pemulihan selepas pembedahan adalah kritikal untuk mengembalikan fungsi normal. Protokol <surgery>rehabilitasi kami</surgery> direka untuk menyokong penyembuhan tisu dan membina semula kekuatan dengan selamat."
       },
       "chronic-pain": {
         "title": "Rawatan Kesakitan Kronik",
-        "desc": "Ramai yang datang kepada kami dengan pengalaman yang sama. Kesakitan reda seketika — selepas berehat, ubat, urutan, atau rawatan — tetapi kemudian ia kembali lagi."
+        "desc": "Ramai yang datang kepada kami dengan pengalaman yang sama. Kesakitan reda seketika — selepas berehat, ubat, urutan, atau rawatan — tetapi kemudian ia kembali lagi.",
+        "intro": "Kesakitan yang berlarutan selama berbulan atau bertahun sering melibatkan isu struktur dan keradangan. Program <chronic>sakit kronik kami</chronic> melihat melampaui simptom luaran untuk menyelesaikan punca sebenar."
       },
-      "sport-injury": {
+      "sports-injury": {
         "title": "Rawatan Kecederaan Sukan",
-        "desc": "Kecederaan sukan boleh berlaku secara tiba-tiba — semasa perlawanan, larian, atau senaman biasa. Apa yang bermula sebagai ketegangan ringan boleh menjadi masalah jangka panjang jika tidak dijaga baik."
+        "desc": "Kecederaan sukan boleh berlaku secara tiba-tiba — semasa perlawanan, larian, atau senaman biasa. Apa yang bermula sebagai ketegangan ringan boleh menjadi masalah jangka panjang jika tidak dijaga baik.",
+        "intro": "Sama ada <link>terseliuh buku lali</link> atau koyakan rotator cuff, pakar <sports>kecederaan sukan kami</sports> membantu atlet kembali ke tahap prestasi puncak melalui penjagaan klinikal bersepadu."
       }
     }
   },
   "MethodPage": {
     "hero": {
-      "title": "Kaedah Kami",
-      "subtitle": "Menghubungkan Kebijaksanaan Tradisional dengan Sains Klinikal Moden"
+      "title": "KAEDAH KAMI",
+      "subtitle": "Cara Kami Merawat Otot Kronik dan Sakit Sendi",
+      "hook": "Apabila kesakitan terus datang kembali, biasanya ada sebab. Kebanyakan sakit otot dan sendi yang kronik tidak datang dari satu masalah. Ia datang daripada gabungan keradangan berterusan, pergerakan terhad dan struktur sokongan yang lemah - tiada satu pun yang telah diselesaikan sepenuhnya. Rawatan yang menangani hanya satu daripada faktor ini cenderung untuk menghasilkan peningkatan sementara. Apabila gabungan asas kekal, rasa sakit kembali. Kaedah kami dibina berdasarkan penyelesaian ketiga-tiga bersama-sama, dengan cara yang tersusun dan bersepadu."
     },
-    "whoWeAre": {
-      "title": "Siapa Kami",
-      "text1": "Sejak 1979, YAPCHANKOR telah membantu lebih 20,000 pesakit dengan jayanya, kebanyakannya dengan masalah otot dan sendi yang paling kronik seperti slipped disc, osteoarthritis lutut, dan bahu beku.",
-      "text2": "Terdapat faedah perubatan sebenar dalam ubat kami, yang memberikan terapi paling pantas, paling cekap dan kos efektif untuk sakit otot dan sendi kronik hari ini."
+    "treatment": {
+      "title": "Cara Rawatan Kami Berfungsi",
+      "physio": {
+        "title": "Fisioterapi Tangan",
+        "text": "Terapi manual yang disasarkan — termasuk pelepasan otot, terapi haba, TENS dan ultrasound — untuk mengurangkan ketegangan, memulihkan mobiliti dan menangani penyumbang struktur kepada kesakitan anda."
+      },
+      "rehab": {
+        "title": "Pemulihan Berstruktur",
+        "text": "Latihan progresif direka untuk membina semula kekuatan dan kestabilan di sekitar kawasan yang terjejas — jadi pemulihan dikekalkan antara sesi dan kesakitan tidak kembali."
+      },
+      "herbal": {
+        "title": "Formulasi Herba Milik",
+        "text": "Tompok herba yang berasal dari Shaolin disapu terus ke kawasan yang terjejas selepas setiap sesi dan dipakai selama sekurang-kurangnya 12 jam — berfungsi untuk mengurangkan keradangan dan menyokong proses pemulihan semula jadi badan dari luar ke dalam."
+      }
     },
-    "howItWorks": {
-      "title": "Bagaimana Ia Berfungsi",
-      "intro": "Perubatan moden telah menghasilkan banyak keajaiban dalam merawat masalah kesihatan manusia. Walau bagaimanapun, dalam bidang sakit otot dan sendi kronik, kebanyakan rawatan mempunyai kelemahan yang ketara.",
-      "downside1": "Ubat penahan sakit moden menyekat isyarat kesakitan tanpa merawat punca utama, dengan kesan sampingan yang teruk pada perut atau jantung anda.",
-      "downside2": "Ramai penyedia perkhidmatan seperti kiropraktor, osteopat, dan ahli fisioterapi memberikan sedikit kelegaan, tetapi tiada seorang pun daripada mereka memberikan penawar sepenuhnya, dan ramai yang mahal untuk kelegaan jangka pendek.",
-      "solution": "Kami percaya kami mempunyai penyelesaian yang lebih baik. Dengan menggabungkan Perubatan Herba Shaolin yang unik, yang membantu mengurangkan keradangan dan meningkatkan penyembuhan, bersama-sama dengan fisioterapi moden, kami telah menghasilkan hasil yang lebih baik untuk pesakit sakit kronik dalam tempoh masa yang lebih cepat."
+    "integration": {
+      "title": "Mengapa Integrasi Penting",
+      "text1": "Setiap elemen menyokong yang lain.",
+      "text2": "Fisioterapi memulihkan pergerakan. Formulasi herba mengurangkan persekitaran keradangan yang sebaliknya akan melambatkan pemulihan. Pemulihan memastikan keuntungan dipegang.",
+      "text3": "Ini bukan perubatan Timur dan Barat yang ditawarkan bersebelahan. Ia adalah pendekatan rawatan tunggal di mana setiap komponen berfungsi dalam arah yang sama pada masa yang sama."
     },
-    "whyItWorks": {
-      "title": "Mengapa Ia Berkesan",
-      "science": "Walaupun Perubatan Tradisional Cina sering dilayan dengan skeptikal, banyak herba Cina telah dikaji dengan teliti. Formula istimewa kami telah terbukti mempunyai faedah positif seperti ciri anti-keradangan dan regeneratif.",
-      "evidence": "Dalam bidang sakit kronik, tidak ada penipuan terhadap pesakit. Kami menggunakan cara objektif untuk mengukur tahap kesakitan dan penambahbaikan dalam pergerakan berfungsi, memastikan rawatan itu benar-benar berkesan.",
-      "placebo": "Malah kesan plasebo, sekuat mana pun, tidak dapat menghasilkan penawar jangka panjang. Kaedah kami memberi tumpuan kepada aktiviti biologi yang boleh diukur dan pemulihan berfungsi."
+    "clinical": {
+      "title": "Sejajar Dengan Amalan Klinikal Semasa",
+      "text1": "Garis panduan klinikal moden mengesyorkan bermula dengan rawatan konservatif, pelbagai disiplin sebelum mempertimbangkan suntikan atau pembedahan.",
+      "text2": "Ini adalah pendekatan yang sama yang kami ambil di YAPCHANKOR — menggabungkan fisioterapi, pemulihan dan formulasi klinikal kami secara tersusun dan bersepadu."
     },
-    "history": {
-      "title": "Sejarah Yang Dibanggakan",
-      "text": "YAPCHANKOR membawa kelegaan semulajadi dan tanpa pembedahan dengan senaman terapeutik kami, tampalan kecederaan sukan dan ubat-ubatan proprietari. Ini menyasarkan setiap bahagian proses pemulihan tisu, sama ada sakit belakang atau lutut, kecederaan sukan, atau sakit otot dan sendi.",
-      "linkTitle": "Kebijaksanaan Purba Bertemu Sains Klinikal Moden",
-      "heritage": "Kajian perubatan dan seni mempertahankan diri sangat berkait rapat di China kuno. Guru seni mempertahankan diri memerlukan pengetahuan anatomi dan pertolongan cemas.",
-      "ancestor": "Leluhur YAPCHANKOR, Yap Feng Qi, yang berlatih di Kuil Shaolin pada awal abad ke-20 dan mempelajari formula rahsia mereka untuk rawatan kecederaan luar.",
-      "migration": "Dari 1916 hingga 1930, keturunannya berpindah ke Malaya untuk mengajar kung-fu, termasuk bapa Yap Chan Kor, Yap Shu Shen, yang menjadi mahaguru Stadium Chin Woo, melatih dan merawat orang selama lebih 50 tahun.",
-      "founding": "Seorang penyembuh yang dihormati, beliau mewariskan ajarannya kepada anaknya, Yap Chan Kor, yang menubuhkan Tabib Yap Chan Kor pada tahun 1979.",
-      "conclusion": "Hari ini, kami menggabungkan perubatan dan teknik Cina purba dengan penggunaan ahli fisioterapi terlatih, membawa tradisi panjang ini dengan penilaian moden untuk memastikan pemulihan yang lebih cepat dan jangka panjang."
+    "science": {
+      "title": "Sains Di Sebalik Formula",
+      "intro": "Tradisi sahaja tidak mencukupi. Inilah sebabnya mengapa formulasi proprietari kami dinilai melalui penyelidikan makmal yang dijalankan oleh rakan penyelidik kami, Relivium Sciences (pembuat produk PainFix). Kajian itu mengkaji penanda keradangan utama seperti TNF-α dan IL-6, yang dikaitkan dengan keradangan kronik.",
+      "findings": "Penemuan menunjukkan:",
+      "finding1": "Penindasan penanda keradangan utama",
+      "finding2": "Aktiviti anti-radang yang konsisten merentasi semua peringkat diuji",
+      "finding3": "Lebih 90% daya maju sel, mengesahkan keselamatan pada kepekatan yang dioptimumkan",
+      "conclusion": "Penemuan ini menyokong aktiviti biologi formulasi yang digunakan dalam pendekatan klinikal kami."
+    },
+    "heritage": {
+      "title": "Keturunan Dibina atas Merawat Kecederaan Sebenar",
+      "text1": "Kajian perubatan dan seni mempertahankan diri tidak dapat dipisahkan di China purba. Pengamal memerlukan pemahaman mendalam tentang anatomi, kecederaan dan pemulihan — dibangunkan melalui latihan fizikal sebenar, bukan teori.",
+      "text2": "Ia adalah moyang YAPCHANKOR, Yap Feng Qi, yang berlatih di Kuil Shaolin pada awal abad ke-20 dan mempelajari formula mereka yang dijaga rapi untuk merawat kecederaan luaran. Dari 1916 dan seterusnya, keturunannya membawa ajaran ini ke Tanah Melayu — termasuk Yap Shu Shen, yang menjadi Grandmaster Stadium Chin Woo dan menghabiskan lebih 50 tahun melatih dan merawat pelajar dan pengamal.",
+      "text3": "Anak lelakinya, Yap Chan Kor, menubuhkan Tabib Yap Chan Kor pada tahun 1979. Apa yang anda lihat hari ini ialah kesinambungan keturunan itu — diperhalusi melalui penggunaan klinikal selama beberapa dekad, disokong oleh fisioterapi moden, dan kini diperkukuh oleh penyelidikan saintifik bebas.",
+      "text4": "Ini bukan tradisi yang kami warisi dan kekalkan tidak berubah. Ia adalah satu yang kami terus bangunkan."
+    },
+    "product": {
+      "title": "Dari Klinik ke Produk",
+      "text1": "Formulasi yang sama digunakan di klinik kami selama lebih 45 tahun — merentasi lebih 50,000 pesakit — kemudiannya mengilhamkan rangkaian produk PainFix, yang berdaftar dengan Kementerian Kesihatan Malaysia (KKM).",
+      "text2": "Apa yang bermula sebagai rawatan klinikal kini boleh didapati dalam bentuk topikal gred farmasi. Formulasi, penyelidikan dan warisan klinikal di belakangnya adalah sama."
+    },
+    "measurement": {
+      "title": "Diukur, Tidak Diandaikan",
+      "text": "Kami menjejaki kemajuan melalui tahap kesakitan, julat pergerakan dan penambahbaikan fungsi — supaya pemulihan boleh diperhatikan, tidak diandaikan."
+    },
+    "summary": {
+      "title": "Maksud Ini untuk Anda",
+      "text1": "Anda tidak memilih antara penjagaan tradisional dan moden. Anda mengakses kedua-duanya — dalam pendekatan rawatan bersepadu tunggal, disampaikan oleh ahli fisioterapi bertauliah dan dipandu oleh penilaian klinikal.",
+      "text2": "Bagi pesakit yang telah mencuba pelbagai rawatan tanpa peningkatan yang berkekalan, ini selalunya perbezaannya."
+    },
+    "cta": {
+      "title": "Bersedia untuk Mengetahui sama ada Kami Boleh Membantu?",
+      "text": "Tempah penilaian klinikal dengan pakar fisioterapi kami hari ini. Tiada rujukan diperlukan.",
+      "button": "BUKU PENILAIAN KLINIKAL"
     }
   },
   "Legal": {
@@ -455,9 +501,48 @@
     "subtitle": "Hasil klinikal dan pengalaman pesakit dari rawatan kesakitan kronik khusus kami.",
     "heroTitle": "Kisah Kejayaan Pesakit",
     "heroSubtitle": "Hasil terbukti merentasi ribuan kes sakit kronik menggunakan Kaedah Shaolin sejak 1979.",
-    "categories": "Tapis mengikut Keadaan",
+    "viewAllFor": "Terokai semua pemulihan {condition}",
+    "categories": {
+      "all": "Kisah Pemulihan",
+      "sports-injury": "Kecederaan Sukan",
+      "post-surgery-rehab": "Pasca Pembedahan",
+      "chronic-pain": "Sakit Kronik",
+      "knee-pain": "Lutut",
+      "back-pain": "Belakang & Tulang Belakang",
+      "shoulder-pain": "Bahu",
+      "neck-pain": "Leher",
+      "sprained-ankle": "Buku Lali & Kaki",
+      "wrist-pain": "Tangan & Pergelangan Tangan"
+    },
     "noResults": "Tiada kes khusus ditemui untuk kategori ini lagi.",
     "viewAll": "Semua Kisah Pemulihan",
     "readOriginal": "Baca Kes Asal"
+  },
+  "Science": {
+    "heroLabel": "Validasi Klinikal",
+    "heroTitle": "Sains di Sebalik Pemulihan Shaolin",
+    "heroSubtitle": "Menghubungkan 40 tahun warisan klinikal Shaolin dengan penyelidikan selular terkini dan pengesahan makmal.",
+    "heritageTitle": "Dari Tradisi ke Makmal",
+    "heritageText": "Selama lebih 40 tahun, YAPCHANKOR telah menggunakan formula ubat herba yang diuji masa di klinik kami dengan kejayaan yang luar biasa. Walaupun data klinikal menunjukkan keberkesanan yang tinggi, kami mencari pengesahan teknikal untuk membongkar rahsia biologi di sebalik masa pemulihan ini.",
+    "studyTitle": "Kajian Universiti Monash",
+    "studySubtitle": "Penilaian Selular Keberkesanan Anti-Radang",
+    "studyBackground": "Tujuan kajian ini adalah untuk menilai ciri-ciri anti-radang ekstrak herba proprietari YAPCHANKOR menggunakan sel Human Embryonic Kidney (HEK293).",
+    "studyMethod": "Sel dirawat dengan formulasi herba dan keradangan dicetuskan menggunakan Lipopolysaccharide (LPS). Empat penanda keradangan utama — P-P38MAPK, IL-6, IL-1β, dan TNF-α — dikaji untuk mengukur tindak balas imun.",
+    "studyResultsTitle": "Keputusan Penemuan",
+    "result1Title": "Tidak Toksik & Selamat",
+    "result1Text": "Kajian mengesahkan lebih 90% daya hidup sel, membuktikan formulasi ini tidak toksik sama sekali pada kepekatan terapeutik.",
+    "result2Title": "Menghalang IL-6 dan TNF-α",
+    "result2Text": "Ekstrak herba secara signifikan menghalang permulaan keradangan dengan menekan penanda keradangan utama.",
+    "result3Title": "Tindakan Masa Nyata yang Pantas",
+    "result3Text": "Tindakan anti-radang yang signifikan diperhatikan seawal 2 jam dan berterusan selama lebih 24 jam.",
+    "mechanismTitle": "Cara Ia Berfungsi",
+    "mechanismSubtitle": "Pemulihan Transdermal Berbilang Sasaran",
+    "step1Title": "Penyerapan",
+    "step1Text": "Kaedah pengekstrakan proprietari memastikan sebatian herba aktif sedia diserap melalui kulit.",
+    "step2Title": "Sasaran Selular",
+    "step2Text": "Formulasi ini menyasarkan laluan keradangan tertentu untuk mengurangkan bengkak dan kesakitan pada puncanya.",
+    "step3Title": "Regenerasi Tisu",
+    "step3Text": "Dengan menguruskan keradangan, tampalan herba mewujudkan persekitaran yang optimum untuk pembaikan tisu semula jadi.",
+    "conclusion": "Validasi ini mengesahkan apa yang telah kami lihat di klinik kami selama berdekad-dekad: tampalan herba YAPCHANKOR adalah penyelesaian yang berkuasa dan tidak invasif untuk pemulihan muskuloskeletal."
   }
 }

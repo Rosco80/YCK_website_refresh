@@ -11,15 +11,15 @@ export default function PrivacyPolicy() {
       <main className="grow py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <header className="mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-brand-gold">
+            <h1 className="text-h2 text-brand-gold mb-4">
               {t("privacyPolicy")}
             </h1>
-            <p className="text-zinc-500 italic font-medium">{t("updated")}</p>
+            <p className="text-body text-zinc-500 italic">{t("updated")}</p>
           </header>
 
           <div className="prose prose-zinc max-w-none space-y-12 text-zinc-700 leading-relaxed">
             <section className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-brand-teal-deep mb-6 border-b border-brand-gold/20 pb-2">
+              <h2 className="text-h4 text-brand-teal-deep mb-6 border-b border-brand-gold/20 pb-2">
                 1. Introduction
               </h2>
               <p>
@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-brand-teal-deep mb-6 border-b border-brand-gold/20 pb-2">
+              <h2 className="text-h4 text-brand-teal-deep mb-6 border-b border-brand-gold/20 pb-2">
                 2. Information We Collect
               </h2>
               <p>
@@ -37,7 +37,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-brand-teal-deep mb-6 border-b border-brand-gold/20 pb-2">
+              <h2 className="text-h4 text-brand-teal-deep mb-6 border-b border-brand-gold/20 pb-2">
                 3. Use of Information
               </h2>
               <p>
@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-brand-teal-deep mb-6 border-b border-brand-gold/20 pb-2">
+              <h2 className="text-h4 text-brand-teal-deep mb-6 border-b border-brand-gold/20 pb-2">
                 4. Data Security
               </h2>
               <p>
@@ -56,7 +56,7 @@ export default function PrivacyPolicy() {
 
             <section className="mt-20">
               <div className="p-8 bg-brand-teal/5 rounded-2xl border border-brand-teal/20 shadow-sm">
-                <p className="text-sm text-zinc-600 m-0 leading-relaxed font-medium italic">
+                <p className="text-body text-sm text-zinc-600 italic">
                   {t("disclaimer")}
                 </p>
               </div>

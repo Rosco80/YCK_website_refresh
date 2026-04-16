@@ -66,22 +66,26 @@ export function Header() {
             priority
             className={cn(
               "object-contain transition-all duration-500 hover:scale-[1.03]",
-              isScrolled ? "h-[67px] lg:h-[77px] w-auto" : "h-[154px] w-[138px]"
+              isScrolled ? "h-16.75 lg:h-19.25 w-auto" : "h-38.5 w-34.5"
             )}
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden xl:flex items-center space-x-5 2xl:space-x-8 text-[10px] xl:text-xs uppercase tracking-wider font-bold text-brand-teal-deep/60">
+        <nav className="hidden xl:flex items-center gap-x-8 2xl:gap-x-12 px-12 text-label text-brand-teal-deep/60 mx-auto">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-brand-teal transition-colors">
+            <Link 
+              key={link.href} 
+              href={link.href} 
+              className="hover:text-brand-teal transition-colors whitespace-nowrap"
+            >
               {link.label}
             </Link>
           ))}
         </nav>
 
         {/* Actions & Hamburger */}
-        <div className="flex items-center space-x-3 lg:space-x-8">
+        <div className="flex items-center space-x-3 lg:space-x-8 lg:pl-12 lg:border-l lg:border-brand-teal/10">
           {/* Language Switcher (Desktop & Mobile) */}
           <div className="flex items-center bg-brand-teal/5 lg:bg-transparent p-1 lg:p-0 rounded-lg lg:rounded-none lg:space-x-1">
             {routing.locales.map((l) => (
@@ -89,7 +93,7 @@ export function Header() {
                 key={l}
                 onClick={() => handleLanguageChange(l)}
                 className={cn(
-                  "px-2 lg:px-2.5 py-1.5 lg:py-1 rounded text-[10px] font-bold tracking-wider uppercase transition-all",
+                  "px-2 lg:px-2.5 py-1.5 lg:py-1 rounded text-label text-[10px] transition-all",
                   locale === l 
                     ? "bg-brand-teal text-white shadow-sm" 
                     : "text-brand-teal-deep/40 hover:text-brand-teal hover:bg-brand-teal/5"
@@ -102,7 +106,7 @@ export function Header() {
 
           <Button 
             asChild
-            className="hidden sm:flex rounded-full px-7 h-11 text-xs uppercase tracking-wider bg-brand-teal text-white hover:bg-brand-teal-deep"
+            className="hidden sm:flex rounded-full px-7 h-11 text-label bg-brand-teal text-white hover:bg-brand-teal-deep"
           >
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" id="cta_book_header_click">
               {t("bookAssessment")}
@@ -137,7 +141,7 @@ export function Header() {
             <Link 
               key={link.href} 
               href={link.href} 
-              className="text-2xl font-bold text-brand-teal-deep hover:text-brand-gold transition-colors"
+              className="text-h4 text-brand-teal-deep hover:text-brand-gold transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.label}
@@ -148,7 +152,7 @@ export function Header() {
         <div className="mt-auto">
           <Button 
             asChild
-            className="w-full rounded-2xl h-14 text-sm font-bold uppercase tracking-widest bg-brand-teal text-white shadow-clinical-hover"
+            className="w-full rounded-2xl h-14 text-label bg-brand-teal text-white shadow-clinical-hover"
           >
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
               {t("bookAssessment")}

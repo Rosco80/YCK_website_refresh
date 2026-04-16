@@ -28,10 +28,10 @@ export default function ConditionsIndex() {
           </div>
 
           <div className="container mx-auto px-6 relative z-20 text-center">
-            <h1 className="text-4xl lg:text-7xl font-black mb-6 tracking-tight drop-shadow-lg">
+            <h1 className="text-display text-4xl lg:text-7xl mb-6 drop-shadow-lg">
               {t("title")}
             </h1>
-            <p className="text-xl lg:text-3xl font-medium text-brand-gold max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lead text-brand-gold max-w-4xl mx-auto">
               {t("subtitle")}
             </p>
           </div>
@@ -41,27 +41,32 @@ export default function ConditionsIndex() {
         <section className="py-24 bg-brand-bg">
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {conditionSlugs.map((slug) => (
-                <Link 
-                  key={slug}
-                  href={`/conditions/${slug}`}
-                  className="bg-white p-8 lg:p-10 rounded-[2.5rem] border border-brand-teal/5 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group flex flex-col h-full"
-                >
-                  <div className="w-16 h-16 bg-brand-teal/5 rounded-2xl flex items-center justify-center text-brand-teal mb-8 group-hover:bg-brand-teal group-hover:text-white transition-colors duration-300 shadow-inner">
-                    <Activity className="w-8 h-8" />
-                  </div>
-                  <h3 className="text-xl lg:text-2xl font-bold text-brand-teal-deep mb-4 line-clamp-2">
-                    {t(`list.${slug}.title`)}
-                  </h3>
-                  <p className="text-brand-teal-deep/60 leading-relaxed font-medium mb-8 grow line-clamp-4">
-                    {t(`list.${slug}.desc`)}
-                  </p>
-                  <div className="flex items-center space-x-2 text-brand-teal font-bold uppercase tracking-widest text-xs mt-auto pt-6 border-t border-brand-teal/10 w-full">
-                    <span>{t("viewTreatment")}</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
-                  </div>
-                </Link>
-              ))}
+              {conditionSlugs.map((slug) => {
+                const isSolution = ["sports-injury", "post-surgery-rehab", "chronic-pain"].includes(slug);
+                const basePath = isSolution ? "/solutions" : "/conditions";
+                
+                return (
+                  <Link 
+                    key={slug}
+                    href={`${basePath}/${slug}`}
+                    className="bg-white p-8 lg:p-10 rounded-[2.5rem] border border-brand-teal/5 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group flex flex-col h-full"
+                  >
+                    <div className="w-16 h-16 bg-brand-teal/5 rounded-2xl flex items-center justify-center text-brand-teal mb-8 group-hover:bg-brand-teal group-hover:text-white transition-colors duration-300 shadow-inner">
+                      <Activity className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-h4 text-brand-teal-deep mb-4 line-clamp-2">
+                      {t(`list.${slug}.title`)}
+                    </h3>
+                    <p className="text-body text-brand-teal-deep/60 mb-8 grow line-clamp-4">
+                      {t(`list.${slug}.desc`)}
+                    </p>
+                    <div className="text-label text-brand-teal mt-auto pt-6 border-t border-brand-teal/10 w-full flex items-center space-x-2">
+                      <span>{t("viewTreatment")}</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

@@ -35,12 +35,15 @@ export function Insights({ latestInsights }: { latestInsights?: Insight[] }) {
     },
   ];
 
+  const LOCALE_MAP: Record<string, string> = { en: "en-MY", ms: "ms-MY", zh: "zh-MY" };
+  const safeLocale = LOCALE_MAP[locale] ?? "en-MY";
+
   // Map dynamic insights to matching properties if available
   const articlesToRender = latestInsights && latestInsights.length > 0 
     ? latestInsights.map(insight => ({
         id: insight.slug,
         slug: `/insights/${insight.slug}`,
-        category: new Date(insight.pubDate).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' }),
+        category: new Date(insight.pubDate).toLocaleDateString(safeLocale, { year: 'numeric', month: 'long', day: 'numeric' }),
         title: insight.title,
         description: insight.snippet
       }))
@@ -55,7 +58,7 @@ export function Insights({ latestInsights }: { latestInsights?: Insight[] }) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl lg:text-5xl font-bold text-brand-teal mb-6"
+              className="text-h3 text-brand-teal mb-6"
             >
               {t("headline")}
             </motion.h2>
@@ -64,7 +67,7 @@ export function Insights({ latestInsights }: { latestInsights?: Insight[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-base lg:text-xl text-brand-teal-deep/70 font-medium leading-relaxed"
+              className="text-body-lg text-brand-teal-deep/70"
             >
               {t("description")}
             </motion.p>
@@ -77,7 +80,7 @@ export function Insights({ latestInsights }: { latestInsights?: Insight[] }) {
           >
             <Link href="/insights">
               <Button 
-                className="rounded-full px-10 h-14 text-sm uppercase tracking-widest font-bold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="rounded-full px-10 h-14 text-label bg-brand-teal text-white shadow-lg hover:shadow-xl transition-all duration-300"
                 id="cta_publications_all"
               >
                 {t("cta")}
@@ -96,16 +99,16 @@ export function Insights({ latestInsights }: { latestInsights?: Insight[] }) {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-8 lg:p-12 rounded-3xl shadow-clinical hover:shadow-xl transition-all duration-500 border border-brand-teal/5 flex flex-col h-full"
               >
-                <div className="text-[10px] lg:text-xs font-bold text-brand-gold uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                <div className="text-label mb-6 flex items-center gap-2">
                   <Calendar size={14} className="group-hover:text-brand-teal transition-colors" /> {article.category}
                 </div>
-                <h3 className="text-lg lg:text-2xl font-bold text-brand-teal mb-4 lg:mb-6 leading-tight group-hover:text-brand-teal-deep transition-colors line-clamp-3">
+                <h3 className="text-h4 text-brand-teal mb-4 lg:mb-6 group-hover:text-brand-teal-deep transition-colors line-clamp-3">
                   {article.title}
                 </h3>
-                <p className="text-sm lg:text-base text-brand-teal-deep/60 mb-8 lg:mb-10 leading-relaxed font-medium line-clamp-4">
+                <p className="text-body text-brand-teal-deep/60 mb-8 lg:mb-10 line-clamp-4">
                   {article.description}
                 </p>
-                <div className="mt-auto flex items-center text-brand-teal font-bold tracking-widest uppercase text-[10px] lg:text-xs group-hover:gap-2 transition-all">
+                <div className="mt-auto flex items-center text-label group-hover:gap-2 transition-all">
                   <span>Read Article</span>
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </div>

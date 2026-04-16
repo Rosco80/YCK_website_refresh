@@ -24,6 +24,38 @@
   --animate-reveal: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+@utility text-display {
+  @apply text-4xl sm:text-6xl lg:text-8xl font-bold uppercase tracking-tighter leading-[1.05];
+}
+
+@utility text-h2 {
+  @apply text-3xl lg:text-6xl font-bold uppercase tracking-tight leading-tight;
+}
+
+@utility text-h3 {
+  @apply text-2xl lg:text-4xl font-bold tracking-tight leading-snug;
+}
+
+@utility text-h4 {
+  @apply text-xl lg:text-2xl font-bold tracking-tight;
+}
+
+@utility text-lead {
+  @apply text-xl lg:text-3xl font-normal leading-relaxed text-brand-teal-deep/80;
+}
+
+@utility text-body-lg {
+  @apply text-lg lg:text-2xl font-normal leading-relaxed;
+}
+
+@utility text-body {
+  @apply text-base lg:text-lg font-normal leading-relaxed;
+}
+
+@utility text-label {
+  @apply text-xs lg:text-sm font-bold uppercase tracking-[0.15em] text-brand-gold;
+}
+
 @keyframes reveal {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -33,12 +65,13 @@ body {
   background: var(--color-brand-bg);
   color: var(--color-brand-teal-deep);
   font-family: var(--font-sans);
+  font-weight: 400;
   line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .glassmorphism {

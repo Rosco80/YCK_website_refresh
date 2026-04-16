@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Link } from "@/i18n/routing";
 
 export function Compatibility() {
   const t = useTranslations("Compatibility");
@@ -15,13 +16,21 @@ export function Compatibility() {
       <div className="container mx-auto px-6 lg:px-8 text-center">
         <div className="max-w-3xl mx-auto">
           <div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-teal mb-8 leading-tight">
+            <h2 className="text-h3 text-brand-teal mb-8">
               {t("title")}
             </h2>
             
-            <div className="space-y-6 text-lg lg:text-xl text-brand-teal-deep/70 mb-16 leading-relaxed font-medium">
-              <p>{t("description")}</p>
-              <p>{t("support")}</p>
+            <div className="text-body-lg text-brand-teal-deep/70 mb-16 space-y-6">
+              <p>
+                {t.rich("description", {
+                  link: (chunks) => <Link href="/solutions/post-surgery-rehab" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
+                })}
+              </p>
+              <p>
+                {t.rich("support", {
+                  link: (chunks) => <Link href="/solutions/chronic-pain" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
+                })}
+              </p>
             </div>
 
             <div className="flex flex-wrap justify-center gap-12 lg:gap-24">
@@ -39,7 +48,7 @@ export function Compatibility() {
                       className="w-14 h-14 object-contain opacity-90 brightness-110 drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)]"
                     />
                   </div>
-                  <span className="text-sm font-bold text-brand-teal/50 uppercase tracking-[0.2em] leading-relaxed">
+                  <span className="text-label text-brand-teal/50">
                     {item.label}
                   </span>
                 </div>

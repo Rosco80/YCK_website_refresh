@@ -51,15 +51,15 @@ export function WhyChooseUs() {
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-6xl mx-auto">
           <div>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-brand-gold uppercase tracking-[0.2em] mb-10">
+            <h2 className="text-label text-xl lg:text-2xl mb-10">
               {t("title")}
             </h2>
             
-            <h3 className="text-2xl lg:text-4xl font-bold text-brand-teal mb-8 lg:mb-12 leading-tight max-w-5xl mx-auto">
+            <h3 className="text-h3 text-brand-teal mb-8 lg:mb-12 max-w-5xl mx-auto">
               {t("subtitle")}
             </h3>
 
-            <div className="text-base lg:text-xl text-brand-teal-deep/70 mb-12 lg:mb-20 max-w-3xl mx-auto leading-relaxed font-medium space-y-4">
+            <div className="text-body-lg text-brand-teal-deep/70 mb-12 lg:mb-20 max-w-3xl mx-auto space-y-4">
               {t("description").split("\n\n").map((paragraph, i) => (
                 <p key={i}>{renderDescriptionWithLinks(paragraph)}</p>
               ))}
@@ -80,7 +80,7 @@ export function WhyChooseUs() {
                       className="object-contain mix-multiply p-8" 
                     />
                   </div>
-                  <span className="text-sm lg:text-base font-bold text-brand-teal-deep uppercase tracking-widest mt-4">
+                  <span className="text-label text-brand-teal-deep mt-4">
                     {feature.label}
                   </span>
                 </div>

@@ -1,24 +1,57 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { TestimonialCard } from "./TestimonialCard";
 import { Button } from "./ui/button";
 import { getTopTestimonials, testimonialsData } from "@/data/testimonials";
 import { cn } from "@/lib/utils";
 
-const CATEGORIES = [
-  { id: "all", label: "Recovery Stories" },
-  { id: "knee-pain", label: "Knee" },
-  { id: "back-pain", label: "Back & Spine" },
-  { id: "frozen-shoulder", label: "Shoulder" },
-  { id: "neck-pain", label: "Neck" },
-  { id: "sprained-ankle", label: "Ankle & Foot" },
-  { id: "wrist-pain", label: "Hand & Wrist" },
+const CATEGORY_IDS = [
+  "all",
+  "sports-injury",
+  "post-surgery-rehab",
+  "chronic-pain",
+  "knee-pain",
+  "back-pain",
+  "shoulder-pain",
+  "neck-pain",
+  "sprained-ankle",
+  "wrist-pain",
 ];
 
 export function TestimonialGrid() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const t = useTranslations("Testimonials");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  
+  const initialCategory = searchParams.get("filter") || "all";
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
+
+  // Sync state with URL changes
+  useEffect(() => {
+    const filter = searchParams.get("filter");
+    if (filter && CATEGORY_IDS.includes(filter)) {
+      setActiveCategory(filter);
+    } else if (!filter) {
+      setActiveCategory("all");
+    }
+  }, [searchParams]);
+
+  const handleCategoryChange = (id: string) => {
+    setActiveCategory(id);
+    const params = new URLSearchParams(searchParams.toString());
+    if (id === "all") {
+      params.delete("filter");
+    } else {
+      params.set("filter", id);
+    }
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+  };
 
   const filteredTestimonials = useMemo(() => {
     if (activeCategory === "all") {
@@ -32,25 +65,25 @@ export function TestimonialGrid() {
     <div className="space-y-16">
       {/* Category Filter Navigation */}
       <nav className="flex flex-wrap justify-center gap-4 mb-20">
-        {CATEGORIES.map((cat) => (
+        {CATEGORY_IDS.map((catId) => (
           <Button
-            key={cat.id}
-            variant={activeCategory === cat.id ? "default" : "outline"}
-            onClick={() => setActiveCategory(cat.id)}
+            key={catId}
+            variant={activeCategory === catId ? "default" : "outline"}
+            onClick={() => handleCategoryChange(catId)}
             className={cn(
-              "rounded-full px-8 py-6 text-xs font-bold uppercase tracking-widest transition-all",
-              activeCategory === cat.id 
+              "rounded-full px-8 py-6 text-label transition-all",
+              activeCategory === catId 
                 ? "bg-brand-teal text-white shadow-lg scale-105" 
                 : "border-brand-teal/20 text-brand-teal hover:bg-brand-teal/5"
             )}
           >
-            {cat.label}
+            {t(`categories.${catId}`)}
           </Button>
         ))}
       </nav>
 
       {/* Masonry Layout using CSS Columns */}
-      <div className="columns-1 md:columns-2 lg:columns-3 gap-8 lg:gap-12 [column-fill:_balance]">
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-8 lg:gap-12 [column-fill:balance]">
         <AnimatePresence mode="popLayout">
           {filteredTestimonials.map((testimonial, idx) => (
             <motion.div
@@ -77,7 +110,7 @@ export function TestimonialGrid() {
 
       {filteredTestimonials.length === 0 && (
         <div className="text-center py-20 bg-white rounded-[3rem] border border-brand-teal/5 shadow-inner">
-          <p className="text-lg font-medium text-brand-teal/40 italic">
+          <p className="text-body text-brand-teal/40 italic">
             No specific cases found for this category yet. Select another to see more results.
           </p>
         </div>

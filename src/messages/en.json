@@ -6,6 +6,13 @@
     "primaryCTA": "Book Clinical Assessment",
     "secondaryCTA": "Explore Our Method"
   },
+  "Home": {
+    "ConditionsGrid": {
+      "title": "Conditions We Treat",
+      "subtitle": "Specialized clinical care shaped by 40 years of treatment experience.",
+      "viewMore": "Explore"
+    }
+  },
   "TrustBar": {
     "item1": {
       "title": "Since 1979",
@@ -25,13 +32,15 @@
     }
   },
   "Navigation": {
-    "method": "Our Method",
-    "formulations": "Clinical Formulations",
+    "home": "Home",
+    "method": "Method",
+    "formulations": "The Science",
     "locations": "Locations",
     "insights": "Insights",
     "faq": "FAQ",
-    "conditions": "Conditions We Treat",
-    "testimonials": "Real Recovery Stories",
+    "conditions": "Services",
+    "solutions": "Solutions",
+    "testimonials": "Testimonials",
     "bookAssessment": "Book Clinical Assessment"
   },
   "WhatsApp": {
@@ -55,7 +64,7 @@
   "Differentiation": {
     "title": "Built from Real Injuries — Not Just Theory",
     "heritage": "源自少林伤科传统",
-    "description": "Shaolin medicine developed through treating sprains, tears, and chronic pain in real people. That practical tradition continues at YAPCHANKOR today.",
+    "description": "Shaolin medicine developed through treating <link>sprains, tears, and chronic pain</link> in real people. That practical tradition continues at YAPCHANKOR today.",
     "transition": "Rather than relying on one method alone, our treatment combines:",
     "point1": "hands-on therapy",
     "point2": "structured rehabilitation",
@@ -83,8 +92,8 @@
   },
   "Compatibility": {
     "title": "Works Alongside Modern Medical Care",
-    "description": "YAPCHANKOR treatment is often used alongside physiotherapy, medical treatment, and post-surgical rehabilitation. Our role is not to replace other care, but to support recovery through an integrated approach.",
-    "support": "Modern clinical guidelines recommend starting with conservative, non-invasive treatment before considering injections or surgery. At YAPCHANKOR, we combine physiotherapy with our Shaolin-based herbal formulation to support recovery in a structured and practical way.",
+    "description": "YAPCHANKOR treatment is often used alongside physiotherapy, medical treatment, and <link>post-surgical rehabilitation</link>. Our role is not to replace other care, but to support recovery through an integrated approach.",
+    "support": "Modern clinical guidelines recommend starting with <link>conservative, non-invasive treatment</link> before considering injections or surgery. At YAPCHANKOR, we combine physiotherapy with our Shaolin-based herbal formulation to support recovery in a structured and practical way.",
     "physio": "Physiotherapy",
     "imaging": "Medical Imaging",
     "rehab": "Rehabilitation"
@@ -393,52 +402,89 @@
         "step2": "Your treatment plan combines hands-on physiotherapy, guided rehabilitation, and our clinical herbal formulation. Specific techniques are selected based on your condition and stage of recovery.",
         "step3": "As your condition improves, we guide you through exercises to strengthen the forearm muscles and improve load tolerance. This is essential for preventing recurrence when you return to work or sports activities."
       },
-      "post-surgery": {
+      "post-surgery-rehab": {
         "title": "Post-Surgery Rehabilitation",
-        "desc": "Recovering from an injury or surgery does not end when the procedure or initial treatment is over."
+        "desc": "Recovering from an injury or surgery does not end when the procedure or initial treatment is over.",
+        "intro": "Post-surgery recovery is a critical phase where the goal shifts from immediate surgical success to functional restoration. Our <surgery>rehabilitation protocols</surgery> are designed to support tissue healing and rebuild strength safely."
       },
       "chronic-pain": {
         "title": "Chronic Pain Treatment",
-        "desc": "Many people come to us with the same experience. The pain improves for a while — after rest, medication, massage, or treatment — but then it comes back again."
+        "desc": "Many people come to us with the same experience. The pain improves for a while — after rest, medication, massage, or treatment — but then it comes back again.",
+        "intro": "When pain persists for months or years, it often involves a combination of structural issues and persistent inflammation. Our <chronic>chronic pain program</chronic> looks beyond surface symptoms to resolve the underlying drivers."
       },
-      "sport-injury": {
+      "sports-injury": {
         "title": "Sports Injury Treatment",
-        "desc": "Sports injuries can happen suddenly — during a game, a run, or even routine exercise. What starts as a minor strain or sprain can develop into a longer-term issue if not properly managed."
+        "desc": "Sports injuries can happen suddenly — during a game, a run, or even routine exercise. What starts as a minor strain or sprain can develop into a longer-term issue if not properly managed.",
+        "intro": "Whether it's a <link>sprained ankle</link> or a rotator cuff tear, our <sports>sports injury specialists</sports> help athletes return to their peak performance through integrated clinical care."
       }
     }
   },
   "MethodPage": {
     "hero": {
-      "title": "Our Method",
-      "subtitle": "Bridging Traditional Wisdom and Modern Clinical Science"
+      "title": "OUR METHOD",
+      "subtitle": "How We Treat Chronic Muscle and Joint Pain",
+      "hook": "When pain keeps coming back, there is usually a reason. Most chronic muscle and joint pain does not come from a single problem. It comes from a combination of persistent inflammation, restricted movement and weakened supporting structures — none of which has been fully resolved. Treatments that address only one of these factors tend to produce temporary improvement. When the underlying combination remains, the pain returns. Our method is built around resolving all three together, in a structured and integrated way."
     },
-    "whoWeAre": {
-      "title": "Who We Are",
-      "text1": "Since 1979, YAPCHANKOR has helped over 20,000 patients successfully, many with the most chronic muscle and joint problems like slipped discs, knee osteoarthritis, and frozen shoulders.",
-      "text2": "There is a real medical benefit in our medicine, which delivers the fastest, most efficient and cost-effective therapy for chronic muscle and joint pain today."
+    "treatment": {
+      "title": "How Our Treatment Works",
+      "physio": {
+        "title": "Hands-On Physiotherapy",
+        "text": "Targeted manual therapy — including muscle release, heat therapy, TENS and ultrasound — to reduce strain, restore mobility and address the structural contributors to your pain."
+      },
+      "rehab": {
+        "title": "Structured Rehabilitation",
+        "text": "Progressive exercises designed to rebuild strength and stability around the affected area — so recovery is maintained between sessions and the pain does not return."
+      },
+      "herbal": {
+        "title": "Proprietary Herbal Formulation",
+        "text": "Shaolin-derived herbal patches applied directly to the affected area after each session and worn for at least 12 hours — working to reduce inflammation and support the body's natural recovery process from the outside in."
+      }
     },
-    "howItWorks": {
-      "title": "How It Works",
-      "intro": "Modern medicine has produced many miracles in treating humanity's health problems. However, in the area of chronic muscle and joint pain, most treatments have significant downsides.",
-      "downside1": "Modern painkillers block pain signals without treating the root cause, at the expense of severe side effects to your stomach or heart.",
-      "downside2": "Many service providers like chiropractors, osteopaths, and physiotherapists provide some relief, but none of them provides a cure-all, and many are expensive for short-term relief.",
-      "solution": "We believe we have a better solution. By combining a unique Shaolin Herbal Medicine, which helps reduce inflammation and boosts healing, together with modern physiotherapy, we have produced better results for chronic pain patients in a faster time frame."
+    "integration": {
+      "title": "Why Integration Matters",
+      "text1": "Each element supports the others.",
+      "text2": "Physiotherapy restores movement. The herbal formulation reduces the inflammatory environment that would otherwise slow recovery. Rehabilitation ensures the gains hold.",
+      "text3": "This is not Eastern and Western medicine offered side by side. It is a single treatment approach where every component works in the same direction at the same time."
     },
-    "whyItWorks": {
-      "title": "Why It Works",
-      "science": "While Traditional Chinese Medicine is often treated skeptically, many Chinese herbs have been studied rigorously. Our special formula has been shown to have positive benefits like anti-inflammation and regenerative properties.",
-      "evidence": "In the area of chronic pain, there is no deceiving the patient. We use objective ways to measure pain levels and improvements in functional movement, ensuring the treatment is truly working.",
-      "placebo": "Even the placebo effect, as strong as it is, cannot produce a long-term cure. Our methods focus on measurable biological activity and functional recovery."
+    "clinical": {
+      "title": "Aligned With Current Clinical Practice",
+      "text1": "Modern clinical guidelines recommend starting with conservative, multidisciplinary treatment before considering injections or surgery.",
+      "text2": "This is the same approach we take at YAPCHANKOR — combining physiotherapy, rehabilitation and our clinical formulation in a structured, integrated way."
     },
-    "history": {
-      "title": "A Proud History",
-      "text": "YAPCHANKOR brings natural and non-surgical relief with our therapeutic exercises, sports injury patches and proprietary medicines. These target every part of the tissue recovery process, whether back or knee pains, sports injuries, or muscle and joint pains.",
-      "linkTitle": "Ancient Wisdom Meets Modern Clinical Science",
-      "heritage": "The study of medicine and martial arts were very closely linked in ancient China. Martial arts teachers needed a knowledge of anatomy and first aid.",
-      "ancestor": "It was YAPCHANKOR's ancestor, Yap Feng Qi, who trained at the Shaolin Temple in the early 20th century and learned their secret formulas for the treatment of external injuries.",
-      "migration": "From 1916 to 1930, his descendants moved to Malaya to teach kung-fu, including Yap Chan Kor’s father, Yap Shu Shen, who became the grandmaster of the Chin Woo Stadium, training and treating people for over 50 years.",
-      "founding": "A revered healer, he passed on his teachings to his son, Yap Chan Kor, who established Tabib Yap Chan Kor in 1979.",
-      "conclusion": "Today, we blend ancient Chinese medicine and techniques with the use of trained physiotherapists, bringing forth this long tradition with modern assessments to ensure faster and long-term recovery."
+    "science": {
+      "title": "The Science Behind the Formula",
+      "intro": "Tradition alone is not enough. This is why our proprietary formulation was evaluated through laboratory research conducted by our research partner, Relivium Sciences (maker of PainFix products). The study examined key inflammatory markers such as TNF-α and IL-6, which are associated with chronic inflammation.",
+      "findings": "Findings showed:",
+      "finding1": "Suppression of key inflammatory markers",
+      "finding2": "Consistent anti-inflammatory activity across all stages tested",
+      "finding3": "Over 90% cell viability, confirming safety at optimised concentrations",
+      "conclusion": "These findings support the biological activity of the formulation used in our clinical approach."
+    },
+    "heritage": {
+      "title": "A Lineage Built on Treating Real Injuries",
+      "text1": "The study of medicine and martial arts were inseparable in ancient China. Practitioners needed a deep understanding of anatomy, injury and recovery — developed through real physical training, not theory.",
+      "text2": "It was YAPCHANKOR's ancestor, Yap Feng Qi, who trained at the Shaolin Temple in the early 20th century and learned their closely guarded formulas for treating external injuries. From 1916 onwards, his descendants brought these teachings to Malaya — including Yap Shu Shen, who became Grandmaster of the Chin Woo Stadium and spent over 50 years training and treating students and practitioners.",
+      "text3": "His son, Yap Chan Kor, established Tabib Yap Chan Kor in 1979. What you see today is the continuation of that lineage — refined through decades of clinical use, supported by modern physiotherapy, and now strengthened by independent scientific research.",
+      "text4": "This is not a tradition we inherited and preserved unchanged. It is one we have continued to develop."
+    },
+    "product": {
+      "title": "From Clinic to Product",
+      "text1": "The same formulation used in our clinics for over 45 years — across more than 50,000 patients — later inspired the PainFix product range, registered with Malaysia's Ministry of Health (KKM).",
+      "text2": "What began as a clinical treatment is now available in pharmacy-grade topical form. The formulation, the research and the clinical heritage behind it are the same."
+    },
+    "measurement": {
+      "title": "Measured, Not Assumed",
+      "text": "We track progress through pain levels, range of motion and functional improvement — so that recovery is observable, not assumed."
+    },
+    "summary": {
+      "title": "What This Means for You",
+      "text1": "You are not choosing between traditional and modern care. You are accessing both — in a single integrated treatment approach, delivered by certified physiotherapists and guided by clinical assessment.",
+      "text2": "For patients who have tried multiple treatments without lasting improvement, this is often the difference."
+    },
+    "cta": {
+      "title": "Ready to Find Out if We Can Help?",
+      "text": "Book a clinical assessment with our physiotherapy specialists today. No referral needed.",
+      "button": "BOOK CLINICAL ASSESSMENT"
     }
   },
   "Legal": {
@@ -453,9 +499,48 @@
     "subtitle": "Clinical outcomes and patient experiences from our specialized chronic pain treatment.",
     "heroTitle": "Patient Success Stories",
     "heroSubtitle": "Proven outcomes across thousands of chronic pain cases using the Shaolin Method since 1979.",
-    "categories": "Filter by Condition",
+    "viewAllFor": "Explore all {condition} recoveries",
+    "categories": {
+      "all": "All Recovery Stories",
+      "sports-injury": "Sports Injury",
+      "post-surgery-rehab": "Post-Surgery",
+      "chronic-pain": "Chronic Pain",
+      "knee-pain": "Knee",
+      "back-pain": "Back & Spine",
+      "shoulder-pain": "Shoulder",
+      "neck-pain": "Neck",
+      "sprained-ankle": "Ankle & Foot",
+      "wrist-pain": "Hand & Wrist"
+    },
     "noResults": "No specific cases found for this category yet.",
     "viewAll": "All Recovery Stories",
     "readOriginal": "Read Original Case"
+  },
+  "Science": {
+    "heroLabel": "Clinical Validation",
+    "heroTitle": "The Science of Shaolin Recovery",
+    "heroSubtitle": "Bridging 40 years of Shaolin clinical heritage with cutting-edge cellular research and laboratory validation.",
+    "heritageTitle": "From Tradition to Laboratory",
+    "heritageText": "For over 40 years, YAPCHANKOR has utilized time-tested herbal medicine formulas in our clinics with exceptional success. While clinical data suggested high efficacy, we sought technical validation to unlock the biological secrets behind these recovery times.",
+    "studyTitle": "The Monash University Study",
+    "studySubtitle": "Cellular Evaluation of Anti-Inflammatory Efficacy",
+    "studyBackground": "The purpose of this study was to evaluate the anti-inflammatory characteristics of YAPCHANKOR proprietary herbal extracts using Human Embryonic Kidney (HEK293) cells.",
+    "studyMethod": "Cells were treated with the herbal formulation and inflammation was induced using Lipopolysaccharide (LPS). Four key inflammatory markers — P-P38MAPK, IL-6, IL-1β, and TNF-α — were studied to measure the immune response.",
+    "studyResultsTitle": "Breakthrough Results",
+    "result1Title": "Non-Toxic & Safe",
+    "result1Text": "The study confirmed over 90% cell viability, proving the formulation is completely non-toxic at therapeutic concentrations.",
+    "result2Title": "Inhibits IL-6 and TNF-α",
+    "result2Text": "The extracts significantly inhibited the onset of inflammation by suppressing the expression of key inflammatory markers.",
+    "result3Title": "Rapid Real-Time Action",
+    "result3Text": "Significant anti-inflammatory action was observed as early as 2 hours and sustained for over 24 hours.",
+    "mechanismTitle": "How It Works",
+    "mechanismSubtitle": "Multi-Targeted Transdermal Recovery",
+    "step1Title": "Absorption",
+    "step1Text": "The proprietary extraction method ensures that active herbal compounds are readily absorbed through the skin.",
+    "step2Title": "Cellular Targeting",
+    "step2Text": "The formulation targets specific inflammatory pathways to reduce swelling and pain at the source.",
+    "step3Title": "Tissue Regeneration",
+    "step3Text": "By managing inflammation, the herbal patches create an optimal environment for natural tissue repair.",
+    "conclusion": "This validation confirms what we have seen in our clinics for decades: YAPCHANKOR herbal patches are a powerful, non-invasive solution for musculoskeletal recovery."
   }
 }

@@ -52,7 +52,7 @@ export const testimonialsData: Testimonial[] = [
   {
     "id": "testimonial-2",
     "title": "Chronic Ankle Sprain | Taufiq C",
-    "slug": "sprained-ankle",
+    "slug": "sports-injury",
     "content": "“Hi I’m Taufiq. 31 years old. I got injured in a football match. I sprained my ankle badly which was swelling at that time. The next day I went to Hospital Selayang to do X-ray and consultation from doctor. After 3 weeks the ankle still not fully recover. So I decided to search for a therapy where I found Yap Chan Kor in a blog. I went for 7 days course. Alhamdulillah (all praise to Allah) that after the first treatment, I’m able to feel much better and the swelling in my ankle improved. After 7 days, I received good recovery. I got good services and good hospitality from Yap Chan Kor.” –  Taufiq Cheng\nTaufiq_Arwin YAPCHANKOR Testimonial for Chronic Ankle Sprain\nA chronic ankle sprain injury from playing football wasn't going away despite seeing a doctor at a local hospital for Taufiq. With pain and swelling disrupting his active life, Taufiq sought us out and within just 7 days of treatment, he recovered. Our treatment involved applying our anti-swelling, anti-inflammatory Shaolin patches and various physiotherapy modalities.",
     "outcome": "“Hi I’m Taufiq. 31 years old. I got injured in a football match. I sprained my ankle badly which was swelling at that time. The next day I went to Hospital Selayang to do X-ray and consultation from d...",
     "link": "https://yapchankor.com/testimonials/chronic-ankle-sprain-taufiq-c/",
@@ -124,7 +124,7 @@ export const testimonialsData: Testimonial[] = [
   {
     "id": "testimonial-10",
     "title": "Knee PCL Ligament | Dandy",
-    "slug": "knee-pain",
+    "slug": "post-surgery-rehab",
     "content": "“I am an active footballer and sports(man) last 2 years, and in 2015 my knee felt not comfortable when running and jogging.\n2016 I went to MRI and X-ray, found both of my knee PCL a bit (torn) and (the) gap a bit close.\nAfter 21 treatment sessions with YapChanKor, I feel good and more comfortable. 80% improvement success. So I need to continue to take supplements and physiotherapy for better result. Thanks YCK.”\n– Dandy S.\nknee_ligament_injury_soft_tissue_yck_yapchankor_dandy_ema Testimonial\nAn avid footballer and athlete, Dandy suffered from minor tears in his knee PCL (posterior cruciate ligament) a few years back. He had tried some treatments that his orthopaedic doctor prescribed but when he didn't see satisfactory results, he came to YAPCHANKOR. We succeeded in getting his pain and functional levels to improve by 80% based on various measures. Thanks Dandy for sharing your story!",
     "outcome": "After 21 treatment sessions with YapChanKor, I feel good and more comfortable. 80% improvement success. So I need to continue to take supplements and physiotherapy for better result. Thanks YCK.”",
     "link": "https://yapchankor.com/testimonials/knee-pcl-ligament-dandy/",
@@ -133,7 +133,7 @@ export const testimonialsData: Testimonial[] = [
   {
     "id": "testimonial-11",
     "title": "Chronic Ankle Pain – Aedan",
-    "slug": "sprained-ankle",
+    "slug": "post-surgery-rehab",
     "content": "“I work as a mechanic, everyday in my life is mostly lifting heavy objects. One day, I was trying to put on the tires of a BMW X6 when my right ankle slipped. What I thought was a simple sprain happened to be a pain that haunted me for the next 3 years. Every time the pain came, I would go to my usual doctor to get painkillers and anti-swelling [medicine]. My parents told me to go to a physiotherapist to try to cure it, and I came to YAPCHANKOR. After 21 days of treatment, my ankle felt like the incident 3 years ago never happened. Thanks YAPCHANKOR and to its physiotherapists. You all did a great job ♥” – Aedan, 2018\nAedan testimonial for YCK\nThis is a case we are particularly proud of. A 3 year chronic ankle pain sufferer who had been taking painkillers and anti-swelling medicine from doctors to reduce the pain and symptoms, finally was cured of this pain after our treatment. In just 3 weeks worth of treatment!\r\n\r\nIf you have a friend or relative who has been suffering from chronic pain for years, or needs rehab after surgery, or is considering an orthopaedic surgery, share this story with them. We could help save them months of pain and unnecessary procedures.\r\n\r\nThank you Aedan for sharing your story so effusively!",
     "outcome": "“I work as a mechanic, everyday in my life is mostly lifting heavy objects. One day, I was trying to put on the tires of a BMW X6 when my right ankle slipped. What I thought was a simple sprain happen...",
     "link": "https://yapchankor.com/testimonials/chronic-ankle-pain-aedan/",
@@ -169,7 +169,7 @@ export const testimonialsData: Testimonial[] = [
   {
     "id": "testimonial-15",
     "title": "Degenerative Spondylolisthesis | Ann B.",
-    "slug": "back-pain",
+    "slug": "chronic-pain",
     "content": "“A year and a half ago, I was diagnosed with degenerative spondilolesthis, spinal stenosis and degenerative discs from L2/3 to L5 S1. At this time I was given 2 options, conservative treatment or surgery. I opted for conservative. My back and leg pain began about 4 years ago during which I have undergone many treatments and therapies such as massage therapy, acupuncture, cupping, physiotherapy, chiropractic, traction, intense daily exercise in the gym and swimming daily ~ 2km. I even lost 15 kilos in an effort to decrease the pressure on my spine but nothing was resonating. In fact my pain seemed to be getting worse. YAPCHANKOR was my last hope before resorting to surgery for decompression and instrumental fusion. I was consuming a lot of medication such as Lyrica and Celebrex and didn’t want to do this for the rest of my life.\nAt first I was very skeptical that this treatment would be any different but I had to give it a try. My therapist Ganesh Vijayam seemed to understand my problem and set out a course of treatment to prove to me that YAPCHANKOR would be different. He asked me to keep a daily log of my activities to help determine if I was doing something to aggravate my problem. He showed me several exercises which have made a world of difference to managing my pain. He offered me advice to keep me from re-injuring myself such as changing the side of the bed I was sleeping on to make it easier getting up without pulling unnecessarily my problem side.\nAfter 10 sessions, my pain level has gone from an 8 or 9 to a 2 or 3 – something I can now manage. And that is without any medication. I consider this a victory!\nWalking great distances is still a problem for me but by stretching before and after, its not as bad.\nI must give credit to my therapist Ganesh for taking the time to listen and try to understand my pain and work with me to improve my situation. I was never made to feel like just another number. For the first time I felt that someone truly cared. Thank you YAPCHANKOR. You now have a convert!”\nAnn Beckett\nAnn Beckett YCK Testimonial for Degenerative Spondylolisthesis Part 1\nAnn Beckett YCK Testimonial for Degenerative Spondylolisthesis Part 2\nThank you Ann for sharing your recovery and your generous words. We are glad that we could help bring some much needed relief in your life, and perhaps even saved you from invasive surgery.",
     "outcome": "I must give credit to my therapist Ganesh for taking the time to listen and try to understand my pain and work with me to improve my situation. I was never made to feel like just another number. For t...",
     "link": "https://yapchankor.com/testimonials/degenerative-spondylolisthesis-ann-b/",
@@ -214,7 +214,7 @@ export const testimonialsData: Testimonial[] = [
   {
     "id": "testimonial-20",
     "title": "Knee Injury from Football | Azrizan",
-    "slug": "knee-pain",
+    "slug": "sports-injury",
     "content": "“I got my injury when I played football. After that, the injury are repeatable [sic. ‘repeated’]. I’ve tried many treatments but it didn’t work well. Until I tried YAPCHANKOR…my knee showed positive results with less pain and I can play football normally back. Thank you for your great treatment and physio. I would recommend this kind of treatment to others.” – Azrizan 30/5/18\nAzrizan Testimonial Football for YCK\nThank you Azrizan for your positive words. We are so glad we could help you to play football again. Our treatment works well for sports injuries like the knee injury suffered by Azrizan, and is a non-invasive, fast and long-term focused recovery treatment.",
     "outcome": "“I got my injury when I played football. After that, the injury are repeatable [sic. ‘repeated’]. I’ve tried many treatments but it didn’t work well. Until I tried YAPCHANKOR…my knee showed positive r...",
     "link": "https://yapchankor.com/testimonials/knee-injury-from-football-azrizan/",
@@ -511,7 +511,7 @@ export const testimonialsData: Testimonial[] = [
   {
     "id": "testimonial-53",
     "title": "Meniscus Injury Ahmad",
-    "slug": "knee-pain",
+    "slug": "sports-injury",
     "content": "Ahmad is a young active and athletic guy whose sports injury to the knee caused him to stop sports. The left knee MCL & meniscus injury was caused by straining from previous sporting activities. After we treated him for just 10 sessions, we have renewed his confidence in being able to go back to sports. Thanks again Ahmad for sharing your story here!\n#kneemclinjury #meniscusinjury #yapchankor #yck #shahalam #physiotherapy #alternativetreatment #sportsinjury",
     "outcome": "Ahmad is a young active and athletic guy whose sports injury to the knee caused him to stop sports. The left knee MCL & meniscus injury was caused by straining from previous sporting activities. After...",
     "link": "https://yapchankor.com/testimonials/ahmad-meniscus-injury/",
@@ -591,8 +591,8 @@ export const testimonialsData: Testimonial[] = [
   },
   {
     "id": "testimonial-62",
-    "title": "Slipped Disc Danny",
-    "slug": "neck-pain",
+    "title": "Cervical Slipped Disc Danny",
+    "slug": "chronic-pain",
     "content": "Danny suffered from a cervical slipped disc which caused discomfort, pain and numbness down his right arm to his hand. This sensation is not only very uncomfortable and painful, it also causes a loss of function. Danny had trouble using his right arm for daily activities. He came to see us and was treated by our physiotherapist Joy. Glad to hear that he’s improved tremendously. Thank you for sharing your story!\n#cervicalslippeddisc #cervicalpain #slippeddiscpain #slippeddisctreatment #yapchankor #yck #alternativetreatment #muscleandjointpaintreatment #subangjaya #subangss15 #malaysia #selangor #klangvalley",
     "outcome": "Danny suffered from a cervical slipped disc which caused discomfort, pain and numbness down his right arm to his hand. This sensation is not only very uncomfortable and painful, it also causes a loss ...",
     "link": "https://yapchankor.com/testimonials/danny-cervical-slipped-disc/",
@@ -790,7 +790,7 @@ export const testimonialsData: Testimonial[] = [
   {
     "id": "testimonial-84",
     "title": "Lumbar Spondylosis Jez L.",
-    "slug": "back-pain",
+    "slug": "chronic-pain",
     "content": "“Suffering chronic pain for a year and a half.  Tried medication, acupuncture and chiropractic but no effect. At Yap Chan Kor, I was undergoing 21 sessions of herbal patching, massages, infrared, strengthening, flexibility.\nI’m truly impressed by YAP CHAN KOR and especially my physiotherapist Brian Moreira. He has not only received my pain, he has treated the root cause! It’s worth the money spent. As I’m back to outdoor activities / exercises – HAPPILY.” – Jezamine Lo\n#lumbarspondylosistreatment #scoliosistreatment #yapchankor #yck #secretformula #lowbackpaintreatment #alternativetreatment #chinesemedicine #testimonial\nJezamine was a recent success story. She had suffered for over one year from low back pain due to lumbar spondylosis and some slight scoliosis. She spent thousands of ringgit trying different treatments during this year, but either there was no effect on reducing her pain or the pain relief was temporary. This really affected her quality of life as she was a very active person and loved exercising, cycling, doing yoga and running.\r\n\r\nShe found us after searching online and came to see us after reading our testimonials. Due to the chronic nature of her problem, our physiotherapists recommended a 21-session treatment plan, where we comprehensively addressed the pain, healing and remodelling stages of soft tissue recoveries. Her recovery was apparent during the first week but became much more obvious after the first week. This is typical of our chronic pain patients’ experiences, which is why it is important for our patients to remain patient with our treatment sometimes.\r\n\r\nToday her back pain has been resolved and she’s back to her active lifestyle. She has told us that she can cycle and jog now without any pain. We also taught her some further exercises to continue to maintain the strength and flexibility of her back. Thank you Jezamine for your testimonial!",
     "outcome": "She found us after searching online and came to see us after reading our testimonials. Due to the chronic nature of her problem, our physiotherapists recommended a 21-session treatment plan, where we ...",
     "link": "https://yapchankor.com/testimonials/jez-l-lumbar-spondylosis/",

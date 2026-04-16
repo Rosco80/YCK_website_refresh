@@ -32,15 +32,15 @@ export function Hero() {
       <div className="container mx-auto px-6 z-10 text-center sm:text-left">
         <div className="max-w-4xl mx-auto sm:mx-0">
           <div>
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold leading-[1.05] text-white mb-6 tracking-tight drop-shadow-md">
+            <h1 className="text-display text-white mb-6 drop-shadow-md">
               {t("title")}
             </h1>
             
-            <p className="text-xl sm:text-2xl lg:text-3xl font-medium text-brand-gold mb-10 tracking-[0.2em] drop-shadow-sm">
+            <p className="text-label mb-10 drop-shadow-sm text-2xl lg:text-3xl">
               {t("heritageHeadline")}
             </p>
 
-            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-16 lg:mb-20 leading-relaxed max-w-3xl mx-auto sm:mx-0 font-medium drop-shadow-lg">
+            <p className="text-lead text-white/90 mb-16 lg:mb-20 max-w-3xl mx-auto sm:mx-0 drop-shadow-lg">
               {t("description1")}
             </p>
 
@@ -118,10 +118,10 @@ function TrustItem({ title, sub, showDivider }: { title: string; sub: string; sh
         />
       </div>
       <div className="text-left">
-        <div className="text-lg lg:text-xl font-bold text-white leading-tight">
+        <div className="text-h4 text-white leading-tight mb-1">
           {title}
         </div>
-        <div className="text-xs font-bold text-brand-gold uppercase tracking-widest mt-1 opacity-90 group-hover:opacity-100 transition-opacity">
+        <div className="text-label mt-1 opacity-90 group-hover:opacity-100 transition-opacity">
           {sub}
         </div>
       </div>

@@ -14,9 +14,9 @@ export const conditionSlugs = [
   "sciatica",
   "hip-pain",
   "elbow-pain",
-  "post-surgery",
+  "post-surgery-rehab",
   "chronic-pain",
-  "sport-injury"
+  "sports-injury"
 ] as const;
 
 export type ConditionSlug = typeof conditionSlugs[number];
@@ -38,7 +38,7 @@ export const conditionsData: Record<ConditionSlug, { iconName: string }> = {
   "sciatica": { iconName: "Activity" },
   "hip-pain": { iconName: "Activity" },
   "elbow-pain": { iconName: "Activity" },
-  "post-surgery": { iconName: "Activity" },
+  "post-surgery-rehab": { iconName: "Activity" },
   "chronic-pain": { iconName: "Activity" },
-  "sport-injury": { iconName: "Activity" }
+  "sports-injury": { iconName: "Activity" }
 };

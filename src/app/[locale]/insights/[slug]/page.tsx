@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Link } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
+import { setRequestLocale } from 'next-intl/server';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import { Metadata } from 'next';
@@ -24,6 +25,9 @@ export const revalidate = 3600; // Cache and statically regenerate the detail pa
 
 export default async function InsightDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { slug, locale } = await params;
+  setRequestLocale(locale);
+  const LOCALE_MAP: Record<string, string> = { en: 'en-MY', ms: 'ms-MY', zh: 'zh-MY' };
+  const safeLocale = LOCALE_MAP[locale] ?? 'en-MY';
   console.log("==> Incoming slug from Next.js:", slug);
   const insights = await getInsights();
   console.log("==> Available slugs from Substack:", insights.map(i => i.slug));
@@ -77,16 +81,16 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
             <div className="container mx-auto px-6 max-w-4xl relative z-10 text-center">
               <Link 
                 href="/insights" 
-                className="inline-flex items-center text-brand-gold hover:text-white transition-colors mb-10 text-xs font-bold uppercase tracking-widest"
+                className="inline-flex items-center text-brand-gold hover:text-white transition-colors mb-10 text-label"
                 aria-label="Back to Clinical Insights"
               >
                 <ArrowLeft size={14} className="mr-2" /> Back to Insights
               </Link>
-              <div className="flex items-center justify-center text-brand-gold/80 font-bold text-xs uppercase tracking-widest mb-6 gap-2">
+              <div className="text-label text-brand-gold/80 mb-6 gap-2 flex items-center justify-center">
                  <Calendar size={14} />
-                 {new Date(insight.pubDate).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' })}
+                 {new Date(insight.pubDate).toLocaleDateString(safeLocale, { year: 'numeric', month: 'long', day: 'numeric' })}
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-8 drop-shadow-lg" itemProp="headline">
+              <h1 className="text-h2 text-white mb-8 drop-shadow-lg" itemProp="headline">
                 {insight.title}
               </h1>
             </div>
@@ -98,19 +102,19 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
               
               {/* AI Summary Block (AEO Optimization) */}
               <div className="bg-brand-bg/50 rounded-2xl p-6 sm:p-8 mb-12 border-l-4 border-brand-gold">
-                <h2 className="text-sm font-bold text-brand-gold uppercase tracking-widest mb-3">Key Takeaways</h2>
-                <p className="text-brand-teal-deep/80 leading-relaxed font-medium" itemProp="description">
+                <h2 className="text-label mb-3">Key Takeaways</h2>
+                <p className="text-body text-brand-teal-deep/80" itemProp="description">
                   {insight.snippet}
                 </p>
               </div>
 
               <div 
                 className="
-                  text-brand-teal-deep/80 text-lg leading-relaxed
+                  text-body text-brand-teal-deep/80 text-lg
                   [&>p]:mb-8
-                  [&>h1]:text-3xl [&>h1]:font-bold [&>h1]:text-brand-teal-deep [&>h1]:mb-6 [&>h1]:mt-12
-                  [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-brand-teal-deep [&>h2]:mb-6 [&>h2]:mt-10
-                  [&>h3]:text-xl [&>h3]:font-bold [&>h3]:text-brand-teal-deep [&>h3]:mb-4 [&>h3]:mt-8
+                  [&>h1]:text-h3 [&>h1]:text-brand-teal-deep [&>h1]:mb-6 [&>h1]:mt-12
+                  [&>h2]:text-h4 [&>h2]:text-brand-teal-deep [&>h2]:mb-6 [&>h2]:mt-10
+                  [&>h3]:text-body-lg [&>h3]:font-bold [&>h3]:text-brand-teal-deep [&>h3]:mb-4 [&>h3]:mt-8
                   [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-8 [&>ul>li]:mb-2
                   [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-8 [&>ol>li]:mb-2
                   [&>img]:w-full [&>img]:rounded-2xl [&>img]:my-10 [&>img]:shadow-sm
@@ -127,7 +131,7 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
                   href={insight.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-4 bg-brand-bg border-2 border-brand-teal/20 text-brand-teal-deep font-bold rounded-xl hover:border-brand-teal hover:bg-brand-teal hover:text-white transition-all text-sm uppercase tracking-widest"
+                  className="inline-flex items-center px-8 py-4 bg-brand-bg border-2 border-brand-teal/20 text-brand-teal-deep text-label rounded-xl hover:border-brand-teal hover:bg-brand-teal hover:text-white transition-all"
                 >
                   View original on Substack
                 </a>

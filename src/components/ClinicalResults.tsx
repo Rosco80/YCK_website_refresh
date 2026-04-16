@@ -39,14 +39,10 @@ export function ClinicalResults() {
       <div className="container mx-auto px-6 lg:px-8 text-center">
         <div
           className="text-center max-w-3xl mx-auto mb-12 lg:mb-24">
-          <h2 
-            className="text-2xl md:text-4xl lg:text-5xl font-bold text-brand-teal mb-6"
-          >
+          <h2 className="text-h3 text-brand-teal mb-6">
             {t("title")}
           </h2>
-          <p 
-            className="text-base lg:text-xl text-brand-teal-deep/60 font-medium"
-          >
+          <p className="text-body-lg text-brand-teal-deep/60">
             {t("subtitle")}
           </p>
         </div>
@@ -69,16 +65,16 @@ export function ClinicalResults() {
                 <div className="absolute inset-0 bg-brand-teal-deep/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </div>
               <div className="p-6 lg:p-10 flex flex-col grow">
-                <h3 className="text-lg lg:text-2xl font-bold text-brand-teal mb-4 leading-tight group-hover:text-brand-gold transition-colors">
+                <h3 className="text-h4 text-brand-teal mb-4 group-hover:text-brand-gold transition-colors">
                   {item.title}
                 </h3>
                 <div className="space-y-4">
-                  <p className="text-brand-teal-deep/60 font-medium italic text-sm lg:text-base">
+                  <p className="text-body text-brand-teal-deep/60 italic">
                     "{item.problem}"
                   </p>
                   <div className="flex items-start space-x-3">
                     <div className="mt-1.5 w-2 h-2 rounded-full bg-brand-gold shrink-0" />
-                    <p className="text-brand-teal font-bold leading-snug text-sm lg:text-base">
+                    <p className="text-body font-bold text-brand-teal">
                       {item.result}
                     </p>
                   </div>

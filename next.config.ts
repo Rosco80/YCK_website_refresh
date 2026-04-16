@@ -31,6 +31,19 @@ const nextConfig: NextConfig = {
       { source: '/service/osteoarthritis-knee-therapy-malaysia', destination: '/en/conditions/osteoarthritis-knee', permanent: true },
       { source: '/service/osteoarthritis-therapy-malaysia', destination: '/en/conditions/osteoarthritis', permanent: true },
       { source: '/service', destination: '/en/conditions', permanent: true },
+      
+      // New SEO Solution Paths
+      { source: '/en/conditions/sport-injury', destination: '/en/solutions/sports-injury', permanent: true },
+      { source: '/ms/conditions/sport-injury', destination: '/ms/solutions/sports-injury', permanent: true },
+      { source: '/zh/conditions/sport-injury', destination: '/zh/solutions/sports-injury', permanent: true },
+      
+      { source: '/en/conditions/post-surgery', destination: '/en/solutions/post-surgery-rehab', permanent: true },
+      { source: '/ms/conditions/post-surgery', destination: '/ms/solutions/post-surgery-rehab', permanent: true },
+      { source: '/zh/conditions/post-surgery', destination: '/zh/solutions/post-surgery-rehab', permanent: true },
+      
+      { source: '/en/conditions/chronic-pain', destination: '/en/solutions/chronic-pain', permanent: true },
+      { source: '/ms/conditions/chronic-pain', destination: '/ms/solutions/chronic-pain', permanent: true },
+      { source: '/zh/conditions/chronic-pain', destination: '/zh/solutions/chronic-pain', permanent: true },
     ];
   }
 };

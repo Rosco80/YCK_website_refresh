@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 
 export function Differentiation() {
@@ -17,16 +18,20 @@ export function Differentiation() {
           {/* Left Content */}
           <div className="lg:w-1/2">
             <div>
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-brand-teal leading-tight mb-4">
+              <h2 className="text-h3 text-brand-teal mb-4">
                 {t("title")}
               </h2>
               
-              <p className="text-lg md:text-2xl lg:text-3xl font-medium text-brand-gold uppercase tracking-[0.2em] mb-10">
+              <p className="text-label text-xl md:text-2xl lg:text-3xl mb-10">
                 {t("heritage")}
               </p>
 
-              <div className="space-y-6 lg:space-y-8 text-base lg:text-lg text-brand-teal-deep/80 leading-relaxed font-medium">
-                <p>{t("description")}</p>
+              <div className="text-body-lg text-brand-teal-deep/80 space-y-6 lg:space-y-8">
+                <p>
+                  {t.rich("description", {
+                    link: (chunks) => <Link href="/conditions" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
+                  })}
+                </p>
                 
                 <div className="space-y-6 pt-4 border-t border-brand-teal/10">
                   <p className="text-brand-teal font-bold">{t("transition")}</p>
@@ -46,7 +51,7 @@ export function Differentiation() {
                     ))}
                   </ul>
                   
-                  <p className="text-xl md:text-2xl lg:text-3xl font-bold text-brand-teal pt-8 tracking-tight border-t border-brand-teal/10">
+                  <p className="text-body-lg font-bold text-brand-teal pt-8 tracking-tight border-t border-brand-teal/10">
                     {t("conclusion")}
                   </p>
                 </div>

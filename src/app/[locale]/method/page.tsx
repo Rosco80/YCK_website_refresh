@@ -6,12 +6,14 @@ import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight, ShieldCheck, Microscope, History } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Link } from "@/i18n/routing";
+import { CheckCircle2, ArrowRight, ShieldCheck, Microscope, Activity } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function MethodPage() {
   const t = useTranslations("MethodPage");
-  const tMethod = useTranslations("Method");
+  const tw = useTranslations("WhatsApp");
+  const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
   
   const revealVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -34,10 +36,9 @@ export default function MethodPage() {
     "procedureType": "PhysicalTherapy",
     "relevantSpecialty": ["Physiotherapy", "TraditionalChineseMedicine"],
     "howItWorks": [
-      tMethod("step1Title"),
-      tMethod("step2Title"),
-      tMethod("step3Title"),
-      tMethod("step4Title")
+      t("treatment.physio.title"),
+      t("treatment.rehab.title"),
+      t("treatment.herbal.title")
     ]
   };
 
@@ -50,7 +51,7 @@ export default function MethodPage() {
       <Header />
       
       <main className="grow">
-        {/* Section 1: Hero Section */}
+        {/* Section 1: Full-width Hook */}
         <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
           <div className="absolute inset-0 z-0 opacity-20">
             <Image 
@@ -70,158 +71,84 @@ export default function MethodPage() {
               animate="visible"
               variants={revealVariants}
             >
-              <h1 className="text-4xl lg:text-8xl font-black mb-6 tracking-tight drop-shadow-lg">
+              <h1 className="text-display mb-6 drop-shadow-lg">
                 {t("hero.title")}
               </h1>
-              <p className="text-xl lg:text-3xl font-medium text-brand-gold max-w-3xl mx-auto uppercase tracking-widest leading-relaxed">
+              <p className="text-label text-xl lg:text-2xl max-w-4xl mx-auto mb-12">
                 {t("hero.subtitle")}
               </p>
+              <div className="max-w-3xl mx-auto text-body-lg text-white/90 space-y-6">
+                <p>{t("hero.hook")}</p>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Section 2: Who We Are (Portrait Image) */}
-        <section id="who-we-are" className="py-20 lg:py-32">
+        {/* Section 2: Three-column Treatment Section */}
+        <section className="py-24 lg:py-32 bg-white">
           <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={revealVariants}
-                className="order-2 lg:order-1"
-              >
-                <div className="inline-block px-4 py-1.5 rounded-full bg-brand-teal/10 text-brand-teal text-xs font-bold uppercase tracking-widest mb-6 border border-brand-teal/20">
-                  {t("whoWeAre.title")}
-                </div>
-                <h2 className="text-3xl lg:text-6xl font-bold mb-8 text-brand-teal-deep leading-tight">
-                  Over <span className="text-brand-gold">20,000</span> Patients Helped Since 1979
-                </h2>
-                <div className="space-y-6 text-lg text-brand-teal-deep/70 font-medium leading-relaxed">
-                  <p>{t("whoWeAre.text1")}</p>
-                  <p>{t("whoWeAre.text2")}</p>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1 }}
-                className="order-1 lg:order-2"
-              >
-                <div className="relative aspect-3/4 max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
-                  <Image 
-                    src="/images/about-history.webp" 
-                    className="object-cover transition-all duration-700 hover:scale-105"
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    alt="Who We Are - Portrait"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-brand-teal-deep/30 to-transparent" />
-                </div>
-              </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={revealVariants}
+              className="text-center mb-16"
+            >
+              <h2 className="text-h2 text-brand-teal-deep mb-4">{t("treatment.title")}</h2>
+              <div className="w-24 h-1 bg-brand-gold mx-auto" />
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+              <TreatmentCard 
+                icon={<CheckCircle2 className="w-10 h-10 text-brand-teal" />}
+                title={t("treatment.physio.title")}
+                text={t("treatment.physio.text")}
+                delay={0}
+              />
+              <TreatmentCard 
+                icon={<Activity className="w-10 h-10 text-brand-teal" />}
+                title={t("treatment.rehab.title")}
+                text={t("treatment.rehab.text")}
+                delay={0.2}
+              />
+              <TreatmentCard 
+                icon={<ShieldCheck className="w-10 h-10 text-brand-teal" />}
+                title={t("treatment.herbal.title")}
+                text={t("treatment.herbal.text")}
+                delay={0.4}
+              />
             </div>
           </div>
         </section>
 
-        {/* Section 3: How It Works (Narrative Style) */}
-        <section className="py-24 lg:py-40 bg-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-gold/5 blur-[120px] rounded-full translate-x-1/2" />
-          
+        {/* Section 3: Why Integration Matters */}
+        <section className="py-24 lg:py-32 bg-brand-bg relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-gold/5 blur-3xl rounded-full" />
           <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto text-center">
               <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={revealVariants}
-                className="text-center mb-16 lg:mb-24"
               >
-                <h2 className="text-3xl lg:text-7xl font-bold mb-8 text-brand-teal-deep tracking-tight">{t("howItWorks.title")}</h2>
-                <p className="text-xl lg:text-2xl text-brand-teal-deep/80 leading-relaxed italic">{t("howItWorks.intro")}</p>
-              </motion.div>
-
-              <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-                <motion.div 
-                   initial="hidden"
-                   whileInView="visible"
-                   viewport={{ once: true }}
-                   variants={revealVariants}
-                   className="space-y-8"
-                >
-                  <div className="p-8 rounded-3xl bg-brand-bg border border-brand-teal/10">
-                    <p className="text-brand-teal-deep/70 leading-relaxed text-lg">{t("howItWorks.downside1")}</p>
-                  </div>
-                  <div className="p-8 rounded-3xl bg-brand-bg border border-brand-teal/10">
-                    <p className="text-brand-teal-deep/70 leading-relaxed text-lg">{t("howItWorks.downside2")}</p>
-                  </div>
-                </motion.div>
-
-                <motion.div 
-                   initial="hidden"
-                   whileInView="visible"
-                   viewport={{ once: true }}
-                   variants={revealVariants}
-                   transition={{ delay: 0.3 }}
-                   className="p-10 lg:p-14 rounded-3xl bg-brand-gold/10 border-2 border-brand-gold/30 text-brand-teal-deep shadow-xl"
-                >
-                  <h3 className="text-2xl lg:text-4xl font-black mb-8 uppercase tracking-tight text-brand-teal">Our Better Solution</h3>
-                  <p className="text-xl lg:text-2xl font-bold leading-relaxed">
-                    {t("howItWorks.solution")}
+                <h2 className="text-h2 text-brand-teal-deep mb-12">
+                  {t("integration.title")}
+                </h2>
+                <div className="text-lead space-y-8 italic">
+                  <p>{t("integration.text1")}</p>
+                  <p className="not-italic text-body-lg">{t("integration.text2")}</p>
+                  <p className="text-brand-teal font-bold border-t border-brand-teal/10 pt-8 not-italic">
+                    {t("integration.text3")}
                   </p>
-                </motion.div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 4: Why It Works (Landscape Images) */}
-        <section className="py-24 lg:py-40 bg-brand-bg text-brand-teal-deep">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-20 lg:mb-32">
-              <motion.h2 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={revealVariants}
-                className="text-3xl lg:text-7xl font-bold mb-6 tracking-tight"
-              >
-                {t("whyItWorks.title")}
-              </motion.h2>
-              <p className="text-brand-gold font-bold uppercase tracking-[0.3em] text-sm lg:text-lg">Science Meets Tradition</p>
-            </div>
-
-            <div className="space-y-24 lg:space-y-40">
-              <WhyReason 
-                title="Scientific Rigor"
-                desc={t("whyItWorks.science")}
-                image="/images/yck-about-who-768x361.webp"
-                reverse={false}
-              />
-              <WhyReason 
-                title="Objective Results"
-                desc={t("whyItWorks.evidence")}
-                image="/images/yck-about.webp"
-                reverse={true}
-              />
-              <motion.div 
-                initial="hidden" 
-                whileInView="visible" 
-                viewport={{ once: true }} 
-                variants={revealVariants}
-                className="max-w-3xl mx-auto text-center pt-12"
-              >
-                <p className="text-lg lg:text-2xl text-brand-teal-deep/60 italic font-medium">
-                  {t("whyItWorks.placebo")}
-                </p>
+                </div>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Section 5: A Proud History */}
-        <section className="py-24 lg:py-40 bg-white text-brand-teal-deep relative">
+        {/* Section 4: Clinical Practice (Pull Quote) */}
+        <section className="py-24 lg:py-32 bg-white">
           <div className="container mx-auto px-6">
             <motion.div
               initial="hidden"
@@ -230,42 +157,229 @@ export default function MethodPage() {
               variants={revealVariants}
               className="max-w-5xl mx-auto"
             >
-              <div className="grid lg:grid-cols-12 gap-12 items-start">
-                <div className="lg:col-span-1 text-brand-gold opacity-30 hidden lg:block">
-                  <History className="w-24 h-24" />
-                </div>
-                <div className="lg:col-span-11">
-                  <div className="inline-block px-4 py-1.5 rounded-full border border-brand-teal/20 bg-brand-teal/5 text-brand-teal text-xs font-bold uppercase tracking-[0.2em] mb-8">
-                    {t("history.linkTitle")}
-                  </div>
-                  <h2 className="text-4xl lg:text-7xl font-black mb-12 text-brand-teal-deep tracking-tight lowercase">
-                    {t("history.title")}
+              <div className="flex flex-col md:flex-row items-center gap-12 p-12 lg:p-20 rounded-[3rem] bg-brand-teal-deep text-white relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-24 h-24 bg-brand-gold/10 rounded-br-full" />
+                <div className="relative z-10 flex-1">
+                  <h2 className="text-h3 text-brand-gold mb-8">
+                    {t("clinical.title")}
                   </h2>
-                  
-                  <div className="space-y-16 text-lg lg:text-2xl text-brand-teal-deep/80 font-medium leading-relaxed">
-                    <p className="text-2xl lg:text-4xl text-brand-teal-deep font-bold leading-tight border-l-4 border-brand-gold pl-8 lg:pl-12">{t("history.text")}</p>
-                    
-                    <div className="grid md:grid-cols-2 gap-10 lg:gap-16 pt-8">
-                       <div className="space-y-6">
-                         <div className="w-12 h-1 bg-brand-gold/40" />
-                         <p className="text-brand-teal-deep/70">{t("history.heritage")}</p>
-                         <p className="text-brand-teal-deep">{t("history.ancestor")}</p>
-                       </div>
-                       <div className="space-y-6">
-                         <div className="w-12 h-1 bg-brand-gold/40" />
-                         <p className="text-brand-teal-deep">{t("history.migration")}</p>
-                         <p className="border-l-2 border-brand-gold/30 pl-6 text-brand-gold font-bold">{t("history.founding")}</p>
-                       </div>
-                    </div>
-                    
-                    <div className="pt-12 text-center">
-                      <p className="text-brand-teal font-bold uppercase tracking-widest text-sm lg:text-base border-t border-brand-teal/10 pt-12 inline-block px-12">
-                        {t("history.conclusion")}
-                      </p>
-                    </div>
+                  <div className="text-body-lg text-white/90 space-y-6">
+                    <p className="border-l-4 border-brand-gold pl-8 italic">{t("clinical.text1")}</p>
+                    <p>{t("clinical.text2")}</p>
                   </div>
+                </div>
+                <div className="relative z-10 hidden lg:block">
+                  <Image 
+                    src="/images/yck-about.webp" 
+                    width={400} 
+                    height={500} 
+                    className="rounded-3xl shadow-2xl border-4 border-white/20"
+                    alt="Clinical Practice"
+                  />
                 </div>
               </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Section 5: Science Section */}
+        <section className="py-24 lg:py-32 bg-brand-bg">
+          <div className="container mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={revealVariants}
+              >
+                <div className="text-label inline-block px-4 py-1.5 rounded-full bg-brand-teal/10 mb-6 border border-brand-teal/20">
+                  Laboratory Linked
+                </div>
+                <h2 className="text-h2 text-brand-teal-deep mb-8">
+                  {t("science.title")}
+                </h2>
+                <p className="text-body-lg text-brand-teal-deep/70 mb-8">
+                  {t("science.intro")}
+                </p>
+                <p className="text-h4 text-brand-teal mb-4">{t("science.findings")}</p>
+                <div className="space-y-4">
+                  {[1, 2, 3].map((num) => (
+                    <div key={num} className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-brand-teal/10">
+                      <div className="shrink-0 w-8 h-8 rounded-full bg-brand-teal text-white flex items-center justify-center font-bold">
+                        {num}
+                      </div>
+                      <p className="text-body font-bold text-brand-teal-deep">{t(`science.finding${num}`)}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-body text-brand-teal-deep/60 mt-8 italic font-bold">{t("science.conclusion")}</p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="relative aspect-square lg:aspect-4/5 xl:aspect-square bg-white rounded-[3rem] p-12 shadow-xl border border-brand-teal/10 flex flex-col justify-center"
+              >
+                <Microscope className="w-24 h-24 text-brand-gold/40 mb-8" />
+                <h3 className="text-h3 text-brand-teal-deep mb-6 uppercase">
+                  Independent Scientific Research
+                </h3>
+                <p className="text-label text-xl tracking-widest leading-loose">
+                  RELI<span className="text-brand-gold">VIUM</span> SCIENCES × YAP<span className="text-brand-gold">CHAN</span>KOR
+                </p>
+                <div className="absolute bottom-12 right-12 opacity-10">
+                  <Microscope className="w-48 h-48" />
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 6: Heritage Section */}
+        <section className="py-24 lg:py-40 bg-white relative">
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={revealVariants}
+                className="grid lg:grid-cols-12 gap-12 lg:gap-24"
+              >
+                <div className="lg:col-span-7">
+                  <div className="text-label inline-block px-4 py-1.5 rounded-full border border-brand-teal/20 bg-brand-teal/5 mb-8">
+                    Ancient Wisdom Meets Modern Science
+                  </div>
+                  <h2 className="text-h2 text-brand-teal-deep mb-12">
+                    {t("heritage.title")}
+                  </h2>
+                  <div className="text-body-lg text-brand-teal-deep/80 space-y-8">
+                    <p className="text-h3 text-brand-teal border-l-4 border-brand-gold pl-8 lg:pl-12 mb-12">
+                      {t("heritage.text1")}
+                    </p>
+                    <p>{t("heritage.text2")}</p>
+                    <p>{t("heritage.text3")}</p>
+                    <p className="text-label pt-8 border-t border-brand-teal/10 text-center">
+                      {t("heritage.text4")}
+                    </p>
+                  </div>
+                </div>
+                <div className="lg:col-span-5">
+                  <div className="sticky top-32">
+                    <div className="relative aspect-3/4 rounded-[2.5rem] overflow-hidden shadow-2xl group border-8 border-white">
+                      <Image 
+                        src="/images/about-history.webp" 
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        fill
+                        alt="Our Heritage"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-brand-teal-deep/40 to-transparent" />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 7: Clinic to Product */}
+        <section className="py-24 bg-brand-teal-deep text-white">
+          <div className="container mx-auto px-6 text-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={revealVariants}
+              className="max-w-4xl mx-auto"
+            >
+              <h2 className="text-h2 text-brand-gold mb-8">
+                {t("product.title")}
+              </h2>
+              <div className="text-lead text-white/90 space-y-8">
+                <p>{t("product.text1")}</p>
+                <p className="text-body-lg text-white/70 italic border-t border-white/10 pt-8">
+                  {t("product.text2")}
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Section 8: Measurement */}
+        <section className="py-16 bg-brand-gold text-brand-teal-deep text-center">
+          <div className="container mx-auto px-6">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={revealVariants}
+            >
+              <h2 className="text-h3 uppercase mb-4">
+                {t("measurement.title")}
+              </h2>
+              <p className="text-lead font-bold max-w-4xl mx-auto">
+                {t("measurement.text")}
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Section 9: What This Means */}
+        <section className="py-24 lg:py-40 bg-brand-bg relative overflow-hidden">
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-5xl mx-auto">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={revealVariants}
+                className="text-center"
+              >
+                <h2 className="text-h2 text-brand-teal-deep mb-16">
+                  {t("summary.title")}
+                </h2>
+                <div className="grid md:grid-cols-2 gap-12 text-left">
+                  <div className="p-10 rounded-[2.5rem] bg-white shadow-xl border border-brand-teal/5">
+                    <p className="text-body-lg font-bold text-brand-teal-deep/80">
+                      {t("summary.text1")}
+                    </p>
+                  </div>
+                  <div className="p-10 rounded-[2.5rem] bg-brand-teal text-white shadow-xl flex items-center">
+                    <p className="text-h3">
+                      {t("summary.text2")}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 10: Final CTA */}
+        <section id="book-now" className="py-24 lg:py-40 bg-brand-teal-deep text-white text-center">
+          <div className="container mx-auto px-6">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={revealVariants}
+            >
+              <h2 className="text-display text-brand-gold mb-8">
+                {t("cta.title")}
+              </h2>
+              <p className="text-lead text-white/80 max-w-3xl mx-auto mb-12 italic">
+                {t("cta.text")}
+              </p>
+              <Button 
+                size="lg" 
+                className="h-20 px-12 text-label text-2xl bg-white text-brand-teal-deep hover:scale-105 hover:bg-brand-gold hover:text-white transition-all duration-300 rounded-full shadow-[0_20px_40px_-10px_rgba(255,255,255,0.2)]"
+                asChild
+              >
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  {t("cta.button")} <ArrowRight className="ml-4 w-8 h-8" />
+                </a>
+              </Button>
             </motion.div>
           </div>
         </section>
@@ -276,48 +390,24 @@ export default function MethodPage() {
   );
 }
 
-
-
-function WhyReason({ title, desc, image, reverse }: { title: string; desc: string; image: string; reverse: boolean }) {
+function TreatmentCard({ icon, title, text, delay }: { icon: React.ReactNode; title: string; text: string; delay: number }) {
   return (
-    <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-      <motion.div
-        initial={{ opacity: 0, x: reverse ? 50 : -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className={cn(
-          "relative lg:col-span-12 xl:col-span-8",
-          reverse ? "lg:order-2" : "lg:order-1"
-        )}
-      >
-        <div className="relative aspect-video rounded-[2.5rem] overflow-hidden group border-12 border-white/50 bg-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)]">
-          <Image 
-            src={image} 
-            className="object-cover transition-transform duration-700 group-hover:scale-105" 
-            fill
-            sizes="(min-width: 1024px) 66vw, 100vw"
-            alt={title} 
-          />
-          <div className="absolute inset-0 bg-brand-teal-deep/5 group-hover:bg-transparent transition-colors duration-500" />
-        </div>
-      </motion.div>
-      
-      <motion.div
-        initial={{ opacity: 0, x: reverse ? -50 : 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className={cn(
-          "lg:col-span-12 xl:col-span-4",
-          reverse ? "lg:order-1" : "lg:order-2"
-        )}
-      >
-        <h3 className="text-3xl lg:text-5xl font-bold mb-8 text-brand-teal-deep tracking-tight">{title}</h3>
-        <p className="text-lg lg:text-2xl text-brand-teal-deep/70 font-medium leading-relaxed">
-          {desc}
-        </p>
-      </motion.div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay, duration: 0.6 }}
+      className="p-10 rounded-[2.5rem] bg-brand-bg border border-brand-teal/10 hover:border-brand-teal/30 transition-colors group h-full flex flex-col"
+    >
+      <div className="mb-8 p-4 rounded-2xl bg-white w-fit shadow-lg group-hover:scale-110 transition-transform duration-300">
+        {icon}
+      </div>
+      <h3 className="text-h3 text-brand-teal-deep mb-6">
+        {title}
+      </h3>
+      <p className="text-body text-brand-teal-deep/70 grow">
+        {text}
+      </p>
+    </motion.div>
   );
 }

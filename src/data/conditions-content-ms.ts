@@ -883,7 +883,7 @@ export const conditionsContentMs: Record<string, ConditionContent> = {
     ],
     relatedConditions: ["wrist-pain", "shoulder-pain"],
   },
-  "post-surgery": {
+  "post-surgery-rehab": {
     title: "Pemulihan Selepas Pembedahan dan Kecederaan di Malaysia",
     subtitle: "Pemulihan Berstruktur untuk Mengembalikan Fungsi Selepas Kecederaan atau Pembedahan",
     intro: "Pemulihan daripada kecederaan atau pembedahan tidak berakhir apabila prosedur atau rawatan awal selesai.\n\nRamai pesakit mendapati bahawa walaupun selepas rawatan perubatan, mereka terus mengalami kekakuan, kelemahan, pergerakan terhad, atau kesakitan berulang. Tanpa pemulihan yang betul, proses baik pulih mungkin kekal tidak lengkap.\n\nDi YAPCHANKOR, kami menyokong pesakit dalam fasa pemulihan — membantu memulihkan pergerakan, membina semula kekuatan, dan kembali kepada aktiviti biasa dengan pendekatan berstruktur dan bersepadu.",
@@ -951,7 +951,7 @@ export const conditionsContentMs: Record<string, ConditionContent> = {
     ],
     relatedConditions: ["back-pain", "knee-pain", "shoulder-pain", "sciatica"]
   },
-  "sport-injury": {
+  "sports-injury": {
     title: "Rawatan Kecederaan Sukan di Malaysia",
     subtitle: "Pulih Daripada Kecederaan dan Kembali Aktif dengan Pemulihan Berstruktur",
     intro: "Kecederaan sukan boleh berlaku secara tiba-tiba — semasa perlawanan, larian, atau senaman biasa. Apa yang bermula sebagai ketegangan ringan boleh menjadi masalah jangka panjang jika tidak diuruskan dengan betul.\n\nBagi kebanyakan pesakit, cabarannya bukan sekadar pulih daripada kecederaan, tetapi kembali aktif tanpa rasa sakit berulang.\n\nDi YAPCHANKOR, kami kerap melihat pesakit yang telah mencuba rehat, fisioterapi asas, atau rawatan sendiri tetapi tidak dapat pulih sepenuhnya. Di sinilah pendekatan yang lebih berstruktur dan bersepadu boleh membawa perubahan.",

@@ -1004,7 +1004,7 @@ const conditionsContentEn = {
     ],
     relatedConditions: ["wrist-pain", "shoulder-pain"]
   },
-  "post-surgery": {
+  "post-surgery-rehab": {
     title: "Post-Surgery and Post-Injury Rehabilitation in Malaysia",
     subtitle: "Structured Recovery to Restore Function After Injury or Surgery",
     intro: "Recovering from an injury or surgery does not end when the procedure or initial treatment is over.\n\nMany patients find that even after medical treatment, they continue to experience stiffness, weakness, limited mobility, or recurring pain. Without proper rehabilitation, recovery may remain incomplete.\n\nAt YAPCHANKOR, we support patients in the recovery phase — helping restore movement, rebuild strength, and return to normal activity with a structured, integrated approach.",
@@ -1072,7 +1072,7 @@ const conditionsContentEn = {
     ],
     relatedConditions: ["back-pain", "knee-pain", "shoulder-pain", "sciatica"]
   },
-  "sport-injury": {
+  "sports-injury": {
     title: "Sports Injury Treatment in Malaysia",
     subtitle: "Recover from Injuries and Return to Activity with Structured Rehabilitation",
     intro: "Sports injuries can happen suddenly — during a game, a run, or even routine exercise. What starts as a minor strain or sprain can develop into a longer-term issue if not properly managed.\n\nFor many patients, the challenge is not just recovering from the injury, but returning to activity without the pain coming back.\n\nAt YAPCHANKOR, we regularly see patients who have tried rest, basic physiotherapy, or self-treatment but are unable to fully recover. This is where a more structured, integrated approach can make a difference.",

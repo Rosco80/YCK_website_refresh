@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { TestimonialGrid } from "@/components/TestimonialGrid";
@@ -19,6 +19,7 @@ export default async function TestimonialsPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Testimonials" });
   
   return (
@@ -32,15 +33,15 @@ export default async function TestimonialsPage({
           
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-4xl">
-              <div className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-widest mb-6">
+              <div className="text-label inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 mb-6">
                 <span>{t("title")}</span>
               </div>
               
-              <h1 className="text-4xl lg:text-7xl font-bold mb-8 tracking-tight leading-[1.1]">
+              <h1 className="text-h2 lg:text-8xl mb-8">
                 {t("heroTitle")}
               </h1>
               
-              <p className="text-xl text-white/70 max-w-2xl leading-relaxed font-medium">
+              <p className="text-body-lg text-white/80 max-w-2xl">
                 {t("heroSubtitle")}
               </p>
             </div>
@@ -48,7 +49,7 @@ export default async function TestimonialsPage({
           
           {/* Abstract Decorations */}
           <div className="absolute top-0 right-0 w-1/2 h-full z-0 opacity-10 pointer-events-none">
-             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-gold/40 to-transparent blur-3xl translate-x-1/2 -translate-y-1/2" />
+             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-brand-gold/40 to-transparent blur-3xl translate-x-1/2 -translate-y-1/2" />
           </div>
         </section>
 

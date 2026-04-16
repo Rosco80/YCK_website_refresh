@@ -847,7 +847,7 @@ export const conditionsContentZh: Record<string, ConditionContent> = {
     ],
     relatedConditions: ["wrist-pain", "shoulder-pain"],
   },
-  "post-surgery": {
+  "post-surgery-rehab": {
     title: "马来西亚的术后及损伤后康复治疗",
     subtitle: "通过结构化康复恢复功能，助您重返正常生活",
     intro: "从伤病或手术中的恢复并不代表随着医疗程序的结束而终止。\n\n许多患者发现，即便接受了医疗处理，依然会遗留僵硬、无力、活动受限或反复的疼痛等问题。如果没有正确的康复介入，复原过程可能并不完整。\n\n在 YAPCHANKOR，我们在患者的康复阶段全程陪同——通过一套结构化和综合性的方法，帮助他们恢复活动能力、重建肌力并安全重返日常活动。",
@@ -915,7 +915,7 @@ export const conditionsContentZh: Record<string, ConditionContent> = {
     ],
     relatedConditions: ["back-pain", "knee-pain", "shoulder-pain", "sciatica"]
   },
-  "sport-injury": {
+  "sports-injury": {
     title: "马来西亚运动损伤治疗",
     subtitle: "通过结构化康复助您从运动损伤中恢复并安全重返运动",
     intro: "运动损伤可能在瞬间发生——无论是在比赛、跑步还是日常锻炼中。如果没有得到适当的护理，最初可能只是看似轻微的拉伤或扭伤，却极易演变成长期的困扰。\n\n对许多患者来说，最大的挑战不仅仅是从伤病中恢复，而且要确保能安全重返运动，避免疼痛复发。\n\n在 YAPCHANKOR，我们经常接诊那些曾尝试休息或接受基本理疗却未能完全康复的患者。在这方面，运用系统化和综合性方法进行治理往往能带来截然不同的改变。",

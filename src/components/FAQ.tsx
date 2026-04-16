@@ -41,7 +41,7 @@ export function FAQ() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-teal mb-6"
+            className="text-h3 text-brand-teal mb-6"
           >
             {t("headline")}
           </motion.h2>
@@ -50,7 +50,7 @@ export function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-brand-teal-deep/70"
+            className="text-body-lg text-brand-teal-deep/70"
           >
             {t("description")}
           </motion.p>
@@ -65,7 +65,7 @@ export function FAQ() {
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="text-xl font-bold text-brand-teal group-hover:text-brand-gold transition-colors">{faq.q}</span>
+                <span className="text-h4 text-brand-teal group-hover:text-brand-gold transition-colors">{faq.q}</span>
                 <div className="shrink-0 ml-4 text-brand-gold" aria-hidden="true">
                   {openIndex === index ? <Minus size={24} /> : <Plus size={24} />}
                 </div>
@@ -82,7 +82,7 @@ export function FAQ() {
                     id={`faq-answer-${index}`}
                     role="region"
                   >
-                    <div className="pb-8 text-brand-teal-deep/70 leading-relaxed text-lg">
+                    <div className="pb-8 text-brand-teal-deep/70 text-body">
                       {faq.a}
                     </div>
                   </motion.div>

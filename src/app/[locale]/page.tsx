@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Branches } from "@/components/Branches";
@@ -7,6 +8,7 @@ import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { RollingHook } from "@/components/RollingHook";
+import { ConditionsGrid } from "@/components/ConditionsGrid";
 import { Differentiation } from "@/components/Differentiation";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { ScientificProof } from "@/components/ScientificProof";
@@ -22,7 +24,13 @@ export const revalidate = 3600; // Cache and statically regenerate the homepage 
 
 import { getInsights } from "@/lib/substack";
 
-export default async function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const insights = await getInsights();
 
   return (
@@ -31,6 +39,7 @@ export default async function Home() {
       <main className="grow">
         <Hero />
         <RollingHook />
+        <ConditionsGrid />
         <Differentiation />
         <WhyChooseUs />
         <ScientificProof />

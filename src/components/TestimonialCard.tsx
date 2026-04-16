@@ -1,8 +1,13 @@
+"use client";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote, ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "@/i18n/routing";
 import type { Testimonial } from "@/data/testimonials";
+
+const SOLUTION_SLUGS = ["sports-injury", "post-surgery-rehab", "chronic-pain"];
 
 interface TestimonialCardProps {
   testimonial: Testimonial;
@@ -41,22 +46,27 @@ export function TestimonialCard({ testimonial, className, isHero = false }: Test
     >
       <div className="flex justify-between items-start mb-8">
         <div className="space-y-1">
-          <span className="text-[10px] font-bold text-brand-gold uppercase tracking-[0.2em] block opacity-70">
+          <span className="text-label text-[10px] text-brand-gold block opacity-70">
             Official Case
           </span>
-          <h4 className="text-lg font-bold text-brand-teal tracking-tight capitalize">
-            {testimonial.slug.replace(/-/g, ' ')}
-          </h4>
+          <Link 
+            href={`${SOLUTION_SLUGS.includes(testimonial.slug) ? "/solutions" : "/conditions"}/${testimonial.slug}`}
+            className="group/title inline-block"
+          >
+            <h4 className="text-h4 text-brand-teal capitalize group-hover/title:text-brand-gold transition-colors">
+              {testimonial.slug.replace(/-/g, ' ')}
+            </h4>
+          </Link>
         </div>
         <Quote className="w-8 h-8 text-brand-gold/20" />
       </div>
 
       <div className="mb-0">
-        <span className="text-[10px] font-bold text-brand-teal-deep/40 uppercase tracking-[0.2em] block mb-6">
+        <span className="text-label text-[10px] text-brand-teal-deep/40 block mb-6">
           Patient Experience
         </span>
         <div className={cn(
-          "text-[1.05rem] text-brand-teal-deep/80 leading-[1.8] font-medium italic space-y-6 relative",
+          "text-body text-[1.05rem] text-brand-teal-deep/80 italic space-y-6 relative",
           shouldTruncate && !isExpanded && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-12 after:bg-linear-to-t after:from-white after:to-transparent"
         )}>
           {displayParagraphs.map((p, idx) => (
@@ -71,7 +81,7 @@ export function TestimonialCard({ testimonial, className, isHero = false }: Test
         {shouldTruncate && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="mt-6 flex items-center space-x-2 text-[10px] font-bold text-brand-teal hover:text-brand-gold transition-colors uppercase tracking-[0.2em] relative z-10"
+            className="mt-6 text-label text-[10px] text-brand-teal hover:text-brand-gold transition-colors relative z-10 flex items-center space-x-2"
           >
             <span>{isExpanded ? "View Less" : "Read Full Story"}</span>
             {isExpanded ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
@@ -81,11 +91,11 @@ export function TestimonialCard({ testimonial, className, isHero = false }: Test
 
       {!isDuplicate && (
         <div className="pt-8 border-t border-brand-teal/5">
-          <span className="text-[10px] font-bold text-brand-gold uppercase tracking-[0.2em] block mb-3 opacity-70">
+          <span className="text-label text-[10px] text-brand-gold block mb-3 opacity-70">
             Functional Outcome
           </span>
           <div className="p-5 rounded-2xl bg-brand-teal/5 border border-brand-teal/5">
-            <p className="text-brand-teal font-bold text-base leading-relaxed">
+            <p className="text-body font-bold text-brand-teal">
               {testimonial.outcome}
             </p>
           </div>

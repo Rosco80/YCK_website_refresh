@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Link } from "@/i18n/routing";
 
 export function ScientificProof() {
   const t = useTranslations("ScientificProof");
@@ -43,14 +44,14 @@ export function ScientificProof() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
           {/* Left Content */}
           <div>
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-brand-teal leading-tight mb-4 text-center lg:text-left">
+            <h2 className="text-h3 text-brand-teal mb-4 text-center lg:text-left">
               {t("title")}
             </h2>
-            <p className="text-lg md:text-2xl lg:text-3xl font-medium text-brand-gold uppercase tracking-[0.2em] mb-10 text-center lg:text-left">
+            <p className="text-label text-xl lg:text-2xl mb-10 text-center lg:text-left">
               {t("heritage")}
             </p>
 
-            <div className="space-y-6 text-lg lg:text-xl text-brand-teal-deep/80 mb-12 leading-relaxed font-medium text-center lg:text-left">
+            <div className="text-body-lg text-brand-teal-deep/80 mb-12 text-center lg:text-left space-y-6">
               <p>{t("description")}</p>
               <p className="text-brand-teal-deep/70 italic">
                 {t("monashStudy")}
@@ -58,7 +59,7 @@ export function ScientificProof() {
             </div>
 
             <div className="pt-8">
-              <h4 className="text-brand-teal font-bold text-xl mb-8 text-center lg:text-left">{t("findingsTitle")}</h4>
+              <h4 className="text-h4 text-brand-teal mb-8 text-center lg:text-left">{t("findingsTitle")}</h4>
               <div className="flex flex-col space-y-4">
                 {findings.map((finding, i) => (
                   <FindingItem key={i} text={finding} />
@@ -106,8 +107,11 @@ export function ScientificProof() {
                   />
                 </div>
               </div>
-              <p className="text-sm font-bold text-brand-teal/60 uppercase tracking-widest leading-relaxed text-center lg:text-left">
-                {t("graphicCaption")}
+              <p className="text-label text-brand-teal/60 text-center lg:text-left">
+                <Link href="/formulations" className="hover:text-brand-gold transition-colors inline-flex items-center group/link">
+                  {t("graphicCaption")}
+                  <span className="ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                </Link>
               </p>
             </div>
           </div>
@@ -123,7 +127,7 @@ function FindingItem({ text }: { text: string }) {
       <div className="shrink-0 w-6 h-6 rounded-full bg-brand-teal/10 flex items-center justify-center group-hover:bg-brand-teal/20 transition-colors">
         <Check className="w-4 h-4 text-brand-teal" strokeWidth={3} />
       </div>
-      <p className="text-lg text-brand-teal-deep/90 font-medium">
+      <p className="text-body text-brand-teal-deep/90 font-bold">
         {text}
       </p>
     </div>

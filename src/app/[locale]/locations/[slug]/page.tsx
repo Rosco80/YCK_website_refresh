@@ -113,12 +113,12 @@ export default function LocationPage() {
             >
               <Link href="/#branches" className="inline-flex items-center space-x-2 text-brand-gold hover:text-white transition-colors mb-8 group">
                 <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                <span className="text-xs font-bold uppercase tracking-widest">Back to Locations</span>
+                <span className="text-label">Back to Locations</span>
               </Link>
-              <h1 className="text-4xl lg:text-7xl font-black mb-6 tracking-tight drop-shadow-lg">
+              <h1 className="text-display text-4xl lg:text-7xl mb-6 drop-shadow-lg">
                 YAPCHANKOR <span className="text-brand-gold">{branchName}</span>
               </h1>
-              <p className="text-xl lg:text-3xl font-medium text-white/80 max-w-3xl uppercase tracking-widest leading-relaxed">
+              <p className="text-label text-xl lg:text-2xl text-white/80 max-w-3xl leading-relaxed">
                 Professional Chronic Pain Treatment
               </p>
             </motion.div>
@@ -131,21 +131,21 @@ export default function LocationPage() {
             <div className="grid lg:grid-cols-3 gap-12 items-start">
               <div className="lg:col-span-2 space-y-12">
                 <div>
-                  <h2 className="text-3xl lg:text-5xl font-bold text-brand-teal-deep mb-8 tracking-tight">Location Details</h2>
+                  <h2 className="text-h3 text-brand-teal-deep mb-8">Location Details</h2>
                   <div className="grid md:grid-cols-2 gap-10">
                     <div className="space-y-6">
                       <div className="flex items-start space-x-4">
                         <MapPin className="w-6 h-6 text-brand-gold shrink-0 mt-1" />
                         <div>
-                          <p className="text-xs font-bold uppercase tracking-widest text-brand-teal-deep/40 mb-2">Address</p>
-                          <p className="text-xl font-medium text-brand-teal-deep leading-relaxed">{branchAddress}</p>
+                          <p className="text-label text-brand-teal-deep/40 mb-2">Address</p>
+                          <p className="text-body-lg text-brand-teal-deep">{branchAddress}</p>
                         </div>
                       </div>
                       <div className="flex items-start space-x-4">
                         <Phone className="w-6 h-6 text-brand-gold shrink-0 mt-1" />
                         <div>
-                          <p className="text-xs font-bold uppercase tracking-widest text-brand-teal-deep/40 mb-2">Phone</p>
-                          <p className="text-xl font-medium text-brand-teal-deep">{branchPhone}</p>
+                          <p className="text-label text-brand-teal-deep/40 mb-2">Phone</p>
+                          <p className="text-body-lg text-brand-teal-deep">{branchPhone}</p>
                         </div>
                       </div>
                     </div>
@@ -153,8 +153,8 @@ export default function LocationPage() {
                       <div className="flex items-start space-x-4">
                         <Clock className="w-6 h-6 text-brand-gold shrink-0 mt-1" />
                         <div>
-                          <p className="text-xs font-bold uppercase tracking-widest text-brand-teal-deep/40 mb-2">Operating Hours</p>
-                          <p className="text-xl font-medium text-brand-teal-deep whitespace-pre-wrap">{branchHours}</p>
+                          <p className="text-label text-brand-teal-deep/40 mb-2">Operating Hours</p>
+                          <p className="text-body-lg text-brand-teal-deep whitespace-pre-wrap">{branchHours}</p>
                         </div>
                       </div>
                     </div>
@@ -162,7 +162,7 @@ export default function LocationPage() {
                 </div>
 
                 <div className="pt-8 border-t border-brand-teal/10">
-                  <p className="text-xs font-bold uppercase tracking-widest text-brand-teal-deep/40 mb-6">Navigation</p>
+                  <p className="text-label text-brand-teal-deep/40 mb-6">Navigation</p>
                   <div className="flex flex-wrap gap-4">
                     <a 
                       href={wazeUrl} 
@@ -190,9 +190,9 @@ export default function LocationPage() {
 
               <aside className="lg:col-span-1">
                 <div className="bg-brand-teal/5 rounded-3xl p-8 sticky top-24">
-                  <h3 className="text-2xl font-bold text-brand-teal-deep mb-6">Book an Appointment</h3>
-                  <p className="text-brand-teal-deep/60 mb-8 font-medium">Ready to start your recovery? Schedule a professional assessment at our {branchName} clinic today.</p>
-                  <Button asChild className="w-full bg-brand-teal hover:bg-brand-teal-deep text-white h-14 rounded-xl text-xs font-black uppercase tracking-widest shadow-clinical hover:shadow-clinical-hover transition-all">
+                  <h3 className="text-h4 text-brand-teal-deep mb-6">Book an Appointment</h3>
+                  <p className="text-body text-brand-teal-deep/60 mb-8">Ready to start your recovery? Schedule a professional assessment at our {branchName} clinic today.</p>
+                  <Button asChild className="w-full bg-brand-teal hover:bg-brand-teal-deep text-white h-14 rounded-xl text-label shadow-clinical hover:shadow-clinical-hover transition-all">
                     <a href={getWhatsAppUrl(tw("branchMessage", { branch: branchName }))} target="_blank" rel="noopener noreferrer">
                       {navT("bookAssessment")}
                     </a>
@@ -201,7 +201,7 @@ export default function LocationPage() {
                     <div className="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center shrink-0">
                       <ShieldCheck className="w-6 h-6 text-brand-gold" />
                     </div>
-                    <p className="text-[10px] font-bold text-brand-teal-deep/40 uppercase tracking-widest">No Referral Needed • KKM Registered</p>
+                    <p className="text-label text-[10px] text-brand-teal-deep/40">No Referral Needed • KKM Registered</p>
                   </div>
                 </div>
               </aside>
@@ -214,8 +214,8 @@ export default function LocationPage() {
           <section className="py-24 bg-brand-bg relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10">
               <div className="text-center max-w-3xl mx-auto mb-20">
-                <h2 className="text-3xl lg:text-6xl font-black text-brand-teal-deep mb-6 tracking-tight">Meet Our <span className="text-brand-gold">Specialists</span></h2>
-                <p className="text-lg lg:text-xl text-brand-teal-deep/60 font-medium leading-relaxed">
+                <h2 className="text-h2 text-brand-teal-deep mb-6">Meet Our <span className="text-brand-gold">Specialists</span></h2>
+                <p className="text-body text-brand-teal-deep/60">
                   Our clinicians are experts in the Shaolin heritage method and modern musculoskeletal science.
                 </p>
               </div>
@@ -241,13 +241,13 @@ export default function LocationPage() {
                     </div>
                     <div className="text-center md:text-left flex flex-col h-full">
                       <div className="mb-6">
-                        <h3 className="text-2xl font-black text-brand-teal-deep mb-1">{physio.name}</h3>
-                        <p className="text-xs font-bold text-brand-gold uppercase tracking-[0.2em]">{physio.title}</p>
+                        <h3 className="text-h4 text-brand-teal-deep mb-1">{physio.name}</h3>
+                        <p className="text-label text-xs text-brand-gold">{physio.title}</p>
                       </div>
-                      <p className="text-brand-teal-deep/60 font-medium leading-relaxed mb-8 grow italic">
+                      <p className="text-body text-brand-teal-deep/60 italic mb-8 grow">
                         "{physio.bio}"
                       </p>
-                      <Button asChild className="w-full bg-black hover:bg-brand-teal-deep text-white h-12 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-xl transition-all">
+                      <Button asChild className="w-full bg-black hover:bg-brand-teal-deep text-white h-12 rounded-xl text-label text-[10px] shadow-xl transition-all">
                         <a href={getWhatsAppUrl(tw("clinicianMessage", { name: physio.name, branch: branchName }))} target="_blank" rel="noopener noreferrer">
                           Book Appointment
                         </a>
