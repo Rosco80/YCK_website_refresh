@@ -65,7 +65,7 @@ export function Differentiation() {
               className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-clinical"
             >
               <Image 
-                src="/images/differentiation_rehab.png" 
+                src="/images/YCK Homepage Knee Osteoarthritis Treatment Image 2026.webp" 
                 alt="Structured Rehabilitation at YAPCHANKOR" 
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"

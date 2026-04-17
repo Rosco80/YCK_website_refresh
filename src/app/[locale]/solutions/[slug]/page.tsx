@@ -3,9 +3,10 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ShieldCheck, Activity, Brain, CheckCircle2, ChevronDown } from "lucide-react";
+import { ArrowLeft, ShieldCheck, CheckCircle2, ChevronDown } from "lucide-react";
+import Image from "next/image";
 import { Link } from "@/i18n/routing";
-import { conditionSlugs, ConditionSlug } from "@/data/conditions";
+import { conditionSlugs, ConditionSlug, conditionsData } from "@/data/conditions";
 import { getConditionsContent } from "@/data/conditions-content";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { ConditionTestimonials } from "@/components/ConditionTestimonials";
@@ -91,7 +92,14 @@ export default async function SolutionDetail({
             
             <div className="max-w-4xl">
               <div className="text-label inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 mb-6">
-                <Brain className="w-4 h-4" />
+                <div className="w-5 h-5 relative">
+                  <Image 
+                    src={conditionsData[slug as ConditionSlug].iconPath} 
+                    alt="" 
+                    fill 
+                    className="object-contain brightness-0 invert" 
+                  />
+                </div>
                 <span>Integrated Clinical Solution</span>
               </div>
               <h1 className="text-h2 lg:text-8xl mb-8 drop-shadow-lg">

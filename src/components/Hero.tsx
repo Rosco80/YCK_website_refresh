@@ -105,7 +105,7 @@ export function Hero() {
 function TrustItem({ title, sub, showDivider }: { title: string; sub: string; showDivider?: boolean }) {
   return (
     <div className={cn(
-      "flex items-center space-x-6 px-4 sm:px-6 lg:px-10 group transition-all justify-center sm:justify-start",
+      "flex items-center space-x-6 px-4 sm:px-6 lg:px-10 group transition-all justify-start",
       showDivider && "lg:border-l lg:border-white/10"
     )}>
       <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center shadow-inner group-hover:bg-brand-gold/20 transition-colors shrink-0 relative overflow-hidden">

@@ -59,20 +59,20 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center relative z-50">
           <Image
-            src="/images/painfix_cream-removebg-preview.png"
+            src="/images/logo/wordmark_vertical.png"
             alt="YAPCHANKOR Clinic Logo"
             width={138}
             height={154}
             priority
             className={cn(
               "object-contain transition-all duration-500 hover:scale-[1.03]",
-              isScrolled ? "h-16.75 lg:h-19.25 w-auto" : "h-38.5 w-34.5"
+              isScrolled ? "h-12 lg:h-16 w-auto" : "h-24 sm:h-32 lg:h-38.5 w-auto"
             )}
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden xl:flex items-center gap-x-8 2xl:gap-x-12 px-12 text-label text-brand-teal-deep/60 mx-auto">
+        <nav className="hidden xl:flex items-center gap-x-4 2xl:gap-x-12 px-6 text-label text-brand-teal-deep/60 mx-auto">
           {navLinks.map((link) => (
             <Link 
               key={link.href} 
@@ -134,7 +134,7 @@ export function Header() {
           closed: { opacity: 0, x: "100%", transitionEnd: { display: "none" } },
         }}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed inset-0 bg-brand-bg flex flex-col pt-32 px-10 pb-10 overflow-y-auto"
+        className="fixed inset-0 bg-brand-bg flex flex-col pt-52 px-10 pb-10 overflow-y-auto z-40"
       >
         <nav className="flex flex-col space-y-8 mb-12">
           {navLinks.map((link) => (

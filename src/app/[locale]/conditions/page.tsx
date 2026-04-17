@@ -2,8 +2,9 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ArrowRight, Activity } from "lucide-react";
-import { conditionSlugs } from "@/data/conditions";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { conditionSlugs, conditionsData } from "@/data/conditions";
 
 export const metadata = {
   title: "Conditions We Treat | YAPCHANKOR",
@@ -51,8 +52,14 @@ export default function ConditionsIndex() {
                     href={`${basePath}/${slug}`}
                     className="bg-white p-8 lg:p-10 rounded-[2.5rem] border border-brand-teal/5 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group flex flex-col h-full"
                   >
-                    <div className="w-16 h-16 bg-brand-teal/5 rounded-2xl flex items-center justify-center text-brand-teal mb-8 group-hover:bg-brand-teal group-hover:text-white transition-colors duration-300 shadow-inner">
-                      <Activity className="w-8 h-8" />
+                    <div className="w-16 h-16 bg-brand-teal/5 rounded-2xl flex items-center justify-center text-brand-teal mb-8 group-hover:bg-brand-teal group-hover:text-white transition-colors duration-300 shadow-inner overflow-hidden p-2">
+                      <Image 
+                        src={conditionsData[slug].iconPath} 
+                        alt="" 
+                        width={40} 
+                        height={40} 
+                        className="object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                      />
                     </div>
                     <h3 className="text-h4 text-brand-teal-deep mb-4 line-clamp-2">
                       {t(`list.${slug}.title`)}

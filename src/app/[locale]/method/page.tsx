@@ -365,7 +365,7 @@ export default function MethodPage() {
               viewport={{ once: true }}
               variants={revealVariants}
             >
-              <h2 className="text-display text-brand-gold mb-8">
+              <h2 className="text-h2 text-brand-gold mb-8">
                 {t("cta.title")}
               </h2>
               <p className="text-lead text-white/80 max-w-3xl mx-auto mb-12 italic">
@@ -373,11 +373,11 @@ export default function MethodPage() {
               </p>
               <Button 
                 size="lg" 
-                className="h-20 px-12 text-label text-2xl bg-white text-brand-teal-deep hover:scale-105 hover:bg-brand-gold hover:text-white transition-all duration-300 rounded-full shadow-[0_20px_40px_-10px_rgba(255,255,255,0.2)]"
+                className="w-full sm:w-auto h-16 sm:h-20 px-6 sm:px-12 text-label text-lg sm:text-2xl bg-white text-brand-teal-deep hover:scale-105 hover:bg-brand-gold hover:text-white transition-all duration-300 rounded-full shadow-[0_20px_40px_-10px_rgba(255,255,255,0.2)]"
                 asChild
               >
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                  {t("cta.button")} <ArrowRight className="ml-4 w-8 h-8" />
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  {t("cta.button")} <ArrowRight className="ml-2 sm:ml-4 w-5 h-5 sm:w-8 sm:h-8" />
                 </a>
               </Button>
             </motion.div>
