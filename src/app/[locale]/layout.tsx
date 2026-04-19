@@ -4,6 +4,7 @@ import { getMessages } from 'next-intl/server';
 import localFont from "next/font/local";
 import "../globals.css";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
+import { Analytics } from '@vercel/analytics/next';
 
 const bandaRegular = localFont({
   src: "../fonts/Banda.ttf",
@@ -93,6 +94,7 @@ export default async function RootLayout({
           {children}
           <WhatsAppWidget />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
