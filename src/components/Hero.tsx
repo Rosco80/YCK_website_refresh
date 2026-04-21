@@ -23,7 +23,7 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover transition-transform duration-1000 scale-[1.02] group-hover:scale-105"
+          className="object-cover object-[60%_center] md:object-center transition-transform duration-1000 scale-[1.02] group-hover:scale-105"
         />
         {/* Darkened overlay for better text readability - Increased opacity */}
         <div className="absolute inset-0 bg-linear-to-b from-black/85 via-black/50 to-black/80" />
