@@ -70,6 +70,12 @@
       "finding1": "经证实可减少炎症标记物",
       "finding2": "增强型透皮吸收技术",
       "finding3": "安全、非侵入性的治疗作用"
+    },
+    "floatingPanel": {
+      "contactTab": "联系我们",
+      "formTitle": "联系我们",
+      "callTooltip": "立即致电",
+      "whatsappTag": "需要帮助？与我们聊天"
     }
   },
   "Hero": {

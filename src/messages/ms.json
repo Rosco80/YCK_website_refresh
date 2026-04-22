@@ -70,6 +70,12 @@
       "finding1": "Pengurangan terbukti dalam penanda keradangan",
       "finding2": "Metodologi penyerapan transdermal yang dipertingkatkan",
       "finding3": "Tindakan terapeutik yang selamat dan tidak invasif"
+    },
+    "floatingPanel": {
+      "contactTab": "Hubungi Kami",
+      "formTitle": "Hubungi Kami",
+      "callTooltip": "Hubungi Sekarang",
+      "whatsappTag": "Perlukan bantuan? Sembang dengan kami"
     }
   },
   "Hero": {

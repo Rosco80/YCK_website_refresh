@@ -616,6 +616,12 @@
       "finding1": "Proven reduction in inflammatory markers",
       "finding2": "Enhanced transdermal absorption methodology",
       "finding3": "Safe, non-invasive therapeutic action"
+    },
+    "floatingPanel": {
+      "contactTab": "Contact Us",
+      "formTitle": "Contact Us",
+      "callTooltip": "Call Us Now",
+      "whatsappTag": "Need Help? Chat with us"
     }
   }
 }
