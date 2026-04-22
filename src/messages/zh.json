@@ -1,4 +1,70 @@
 {
+  "LandingPage": {
+    "hero": {
+      "label": "经验证的止痛疗法",
+      "title": "不要只是管理疼痛。从根本解决它。",
+      "subtitle": "结合少林伤科医药与现代物理治疗，专业诊疗慢性肌肉和关节疼痛。",
+      "description": "自 1979 年以来，我们已帮助超过 50,000 名患者在无需手术或注射的情况下，从腰痛、膝盖问题和运动损伤中康复。"
+    },
+    "form": {
+      "title": "预约您的临床评估",
+      "subtitle": "填写下方表格，我们的团队将联系您确认预约。",
+      "name": "全名",
+      "phone": "电话号码",
+      "email": "电子邮件",
+      "preferredDate": "首选日期",
+      "preferredTime": {
+        "label": "首选时间段",
+        "morning": "早间时段 (9:00 AM - 12:00 PM)",
+        "afternoon": "下午时段 (12:00 PM - 3:00 PM)",
+        "night": "晚间时段 (6:00 PM - 9:00 PM)"
+      },
+      "contactMethod": {
+        "label": "首选联系方式",
+        "whatsapp": "WhatsApp",
+        "email": "电子邮件",
+        "call": "电话联系"
+      },
+      "branch": {
+        "label": "选择分院",
+        "okr": "Old Klang Road (HQ)",
+        "ampang": "Ampang",
+        "subang": "Subang Jaya",
+        "shahalam": "Shah Alam"
+      },
+      "physicalIssue": "身体状况（如：肩膀疼痛）",
+      "painDuration": "疼痛时长（如：3个月）",
+      "submit": "提交请求",
+      "submitting": "处理中...",
+      "success": "您的请求已收到。我们的团队将尽快联系您确认预约。",
+      "error": "提交请求时出错。请重试或通过 WhatsApp 联系我们。"
+    },
+    "whatsapp": {
+      "title": "更喜欢 WhatsApp？",
+      "button": "立即与我们聊天",
+      "message": "您好 YAPCHANKOR，我看到了您的广告，想为我的疼痛预约临床评估。"
+    },
+    "benefits": {
+      "title": "为什么选择 YAPCHANKOR？",
+      "item1": {
+        "title": "无需手术",
+        "desc": "针对慢性病症的有效非侵入性疗法。"
+      },
+      "item2": {
+        "title": "验证配方",
+        "desc": "自 1979 年以来使用的专利草本配方。"
+      },
+      "item3": {
+        "title": "临床专家",
+        "desc": "认证物理治疗师指导您的康复。"
+      }
+    },
+    "locations": {
+      "title": "我们的康复中心",
+      "subtitle": "欢迎亲临我们位于巴生谷的 4 家专业中心，进行专业的临床评估。",
+      "cta": "联系分院"
+    }
+  },
   "Hero": {
     "title": "少林医药：自1979年起在真实患者身上得到验证",
     "heritageHeadline": "源自少林伤科传统",

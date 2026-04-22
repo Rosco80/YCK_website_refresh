@@ -1,4 +1,70 @@
 {
+  "LandingPage": {
+    "hero": {
+      "label": "PELEPAS SAKIT TERBUKTI",
+      "title": "Jangan Sekadar Urus Kesakitan. Selesaikannya.",
+      "subtitle": "Penjagaan klinikal pakar untuk sakit otot dan sendi kronik menggunakan perubatan kecederaan Shaolin dan fisioterapi moden.",
+      "description": "Sejak 1979, kami telah membantu lebih 50,000 pesakit pulih daripada sakit belakang, masalah lutut, dan kecederaan sukan tanpa pembedahan atau suntikan."
+    },
+    "form": {
+      "title": "Tempah Penilaian Klinikal Anda",
+      "subtitle": "Isi borang di bawah dan pasukan kami akan menghubungi anda untuk mengesahkan janji temu anda.",
+      "name": "Nama Penuh",
+      "phone": "Nombor Telefon",
+      "email": "Alamat Emel",
+      "preferredDate": "Tarikh Pilihan",
+      "preferredTime": {
+        "label": "Sesi Masa Pilihan",
+        "morning": "Sesi Pagi (9:00 AM - 12:00 PM)",
+        "afternoon": "Sesi Awal Petang (12:00 PM - 3:00 PM)",
+        "night": "Sesi Malam (6:00 PM - 9:00 PM)"
+      },
+      "contactMethod": {
+        "label": "Kaedah Hubungan Pilihan",
+        "whatsapp": "WhatsApp",
+        "email": "Emel",
+        "call": "Panggilan Telefon"
+      },
+      "branch": {
+        "label": "Pilih Cawangan",
+        "okr": "Old Klang Road (HQ)",
+        "ampang": "Ampang",
+        "subang": "Subang Jaya",
+        "shahalam": "Shah Alam"
+      },
+      "physicalIssue": "Isu Fizikal (cth. Sakit Bahu)",
+      "painDuration": "Tempoh Kesakitan (cth. 3 bulan)",
+      "submit": "Hantar Permintaan",
+      "submitting": "Memproses...",
+      "success": "Permintaan anda telah diterima. Pasukan kami akan menghubungi anda sebentar lagi untuk mengesahkan janji temu anda.",
+      "error": "Terdapat ralat semasa menghantar permintaan anda. Sila cuba lagi atau hubungi kami melalui WhatsApp."
+    },
+    "whatsapp": {
+      "title": "Lebih Suka WhatsApp?",
+      "button": "Sembang dengan Kami Sekarang",
+      "message": "Hi YAPCHANKOR, saya melihat iklan anda dan ingin menempah penilaian klinikal untuk kesakitan saya."
+    },
+    "benefits": {
+      "title": "Kenapa Pilih YAPCHANKOR?",
+      "item1": {
+        "title": "Tanpa Pembedahan",
+        "desc": "Rawatan tidak invasif yang berkesan untuk keadaan kronik."
+      },
+      "item2": {
+        "title": "Formula Terbukti",
+        "desc": "Formulasi herba proprietari yang digunakan sejak 1979."
+      },
+      "item3": {
+        "title": "Pakar Klinikal",
+        "desc": "Ahli fisioterapi bertauliah yang membimbing pemulihan anda."
+      }
+    },
+    "locations": {
+      "title": "Pusat Pemulihan Kami",
+      "subtitle": "Lawati mana-mana daripada 4 pusat pakar kami di Lembah Klang untuk penilaian klinikal profesional.",
+      "cta": "Hubungi Cawangan"
+    }
+  },
   "Hero": {
     "title": "Perubatan Shaolin: Diuji pada Pesakit Sebenar Sejak 1979",
     "heritageHeadline": "Dari Tradisi Perubatan Kecederaan Shaolin",
