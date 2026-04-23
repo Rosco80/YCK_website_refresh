@@ -3,19 +3,20 @@ import { setRequestLocale } from "next-intl/server";
 import { LandingHeader } from "@/components/LandingHeader";
 import { Hero } from "@/components/Hero";
 import { Branches } from "@/components/Branches";
-import { Insights } from "@/components/Insights";
+
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { RollingHook } from "@/components/RollingHook";
-import { ConditionsGrid } from "@/components/ConditionsGrid";
+
 import { Differentiation } from "@/components/Differentiation";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { ScientificProof } from "@/components/ScientificProof";
 import { Compatibility } from "@/components/Compatibility";
 import { ClinicalResults } from "@/components/ClinicalResults";
 import { FloatingContactPanel } from "@/components/FloatingContactPanel";
-import { getInsights } from "@/lib/substack";
+import { LeadForm } from "@/components/LeadForm";
+
 
 export const metadata: Metadata = {
   title: "Proven Pain Relief Treatment | YAPCHANKOR",
@@ -32,24 +33,29 @@ export default async function PainReliefLandingPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const insights = await getInsights();
+
 
   return (
     <div className="min-h-screen flex flex-col">
       <LandingHeader />
       <main className="grow">
-        <Hero />
-        <RollingHook />
-        <ConditionsGrid />
-        <Differentiation />
-        <WhyChooseUs />
-        <ScientificProof />
-        <Compatibility />
-        <ClinicalResults />
-        <Insights latestInsights={insights.slice(0, 3)} />
-        <Branches />
+        <Hero hideLinks={true} />
+        <RollingHook hideLinks={true} />
+        <Differentiation hideLinks={true} />
+        <WhyChooseUs hideLinks={true} />
+        <ScientificProof hideLinks={true} />
+        <Compatibility hideLinks={true} />
+        <ClinicalResults hideLinks={true} />
+
+        <section id="booking-form" className="py-16 lg:py-24 bg-brand-bg relative scroll-mt-20">
+          <div className="container mx-auto px-6 max-w-4xl">
+            <LeadForm />
+          </div>
+        </section>
+
+        <Branches hideLinks={true} />
         <FAQ />
-        <FinalCTA />
+        <FinalCTA hideLinks={true} />
       </main>
       <Footer />
 

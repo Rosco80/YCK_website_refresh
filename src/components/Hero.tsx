@@ -7,7 +7,7 @@ import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 
-export async function Hero() {
+export async function Hero({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = await getTranslations("Hero");
   const tb = await getTranslations("TrustBar");
   const tw = await getTranslations("WhatsApp");
@@ -57,20 +57,22 @@ export async function Hero() {
                   size="lg"
                   className="bg-brand-gold hover:bg-brand-gold/90 text-brand-teal-deep rounded-full px-12 h-14 lg:h-16 text-sm lg:text-lg uppercase tracking-widest font-bold shadow-2xl transition-all hover:scale-105"
                 >
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" id="cta_book_hero_click">
+                  <a href={hideLinks ? "#booking-form" : whatsappUrl} target={hideLinks ? "_self" : "_blank"} rel="noopener noreferrer" id="cta_book_hero_click">
                     {t("primaryCTA")}
                   </a>
                 </Button>
-              <Button 
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-white/40 text-white hover:bg-white/10 rounded-full px-12 h-14 lg:h-16 text-sm lg:text-lg uppercase tracking-widest font-bold backdrop-blur-md"
-              >
-                <Link href="/method">
-                  {t("secondaryCTA")}
-                </Link>
-              </Button>
+              {!hideLinks && (
+                <Button 
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-white/40 text-white hover:bg-white/10 rounded-full px-12 h-14 lg:h-16 text-sm lg:text-lg uppercase tracking-widest font-bold backdrop-blur-md"
+                >
+                  <Link href="/method">
+                    {t("secondaryCTA")}
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { X, Phone, Mail } from "lucide-react";
 import { LeadForm } from "./LeadForm";
 
-const CALL_NUMBER = "+60379833276";
+const CALL_NUMBER = "+60162481899";
 
 export function FloatingContactPanel() {
   const t = useTranslations("LandingPage.floatingPanel");

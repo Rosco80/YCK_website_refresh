@@ -7,7 +7,7 @@ import { Link } from "@/i18n/routing";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { Button } from "./ui/button";
 
-export function RollingHook() {
+export function RollingHook({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = useTranslations("RollingHook");
   const tw = useTranslations("WhatsApp");
   const [index, setIndex] = useState(0);
@@ -125,7 +125,7 @@ export function RollingHook() {
               asChild
               className="rounded-full px-12 h-14 text-sm uppercase tracking-widest font-bold shadow-brand-premium"
             >
-              <a href={getWhatsAppUrl(tw("conditionMessage", { condition: conditions[index] }))} target="_blank" rel="noopener noreferrer" id="cta_rolling_hook_click">
+              <a href={hideLinks ? "#booking-form" : getWhatsAppUrl(tw("conditionMessage", { condition: conditions[index] }))} target={hideLinks ? "_self" : "_blank"} rel="noopener noreferrer" id="cta_rolling_hook_click">
                 {t("cta")}
               </a>
             </Button>

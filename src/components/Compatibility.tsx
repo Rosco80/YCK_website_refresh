@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 
-export function Compatibility() {
+export function Compatibility({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = useTranslations("Compatibility");
 
   const trustIcons = [
@@ -23,12 +23,12 @@ export function Compatibility() {
             <div className="text-body-lg text-brand-teal-deep/70 mb-16 space-y-6">
               <p>
                 {t.rich("description", {
-                  link: (chunks) => <Link href="/solutions/post-surgery-rehab" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
+                  link: (chunks) => hideLinks ? <span className="font-bold text-brand-teal">{chunks}</span> : <Link href="/solutions/post-surgery-rehab" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
                 })}
               </p>
               <p>
                 {t.rich("support", {
-                  link: (chunks) => <Link href="/solutions/chronic-pain" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
+                  link: (chunks) => hideLinks ? <span className="font-bold text-brand-teal">{chunks}</span> : <Link href="/solutions/chronic-pain" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
                 })}
               </p>
             </div>

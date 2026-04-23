@@ -4,7 +4,7 @@ import { Link } from "@/i18n/routing";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 
-function renderDescriptionWithLinks(text: string): (string | React.ReactElement)[] {
+function renderDescriptionWithLinks(text: string, hideLinks: boolean = false): (string | React.ReactElement)[] {
   const conditionLinks = [
     { text: "back pain", href: "/conditions/back-pain" },
     { text: "knee pain", href: "/conditions/knee-pain" },
@@ -21,7 +21,10 @@ function renderDescriptionWithLinks(text: string): (string | React.ReactElement)
 
       return part.split(new RegExp(`(${condText})`, "i")).map((segment, i) =>
         segment.toLowerCase() === condText.toLowerCase()
-          ? <Link key={`${href}-${i}`} href={href} className="text-brand-teal hover:text-brand-teal-deep underline transition-colors">{segment}</Link>
+          ? (hideLinks 
+              ? <span key={`${href}-${i}`} className="text-brand-teal">{segment}</span>
+              : <Link key={`${href}-${i}`} href={href} className="text-brand-teal hover:text-brand-teal-deep underline transition-colors">{segment}</Link>
+            )
           : segment
       );
     });
@@ -30,7 +33,7 @@ function renderDescriptionWithLinks(text: string): (string | React.ReactElement)
   return parts;
 }
 
-export async function WhyChooseUs() {
+export async function WhyChooseUs({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = await getTranslations("WhyChooseUs");
   const websiteImages = await client.fetch(`*[_type == "websiteImages"][0]`);
 
@@ -64,7 +67,7 @@ export async function WhyChooseUs() {
 
             <div className="text-body-lg text-brand-teal-deep/70 mb-12 lg:mb-20 max-w-3xl mx-auto space-y-4">
               {t("description").split("\n\n").map((paragraph, i) => (
-                <p key={i}>{renderDescriptionWithLinks(paragraph)}</p>
+                <p key={i}>{renderDescriptionWithLinks(paragraph, hideLinks)}</p>
               ))}
             </div>
 

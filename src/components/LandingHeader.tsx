@@ -85,7 +85,7 @@ export function LandingHeader() {
               asChild
               className="rounded-full px-4 lg:px-7 h-9 lg:h-11 text-[10px] lg:text-xs text-label bg-brand-teal text-white hover:bg-brand-teal-deep shadow-clinical shrink-0"
             >
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <a href="#booking-form" rel="noopener noreferrer">
                 {t("whatsapp.button")}
               </a>
             </Button>
