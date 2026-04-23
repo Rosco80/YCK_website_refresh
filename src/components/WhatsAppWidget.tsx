@@ -1,12 +1,16 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { getWhatsAppUrl, ADS_WHATSAPP_NUMBER } from "@/lib/whatsapp";
+import { usePathname } from "next/navigation";
 
 export function WhatsAppWidget() {
   const t = useTranslations("WhatsApp");
+  const pathname = usePathname();
   const defaultMessage = t("defaultMessage");
-  const whatsappUrl = getWhatsAppUrl(defaultMessage);
+  
+  const isLandingPage = pathname?.includes("/lp/");
+  const whatsappUrl = getWhatsAppUrl(defaultMessage, isLandingPage ? ADS_WHATSAPP_NUMBER : undefined);
 
   return (
     <a 

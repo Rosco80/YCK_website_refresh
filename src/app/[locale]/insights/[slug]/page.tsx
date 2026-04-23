@@ -100,7 +100,7 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
 
               {/* Sanity Cover Image */}
               {insight.source === 'sanity' && insight.imageUrl && insight.imageUrl !== '/images/yck_home_hero.webp' && (
-                <div className="mb-12 rounded-2xl overflow-hidden shadow-md relative w-full aspect-[16/9]">
+                <div className="mb-12 rounded-2xl overflow-hidden shadow-md relative w-full aspect-video">
                   <Image 
                     src={insight.imageUrl}
                     alt={insight.title}
