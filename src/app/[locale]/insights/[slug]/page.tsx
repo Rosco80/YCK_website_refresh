@@ -1,4 +1,5 @@
-import { getInsightBySlug, getInsights } from '@/lib/substack';
+import { getInsightBySlug, getInsights } from '@/lib/sanity-insights';
+import { PortableText } from '@portabletext/react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Link } from '@/i18n/routing';
@@ -111,20 +112,27 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
                   [&>blockquote]:border-l-4 [&>blockquote]:border-brand-gold [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-xl [&>blockquote]:my-10
                   [&>a]:text-brand-teal [&>a]:underline [&>a]:underline-offset-4 hover:[&>a]:text-brand-teal-deep
                 "
-                dangerouslySetInnerHTML={{ __html: insight.content }}
-              />
+              >
+                {insight.content ? (
+                  <PortableText value={insight.content} />
+                ) : (
+                  <p>Content is coming soon.</p>
+                )}
+              </div>
             </div>
             
-            <div className="mt-20 text-center">
-                <a 
-                  href={insight.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-4 bg-brand-bg border-2 border-brand-teal/20 text-brand-teal-deep text-label rounded-xl hover:border-brand-teal hover:bg-brand-teal hover:text-white transition-all"
-                >
-                  View original on Substack
-                </a>
-            </div>
+            {insight.link && insight.link.includes('substack.com') && (
+              <div className="mt-20 text-center">
+                  <a 
+                    href={insight.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-8 py-4 bg-brand-bg border-2 border-brand-teal/20 text-brand-teal-deep text-label rounded-xl hover:border-brand-teal hover:bg-brand-teal hover:text-white transition-all"
+                  >
+                    View original on Substack
+                  </a>
+              </div>
+            )}
           </div>
         </article>
       </main>

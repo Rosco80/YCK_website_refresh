@@ -1,4 +1,4 @@
-import { getInsights } from '@/lib/substack';
+import { getInsights } from '@/lib/sanity-insights';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Link } from '@/i18n/routing';
