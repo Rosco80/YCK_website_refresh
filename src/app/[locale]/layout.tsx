@@ -89,6 +89,9 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
+        {siteSettings?.googleSiteVerificationId && (
+          <meta name="google-site-verification" content={siteSettings.googleSiteVerificationId} />
+        )}
         {siteSettings?.googleAnalyticsId && (
           <>
             <Script
