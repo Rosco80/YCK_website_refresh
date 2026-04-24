@@ -580,8 +580,28 @@
   "Testimonials": {
     "title": "Kisah Pemulihan Sebenar",
     "subtitle": "Hasil klinikal dan pengalaman pesakit dari rawatan kesakitan kronik khusus kami.",
-    "heroTitle": "Kisah Kejayaan Pesakit",
-    "heroSubtitle": "Hasil terbukti merentasi ribuan kes sakit kronik menggunakan Kaedah Shaolin sejak 1979.",
+    "heroLabel": "KISAH PEMULIHAN SEBENAR",
+    "heroDescription": "Pesakit datang ke YAPCHANKOR selepas rawatan yang gagal, kesakitan berulang, atau cadangan untuk pembedahan. Kes-kes ini menunjukkan bagaimana rupa pemulihan.",
+    "heroTags": [
+      "Sejak 1979",
+      "50,000+ Pesakit Dirawat",
+      "Kes Kronik",
+      "Pendekatan Tanpa Pembedahan"
+    ],
+    "heroCTA": "Tempah Penilaian Klinikal",
+    "heroBrowse": "Lihat Mengikut Keadaan ↓",
+    "bridgeTitle": "RAMAI PESAKIT DATANG KEPADA KAMI SELEPAS:",
+    "bridgeItems": [
+      "Mencuba pelbagai rawatan tanpa hasil yang berkekalan",
+      "Diberitahu untuk mempertimbangkan pembedahan",
+      "Kesakitan yang terus kembali",
+      "Kehilangan mobiliti yang menjejaskan kehidupan seharian"
+    ],
+    "finalCTA": {
+      "title": "SEDIA UNTUK MENGETAHUI JIKA KAMI BOLEH MEMBANTU?",
+      "description": "Jika kesakitan anda berterusan walaupun telah mencuba rawatan lain, penilaian klinikal dapat membantu menentukan langkah seterusnya.",
+      "button": "Tempah Penilaian Klinikal"
+    },
     "viewAllFor": "Terokai semua pemulihan {condition}",
     "categories": {
       "all": "Kisah Pemulihan",
@@ -593,11 +613,23 @@
       "shoulder-pain": "Bahu",
       "neck-pain": "Leher",
       "sprained-ankle": "Buku Lali & Kaki",
+      "ankle-foot": "Buku Lali & Kaki",
       "wrist-pain": "Tangan & Pergelangan Tangan"
     },
     "noResults": "Tiada kes khusus ditemui untuk kategori ini lagi.",
     "viewAll": "Semua Kisah Pemulihan",
-    "readOriginal": "Baca Kes Asal"
+    "readOriginal": "Baca Kes Asal",
+    "readFullStory": "Baca Kisah Penuh",
+    "viewLess": "Lihat Kurang",
+    "severity": {
+      "chronic": "Kes Kronik",
+      "acute": "Kes Akut",
+      "recovery": "Fasa Pemulihan",
+      "official": "Kes Rasmi",
+      "severe": "Kes Teruk",
+      "moderate": "Kes Sederhana",
+      "persistent": "Kes Berterusan"
+    }
   },
   "Science": {
     "heroLabel": "Validasi Klinikal",

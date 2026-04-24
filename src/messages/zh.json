@@ -578,8 +578,28 @@
   "Testimonials": {
     "title": "真实康复故事",
     "subtitle": "源自我们专业的慢性疼痛治疗的临床结果和患者体验。",
-    "heroTitle": "患者成功故事",
-    "heroSubtitle": "自1979年以来，使用少林疗法在数千例慢性疼痛案例中取得的验证结果。",
+    "heroLabel": "真实康复故事",
+    "heroDescription": "患者在经历治疗失败、反复疼痛或被建议手术后，选择来到 YAPCHANKOR。这些案例展示了康复的可能性。",
+    "heroTags": [
+      "自1979年起",
+      "已治疗50,000+名患者",
+      "慢性病例",
+      "非手术疗法"
+    ],
+    "heroCTA": "预约临床评估",
+    "heroBrowse": "按病情浏览 ↓",
+    "bridgeTitle": "许多患者在以下情况后选择我们：",
+    "bridgeItems": [
+      "尝试了多种治疗但没有持久效果",
+      "被告知需要考虑手术",
+      "疼痛不断反复",
+      "活动能力受限，影响日常生活"
+    ],
+    "finalCTA": {
+      "title": "准备好了解我们是否能提供帮助了吗？",
+      "description": "如果您的疼痛在尝试其他治疗后仍然存在，临床评估可以帮助确定下一步。",
+      "button": "预约临床评估"
+    },
     "viewAllFor": "探索所有{condition}康复案例",
     "categories": {
       "all": "所有康复故事",
@@ -591,11 +611,23 @@
       "shoulder-pain": "肩部",
       "neck-pain": "颈部",
       "sprained-ankle": "脚踝与足部",
+      "ankle-foot": "脚踝与足部",
       "wrist-pain": "手部与手腕"
     },
     "noResults": "目前尚未发现该类别的具体案例。",
     "viewAll": "查看所有康复故事",
-    "readOriginal": "阅读原始案例"
+    "readOriginal": "阅读原始案例",
+    "readFullStory": "阅读完整故事",
+    "viewLess": "收起",
+    "severity": {
+      "chronic": "慢性病例",
+      "acute": "急性病例",
+      "recovery": "康复阶段",
+      "official": "官方案例",
+      "severe": "严重病例",
+      "moderate": "中度病例",
+      "persistent": "持续性病例"
+    }
   },
   "Science": {
     "heroLabel": "临床验证",

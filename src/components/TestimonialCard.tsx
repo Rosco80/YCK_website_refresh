@@ -1,106 +1,146 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Quote, ChevronDown, ChevronUp } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import type { Testimonial } from "@/data/testimonials";
+import type { SanityTestimonial } from "@/lib/sanity-testimonials";
 
 const SOLUTION_SLUGS = ["sports-injury", "post-surgery-rehab", "chronic-pain"];
 
 interface TestimonialCardProps {
-  testimonial: Testimonial;
+  testimonial: Testimonial | SanityTestimonial;
   className?: string;
   isHero?: boolean;
 }
 
 export function TestimonialCard({ testimonial, className, isHero = false }: TestimonialCardProps) {
+  const t = useTranslations("Testimonials");
   const [isExpanded, setIsExpanded] = useState(false);
-  
-  // Similarity check: hide outcome if it's already in the content
-  const outcomeSnippet = testimonial.outcome.replace(/\.\.\.$/, "").trim();
-  const isDuplicate = outcomeSnippet.length > 10 && 
-    testimonial.content.toLowerCase().includes(outcomeSnippet.toLowerCase().slice(0, 50));
+  const isSanity = '_id' in testimonial;
+  const content = isSanity ? (typeof testimonial.patientWords === 'string' ? testimonial.patientWords : testimonial.summary || '') : testimonial.content;
+  const outcomes = isSanity ? (testimonial.outcome || []) : [];
+  const quote = isSanity ? testimonial.quote : '';
+  const summary = isSanity ? (testimonial.summary || '') : content;
 
-  const paragraphs = testimonial.content.split('\n').filter(p => p.trim());
-  const shouldTruncate = testimonial.content.length > 1000;
-  
-  const contentToProcess = (shouldTruncate && !isExpanded) 
-    ? testimonial.content.slice(0, 600).split('\n').slice(0, 2).join('\n') + "..."
-    : testimonial.content;
-
-  const displayParagraphs = contentToProcess.split('\n').filter(p => p.trim());
+  // For legacy cards, truncate long content
+  const shouldTruncate = !isSanity && content.length > 300;
+  const displaySummary = shouldTruncate && !isExpanded
+    ? content.slice(0, 200) + "..."
+    : isSanity ? summary : content;
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        "p-8 lg:p-12 rounded-[2.5rem] bg-white border border-brand-teal/5 shadow-clinical hover:shadow-clinical-hover transition-all flex flex-col break-inside-avoid mb-8",
-        isHero && "border-l-4 border-l-brand-gold bg-linear-to-br from-white to-brand-bg/30",
+        "group rounded-2xl bg-white border shadow-clinical hover:shadow-clinical-hover transition-all flex flex-col h-full overflow-hidden",
+        isHero 
+          ? "border-brand-gold/20 ring-1 ring-brand-gold/10" 
+          : "border-brand-teal/5",
         className
       )}
     >
-      <div className="flex justify-between items-start mb-8">
-        <div className="space-y-1">
-          <span className="text-label text-[10px] text-brand-gold block opacity-70">
-            Official Case
-          </span>
-          <Link 
-            href={`${SOLUTION_SLUGS.includes(testimonial.slug) ? "/solutions" : "/conditions"}/${testimonial.slug}`}
-            className="group/title inline-block"
-          >
-            <h4 className="text-h4 text-brand-teal capitalize group-hover/title:text-brand-gold transition-colors">
-              {testimonial.slug.replace(/-/g, ' ')}
-            </h4>
-          </Link>
-        </div>
-        <Quote className="w-8 h-8 text-brand-gold/20" />
+      {/* Image Area */}
+      <div className="relative h-48 bg-gradient-to-br from-brand-teal/5 to-brand-bg overflow-hidden">
+        {isSanity && testimonial.imageUrl ? (
+          <img 
+            src={testimonial.imageUrl} 
+            alt={testimonial.title} 
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="w-20 h-20 rounded-full bg-white/60 border-2 border-brand-gold/20 flex items-center justify-center shadow-lg">
+              <svg className="w-10 h-10 text-brand-teal/30" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
+            </div>
+          </div>
+        )}
+        {/* Gradient overlay at bottom of image */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent" />
       </div>
 
-      <div className="mb-0">
-        <span className="text-label text-[10px] text-brand-teal-deep/40 block mb-6">
-          Patient Experience
-        </span>
-        <div className={cn(
-          "text-body text-[1.05rem] text-brand-teal-deep/80 italic space-y-6 relative",
-          shouldTruncate && !isExpanded && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-12 after:bg-linear-to-t after:from-white after:to-transparent"
-        )}>
-          {displayParagraphs.map((p, idx) => (
-            <p key={idx}>
-              {idx === 0 ? `“${p}` : p}
-              {idx === displayParagraphs.length - 1 && !shouldTruncate ? "”" : ""}
-              {idx === displayParagraphs.length - 1 && shouldTruncate && isExpanded ? "”" : ""}
-            </p>
-          ))}
-        </div>
-        
-        {shouldTruncate && (
+      {/* Card Body */}
+      <div className="p-6 lg:p-8 flex flex-col grow">
+        {/* Tags */}
+        {isSanity && testimonial.details && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {testimonial.details.caseType && (
+              <span className="px-3 py-1 rounded-full bg-brand-teal/5 text-[10px] font-bold text-brand-teal uppercase tracking-wider border border-brand-teal/10">
+                {testimonial.details.caseType}
+              </span>
+            )}
+            {testimonial.details.conditionTag && (
+              <span className="px-3 py-1 rounded-full bg-brand-gold/5 text-[10px] font-bold text-brand-gold uppercase tracking-wider border border-brand-gold/10">
+                {testimonial.details.conditionTag}
+              </span>
+            )}
+          </div>
+        )}
+
+        {/* Headline */}
+        <Link 
+          href={isSanity ? `/testimonials/${testimonial.slug}` : `${SOLUTION_SLUGS.includes(testimonial.slug) ? "/solutions" : "/conditions"}/${testimonial.slug}`}
+          className="group/title inline-block mb-3"
+        >
+          <h4 className="text-lg lg:text-xl font-bold text-brand-teal capitalize group-hover/title:text-brand-gold transition-colors leading-tight line-clamp-2">
+            {isSanity ? testimonial.title : testimonial.slug.replace(/-/g, ' ')}
+          </h4>
+        </Link>
+
+        {/* 2-line Summary */}
+        <p className="text-sm text-brand-teal-deep/70 leading-relaxed mb-5 line-clamp-2">
+          {displaySummary}
+        </p>
+
+        {/* Outcome Bullets */}
+        {isSanity && outcomes.length > 0 && (
+          <ul className="space-y-2 mb-5">
+            {outcomes.slice(0, 3).map((item, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-brand-teal-deep/80">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-gold mt-1.5 shrink-0" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {/* Spacer to push quote + link to bottom */}
+        <div className="grow" />
+
+        {/* Quote */}
+        {quote && (
+          <p className="text-sm italic text-brand-teal/80 border-l-2 border-brand-gold/30 pl-4 mb-5 line-clamp-2">
+            &ldquo;{quote}&rdquo;
+          </p>
+        )}
+
+        {/* Read Story Link */}
+        {isSanity ? (
+          <Link
+            href={`/testimonials/${testimonial.slug}`}
+            className="inline-flex items-center gap-2 text-xs font-bold text-brand-teal hover:text-brand-gold transition-colors uppercase tracking-wider mt-auto pt-4 border-t border-brand-teal/5"
+          >
+            <span>{t("readFullStory")}</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        ) : (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="mt-6 text-label text-[10px] text-brand-teal hover:text-brand-gold transition-colors relative z-10 flex items-center space-x-2"
+            className="inline-flex items-center gap-2 text-xs font-bold text-brand-teal hover:text-brand-gold transition-colors uppercase tracking-wider mt-auto pt-4 border-t border-brand-teal/5"
           >
-            <span>{isExpanded ? "View Less" : "Read Full Story"}</span>
-            {isExpanded ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+            <span>{isExpanded ? t("viewLess", { defaultValue: "View Less" }) : t("readFullStory")}</span>
+            {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
           </button>
         )}
       </div>
-
-      {!isDuplicate && (
-        <div className="pt-8 border-t border-brand-teal/5">
-          <span className="text-label text-[10px] text-brand-gold block mb-3 opacity-70">
-            Functional Outcome
-          </span>
-          <div className="p-5 rounded-2xl bg-brand-teal/5 border border-brand-teal/5">
-            <p className="text-body font-bold text-brand-teal">
-              {testimonial.outcome}
-            </p>
-          </div>
-        </div>
-      )}
     </motion.div>
   );
 }

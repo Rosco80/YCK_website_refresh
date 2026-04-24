@@ -499,8 +499,28 @@
   "Testimonials": {
     "title": "Real Recovery Stories",
     "subtitle": "Clinical outcomes and patient experiences from our specialized chronic pain treatment.",
-    "heroTitle": "Patient Success Stories",
-    "heroSubtitle": "Proven outcomes across thousands of chronic pain cases using the Shaolin Method since 1979.",
+    "heroLabel": "REAL RECOVERY STORIES",
+    "heroDescription": "Patients come to YAPCHANKOR after failed treatments, recurring pain, or recommendations for surgery. These cases show what recovery can look like.",
+    "heroTags": [
+      "Since 1979",
+      "50,000+ Patients Treated",
+      "Chronic Cases",
+      "Non-Surgical Approach"
+    ],
+    "heroCTA": "Book Clinical Assessment",
+    "heroBrowse": "Browse by Condition ↓",
+    "bridgeTitle": "MANY PATIENTS COME TO US AFTER:",
+    "bridgeItems": [
+      "Trying multiple treatments without lasting results",
+      "Being told to consider surgery",
+      "Pain that keeps returning",
+      "Loss of mobility affecting daily life"
+    ],
+    "finalCTA": {
+      "title": "READY TO FIND OUT IF WE CAN HELP?",
+      "description": "If your pain has persisted despite other treatments, a clinical assessment can help determine the next step.",
+      "button": "Book Clinical Assessment"
+    },
     "viewAllFor": "Explore all {condition} recoveries",
     "categories": {
       "all": "All Recovery Stories",
@@ -512,11 +532,23 @@
       "shoulder-pain": "Shoulder",
       "neck-pain": "Neck",
       "sprained-ankle": "Ankle & Foot",
+      "ankle-foot": "Ankle & Foot",
       "wrist-pain": "Hand & Wrist"
     },
     "noResults": "No specific cases found for this category yet.",
     "viewAll": "All Recovery Stories",
-    "readOriginal": "Read Original Case"
+    "readOriginal": "Read Original Case",
+    "readFullStory": "Read Full Story",
+    "viewLess": "View Less",
+    "severity": {
+      "chronic": "Chronic Case",
+      "acute": "Acute Case",
+      "recovery": "Recovery Phase",
+      "official": "Official Case",
+      "severe": "Severe Case",
+      "moderate": "Moderate Case",
+      "persistent": "Persistent Case"
+    }
   },
   "Science": {
     "heroLabel": "Clinical Validation",
