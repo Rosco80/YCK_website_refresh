@@ -8,7 +8,7 @@ import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 
-export async function Branches() {
+export async function Branches({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = await getTranslations("Branches");
   const locale = await getLocale();
   const websiteImages = await client.fetch(`*[_type == "websiteImages"][0]`);
@@ -123,6 +123,7 @@ export async function Branches() {
               ctaView={t("ctaView")}
               ctaBook={t("ctaBook")}
               ctaDirections={t("ctaDirections")}
+              hideLinks={hideLinks}
             />
           ))}
         </div>
@@ -131,7 +132,7 @@ export async function Branches() {
   );
 }
 
-function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, image, index, ctaView, ctaBook, ctaDirections }: { id: string; name: string; address: string; phone: string; hours: string; wazeUrl: string; googleMapsUrl: string; image: string; index: number; ctaView: string; ctaBook: string; ctaDirections: string }) {
+function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, image, index, ctaView, ctaBook, ctaDirections, hideLinks }: { id: string; name: string; address: string; phone: string; hours: string; wazeUrl: string; googleMapsUrl: string; image: string; index: number; ctaView: string; ctaBook: string; ctaDirections: string; hideLinks?: boolean }) {
   // Pass the generated URLs down if using async/await inside map is tricky, or just use useTranslations if client, but it's a Server Component!
   // Wait, I can just use getTranslations here as long as I make it async. But wait, I'm already inside an async component and the easiest is just making this async.
   // Actually, I will pre-fetch translations to avoid making BranchCard async since it's mapped over.
@@ -186,21 +187,23 @@ function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, i
         </div>
 
         <div className="space-y-3 pt-4 border-t border-white/5">
-            <WhatsAppBranchButton branchName={name} ctaBook={ctaBook} index={index} />
-          <Link 
-            href={`/locations/${id}`}
-            className="w-full py-2 text-label flex items-center justify-center space-x-2 text-white/30 hover:text-white transition-colors"
-          >
-            <span>{ctaView}</span>
-            <ArrowRight className="w-3 h-3" />
-          </Link>
+            <WhatsAppBranchButton branchName={name} ctaBook={ctaBook} index={index} hideLinks={hideLinks} />
+          {!hideLinks && (
+            <Link 
+              href={`/locations/${id}`}
+              className="w-full py-2 text-label flex items-center justify-center space-x-2 text-white/30 hover:text-white transition-colors"
+            >
+              <span>{ctaView}</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-async function WhatsAppBranchButton({ branchName, ctaBook, index }: { branchName: string; ctaBook: string; index: number }) {
+async function WhatsAppBranchButton({ branchName, ctaBook, index, hideLinks }: { branchName: string; ctaBook: string; index: number; hideLinks?: boolean }) {
   const tw = await getTranslations("WhatsApp");
   const whatsappUrl = getWhatsAppUrl(tw("branchMessage", { branch: branchName }));
   
@@ -209,7 +212,7 @@ async function WhatsAppBranchButton({ branchName, ctaBook, index }: { branchName
       asChild
       className="w-full bg-brand-gold hover:bg-brand-gold-dark text-white font-bold rounded-xl h-11 lg:h-12 uppercase tracking-widest text-xs"
     >
-      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" id={`cta_book_branch_${index}_click`}>
+      <a href={hideLinks ? "#booking-form" : whatsappUrl} target={hideLinks ? "_self" : "_blank"} rel="noopener noreferrer" id={`cta_book_branch_${index}_click`}>
         {ctaBook}
       </a>
     </Button>

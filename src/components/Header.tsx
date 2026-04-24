@@ -59,10 +59,10 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center relative z-50">
           <Image
-            src="/images/logo/wordmark_vertical.png"
+            src="/images/logo/main_logo.webp"
             alt="YAPCHANKOR Clinic Logo"
-            width={138}
-            height={154}
+            width={180}
+            height={60}
             priority
             className={cn(
               "object-contain transition-all duration-500 hover:scale-[1.03]",

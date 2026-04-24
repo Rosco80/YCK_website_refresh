@@ -41,7 +41,7 @@
     "conditions": "Services",
     "solutions": "Solutions",
     "testimonials": "Testimonials",
-    "bookAssessment": "Book Clinical Assessment"
+    "bookAssessment": "Book Now"
   },
   "WhatsApp": {
     "defaultMessage": "Hello YAPCHANKOR, I would like to book an assessment.",
@@ -499,8 +499,28 @@
   "Testimonials": {
     "title": "Real Recovery Stories",
     "subtitle": "Clinical outcomes and patient experiences from our specialized chronic pain treatment.",
-    "heroTitle": "Patient Success Stories",
-    "heroSubtitle": "Proven outcomes across thousands of chronic pain cases using the Shaolin Method since 1979.",
+    "heroLabel": "REAL RECOVERY STORIES",
+    "heroDescription": "Patients come to YAPCHANKOR after failed treatments, recurring pain, or recommendations for surgery. These cases show what recovery can look like.",
+    "heroTags": [
+      "Since 1979",
+      "50,000+ Patients Treated",
+      "Chronic Cases",
+      "Non-Surgical Approach"
+    ],
+    "heroCTA": "Book Clinical Assessment",
+    "heroBrowse": "Browse by Condition ↓",
+    "bridgeTitle": "MANY PATIENTS COME TO US AFTER:",
+    "bridgeItems": [
+      "Trying multiple treatments without lasting results",
+      "Being told to consider surgery",
+      "Pain that keeps returning",
+      "Loss of mobility affecting daily life"
+    ],
+    "finalCTA": {
+      "title": "READY TO FIND OUT IF WE CAN HELP?",
+      "description": "If your pain has persisted despite other treatments, a clinical assessment can help determine the next step.",
+      "button": "Book Clinical Assessment"
+    },
     "viewAllFor": "Explore all {condition} recoveries",
     "categories": {
       "all": "All Recovery Stories",
@@ -512,11 +532,23 @@
       "shoulder-pain": "Shoulder",
       "neck-pain": "Neck",
       "sprained-ankle": "Ankle & Foot",
+      "ankle-foot": "Ankle & Foot",
       "wrist-pain": "Hand & Wrist"
     },
     "noResults": "No specific cases found for this category yet.",
     "viewAll": "All Recovery Stories",
-    "readOriginal": "Read Original Case"
+    "readOriginal": "Read Original Case",
+    "readFullStory": "Read Full Story",
+    "viewLess": "View Less",
+    "severity": {
+      "chronic": "Chronic Case",
+      "acute": "Acute Case",
+      "recovery": "Recovery Phase",
+      "official": "Official Case",
+      "severe": "Severe Case",
+      "moderate": "Moderate Case",
+      "persistent": "Persistent Case"
+    }
   },
   "Science": {
     "heroLabel": "Clinical Validation",
@@ -544,5 +576,84 @@
     "step3Title": "Tissue Regeneration",
     "step3Text": "By managing inflammation, the herbal patches create an optimal environment for natural tissue repair.",
     "conclusion": "This validation confirms what we have seen in our clinics for decades: YAPCHANKOR herbal patches are a powerful, non-invasive solution for musculoskeletal recovery."
+  },
+  "LandingPage": {
+    "hero": {
+      "label": "PROVEN PAIN RELIEF",
+      "title": "Don't Just Manage Pain. Resolve It.",
+      "subtitle": "Specialized clinical care for chronic muscle and joint pain using Shaolin injury medicine and modern physiotherapy.",
+      "description": "Since 1979, we have helped over 50,000 patients recover from back pain, knee issues, and sports injuries without surgery or injections."
+    },
+    "form": {
+      "title": "Book Your Clinical Assessment",
+      "subtitle": "Fill out the form below and our team will contact you to confirm your appointment.",
+      "name": "Full Name",
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "preferredDate": "Preferred Date",
+      "preferredTime": {
+        "label": "Preferred Time Session",
+        "morning": "Morning Session (9:00 AM - 12:00 PM)",
+        "afternoon": "Early Afternoon Session (12:00 PM - 3:00 PM)",
+        "night": "Night Session (6:00 PM - 9:00 PM)"
+      },
+      "contactMethod": {
+        "label": "Preferred Contact Method",
+        "whatsapp": "WhatsApp",
+        "email": "Email",
+        "call": "Phone Call"
+      },
+      "branch": {
+        "label": "Select Branch",
+        "okr": "Old Klang Road (HQ)",
+        "ampang": "Ampang",
+        "subang": "Subang Jaya",
+        "shahalam": "Shah Alam"
+      },
+      "physicalIssue": "Physical Issue (e.g. Shoulder Ache)",
+      "painDuration": "Pain Duration (e.g. 3 months)",
+      "submit": "Submit Request",
+      "submitting": "Processing...",
+      "success": "Your request has been received. Our team will contact you shortly to confirm your appointment.",
+      "error": "There was an error submitting your request. Please try again or contact us via WhatsApp."
+    },
+    "whatsapp": {
+      "title": "Prefer WhatsApp?",
+      "button": "Book Now",
+      "message": "Hi YAPCHANKOR, I saw your ad and would like to book a clinical assessment for my pain."
+    },
+    "benefits": {
+      "title": "Why Choose YAPCHANKOR?",
+      "item1": {
+        "title": "No Surgery",
+        "desc": "Effective non-invasive treatments for chronic conditions."
+      },
+      "item2": {
+        "title": "Proven Formula",
+        "desc": "Proprietary herbal formulations used since 1979."
+      },
+      "item3": {
+        "title": "Clinical Experts",
+        "desc": "Certified physiotherapists guiding your recovery."
+      }
+    },
+    "locations": {
+      "title": "Our Recovery Centers",
+      "subtitle": "Visit any of our 4 specialized centers in Klang Valley for a professional clinical assessment.",
+      "cta": "Contact Branch"
+    },
+    "monashStudy": {
+      "title": "Scientifically Validated by Monash University",
+      "subtitle": "Our proprietary herbal formulations have been laboratory-tested for anti-inflammatory efficacy.",
+      "finding1": "Proven reduction in inflammatory markers",
+      "finding2": "Enhanced transdermal absorption methodology",
+      "finding3": "Safe, non-invasive therapeutic action"
+    },
+    "floatingPanel": {
+      "contactTab": "Book Consult",
+      "formTitle": "Contact Us",
+      "callTooltip": "Call Us Now",
+      "whatsappTag": "Need Help? Chat with us"
+    }
   }
 }

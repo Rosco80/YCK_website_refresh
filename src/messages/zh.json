@@ -1,4 +1,83 @@
 {
+  "LandingPage": {
+    "hero": {
+      "label": "经验证的止痛疗法",
+      "title": "不要只是管理疼痛。从根本解决它。",
+      "subtitle": "结合少林伤科医药与现代物理治疗，专业诊疗慢性肌肉和关节疼痛。",
+      "description": "自 1979 年以来，我们已帮助超过 50,000 名患者在无需手术或注射的情况下，从腰痛、膝盖问题和运动损伤中康复。"
+    },
+    "form": {
+      "title": "预约您的临床评估",
+      "subtitle": "填写下方表格，我们的团队将联系您确认预约。",
+      "name": "全名",
+      "phone": "电话号码",
+      "email": "电子邮件",
+      "preferredDate": "首选日期",
+      "preferredTime": {
+        "label": "首选时间段",
+        "morning": "早间时段 (9:00 AM - 12:00 PM)",
+        "afternoon": "下午时段 (12:00 PM - 3:00 PM)",
+        "night": "晚间时段 (6:00 PM - 9:00 PM)"
+      },
+      "contactMethod": {
+        "label": "首选联系方式",
+        "whatsapp": "WhatsApp",
+        "email": "电子邮件",
+        "call": "电话联系"
+      },
+      "branch": {
+        "label": "选择分院",
+        "okr": "Old Klang Road (HQ)",
+        "ampang": "Ampang",
+        "subang": "Subang Jaya",
+        "shahalam": "Shah Alam"
+      },
+      "physicalIssue": "身体状况（如：肩膀疼痛）",
+      "painDuration": "疼痛时长（如：3个月）",
+      "submit": "提交请求",
+      "submitting": "处理中...",
+      "success": "您的请求已收到。我们的团队将尽快联系您确认预约。",
+      "error": "提交请求时出错。请重试或通过 WhatsApp 联系我们。"
+    },
+    "whatsapp": {
+      "title": "更喜欢 WhatsApp？",
+      "button": "立即预约",
+      "message": "您好 YAPCHANKOR，我看到了您的广告，想为我的疼痛预约临床评估。"
+    },
+    "benefits": {
+      "title": "为什么选择 YAPCHANKOR？",
+      "item1": {
+        "title": "无需手术",
+        "desc": "针对慢性病症的有效非侵入性疗法。"
+      },
+      "item2": {
+        "title": "验证配方",
+        "desc": "自 1979 年以来使用的专利草本配方。"
+      },
+      "item3": {
+        "title": "临床专家",
+        "desc": "认证物理治疗师指导您的康复。"
+      }
+    },
+    "locations": {
+      "title": "我们的康复中心",
+      "subtitle": "欢迎亲临我们位于巴生谷的 4 家专业中心，进行专业的临床评估。",
+      "cta": "联系分院"
+    },
+    "monashStudy": {
+      "title": "莫纳什大学 (Monash University) 科学验证",
+      "subtitle": "我们的专利草药配方已经过实验室抗炎功效测试。",
+      "finding1": "经证实可减少炎症标记物",
+      "finding2": "增强型透皮吸收技术",
+      "finding3": "安全、非侵入性的治疗作用"
+    },
+    "floatingPanel": {
+      "contactTab": "预约咨询",
+      "formTitle": "联系我们",
+      "callTooltip": "立即致电",
+      "whatsappTag": "需要帮助？与我们聊天"
+    }
+  },
   "Hero": {
     "title": "少林医药：自1979年起在真实患者身上得到验证",
     "heritageHeadline": "源自少林伤科传统",
@@ -41,7 +120,7 @@
     "conditions": "服务项目",
     "solutions": "诊疗方案",
     "testimonials": "患者见证",
-    "bookAssessment": "预约门诊评估"
+    "bookAssessment": "立即预约"
   },
   "WhatsApp": {
     "defaultMessage": "您好 YAPCHANKOR，我想预约临床评估。",
@@ -499,8 +578,28 @@
   "Testimonials": {
     "title": "真实康复故事",
     "subtitle": "源自我们专业的慢性疼痛治疗的临床结果和患者体验。",
-    "heroTitle": "患者成功故事",
-    "heroSubtitle": "自1979年以来，使用少林疗法在数千例慢性疼痛案例中取得的验证结果。",
+    "heroLabel": "真实康复故事",
+    "heroDescription": "患者在经历治疗失败、反复疼痛或被建议手术后，选择来到 YAPCHANKOR。这些案例展示了康复的可能性。",
+    "heroTags": [
+      "自1979年起",
+      "已治疗50,000+名患者",
+      "慢性病例",
+      "非手术疗法"
+    ],
+    "heroCTA": "预约临床评估",
+    "heroBrowse": "按病情浏览 ↓",
+    "bridgeTitle": "许多患者在以下情况后选择我们：",
+    "bridgeItems": [
+      "尝试了多种治疗但没有持久效果",
+      "被告知需要考虑手术",
+      "疼痛不断反复",
+      "活动能力受限，影响日常生活"
+    ],
+    "finalCTA": {
+      "title": "准备好了解我们是否能提供帮助了吗？",
+      "description": "如果您的疼痛在尝试其他治疗后仍然存在，临床评估可以帮助确定下一步。",
+      "button": "预约临床评估"
+    },
     "viewAllFor": "探索所有{condition}康复案例",
     "categories": {
       "all": "所有康复故事",
@@ -512,11 +611,23 @@
       "shoulder-pain": "肩部",
       "neck-pain": "颈部",
       "sprained-ankle": "脚踝与足部",
+      "ankle-foot": "脚踝与足部",
       "wrist-pain": "手部与手腕"
     },
     "noResults": "目前尚未发现该类别的具体案例。",
     "viewAll": "查看所有康复故事",
-    "readOriginal": "阅读原始案例"
+    "readOriginal": "阅读原始案例",
+    "readFullStory": "阅读完整故事",
+    "viewLess": "收起",
+    "severity": {
+      "chronic": "慢性病例",
+      "acute": "急性病例",
+      "recovery": "康复阶段",
+      "official": "官方案例",
+      "severe": "严重病例",
+      "moderate": "中度病例",
+      "persistent": "持续性病例"
+    }
   },
   "Science": {
     "heroLabel": "临床验证",

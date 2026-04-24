@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
-export function FinalCTA() {
+export function FinalCTA({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = useTranslations("FinalCTA");
   const tw = useTranslations("WhatsApp");
   const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
@@ -31,8 +31,8 @@ export function FinalCTA() {
               className="w-full sm:w-auto px-10 sm:px-12 h-14 sm:h-18 text-label text-base lg:text-xl bg-white text-brand-teal-deep hover:bg-white/90 rounded-full shadow-2xl transition-all duration-300 min-w-0 sm:min-w-[320px]"
             >
               <a 
-                href={whatsappUrl}
-                target="_blank"
+                href={hideLinks ? "#booking-form" : whatsappUrl}
+                target={hideLinks ? "_self" : "_blank"}
                 rel="noopener noreferrer"
                 id="cta_final_assessment_click"
                 className="inline-flex items-center justify-center"

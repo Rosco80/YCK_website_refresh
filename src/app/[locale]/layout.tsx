@@ -6,6 +6,8 @@ import "../globals.css";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 import { client } from "@/sanity/lib/client";
 import Script from "next/script";
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const bandaRegular = localFont({
   src: "../fonts/Banda.ttf",
@@ -87,6 +89,9 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
+        {siteSettings?.googleSiteVerificationId && (
+          <meta name="google-site-verification" content={siteSettings.googleSiteVerificationId} />
+        )}
         {siteSettings?.googleAnalyticsId && (
           <>
             <Script
@@ -153,6 +158,8 @@ export default async function RootLayout({
           {children}
           <WhatsAppWidget />
         </NextIntlClientProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

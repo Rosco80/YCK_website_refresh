@@ -2,6 +2,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { TestimonialGrid } from "@/components/TestimonialGrid";
+import { TestimonialHero } from "@/components/TestimonialHero";
+import { getFeaturedTestimonials, getTestimonials } from "@/lib/sanity-testimonials";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -22,39 +24,43 @@ export default async function TestimonialsPage({
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Testimonials" });
   
+  // Fetch initial data for SSR
+  const [featuredTestimonials, allTestimonials] = await Promise.all([
+    getFeaturedTestimonials(3),
+    getTestimonials('all')
+  ]);
+  
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg">
       <Header />
       
       <main className="grow">
-        {/* Hero Section */}
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
-          <div className="container mx-auto px-6 relative z-10 text-left">
-            <div className="max-w-4xl">
-              <div className="text-label inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 mb-6 uppercase text-brand-gold">
-                <span>{t("title")}</span>
-              </div>
-              
-              <h1 className="text-h2 lg:text-8xl mb-8 uppercase">
-                {t("heroTitle")}
-              </h1>
-              
-              <p className="text-body-lg text-white max-w-2xl">
-                {t("heroSubtitle")}
-              </p>
-            </div>
-          </div>
-          
-          {/* Abstract Decorations */}
-          <div className="absolute top-0 right-0 w-1/2 h-full z-0 opacity-10 pointer-events-none">
-             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-brand-gold/40 to-transparent blur-3xl translate-x-1/2 -translate-y-1/2" />
-          </div>
-        </section>
+        <TestimonialHero />
 
         {/* Testimonials Grid Section */}
         <section className="py-24">
           <div className="container mx-auto px-6">
-            <TestimonialGrid />
+            <TestimonialGrid 
+              initialTestimonials={allTestimonials}
+              featuredTestimonials={featuredTestimonials}
+            />
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="py-24 bg-brand-teal-deep text-white text-center">
+          <div className="container mx-auto px-6">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl lg:text-5xl font-bold mb-8 uppercase tracking-tight">
+                {t("finalCTA.title")}
+              </h2>
+              <p className="text-xl lg:text-2xl mb-12 opacity-80 leading-relaxed">
+                {t("finalCTA.description")}
+              </p>
+              <button className="px-12 py-6 rounded-full bg-brand-gold text-brand-teal-deep font-bold text-xl hover:bg-white transition-all shadow-2xl hover:shadow-brand-gold/30">
+                {t("finalCTA.button")}
+              </button>
+            </div>
           </div>
         </section>
       </main>
