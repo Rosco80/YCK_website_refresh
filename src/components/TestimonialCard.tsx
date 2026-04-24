@@ -46,25 +46,21 @@ export function TestimonialCard({ testimonial, className, isHero = false }: Test
         className
       )}
     >
-      {/* Image Area */}
-      <div className="relative h-48 bg-gradient-to-br from-brand-teal/5 to-brand-bg overflow-hidden">
-        {isSanity && testimonial.imageUrl ? (
-          <img 
-            src={testimonial.imageUrl} 
-            alt={testimonial.title} 
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <div className="w-20 h-20 rounded-full bg-white/60 border-2 border-brand-gold/20 flex items-center justify-center shadow-lg">
-              <svg className="w-10 h-10 text-brand-teal/30" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-              </svg>
-            </div>
-          </div>
-        )}
-        {/* Gradient overlay at bottom of image */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent" />
+      {/* Icon Area */}
+      <div className="pt-8 pb-4 flex justify-center">
+        <div className="w-16 h-16 rounded-full bg-brand-teal/5 border-2 border-brand-gold/20 flex items-center justify-center overflow-hidden">
+          {isSanity && testimonial.imageUrl ? (
+            <img 
+              src={testimonial.imageUrl} 
+              alt={testimonial.title} 
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <svg className="w-8 h-8 text-brand-teal/40" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+          )}
+        </div>
       </div>
 
       {/* Card Body */}
