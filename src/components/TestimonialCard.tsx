@@ -49,10 +49,10 @@ export function TestimonialCard({ testimonial, className, isHero = false }: Test
       {/* Icon Area */}
       <div className="pt-8 pb-4 flex justify-center">
         <div className="w-16 h-16 rounded-full bg-brand-teal/5 border-2 border-brand-gold/20 flex items-center justify-center overflow-hidden">
-          {isSanity && testimonial.imageUrl ? (
+          {testimonial.imageUrl ? (
             <img 
               src={testimonial.imageUrl} 
-              alt={testimonial.title} 
+              alt={isSanity ? testimonial.title : testimonial.title} 
               className="w-full h-full object-cover"
             />
           ) : (
@@ -91,8 +91,11 @@ export function TestimonialCard({ testimonial, className, isHero = false }: Test
           </h4>
         </Link>
 
-        {/* 2-line Summary */}
-        <p className="text-sm text-brand-teal-deep/70 leading-relaxed mb-5 line-clamp-2">
+        {/* Summary / Content */}
+        <p className={cn(
+          "text-sm text-brand-teal-deep/70 leading-relaxed mb-5",
+          !isExpanded && "line-clamp-2"
+        )}>
           {displaySummary}
         </p>
 

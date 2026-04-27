@@ -4,6 +4,8 @@ import { Footer } from "@/components/Footer";
 import { getTestimonialBySlug } from "@/lib/sanity-testimonials";
 import { TestimonialFullStory } from "@/components/TestimonialFullStory";
 import { notFound } from "next/navigation";
+import { Link } from "@/i18n/routing";
+import { ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
 
 export async function generateMetadata({ 
@@ -47,8 +49,18 @@ export default async function TestimonialPage({
         <section className="relative pt-32 pb-16 lg:pt-48 lg:pb-24 overflow-hidden bg-brand-teal-deep text-white">
           <div className="container mx-auto px-6 relative z-10 text-center">
             <div className="max-w-4xl mx-auto">
-              <div className="text-label inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 mb-8 uppercase text-brand-gold">
-                <span>Recovery Case Study</span>
+              <Link 
+                href="/testimonials"
+                className="inline-flex items-center space-x-2 text-brand-gold hover:text-white transition-colors mb-8 group"
+              >
+                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                <span className="text-xs font-bold uppercase tracking-widest">Back to all stories</span>
+              </Link>
+              
+              <div className="block">
+                <div className="text-label inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 mb-8 uppercase text-brand-gold">
+                  <span>Recovery Case Study</span>
+                </div>
               </div>
               
               <h1 className="text-h2 lg:text-7xl mb-8 leading-tight">

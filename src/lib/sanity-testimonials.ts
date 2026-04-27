@@ -71,8 +71,8 @@ export async function getTestimonialBySlug(slug: string): Promise<SanityTestimon
   return client.fetch(query, { slug });
 }
 
-export async function getFeaturedTestimonials(limit: number = 3): Promise<SanityTestimonial[]> {
-  const query = `*[_type == "testimonial" && featured == true] | order(priority asc) [0...${limit}] {
+export async function getFeaturedTestimonials(limit: number = 6): Promise<SanityTestimonial[]> {
+  const query = `*[_type == "testimonial"] | order(featured desc, priority asc) [0...${limit}] {
     _id,
     title,
     "slug": slug.current,
@@ -87,6 +87,20 @@ export async function getFeaturedTestimonials(limit: number = 3): Promise<Sanity
     outcome,
     patientWords,
     relatedConditions,
+    "imageUrl": image.asset->url
+  }`;
+
+  return client.fetch(query);
+}
+
+export interface TestimonialImageOverride {
+  testimonialId: string;
+  imageUrl: string;
+}
+
+export async function getTestimonialImageOverrides(): Promise<TestimonialImageOverride[]> {
+  const query = `*[_type == "testimonialImageOverride"] {
+    testimonialId,
     "imageUrl": image.asset->url
   }`;
 

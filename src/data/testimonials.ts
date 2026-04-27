@@ -6,6 +6,7 @@ export interface Testimonial {
   outcome: string;
   link: string;
   length?: number;
+  imageUrl?: string; // Optional: add a URL to show a patient photo on the card
 }
 
 export function getTopTestimonials(limit: number = 15): Testimonial[] {

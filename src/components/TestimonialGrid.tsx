@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { useRouter, usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
@@ -9,7 +9,7 @@ import { TestimonialCard } from "./TestimonialCard";
 import { Button } from "./ui/button";
 import { getTopTestimonials, testimonialsData } from "@/data/testimonials";
 import { cn } from "@/lib/utils";
-import { SanityTestimonial, getTestimonials } from "@/lib/sanity-testimonials";
+import type { SanityTestimonial } from "@/lib/sanity-testimonials";
 
 const CATEGORY_IDS = [
   "all",
@@ -25,12 +25,27 @@ const CATEGORY_IDS = [
   "chronic-pain",
 ];
 
+// Map filter IDs to static data slugs (some filters match multiple slugs)
+const SLUG_MAP: Record<string, string[]> = {
+  "knee-pain": ["knee-pain"],
+  "back-pain": ["back-pain", "slipped-disc"],
+  "shoulder-pain": ["shoulder-pain", "frozen-shoulder"],
+  "neck-pain": ["neck-pain"],
+  "ankle-foot": ["sprained-ankle", "plantar-fasciitis"],
+  "wrist-pain": ["wrist-pain"],
+  "sprained-ankle": ["sprained-ankle"],
+  "sports-injury": ["sports-injury"],
+  "post-surgery-rehab": ["post-surgery-rehab"],
+  "chronic-pain": ["chronic-pain", "general"],
+};
+
 interface TestimonialGridProps {
   initialTestimonials?: SanityTestimonial[];
   featuredTestimonials?: SanityTestimonial[];
+  imageOverrides?: { testimonialId: string; imageUrl: string }[];
 }
 
-export function TestimonialGrid({ initialTestimonials = [], featuredTestimonials = [] }: TestimonialGridProps) {
+export function TestimonialGrid({ featuredTestimonials = [], imageOverrides = [] }: TestimonialGridProps) {
   const t = useTranslations("Testimonials");
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -38,41 +53,63 @@ export function TestimonialGrid({ initialTestimonials = [], featuredTestimonials
   
   const initialCategory = searchParams.get("filter") || "all";
   const [activeCategory, setActiveCategory] = useState(initialCategory);
-  const [testimonials, setTestimonials] = useState<any[]>(initialTestimonials);
-  const [isLoading, setIsLoading] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(12);
 
-  // Sync state with URL changes and fetch if needed
-  useEffect(() => {
-    const filter = searchParams.get("filter") || "all";
-    setActiveCategory(filter);
+  // Featured: always from Sanity (max 6, managed in CMS)
+  // ... (useMemo code remains same, but I'll include it for context)
+  const featured = useMemo(() => {
+    const sanityCount = featuredTestimonials.length;
+    if (sanityCount >= 6) return featuredTestimonials.slice(0, 6);
     
-    if (filter === "all") {
-      // If we're at 'all', and we have initial testimonials, use them (merged with featured)
-      const combined = [...featuredTestimonials, ...initialTestimonials.filter(it => !featuredTestimonials.some(ft => ft._id === it._id))];
-      // If combined is empty, fallback to static data
-      if (combined.length === 0) {
-         setTestimonials(getTopTestimonials(15));
-      } else {
-         setTestimonials(combined);
-      }
+    const topStatic = getTopTestimonials(6);
+    const needed = 6 - sanityCount;
+    const fillers = topStatic
+      .filter(st => !featuredTestimonials.some(ft => ft.slug === st.slug || ft.title === st.title))
+      .slice(0, needed);
+    
+    return [...featuredTestimonials, ...fillers];
+  }, [featuredTestimonials]);
+
+  // Filtered static testimonials based on active category, merged with Sanity image overrides
+  const allFilteredStatic = useMemo(() => {
+    let baseData = [];
+    if (activeCategory === "all") {
+      // For 'all', we use the full set (filtered by featured later)
+      baseData = [...testimonialsData].sort((a, b) => (b.content.length || 0) - (a.content.length || 0));
     } else {
-      // Fetch from Sanity for specific category
-      setIsLoading(true);
-      getTestimonials(filter).then(res => {
-        if (res.length > 0) {
-          setTestimonials(res);
-        } else {
-          // Fallback to static data if no Sanity results
-          const fallback = testimonialsData.filter(t => t.slug === filter || t.slug.includes(filter.split('-')[0]));
-          setTestimonials(fallback);
-        }
-        setIsLoading(false);
-      });
+      const slugs = SLUG_MAP[activeCategory] || [activeCategory];
+      baseData = testimonialsData
+        .filter(t => slugs.includes(t.slug))
+        .sort((a, b) => (b.content.length || 0) - (a.content.length || 0));
     }
-  }, [searchParams, initialTestimonials, featuredTestimonials]);
+
+    // Merge image overrides from Sanity
+    const merged = baseData.map(testimonial => {
+      const override = imageOverrides.find(o => 
+        o.testimonialId === testimonial.id || o.testimonialId === testimonial.slug
+      );
+      if (override) {
+        return { ...testimonial, imageUrl: override.imageUrl };
+      }
+      return testimonial;
+    });
+
+    // Filter out testimonials that are already in the featured section
+    return merged.filter(st => !featured.some(ft => 
+      ('_id' in ft && ft.title === st.title) || 
+      (ft.slug === st.slug) || 
+      ((ft as any).id === st.id)
+    ));
+  }, [activeCategory, imageOverrides, featured]);
+
+  // The actually visible subset
+  const visibleStatic = useMemo(() => {
+    return allFilteredStatic.slice(0, visibleCount);
+  }, [allFilteredStatic, visibleCount]);
 
   const handleCategoryChange = (id: string) => {
     setActiveCategory(id);
+    setVisibleCount(12); // Reset count on category change
     const params = new URLSearchParams(searchParams.toString());
     if (id === "all") {
       params.delete("filter");
@@ -82,15 +119,14 @@ export function TestimonialGrid({ initialTestimonials = [], featuredTestimonials
     router.push(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
-  const featured = featuredTestimonials.length > 0 ? featuredTestimonials : initialTestimonials.slice(0, 3);
-  const remaining = activeCategory === 'all' 
-    ? testimonials.filter(t => !featured.some(f => f._id === t._id))
-    : testimonials;
+  const loadMore = () => {
+    setVisibleCount(prev => prev + 12);
+  };
 
   return (
     <div className="space-y-24">
-      {/* Featured Section (Only on 'all' view) */}
-      {activeCategory === "all" && (
+      {/* Featured Section (Only on 'all' view) — from Sanity CMS */}
+      {activeCategory === "all" && featured.length > 0 && (
         <div className="space-y-12">
           <div className="flex items-center space-x-4 mb-8">
             <div className="h-px grow bg-brand-teal/10" />
@@ -102,7 +138,7 @@ export function TestimonialGrid({ initialTestimonials = [], featuredTestimonials
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             {featured.map((testimonial) => (
               <TestimonialCard 
-                key={'_id' in testimonial ? testimonial._id : (testimonial as any).id}
+                key={'_id' in testimonial ? (testimonial as any)._id : (testimonial as any).id}
                 testimonial={testimonial} 
                 isHero={true}
               />
@@ -154,28 +190,34 @@ export function TestimonialGrid({ initialTestimonials = [], featuredTestimonials
               ))}
             </div>
           </div>
-          {/* Decorative background element */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 blur-[100px] -translate-y-1/2 translate-x-1/2 rounded-full" />
         </section>
       )}
 
-      {/* Main Grid Section */}
-      <div className="space-y-12">
-        <div className={cn(
-          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 transition-opacity duration-500",
-          isLoading ? "opacity-50" : "opacity-100"
-        )}>
+      {/* Main Grid — Static testimonials */}
+      <div className="space-y-16">
+        {activeCategory !== "all" && (
+          <div className="flex items-center space-x-4 mb-4">
+            <div className="h-px grow bg-brand-teal/10" />
+            <h2 className="text-label text-brand-gold font-bold uppercase tracking-[0.2em] shrink-0">
+              {t(`categories.${activeCategory}`)} — {allFilteredStatic.length} Cases
+            </h2>
+            <div className="h-px grow bg-brand-teal/10" />
+          </div>
+        )}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           <AnimatePresence mode="popLayout">
-            {remaining.map((testimonial, idx) => (
+            {visibleStatic.map((testimonial, idx) => (
               <motion.div
-                key={'_id' in testimonial ? testimonial._id : (testimonial as any).id}
+                key={testimonial.id}
                 layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ 
                   duration: 0.5, 
-                  delay: idx * 0.05,
+                  delay: Math.min(idx * 0.03, 0.5),
                   ease: [0.16, 1, 0.3, 1] 
                 }}
               >
@@ -188,7 +230,18 @@ export function TestimonialGrid({ initialTestimonials = [], featuredTestimonials
           </AnimatePresence>
         </div>
 
-        {remaining.length === 0 && !isLoading && (
+        {allFilteredStatic.length > visibleCount && (
+          <div className="flex justify-center pt-8">
+            <Button
+              onClick={loadMore}
+              className="rounded-full px-12 py-8 bg-white border-2 border-brand-teal text-brand-teal font-bold uppercase tracking-widest hover:bg-brand-teal hover:text-white transition-all shadow-xl hover:shadow-brand-teal/20"
+            >
+              Load More Stories
+            </Button>
+          </div>
+        )}
+
+        {allFilteredStatic.length === 0 && (
           <div className="text-center py-24 bg-white rounded-[3rem] border border-brand-teal/5 shadow-clinical">
             <p className="text-xl text-brand-teal/40 italic">
               {t("noResults")}

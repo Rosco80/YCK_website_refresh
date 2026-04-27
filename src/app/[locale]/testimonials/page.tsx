@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { TestimonialGrid } from "@/components/TestimonialGrid";
 import { TestimonialHero } from "@/components/TestimonialHero";
-import { getFeaturedTestimonials, getTestimonials } from "@/lib/sanity-testimonials";
+import { getFeaturedTestimonials, getTestimonialImageOverrides } from "@/lib/sanity-testimonials";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -24,10 +24,10 @@ export default async function TestimonialsPage({
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Testimonials" });
   
-  // Fetch initial data for SSR
-  const [featuredTestimonials, allTestimonials] = await Promise.all([
-    getFeaturedTestimonials(3),
-    getTestimonials('all')
+  // Fetch featured testimonials and image overrides from Sanity for SSR
+  const [featuredTestimonials, imageOverrides] = await Promise.all([
+    getFeaturedTestimonials(6),
+    getTestimonialImageOverrides()
   ]);
   
   return (
@@ -41,8 +41,8 @@ export default async function TestimonialsPage({
         <section className="py-24">
           <div className="container mx-auto px-6">
             <TestimonialGrid 
-              initialTestimonials={allTestimonials}
               featuredTestimonials={featuredTestimonials}
+              imageOverrides={imageOverrides}
             />
           </div>
         </section>
