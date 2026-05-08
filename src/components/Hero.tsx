@@ -7,7 +7,7 @@ import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 
-export async function Hero({ hideLinks = false }: { hideLinks?: boolean } = {}) {
+export async function Hero({ hideLinks = false, customTitle, customSubtitle }: { hideLinks?: boolean, customTitle?: string, customSubtitle?: string } = {}) {
   const t = await getTranslations("Hero");
   const tb = await getTranslations("TrustBar");
   const tw = await getTranslations("WhatsApp");
@@ -40,11 +40,11 @@ export async function Hero({ hideLinks = false }: { hideLinks?: boolean } = {}) 
         <div className="max-w-4xl mx-auto sm:mx-0">
           <div>
             <h1 className="text-display text-white mb-6 drop-shadow-md">
-              {t("title")}
+              {customTitle || t("title")}
             </h1>
             
             <p className="text-label mb-10 drop-shadow-sm text-2xl lg:text-3xl">
-              {t("heritageHeadline")}
+              {customSubtitle || t("heritageHeadline")}
             </p>
 
             <p className="text-lead text-white/90 mb-16 lg:mb-20 max-w-3xl mx-auto sm:mx-0 drop-shadow-lg">
