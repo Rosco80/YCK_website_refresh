@@ -184,7 +184,7 @@
       "name": "Ampang",
       "address": "No. 11 Jalan AWF 1, Ampang Waterfront, 68000 Ampang, SELANGOR",
       "phone": "+603-42801395",
-      "hoursLines": "10am to 8pm (Mon-Fri) | 9am to 5pm (Sat)",
+      "hoursLines": "9am to 5pm (Mon-Sat)",
       "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.146706%2C101.7659892",
       "googleMapsUrl": "https://maps.app.goo.gl/2YHRvN9u7T6Me53E8"
     },
@@ -200,7 +200,7 @@
       "name": "Shah Alam",
       "address": "50, Jalan Bola Tampar 13/14, Seksyen 13, 40100 Shah Alam",
       "phone": "+603-5510 1966",
-      "hoursLines": "10am to 8pm (Mon-Fri) | 9am to 5pm (Sat)",
+      "hoursLines": "9am to 5pm (Mon-Sat)",
       "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.0816396%2C101.54005",
       "googleMapsUrl": "https://maps.app.goo.gl/RW4fnUDEjex7SYHb8"
     },
@@ -208,7 +208,7 @@
       "name": "Subang Jaya",
       "address": "W-07-0 (Ground Floor), West Wing, Subang Square Business Centre, Jalan SS 15/4G, 47500 Subang Jaya.",
       "phone": "+603-5613 2229",
-      "hoursLines": "10am to 8pm (Mon-Fri) | 9am to 5pm (Sat)",
+      "hoursLines": "9am to 5pm (Mon-Sat)",
       "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.0777696%2C101.5885731",
       "googleMapsUrl": "https://maps.app.goo.gl/qi4F839EpNhnbBFQ7"
     }

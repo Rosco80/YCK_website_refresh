@@ -263,7 +263,7 @@
       "name": "安邦 (Ampang)",
       "address": "No. 11 Jalan AWF 1, Ampang Waterfront, 68000 Ampang, SELANGOR",
       "phone": "+603-42801395",
-      "hoursLines": "上午 10:00 - 晚上 8:00 (周一至周五) | 上午 9:00 - 下午 5:00 (周六)",
+      "hoursLines": "上午 9:00 - 下午 5:00 (周一至周六)",
       "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.146706%2C101.7659892",
       "googleMapsUrl": "https://maps.app.goo.gl/2YHRvN9u7T6Me53E8"
     },
@@ -279,7 +279,7 @@
       "name": "莎阿南 (Shah Alam)",
       "address": "50, Jalan Bola Tampar 13/14, Seksyen 13, 40100 Shah Alam",
       "phone": "+603-5510 1966",
-      "hoursLines": "上午 10:00 - 晚上 8:00 (周一至周五) | 上午 9:00 - 下午 5:00 (周六)",
+      "hoursLines": "上午 9:00 - 下午 5:00 (周一至周六)",
       "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.0816396%2C101.54005",
       "googleMapsUrl": "https://maps.app.goo.gl/RW4fnUDEjex7SYHb8"
     },
@@ -287,7 +287,7 @@
       "name": "梳邦再也 (Subang Jaya)",
       "address": "W-07-0 (Ground Floor), West Wing, Subang Square Business Centre, Jalan SS 15/4G, 47500 Subang Jaya.",
       "phone": "+603-5613 2229",
-      "hoursLines": "上午 10:00 - 晚上 8:00 (周一至周五) | 上午 9:00 - 下午 5:00 (周六)",
+      "hoursLines": "上午 9:00 - 下午 5:00 (周一至周六)",
       "wazeUrl": "https://www.waze.com/en-GB/live-map/directions?to=ll.3.0777696%2C101.5885731",
       "googleMapsUrl": "https://maps.app.goo.gl/qi4F839EpNhnbBFQ7"
     }

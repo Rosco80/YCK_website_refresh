@@ -83,7 +83,7 @@ export async function Branches({ hideLinks = false }: { hideLinks?: boolean } = 
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       "opens": "09:00",
-      "closes": "20:00"
+      "closes": branch.id === 'okr' ? "20:00" : "17:00"
     }
   }));
 
