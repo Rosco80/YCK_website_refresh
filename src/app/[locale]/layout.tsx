@@ -4,6 +4,7 @@ import { getMessages } from 'next-intl/server';
 import localFont from "next/font/local";
 import "../globals.css";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
+import { ContactTracker } from "@/components/ContactTracker";
 import { client } from "@/sanity/lib/client";
 import Script from "next/script";
 import { Analytics } from '@vercel/analytics/next';
@@ -158,6 +159,7 @@ export default async function RootLayout({
           {children}
           <WhatsAppWidget />
         </NextIntlClientProvider>
+        <ContactTracker />
         <Analytics />
         <SpeedInsights />
       </body>

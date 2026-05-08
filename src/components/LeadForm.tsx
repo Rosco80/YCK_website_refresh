@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
@@ -13,6 +13,20 @@ export function LeadForm({ className }: { className?: string }) {
   const t = useTranslations("LandingPage.form");
   const [state, setState] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [hasStarted, setHasStarted] = useState(false);
+  const [utmParams, setUtmParams] = useState({ campaign: "", source: "", medium: "" });
+
+  useEffect(() => {
+    try {
+      const searchParams = new URLSearchParams(window.location.search);
+      setUtmParams({
+        campaign: searchParams.get("utm_campaign") || "",
+        source: searchParams.get("utm_source") || "",
+        medium: searchParams.get("utm_medium") || "",
+      });
+    } catch (e) {
+      // Ignore
+    }
+  }, []);
 
   const handleFormStart = () => {
     if (!hasStarted) {
@@ -93,6 +107,9 @@ export function LeadForm({ className }: { className?: string }) {
         
         {/* Internal Tagging */}
         <input type="hidden" name="Lead Source" value="Google Ads" />
+        <input type="hidden" name="UTM Campaign" value={utmParams.campaign} />
+        <input type="hidden" name="UTM Source" value={utmParams.source} />
+        <input type="hidden" name="UTM Medium" value={utmParams.medium} />
 
         {/* Contact Details */}
         <div className="md:col-span-2">
