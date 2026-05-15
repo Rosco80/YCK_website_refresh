@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export const revalidate = 3600; // Cache and statically regenerate the homepage every hour
 
-import { getInsights } from "@/lib/substack";
+import { getInsights } from "@/lib/sanity-insights";
 
 export default async function Home({
   params,
