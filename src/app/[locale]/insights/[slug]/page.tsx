@@ -8,6 +8,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import { routing } from '@/i18n/routing';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -22,20 +23,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export const revalidate = 3600; // Cache and statically regenerate the detail pages hourly
 
-// Removed generateStaticParams temporarily for debugging 404
+export async function generateStaticParams() {
+  const insights = await getInsights();
+
+  return routing.locales.flatMap((locale) =>
+    insights.map((insight) => ({ locale, slug: insight.slug }))
+  );
+}
 
 export default async function InsightDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { slug, locale } = await params;
   setRequestLocale(locale);
   const LOCALE_MAP: Record<string, string> = { en: 'en-MY', ms: 'ms-MY', zh: 'zh-MY' };
   const safeLocale = LOCALE_MAP[locale] ?? 'en-MY';
-  console.log("==> Incoming slug from Next.js:", slug);
-  const insights = await getInsights();
-  console.log("==> Available slugs from Substack:", insights.map(i => i.slug));
   const insight = await getInsightBySlug(slug);
 
   if (!insight) {
-    console.log("==> No insight found matching slug:", slug);
     notFound();
   }
 
@@ -98,8 +101,8 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
                 </p>
               </div>
 
-              {/* Sanity Cover Image */}
-              {insight.source === 'sanity' && insight.imageUrl && insight.imageUrl !== '/images/yck_home_hero.webp' && (
+              {/* Cover Image */}
+              {insight.imageUrl && insight.imageUrl !== '/images/yck_home_hero.webp' && (
                 <div className="mb-12 rounded-2xl overflow-hidden shadow-md relative w-full aspect-video">
                   <Image 
                     src={insight.imageUrl}
@@ -154,18 +157,6 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
               )}
             </div>
             
-            {insight.link && insight.link.includes('substack.com') && (
-              <div className="mt-20 text-center">
-                  <a 
-                    href={insight.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-8 py-4 bg-brand-bg border-2 border-brand-teal/20 text-brand-teal-deep text-label rounded-xl hover:border-brand-teal hover:bg-brand-teal hover:text-white transition-all"
-                  >
-                    View original on Substack
-                  </a>
-              </div>
-            )}
           </div>
         </article>
       </main>

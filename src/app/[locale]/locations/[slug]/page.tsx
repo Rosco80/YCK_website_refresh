@@ -1,16 +1,44 @@
-import { client } from "@/sanity/lib/client";
-import { urlForImage } from "@/sanity/lib/image";
+import { getPhysiotherapists } from "@/lib/sanity-queries";
 import LocationClientPage from "./LocationClientPage";
 
-export default async function LocationPage() {
-  const rawPhysios = await client.fetch(`*[_type == "physiotherapist"] | order(order asc)`);
-  const sanityPhysios = rawPhysios.map((p: any) => ({
-    name: p.name,
-    title: p.title,
-    bio: p.bio,
-    branch: p.branch,
-    image: p.image ? urlForImage(p.image)?.url() : null
-  }));
+export const revalidate = 3600;
 
-  return <LocationClientPage sanityPhysios={sanityPhysios} />;
+const locationSlugs = [
+  "ampang",
+  "old-klang-road",
+  "shah-alam",
+  "subang-jaya",
+  "okr",
+  "shahAlam",
+  "subangJaya",
+];
+
+const locationSlugMap: Record<string, string> = {
+  "ampang": "ampang",
+  "old-klang-road": "okr",
+  "shah-alam": "shahAlam",
+  "subang-jaya": "subangJaya",
+  "okr": "okr",
+  "shahAlam": "shahAlam",
+  "subangJaya": "subangJaya",
+};
+
+export function generateStaticParams() {
+  const locales = ["en", "ms", "zh"];
+
+  return locales.flatMap((locale) =>
+    locationSlugs.map((slug) => ({ locale, slug }))
+  );
+}
+
+export default async function LocationPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const branchId = locationSlugMap[slug] || slug;
+  const sanityPhysios = await getPhysiotherapists();
+
+  return <LocationClientPage branchId={branchId} sanityPhysios={sanityPhysios} />;
 }

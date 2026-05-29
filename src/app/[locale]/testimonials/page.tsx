@@ -5,6 +5,8 @@ import { TestimonialGrid } from "@/components/TestimonialGrid";
 import { TestimonialHero } from "@/components/TestimonialHero";
 import { getFeaturedTestimonials, getStaticTestimonials, getTestimonialImageOverrides } from "@/lib/sanity-testimonials";
 
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Testimonials" });

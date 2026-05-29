@@ -5,14 +5,25 @@ type Props = {
   params: Promise<{ slug: string; locale: string }>;
 };
 
+const locationSlugMap: Record<string, string> = {
+  "ampang": "ampang",
+  "old-klang-road": "okr",
+  "shah-alam": "shahAlam",
+  "subang-jaya": "subangJaya",
+  "okr": "okr",
+  "shahAlam": "shahAlam",
+  "subangJaya": "subangJaya",
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
   const t = await getTranslations({ locale, namespace: "Branches" });
+  const branchId = locationSlugMap[slug] || slug;
   
   let branchName = "";
   try {
-    branchName = t(`${slug}.name`);
-  } catch (e) {
+    branchName = t(`${branchId}.name`);
+  } catch {
     branchName = slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ');
   }
   

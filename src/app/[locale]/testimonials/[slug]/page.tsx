@@ -1,12 +1,24 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { getTestimonialBySlug } from "@/lib/sanity-testimonials";
+import { getTestimonialBySlug, getTestimonialSlugs } from "@/lib/sanity-testimonials";
 import { TestimonialFullStory } from "@/components/TestimonialFullStory";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
 import { ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
+import { routing } from "@/i18n/routing";
+
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const slugs = await getTestimonialSlugs();
+  const uniqueSlugs = Array.from(new Set(slugs.filter(Boolean)));
+
+  return routing.locales.flatMap((locale) =>
+    uniqueSlugs.map((slug) => ({ locale, slug }))
+  );
+}
 
 export async function generateMetadata({ 
   params 
@@ -38,8 +50,6 @@ export default async function TestimonialPage({
     notFound();
   }
 
-  const t = await getTranslations({ locale, namespace: "Testimonials" });
-  
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg">
       <Header />
@@ -69,7 +79,7 @@ export default async function TestimonialPage({
               
               {testimonial.quote && (
                 <p className="text-xl lg:text-3xl text-brand-gold font-bold italic max-w-3xl mx-auto">
-                  "{testimonial.quote}"
+                  &quot;{testimonial.quote}&quot;
                 </p>
               )}
             </div>

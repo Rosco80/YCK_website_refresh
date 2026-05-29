@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useState, useMemo } from "react";
 import { useRouter, usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
@@ -49,13 +48,20 @@ export function TestimonialGrid({
   imageOverrides = [] 
 }: TestimonialGridProps) {
   const t = useTranslations("Testimonials");
-  const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
   
-  const initialCategory = searchParams.get("filter") || "all";
-  const [activeCategory, setActiveCategory] = useState(initialCategory);
+  const [activeCategory, setActiveCategory] = useState("all");
   const [visibleCount, setVisibleCount] = useState(12);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const filter = params.get("filter");
+
+    if (filter && CATEGORY_IDS.includes(filter)) {
+      window.setTimeout(() => setActiveCategory(filter), 0);
+    }
+  }, []);
 
   // Featured: only from the premium "Testimonial" collection
   const featured = useMemo(() => {
@@ -72,7 +78,8 @@ export function TestimonialGrid({
     }
 
     return baseData.map(item => {
-      const override = imageOverrides.find(o => o.testimonialId === item.slug || o.testimonialId === (item as any).id);
+      const legacyId = "id" in item ? String((item as SanityTestimonial & { id?: string }).id) : undefined;
+      const override = imageOverrides.find(o => o.testimonialId === item.slug || o.testimonialId === legacyId);
       if (override && !item.imageUrl) {
         return { ...item, imageUrl: override.imageUrl };
       }
@@ -87,7 +94,7 @@ export function TestimonialGrid({
   const handleCategoryChange = (id: string) => {
     setActiveCategory(id);
     setVisibleCount(12);
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(window.location.search);
     if (id === "all") {
       params.delete("filter");
     } else {

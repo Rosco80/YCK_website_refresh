@@ -4,7 +4,7 @@ import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
-import { client } from "@/sanity/lib/client";
+import { getWebsiteImages } from "@/lib/sanity-queries";
 import { urlForImage } from "@/sanity/lib/image";
 
 export async function Hero({ hideLinks = false, customTitle, customSubtitle }: { hideLinks?: boolean, customTitle?: string, customSubtitle?: string } = {}) {
@@ -13,7 +13,7 @@ export async function Hero({ hideLinks = false, customTitle, customSubtitle }: {
   const tw = await getTranslations("WhatsApp");
   const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
 
-  const websiteImages = await client.fetch(`*[_type == "websiteImages"][0]`);
+  const websiteImages = await getWebsiteImages();
   const heroImageSrc = websiteImages?.heroImage 
     ? urlForImage(websiteImages.heroImage)?.url() 
     : "/images/yck_home_hero.webp";

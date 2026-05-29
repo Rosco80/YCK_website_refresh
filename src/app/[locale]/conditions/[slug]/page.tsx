@@ -1,10 +1,9 @@
 import { notFound } from "next/navigation";
-import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle2, ShieldCheck, ChevronDown } from "lucide-react";
+import { CheckCircle2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { conditionSlugs, ConditionSlug, conditionsData } from "@/data/conditions";
@@ -13,6 +12,8 @@ import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { ConditionTestimonials } from "@/components/ConditionTestimonials";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedConditions } from "@/components/RelatedConditions";
+
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string, slug: string }> }) {
   const { locale, slug } = await params;
@@ -51,7 +52,6 @@ export default async function ConditionDetail({
     notFound();
   }
 
-  // At the moment, since this is an RSC, we can fetch useTranslations directly inside server components in Next-Intl
   const t = await getTranslations("Conditions");
   const tw = await getTranslations("WhatsApp");
   const title = t(`list.${slug}.title`);

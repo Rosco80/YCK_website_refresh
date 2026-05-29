@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
-import { client } from "@/sanity/lib/client";
+import { getWebsiteImages } from "@/lib/sanity-queries";
 import { urlForImage } from "@/sanity/lib/image";
 
 function renderDescriptionWithLinks(text: string, hideLinks: boolean = false): (string | React.ReactElement)[] {
@@ -35,7 +35,7 @@ function renderDescriptionWithLinks(text: string, hideLinks: boolean = false): (
 
 export async function WhyChooseUs({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = await getTranslations("WhyChooseUs");
-  const websiteImages = await client.fetch(`*[_type == "websiteImages"][0]`);
+  const websiteImages = await getWebsiteImages();
 
   const features = [
     {

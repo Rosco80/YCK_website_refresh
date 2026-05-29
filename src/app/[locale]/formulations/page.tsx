@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Check, Shield, Zap, Microscope, Activity, FlaskConical } from "lucide-react";
 import { FinalCTA } from "@/components/FinalCTA";
 
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Science" });

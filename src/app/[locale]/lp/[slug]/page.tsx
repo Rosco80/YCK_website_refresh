@@ -4,14 +4,28 @@ import { LandingHeader } from "@/components/LandingHeader";
 import { Footer } from "@/components/Footer";
 import { FloatingContactPanel } from "@/components/FloatingContactPanel";
 import { SanityModuleRenderer } from "@/components/SanityModuleRenderer";
-import { client } from "@/sanity/lib/client";
+import { getLandingPageBySlug, getLandingPageSlugs } from "@/lib/sanity-queries";
 import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 export const revalidate = 3600;
 
+type LandingPageModule = {
+  _key?: string;
+  [key: string]: unknown;
+};
+
+export async function generateStaticParams() {
+  const slugs = await getLandingPageSlugs();
+
+  return routing.locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug }))
+  );
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const page = await client.fetch(`*[_type == "landingPage" && slug.current == $slug][0]`, { slug });
+  const page = await getLandingPageBySlug(slug);
   
   if (!page) {
     return { title: 'Page Not Found' };
@@ -31,7 +45,7 @@ export default async function DynamicLandingPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const page = await client.fetch(`*[_type == "landingPage" && slug.current == $slug][0]`, { slug });
+  const page = await getLandingPageBySlug(slug);
 
   if (!page) {
     notFound();
@@ -41,7 +55,7 @@ export default async function DynamicLandingPage({
     <div className="min-h-screen flex flex-col">
       <LandingHeader />
       <main className="grow">
-        {page.modules?.map((module: any, index: number) => (
+        {page.modules?.map((module: LandingPageModule, index: number) => (
           <SanityModuleRenderer key={module._key || index} module={module} />
         ))}
       </main>

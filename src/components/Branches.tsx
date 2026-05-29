@@ -5,13 +5,13 @@ import { Button } from "./ui/button";
 import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import Script from "next/script";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
-import { client } from "@/sanity/lib/client";
+import { getWebsiteImages } from "@/lib/sanity-queries";
 import { urlForImage } from "@/sanity/lib/image";
 
 export async function Branches({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = await getTranslations("Branches");
   const locale = await getLocale();
-  const websiteImages = await client.fetch(`*[_type == "websiteImages"][0]`);
+  const websiteImages = await getWebsiteImages();
 
   const branches = [
     { 

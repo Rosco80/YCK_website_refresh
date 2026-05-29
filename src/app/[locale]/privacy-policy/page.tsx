@@ -1,9 +1,17 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export default function PrivacyPolicy() {
-  const t = useTranslations("MethodPage.Legal");
+export const revalidate = 3600;
+
+export default async function PrivacyPolicy({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Legal");
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg text-brand-teal-deep">

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import localFont from "next/font/local";
 import "../globals.css";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 import { ContactTracker } from "@/components/ContactTracker";
-import { client } from "@/sanity/lib/client";
+import { getSiteSettings } from "@/lib/sanity-queries";
 import Script from "next/script";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { routing } from "@/i18n/routing";
 
 const bandaRegular = localFont({
   src: "../fonts/Banda.ttf",
@@ -58,6 +59,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const revalidate = 3600;
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export default async function RootLayout({
   children,
   params,
@@ -66,6 +74,7 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   const medicalClinicJsonLd = {
@@ -85,7 +94,7 @@ export default async function RootLayout({
     ]
   };
 
-  const siteSettings = await client.fetch(`*[_type == "siteSettings"][0]`);
+  const siteSettings = await getSiteSettings();
 
   return (
     <html lang={locale}>

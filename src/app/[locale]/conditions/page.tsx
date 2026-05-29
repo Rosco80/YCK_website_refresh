@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -11,8 +11,16 @@ export const metadata = {
   description: "Explore the medical conditions we successfully treat using integrating Shaolin-based physiotherapy methods.",
 };
 
-export default function ConditionsIndex() {
-  const t = useTranslations("Conditions");
+export const revalidate = 3600;
+
+export default async function ConditionsIndex({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Conditions");
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg">
