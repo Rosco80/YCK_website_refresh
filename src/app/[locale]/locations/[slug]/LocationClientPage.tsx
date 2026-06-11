@@ -121,7 +121,7 @@ export default function LocationClientPage({ branchId, sanityPhysios = [] }: { b
                       className="inline-flex items-center space-x-3 bg-brand-bg hover:bg-brand-teal/5 px-8 py-4 rounded-2xl border border-brand-teal/10 transition-all font-bold text-brand-teal-deep group"
                     >
                       <Navigation className="w-5 h-5 text-brand-teal/40 group-hover:text-brand-teal transition-colors" />
-                      <span>Open in Waze</span>
+                      <span className="whitespace-nowrap">Open in Waze</span>
                       <ExternalLink className="w-4 h-4 text-brand-gold" />
                     </a>
                     <a 
@@ -131,7 +131,7 @@ export default function LocationClientPage({ branchId, sanityPhysios = [] }: { b
                       className="inline-flex items-center space-x-3 bg-brand-bg hover:bg-brand-teal/5 px-8 py-4 rounded-2xl border border-brand-teal/10 transition-all font-bold text-brand-teal-deep group"
                     >
                       <MapIcon className="w-5 h-5 text-brand-teal/40 group-hover:text-brand-teal transition-colors" />
-                      <span>Google Maps</span>
+                      <span className="whitespace-nowrap">Google Maps</span>
                       <ExternalLink className="text-brand-gold group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>

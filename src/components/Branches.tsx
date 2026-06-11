@@ -144,7 +144,7 @@ function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, i
         <Image src={image || "/images/ampang_new.webp"} alt={name} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
         <div className="absolute inset-0 bg-linear-to-t from-brand-teal-deep to-transparent opacity-60" />
       </div>
-      <div className="p-6 lg:p-10 flex flex-col grow">
+      <div className="p-6 lg:p-6 xl:p-10 flex flex-col grow">
         <h3 className="text-h4 mb-6 lg:mb-8 group-hover:text-brand-gold transition-colors h-14 overflow-hidden">{name}</h3>
         
         <div className="flex flex-col grow">
@@ -165,22 +165,22 @@ function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, i
 
           <div className="space-y-4 pt-6 mt-auto border-t border-white/5 pb-8">
             <span className="text-label text-white/30">{ctaDirections}</span>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <a 
                 href={wazeUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-white/5 hover:bg-brand-gold/20 px-5 py-2.5 rounded-xl transition-all border border-white/10 hover:border-brand-gold/40 text-white/50 hover:text-white group/link shadow-lg min-w-25"
+                className="flex-1 min-w-0 flex items-center justify-center bg-white/5 hover:bg-brand-gold/20 px-3 py-2.5 rounded-xl transition-all border border-white/10 hover:border-brand-gold/40 text-white/50 hover:text-white group/link shadow-lg"
               >
-                <span className="text-label">Waze</span>
+                <span className="text-label whitespace-nowrap">Waze</span>
               </a>
               <a 
                 href={googleMapsUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-white/5 hover:bg-brand-gold/20 px-5 py-2.5 rounded-xl transition-all border border-white/10 hover:border-brand-gold/40 text-white/50 hover:text-white group/link shadow-lg min-w-30"
+                className="flex-1 min-w-0 flex items-center justify-center bg-white/5 hover:bg-brand-gold/20 px-3 py-2.5 rounded-xl transition-all border border-white/10 hover:border-brand-gold/40 text-white/50 hover:text-white group/link shadow-lg"
               >
-                <span className="text-label">Google Maps</span>
+                <span className="text-label whitespace-nowrap">Google Maps</span>
               </a>
             </div>
           </div>
