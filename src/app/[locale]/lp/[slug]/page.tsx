@@ -8,7 +8,7 @@ import { getLandingPageBySlug, getLandingPageSlugs } from "@/lib/sanity-queries"
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 type LandingPageModule = {
   _key?: string;

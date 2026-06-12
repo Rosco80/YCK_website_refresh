@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "Specialized clinical care for chronic muscle and joint pain using Shaolin injury medicine and modern physiotherapy. Book your clinical assessment today.",
 };
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export default async function PainReliefLandingPage({
   params,

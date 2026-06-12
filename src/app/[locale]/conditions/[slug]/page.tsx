@@ -13,7 +13,7 @@ import { ConditionTestimonials } from "@/components/ConditionTestimonials";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedConditions } from "@/components/RelatedConditions";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string, slug: string }> }) {
   const { locale, slug } = await params;

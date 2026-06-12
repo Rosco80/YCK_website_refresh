@@ -11,7 +11,7 @@ export const metadata = {
   description: "Explore the medical conditions we successfully treat using integrating Shaolin-based physiotherapy methods.",
 };
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export default async function ConditionsIndex({
   params,

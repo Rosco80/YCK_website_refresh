@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export const revalidate = 3600; // Cache and statically regenerate the detail pages hourly
+export const revalidate = 86400; // Cache and statically regenerate the detail pages hourly
 
 export async function generateStaticParams() {
   const insights = await getInsights();

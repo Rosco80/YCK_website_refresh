@@ -9,7 +9,7 @@ import { ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
 import { routing } from "@/i18n/routing";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export async function generateStaticParams() {
   const slugs = await getTestimonialSlugs();

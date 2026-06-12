@@ -1,7 +1,7 @@
 import { getPhysiotherapists } from "@/lib/sanity-queries";
 import LocationClientPage from "./LocationClientPage";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 const locationSlugs = [
   "ampang",

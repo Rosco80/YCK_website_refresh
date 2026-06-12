@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: 'Clinical insights on chronic pain, rehabilitation, and injury management from YAPCHANKOR.'
 };
 
-export const revalidate = 3600; // 1-hour Incremental Static Regeneration cache
+export const revalidate = 86400; // 1-hour Incremental Static Regeneration cache
 
 export default async function InsightsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

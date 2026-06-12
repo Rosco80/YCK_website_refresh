@@ -8,7 +8,7 @@ import { ContactTracker } from "@/components/ContactTracker";
 import { getSiteSettings } from "@/lib/sanity-queries";
 import Script from "next/script";
 import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+
 import { routing } from "@/i18n/routing";
 
 const bandaRegular = localFont({
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -170,7 +170,7 @@ export default async function RootLayout({
         </NextIntlClientProvider>
         <ContactTracker />
         <Analytics />
-        <SpeedInsights />
+
       </body>
     </html>
   );
