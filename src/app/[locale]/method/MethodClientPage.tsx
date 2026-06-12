@@ -58,7 +58,7 @@ export function MethodClientPage({
       
       <main className="grow">
         {/* Section 1: Full-width Hero */}
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
+        <section className="relative pt-24 pb-20 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
           <div className="container mx-auto px-6 relative z-10 text-left">
             <motion.div
               initial="hidden"

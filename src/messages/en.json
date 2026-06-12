@@ -3,7 +3,7 @@
     "title": "Shaolin Medicine Proven in Real Patients Since 1979",
     "heritageHeadline": "源自少林伤科传统",
     "description1": "Since 1979, YAPCHANKOR has treated chronic joint and muscle pain using a practical approach rooted in Shaolin injury medicine.",
-    "primaryCTA": "Book Clinical Assessment",
+    "primaryCTA": "Book Assessment",
     "secondaryCTA": "Explore Our Method"
   },
   "Home": {
@@ -41,13 +41,13 @@
     "conditions": "Services",
     "solutions": "Solutions",
     "testimonials": "Testimonials",
-    "bookAssessment": "Book Now"
+    "bookAssessment": "Book Assessment"
   },
   "WhatsApp": {
     "defaultMessage": "Hello YAPCHANKOR, I would like to book an assessment.",
-    "branchMessage": "Hello YAPCHANKOR, I would like to book an assessment at the {branch} branch.",
-    "conditionMessage": "Hello YAPCHANKOR, I would like to book an assessment for {condition}.",
-    "clinicianMessage": "Hello YAPCHANKOR, I would like to book an appointment with {name} at the {branch} branch."
+    "branchMessage": "Hello YAPCHANKOR, I would like to book an assessment.",
+    "conditionMessage": "Hello YAPCHANKOR, I would like to book an assessment.",
+    "clinicianMessage": "Hello YAPCHANKOR, I would like to book an assessment."
   },
   "RollingHook": {
     "staticHeading": "We Treat",
@@ -178,7 +178,7 @@
     "headline": "Our Branches",
     "description": "Visit us at any of our four clinical locations for a professional assessment and treatment.",
     "ctaView": "View Branch",
-    "ctaBook": "Book Here",
+    "ctaBook": "Book Assessment",
     "ctaDirections": "Get Directions",
     "ampang": {
       "name": "Ampang",
@@ -242,7 +242,7 @@
   "FinalCTA": {
     "headline": "Start with a Proper Assessment",
     "description": "Persistent or recurring pain often needs structured treatment rather than short-term relief.",
-    "ctaBook": "Book Clinical Assessment",
+    "ctaBook": "Book Assessment",
     "heritage": "传承少林伤科智慧，结合现代临床实践，自1979年。"
   },
   "Footer": {

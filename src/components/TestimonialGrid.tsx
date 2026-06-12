@@ -231,7 +231,7 @@ export function TestimonialGrid({
 
         {allFiltered.length === 0 && (
           <div className="text-center py-24 bg-white rounded-[3rem] border border-brand-teal/5 shadow-clinical">
-            <p className="text-xl text-brand-teal/40 italic">
+            <p className="text-xl text-brand-teal/60 italic">
               {t("noResults")}
             </p>
           </div>

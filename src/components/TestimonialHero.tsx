@@ -13,7 +13,7 @@ export function TestimonialHero() {
   };
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
+    <section className="relative pt-24 pb-20 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
       <div className="container mx-auto px-6 relative z-10 text-center lg:text-left">
         <div className="max-w-4xl mx-auto lg:mx-0">
           <div className="text-label inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 mb-8 uppercase text-brand-gold">
@@ -28,14 +28,7 @@ export function TestimonialHero() {
             {t("heroDescription")}
           </p>
 
-          {/* Specs/Tags */}
-          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-4 mb-12">
-            {(t.raw("heroTags") as string[]).map((tag, i) => (
-              <div key={i} className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold tracking-wide uppercase text-brand-gold/80 flex items-center justify-center lg:justify-start">
-                {tag}
-              </div>
-            ))}
-          </div>
+
 
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <button className="w-full sm:w-auto px-8 py-5 rounded-full bg-brand-gold text-brand-teal-deep font-bold text-lg hover:bg-white transition-all shadow-lg hover:shadow-brand-gold/20">

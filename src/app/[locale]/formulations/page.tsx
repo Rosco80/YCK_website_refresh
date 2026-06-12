@@ -32,7 +32,7 @@ export default async function SciencePage({
       
       <main className="grow">
         {/* Science Hero */}
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">          <div className="container mx-auto px-6 relative z-10">
+        <section className="relative pt-24 pb-20 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">          <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-4xl">
               <div className="text-label inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 mb-6 text-brand-gold uppercase">
                 <FlaskConical size={14} className="mr-2" />
@@ -99,14 +99,14 @@ export default async function SciencePage({
               <div className="space-y-8">
                 <div className="bg-white p-8 rounded-3xl shadow-clinical border border-brand-teal/5">
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-label text-brand-teal/40">Western Blot Analysis</span>
-                    <span className="text-xs font-mono text-brand-teal/20">Fig 1.2a</span>
+                    <span className="text-label text-brand-teal/60">Western Blot Analysis</span>
+                    <span className="text-xs font-mono text-brand-teal/60">Fig 1.2a</span>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <Image src="/images/monash_test_1.png" alt="Study Result 1" width={400} height={400} className="rounded-lg shadow-sm" />
                     <Image src="/images/monash_test_2.png" alt="Study Result 2" width={400} height={400} className="rounded-lg shadow-sm" />
                   </div>
-                  <p className="mt-6 text-xs text-brand-teal-deep/50 italic text-center">
+                  <p className="mt-6 text-xs text-brand-teal-deep/70 italic text-center">
                     Visual evidence of suppressed inflammatory markers (IL-6, TNF-α) following application of the proprietary herbal extract.
                   </p>
                 </div>
@@ -161,7 +161,7 @@ export default async function SciencePage({
                   <Zap size={40} />
                 </div>
                 <h3 className="text-h4 mb-4">{t("step1Title")}</h3>
-                <p className="text-body text-brand-teal-deep/60">{t("step1Text")}</p>
+                <p className="text-body text-brand-teal-deep/70">{t("step1Text")}</p>
               </div>
 
               <div className="flex flex-col items-center text-center group">

@@ -84,7 +84,7 @@ export default async function ConditionDetail({
       
       <main className="grow">
         {/* Dynamic Abstract Hero */}
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
+        <section className="relative pt-24 pb-20 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
           <div className="container mx-auto px-6 relative z-10 text-left">
             <Breadcrumbs />
             
@@ -301,7 +301,7 @@ export default async function ConditionDetail({
                   {t("btnBook")}
                 </a>
               </Button>
-              <div className="mt-8 flex justify-center text-label text-white/50">
+              <div className="mt-8 flex justify-center text-label text-white/70">
                 {t("noReferral")}
               </div>
             </div>

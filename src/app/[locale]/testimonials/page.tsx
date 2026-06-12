@@ -58,7 +58,7 @@ export default async function TestimonialsPage({
               <h2 className="text-3xl lg:text-5xl font-bold mb-8 uppercase tracking-tight">
                 {t("finalCTA.title")}
               </h2>
-              <p className="text-xl lg:text-2xl mb-12 opacity-80 leading-relaxed">
+              <p className="text-xl lg:text-2xl mb-12 text-white/80 leading-relaxed">
                 {t("finalCTA.description")}
               </p>
               <button className="px-12 py-6 rounded-full bg-brand-gold text-brand-teal-deep font-bold text-xl hover:bg-white transition-all shadow-2xl hover:shadow-brand-gold/30">

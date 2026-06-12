@@ -126,7 +126,7 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
                     [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-8 [&>ul>li]:mb-2
                     [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-8 [&>ol>li]:mb-2
                     [&>img]:w-full [&>img]:rounded-2xl [&>img]:my-10 [&>img]:shadow-sm
-                    [&>figure]:my-10 [&>figure>img]:w-full [&>figure>img]:rounded-2xl [&>figcaption]:text-center [&>figcaption]:text-sm [&>figcaption]:text-brand-teal-deep/50 [&>figcaption]:mt-4
+                    [&>figure]:my-10 [&>figure>img]:w-full [&>figure>img]:rounded-2xl [&>figcaption]:text-center [&>figcaption]:text-sm [&>figcaption]:text-brand-teal-deep/70 [&>figcaption]:mt-4
                     [&>blockquote]:border-l-4 [&>blockquote]:border-brand-gold [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-xl [&>blockquote]:my-10
                     [&>a]:text-brand-teal [&>a]:underline [&>a]:underline-offset-4 hover:[&>a]:text-brand-teal-deep
                   "
@@ -143,7 +143,7 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
                     [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-8 [&>ul>li]:mb-2
                     [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-8 [&>ol>li]:mb-2
                     [&>img]:w-full [&>img]:rounded-2xl [&>img]:my-10 [&>img]:shadow-sm
-                    [&>figure]:my-10 [&>figure>img]:w-full [&>figure>img]:rounded-2xl [&>figcaption]:text-center [&>figcaption]:text-sm [&>figcaption]:text-brand-teal-deep/50 [&>figcaption]:mt-4
+                    [&>figure]:my-10 [&>figure>img]:w-full [&>figure>img]:rounded-2xl [&>figcaption]:text-center [&>figcaption]:text-sm [&>figcaption]:text-brand-teal-deep/70 [&>figcaption]:mt-4
                     [&>blockquote]:border-l-4 [&>blockquote]:border-brand-gold [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-xl [&>blockquote]:my-10
                     [&>a]:text-brand-teal [&>a]:underline [&>a]:underline-offset-4 hover:[&>a]:text-brand-teal-deep
                   "

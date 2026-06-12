@@ -20,7 +20,7 @@ export function LandingFooter() {
               className="h-16 w-auto object-contain" 
             />
           </div>
-          <p className="text-body text-white/50 italic mb-8 max-w-xs text-center">
+          <p className="text-body text-white/70 italic mb-8 max-w-xs text-center">
             {t("tagline")}
           </p>
           <div className="flex space-x-5">
@@ -49,10 +49,10 @@ export function LandingFooter() {
 
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="text-[11px] font-medium text-white/30 tracking-wide text-center md:text-left">
+          <div className="text-[11px] font-medium text-white/60 tracking-wide text-center md:text-left">
             {t("copyright")}
           </div>
-          <div className="flex space-x-10 text-[11px] font-medium text-white/30 tracking-wide">
+          <div className="flex space-x-10 text-[11px] font-medium text-white/60 tracking-wide">
             <FooterLink href="/privacy-policy">{tLegal("privacyPolicy")}</FooterLink>
             <FooterLink href="/terms-of-service">{tLegal("termsOfService")}</FooterLink>
             <FooterLink href="/legal-disclosure">{tLegal("legalDisclosure")}</FooterLink>

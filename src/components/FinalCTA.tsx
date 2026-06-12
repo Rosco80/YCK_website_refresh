@@ -43,7 +43,7 @@ export function FinalCTA({ hideLinks = false }: { hideLinks?: boolean } = {}) {
             </Button>
 
             <div className="mt-16 lg:mt-20 pt-12 lg:pt-16 border-t border-white/10">
-              <p className="text-label text-white tracking-[0.3em] opacity-40">
+              <p className="text-label text-white/60 tracking-[0.3em]">
                 {t("heritage")}
               </p>
             </div>

@@ -10,6 +10,11 @@ export function WhatsAppWidget() {
   const defaultMessage = t("defaultMessage");
   
   const isLandingPage = pathname?.includes("/lp/");
+  const isAdminPage = pathname?.includes("/admin");
+
+  // Don't render the WhatsApp widget on the CMS / admin dashboard
+  if (isAdminPage) return null;
+
   const whatsappUrl = getWhatsAppUrl(defaultMessage, isLandingPage ? ADS_WHATSAPP_NUMBER : undefined);
   
   const handleWhatsAppClick = () => {

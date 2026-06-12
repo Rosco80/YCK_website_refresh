@@ -27,7 +27,7 @@ export function Footer() {
                 />
               </div>
             </div>
-            <p className="text-body text-white/50 italic mb-10 max-w-xs">
+            <p className="text-body text-white/70 italic mb-10 max-w-xs">
               {t("tagline")}
             </p>
             <div className="flex space-x-5">
@@ -58,7 +58,7 @@ export function Footer() {
           <div className="lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 gap-12">
             <div>
               <h4 className="text-label mb-8 text-brand-gold/80">{t("servicesTitle")}</h4>
-              <ul className="space-y-4 text-sm font-medium text-white/40">
+              <ul className="space-y-4 text-sm font-medium text-white/70">
                 <li><FooterLink href="/conditions/back-pain">Back Pain</FooterLink></li>
                 <li><FooterLink href="/conditions/knee-pain">Knee Pain</FooterLink></li>
                 <li><FooterLink href="/conditions/shoulder-pain">Shoulder Pain</FooterLink></li>
@@ -67,7 +67,7 @@ export function Footer() {
             </div>
             <div>
               <h4 className="text-label mb-8 text-brand-gold/80">{t("locationsTitle")}</h4>
-              <ul className="space-y-4 text-sm font-medium text-white/40">
+              <ul className="space-y-4 text-sm font-medium text-white/70">
                 <li><FooterLink href="#">Ampang</FooterLink></li>
                 <li><FooterLink href="#">Old Klang Road</FooterLink></li>
                 <li><FooterLink href="#">Shah Alam</FooterLink></li>
@@ -76,7 +76,7 @@ export function Footer() {
             </div>
             <div>
               <h4 className="text-label mb-8 text-brand-gold/80">{t("companyTitle")}</h4>
-              <ul className="space-y-4 text-sm font-medium text-white/40">
+              <ul className="space-y-4 text-sm font-medium text-white/70">
                 <li><FooterLink href="/method">{tNav("method")}</FooterLink></li>
                 <li><FooterLink href="/insights">{tNav("insights")}</FooterLink></li>
                 <li><FooterLink href="/#faq">{tNav("faq")}</FooterLink></li>
@@ -91,14 +91,14 @@ export function Footer() {
               href="https://yckpainclinic.substack.com/subscribe?next=https%3A%2F%2Fsubstack.com%2F%40yapchankor&utm_source=profile-page&utm_medium=web&utm_campaign=substack_profile&just_signed_up=true"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative mb-6 block w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-xs text-white/20 hover:border-brand-gold/50 transition-all group overflow-hidden"
+              className="relative mb-6 block w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-xs text-white/60 hover:border-brand-gold/50 transition-all group overflow-hidden"
             >
               <span className="font-medium">{t("newsletterPlaceholder")}</span>
-              <div className="absolute right-2 top-2 bottom-2 bg-brand-gold text-white px-4 rounded-lg group-hover:bg-brand-gold-dark group-hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center">
-                <ArrowRight size={16} />
+              <div className="absolute right-2 top-2 bottom-2 bg-brand-gold text-brand-teal-deep px-4 rounded-lg group-hover:bg-brand-gold-dark group-hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center">
+                <ArrowRight className="w-5 h-5" />
               </div>
             </a>
-            <p className="text-label text-white/20 leading-relaxed">
+            <p className="text-label text-white/60 leading-relaxed">
               {t("newsletterSubscribers")}
             </p>
           </div>
@@ -106,10 +106,10 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="text-[11px] font-medium text-white/30 tracking-wide">
+          <div className="text-[11px] font-medium text-white/60 tracking-wide">
             {t("copyright")}
           </div>
-          <div className="flex space-x-10 text-[11px] font-medium text-white/30 tracking-wide">
+          <div className="flex space-x-10 text-[11px] font-medium text-white/60 tracking-wide">
             <FooterLink href="/privacy-policy">{tLegal("privacyPolicy")}</FooterLink>
             <FooterLink href="/terms-of-service">{tLegal("termsOfService")}</FooterLink>
             <FooterLink href="/legal-disclosure">{tLegal("legalDisclosure")}</FooterLink>

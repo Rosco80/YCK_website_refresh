@@ -29,7 +29,7 @@ export function Outcomes() {
             <div className="absolute inset-0 bg-linear-to-t from-brand-teal/80 to-transparent" />
             
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white/40 font-bold uppercase tracking-widest relative z-10">
+              <span className="text-white/60 font-bold uppercase tracking-widest relative z-10">
                 Patient Success Stories
               </span>
             </div>
@@ -93,11 +93,11 @@ function OutcomeCard({ title, problem, result }: { title: string; problem: strin
       
       <div className="grid gap-8">
         <div>
-          <span className="text-[10px] font-bold text-brand-gold uppercase tracking-[0.2em] block mb-2 opacity-60">Baseline Condition</span>
+          <span className="text-[10px] font-bold text-brand-gold uppercase tracking-[0.2em] block mb-2 opacity-80">Baseline Condition</span>
           <p className="text-brand-teal-deep/80 font-medium leading-relaxed">{problem}</p>
         </div>
         <div className="p-6 rounded-2xl bg-brand-teal/5 border border-brand-teal/5">
-          <span className="text-[10px] font-bold text-brand-teal uppercase tracking-[0.2em] block mb-2 opacity-60">Functional Outcome</span>
+          <span className="text-[10px] font-bold text-brand-teal uppercase tracking-[0.2em] block mb-2 opacity-80">Functional Outcome</span>
           <p className="text-brand-teal font-bold text-lg leading-relaxed">{result}</p>
         </div>
       </div>

@@ -95,7 +95,7 @@ export function LeadForm({ className }: { className?: string }) {
   return (
     <div className={cn("bg-white p-8 rounded-2xl shadow-clinical border border-brand-teal/5", className)}>
       <h3 className="text-2xl font-bold text-brand-teal-deep mb-2">{t("title")}</h3>
-      <p className="text-brand-teal-deep/60 text-sm mb-8">{t("subtitle")}</p>
+      <p className="text-brand-teal-deep/70 text-sm mb-8">{t("subtitle")}</p>
 
       <form 
         onSubmit={handleSubmit} 
@@ -113,11 +113,11 @@ export function LeadForm({ className }: { className?: string }) {
 
         {/* Contact Details */}
         <div className="md:col-span-2">
-          <h4 className="text-xs font-black uppercase tracking-[0.2em] text-brand-teal/40 mb-4 border-b border-brand-teal/5 pb-2">Contact Details</h4>
+          <h4 className="text-xs font-black uppercase tracking-[0.2em] text-brand-teal/60 mb-4 border-b border-brand-teal/5 pb-2">Contact Details</h4>
         </div>
 
         <div>
-          <label htmlFor="name" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/40 mb-1.5 ml-1">
+          <label htmlFor="name" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/60 mb-1.5 ml-1">
             {t("name")}
           </label>
           <input
@@ -131,7 +131,7 @@ export function LeadForm({ className }: { className?: string }) {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/40 mb-1.5 ml-1">
+          <label htmlFor="email" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/60 mb-1.5 ml-1">
             {t("email")}
           </label>
           <input
@@ -145,7 +145,7 @@ export function LeadForm({ className }: { className?: string }) {
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/40 mb-1.5 ml-1">
+          <label htmlFor="phone" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/60 mb-1.5 ml-1">
             {t("phone")}
           </label>
           <input
@@ -159,7 +159,7 @@ export function LeadForm({ className }: { className?: string }) {
         </div>
 
         <div>
-          <label htmlFor="contact_method" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/40 mb-1.5 ml-1">
+          <label htmlFor="contact_method" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/60 mb-1.5 ml-1">
             {t("contactMethod.label")}
           </label>
           <select
@@ -176,11 +176,11 @@ export function LeadForm({ className }: { className?: string }) {
 
         {/* Appointment Details */}
         <div className="md:col-span-2 mt-4">
-          <h4 className="text-xs font-black uppercase tracking-[0.2em] text-brand-teal/40 mb-4 border-b border-brand-teal/5 pb-2">Appointment Details</h4>
+          <h4 className="text-xs font-black uppercase tracking-[0.2em] text-brand-teal/60 mb-4 border-b border-brand-teal/5 pb-2">Appointment Details</h4>
         </div>
 
         <div>
-          <label htmlFor="preferred_date" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/40 mb-1.5 ml-1">
+          <label htmlFor="preferred_date" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/60 mb-1.5 ml-1">
             {t("preferredDate")}
           </label>
           <input
@@ -194,7 +194,7 @@ export function LeadForm({ className }: { className?: string }) {
         </div>
 
         <div>
-          <label htmlFor="preferred_time" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/40 mb-1.5 ml-1">
+          <label htmlFor="preferred_time" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/60 mb-1.5 ml-1">
             {t("preferredTime.label")}
           </label>
           <select
@@ -210,7 +210,7 @@ export function LeadForm({ className }: { className?: string }) {
         </div>
 
         <div className="md:col-span-2">
-          <label htmlFor="branch" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/40 mb-1.5 ml-1">
+          <label htmlFor="branch" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/60 mb-1.5 ml-1">
             {t("branch.label")}
           </label>
           <select
@@ -228,11 +228,11 @@ export function LeadForm({ className }: { className?: string }) {
 
         {/* Additional Info */}
         <div className="md:col-span-2 mt-4">
-          <h4 className="text-xs font-black uppercase tracking-[0.2em] text-brand-teal/40 mb-4 border-b border-brand-teal/5 pb-2">Additional Info</h4>
+          <h4 className="text-xs font-black uppercase tracking-[0.2em] text-brand-teal/60 mb-4 border-b border-brand-teal/5 pb-2">Additional Info</h4>
         </div>
 
         <div>
-          <label htmlFor="physical_issue" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/40 mb-1.5 ml-1">
+          <label htmlFor="physical_issue" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/60 mb-1.5 ml-1">
             {t("physicalIssue")}
           </label>
           <input
@@ -246,7 +246,7 @@ export function LeadForm({ className }: { className?: string }) {
         </div>
 
         <div>
-          <label htmlFor="pain_duration" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/40 mb-1.5 ml-1">
+          <label htmlFor="pain_duration" className="block text-[10px] font-bold uppercase tracking-wider text-brand-teal-deep/60 mb-1.5 ml-1">
             {t("painDuration")}
           </label>
           <input

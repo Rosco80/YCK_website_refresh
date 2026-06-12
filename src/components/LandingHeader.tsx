@@ -73,7 +73,7 @@ export function LandingHeader() {
                     "px-1.5 lg:px-2.5 py-1 lg:py-1 rounded text-label text-[10px] transition-all",
                     locale === l 
                       ? "bg-brand-teal text-white shadow-sm" 
-                      : "text-brand-teal-deep/40 hover:text-brand-teal hover:bg-brand-teal/5"
+                      : "text-brand-teal-deep/60 hover:text-brand-teal hover:bg-brand-teal/5"
                   )}
                 >
                   {localeLabels[l] ?? l}

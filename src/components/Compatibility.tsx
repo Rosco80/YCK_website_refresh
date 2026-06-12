@@ -48,7 +48,7 @@ export function Compatibility({ hideLinks = false }: { hideLinks?: boolean } = {
                       className="w-14 h-14 object-contain opacity-90 brightness-110 drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)]"
                     />
                   </div>
-                  <span className="text-label text-brand-teal/50">
+                  <span className="text-label text-brand-teal/70">
                     {item.label}
                   </span>
                 </div>

@@ -27,7 +27,7 @@ export default async function ConditionsIndex({
       <Header />
       <main className="grow">
         {/* Abstract Hero Section */}
-        <section className="pt-40 pb-20 lg:pt-56 lg:pb-32 bg-brand-teal-deep text-white relative overflow-hidden">
+        <section className="pt-24 pb-20 lg:pb-32 bg-brand-teal-deep text-white relative overflow-hidden">
           <div className="container mx-auto px-6 relative z-20 text-left">
             <div className="max-w-4xl">
               <div className="text-label inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 mb-6 text-brand-gold uppercase">
@@ -69,7 +69,7 @@ export default async function ConditionsIndex({
                     <h3 className="text-h4 text-brand-teal-deep mb-4 line-clamp-2">
                       {t(`list.${slug}.title`)}
                     </h3>
-                    <p className="text-body text-brand-teal-deep/60 mb-8 grow line-clamp-4">
+                    <p className="text-body text-brand-teal-deep/70 mb-8 grow line-clamp-4">
                       {t(`list.${slug}.desc`)}
                     </p>
                     <div className="text-label text-brand-teal mt-auto pt-6 border-t border-brand-teal/10 w-full flex items-center space-x-2">

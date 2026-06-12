@@ -164,13 +164,13 @@ function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, i
           </div>
 
           <div className="space-y-4 pt-6 mt-auto border-t border-white/5 pb-8">
-            <span className="text-label text-white/30">{ctaDirections}</span>
+            <span className="text-label text-white/60">{ctaDirections}</span>
             <div className="flex items-center gap-2">
               <a 
                 href={wazeUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex-1 min-w-0 flex items-center justify-center bg-white/5 hover:bg-brand-gold/20 px-3 py-2.5 rounded-xl transition-all border border-white/10 hover:border-brand-gold/40 text-white/50 hover:text-white group/link shadow-lg"
+                className="flex-1 min-w-0 flex items-center justify-center bg-white/5 hover:bg-brand-gold/20 px-3 py-2.5 rounded-xl transition-all border border-white/10 hover:border-brand-gold/40 text-white/70 hover:text-white group/link shadow-lg"
               >
                 <span className="text-label whitespace-nowrap">Waze</span>
               </a>
@@ -178,7 +178,7 @@ function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, i
                 href={googleMapsUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex-1 min-w-0 flex items-center justify-center bg-white/5 hover:bg-brand-gold/20 px-3 py-2.5 rounded-xl transition-all border border-white/10 hover:border-brand-gold/40 text-white/50 hover:text-white group/link shadow-lg"
+                className="flex-1 min-w-0 flex items-center justify-center bg-white/5 hover:bg-brand-gold/20 px-3 py-2.5 rounded-xl transition-all border border-white/10 hover:border-brand-gold/40 text-white/70 hover:text-white group/link shadow-lg"
               >
                 <span className="text-label whitespace-nowrap">Google Maps</span>
               </a>
@@ -191,7 +191,7 @@ function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, i
           {!hideLinks && (
             <Link 
               href={`/locations/${id}`}
-              className="w-full py-2 text-label flex items-center justify-center space-x-2 text-white/30 hover:text-white transition-colors"
+              className="w-full py-2 text-label flex items-center justify-center space-x-2 text-white/60 hover:text-white transition-colors"
             >
               <span>{ctaView}</span>
               <ArrowRight className="w-3 h-3" />
@@ -210,7 +210,7 @@ async function WhatsAppBranchButton({ branchName, ctaBook, index, hideLinks }: {
   return (
     <Button 
       asChild
-      className="w-full bg-brand-gold hover:bg-brand-gold-dark text-white font-bold rounded-xl h-11 lg:h-12 uppercase tracking-widest text-xs"
+      className="w-full bg-brand-gold hover:bg-brand-gold-dark text-brand-teal-deep font-bold rounded-xl h-11 lg:h-12 uppercase tracking-widest text-xs"
     >
       <a href={hideLinks ? "#booking-form" : whatsappUrl} target={hideLinks ? "_self" : "_blank"} rel="noopener noreferrer" id={`cta_book_branch_${index}_click`}>
         {ctaBook}
