@@ -41,22 +41,24 @@ const getSanityArticles = unstable_cache(
   { revalidate: PUBLIC_REVALIDATE_SECONDS, tags: ['sanity-articles'] }
 );
 
-const getSanityArticleBySlug = unstable_cache(
-  async (slug: string) => {
-    const query = `*[_type == "article" && slug.current == $slug][0] {
-      title,
-      "slug": slug.current,
-      "pubDate": publishedAt,
-      "snippet": subtitle,
-      coverImage,
-      content
-    }`;
+const getSanityArticleBySlug = async (slug: string) => {
+  return unstable_cache(
+    async () => {
+      const query = `*[_type == "article" && slug.current == $slug][0] {
+        title,
+        "slug": slug.current,
+        "pubDate": publishedAt,
+        "snippet": subtitle,
+        coverImage,
+        content
+      }`;
 
-    return client.fetch<SanityArticle | null>(query, { slug });
-  },
-  ['sanity-article-by-slug'],
-  { revalidate: PUBLIC_REVALIDATE_SECONDS, tags: ['sanity-articles'] }
-);
+      return client.fetch<SanityArticle | null>(query, { slug });
+    },
+    ['sanity-article-by-slug', slug],
+    { revalidate: PUBLIC_REVALIDATE_SECONDS, tags: ['sanity-articles'] }
+  )();
+};
 
 async function getInsightsUncached(): Promise<Insight[]> {
   const sanityArticles = await getSanityArticles();
@@ -101,8 +103,10 @@ async function getInsightBySlugUncached(slug: string): Promise<Insight | null> {
   return null;
 }
 
-export const getInsightBySlug = unstable_cache(
-  getInsightBySlugUncached,
-  ['combined-insight-by-slug'],
-  { revalidate: PUBLIC_REVALIDATE_SECONDS, tags: ['insights'] }
-);
+export const getInsightBySlug = async (slug: string) => {
+  return unstable_cache(
+    async () => getInsightBySlugUncached(slug),
+    ['combined-insight-by-slug', slug],
+    { revalidate: PUBLIC_REVALIDATE_SECONDS, tags: ['insights'] }
+  )();
+};

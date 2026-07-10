@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 };
 
 export const revalidate = 86400;
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
