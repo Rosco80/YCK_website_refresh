@@ -34,6 +34,17 @@ export default defineType({
       description: 'Used for search engines',
     }),
     defineField({
+      name: 'whatsappMessage',
+      title: 'WhatsApp Message',
+      type: 'object',
+      description: 'The pre-filled message sent by the user on WhatsApp when they click a button on this landing page.',
+      fields: [
+        { name: 'en', title: 'English', type: 'text', description: 'e.g., "Hi YAPCHANKOR, I saw your Knee Pain Ad..."' },
+        { name: 'ms', title: 'Malay', type: 'text' },
+        { name: 'zh', title: 'Chinese', type: 'text' }
+      ]
+    }),
+    defineField({
       name: 'modules',
       title: 'Page Modules',
       description: 'Build your landing page by adding and ordering sections below.',

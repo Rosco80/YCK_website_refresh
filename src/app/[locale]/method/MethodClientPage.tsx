@@ -1,6 +1,7 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { useSiteSettings } from "@/components/SiteSettingsProvider";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { Header } from "@/components/Header";
@@ -19,7 +20,16 @@ export function MethodClientPage({
 }) {
   const t = useTranslations("MethodPage");
   const tw = useTranslations("WhatsApp");
-  const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
+  const locale = useLocale() as 'en' | 'ms' | 'zh';
+  const siteSettings = useSiteSettings();
+  
+  const defaultMessageObj = siteSettings?.websiteWhatsappMessages?.defaultMessage;
+  const resolvedMessage = typeof defaultMessageObj === 'string' 
+    ? defaultMessageObj 
+    : defaultMessageObj?.[locale];
+    
+  const defaultMessage = resolvedMessage || tw("defaultMessage");
+  const whatsappUrl = getWhatsAppUrl(defaultMessage);
   
   const revealVariants: Variants = {
     hidden: { opacity: 0, y: 30 },

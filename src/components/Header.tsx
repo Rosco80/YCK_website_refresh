@@ -9,6 +9,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { useSiteSettings } from "@/components/SiteSettingsProvider";
 
 export function Header() {
   const t = useTranslations("Navigation");
@@ -18,8 +19,16 @@ export function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
+  
+  const siteSettings = useSiteSettings();
+  
+  const defaultMessageObj = siteSettings?.websiteWhatsappMessages?.defaultMessage;
+  const resolvedMessage = typeof defaultMessageObj === 'string' 
+    ? defaultMessageObj 
+    : defaultMessageObj?.[locale as 'en' | 'ms' | 'zh'];
+    
+  const defaultMessage = resolvedMessage || tw("defaultMessage");
+  const whatsappUrl = getWhatsAppUrl(defaultMessage);
 
   useEffect(() => {
     const handleScroll = () => {

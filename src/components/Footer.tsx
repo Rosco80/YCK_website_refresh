@@ -1,14 +1,27 @@
-import { useTranslations } from "next-intl";
+"use client";
+
+import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { Facebook, Instagram, Youtube, ArrowRight } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { useSiteSettings } from "@/components/SiteSettingsProvider";
 
 export function Footer() {
   const t = useTranslations("Footer");
   const tNav = useTranslations("Navigation");
   const tWhatsApp = useTranslations("WhatsApp");
   const tLegal = useTranslations("Legal");
+  
+  const siteSettings = useSiteSettings();
+  const locale = useLocale() as 'en' | 'ms' | 'zh';
+  
+  const defaultMessageObj = siteSettings?.websiteWhatsappMessages?.defaultMessage;
+  const resolvedMessage = typeof defaultMessageObj === 'string' 
+    ? defaultMessageObj 
+    : defaultMessageObj?.[locale];
+    
+  const defaultMessage = resolvedMessage || tWhatsApp("defaultMessage");
 
   return (
     <footer className="bg-brand-teal-deep text-white pt-16 pb-12 border-t border-white/5 font-inter">
@@ -80,7 +93,7 @@ export function Footer() {
                 <li><FooterLink href="/method">{tNav("method")}</FooterLink></li>
                 <li><FooterLink href="/insights">{tNav("insights")}</FooterLink></li>
                 <li><FooterLink href="/#faq">{tNav("faq")}</FooterLink></li>
-                <li><FooterLink href={getWhatsAppUrl(tWhatsApp("defaultMessage"))}>{tNav("bookAssessment")}</FooterLink></li>
+                <li><FooterLink href={getWhatsAppUrl(defaultMessage)}>{tNav("bookAssessment")}</FooterLink></li>
               </ul>
             </div>
           </div>

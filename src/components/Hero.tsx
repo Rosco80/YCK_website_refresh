@@ -5,14 +5,24 @@ import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
-import { getWebsiteImages } from "@/lib/sanity-queries";
+import { getSiteSettings, getWebsiteImages } from "@/lib/sanity-queries";
 import { urlForImage } from "@/sanity/lib/image";
 
 export async function Hero({ hideLinks = false, customTitle, customSubtitle }: { hideLinks?: boolean, customTitle?: string, customSubtitle?: string } = {}) {
   const t = await getTranslations("Hero");
   const tb = await getTranslations("TrustBar");
   const tw = await getTranslations("WhatsApp");
-  const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
+  const { getLocale } = await import("next-intl/server");
+  const locale = await getLocale() as 'en' | 'ms' | 'zh';
+  const siteSettings = await getSiteSettings();
+  
+  const defaultMessageObj = siteSettings?.websiteWhatsappMessages?.defaultMessage;
+  const resolvedMessage = typeof defaultMessageObj === 'string' 
+    ? defaultMessageObj 
+    : defaultMessageObj?.[locale];
+    
+  const defaultMessage = resolvedMessage || tw("defaultMessage");
+  const whatsappUrl = getWhatsAppUrl(defaultMessage);
 
   const websiteImages = await getWebsiteImages();
   const heroImageSrc = websiteImages?.heroImage 

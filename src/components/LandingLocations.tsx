@@ -6,9 +6,19 @@ import { MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "./ui/button";
 import { getWhatsAppUrl, ADS_WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
-export function LandingLocations() {
+export function LandingLocations({ customMessage }: { customMessage?: string }) {
   const t = useTranslations("Branches");
   const tl = useTranslations("LandingPage");
+
+  const getBranchMessage = (branchName: string) => {
+    if (customMessage) {
+      if (customMessage.includes("{branch}")) {
+        return customMessage.replace("{branch}", branchName);
+      }
+      return `${customMessage} - I would like to visit the ${branchName} branch.`;
+    }
+    return `Hi YAPCHANKOR, I saw your ad and would like to visit the ${branchName} branch.`;
+  };
 
   const branches = [
     { 
@@ -104,7 +114,7 @@ export function LandingLocations() {
                     className="w-full bg-brand-teal text-white hover:bg-brand-teal-deep rounded-xl h-10 text-[10px] uppercase font-black tracking-widest"
                   >
                     <a 
-                      href={getWhatsAppUrl(`Hi YAPCHANKOR, I saw your ad and would like to visit the ${branch.name} branch.`, ADS_WHATSAPP_NUMBER)} 
+                      href={getWhatsAppUrl(getBranchMessage(branch.name), ADS_WHATSAPP_NUMBER)} 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >

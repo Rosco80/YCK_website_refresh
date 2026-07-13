@@ -9,6 +9,7 @@ import { Link } from "@/i18n/routing";
 import { conditionSlugs, ConditionSlug, conditionsData } from "@/data/conditions";
 import { getConditionsContent } from "@/data/conditions-content";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { getSiteSettings } from "@/lib/sanity-queries";
 import { ConditionTestimonials } from "@/components/ConditionTestimonials";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedConditions } from "@/components/RelatedConditions";
@@ -58,7 +59,20 @@ export default async function ConditionDetail({
   const desc = t(`list.${slug}.desc`);
   const conditionData = getConditionsContent(locale)[slug];
 
-  const whatsappUrl = getWhatsAppUrl(tw("conditionMessage", { condition: title }));
+  const siteSettings = await getSiteSettings();
+  const override = siteSettings?.websiteWhatsappMessages?.conditionOverrides?.find(
+    (o: any) => o.condition === slug
+  );
+  const customConditionMsg = siteSettings?.websiteWhatsappMessages?.conditionMessage?.[locale as 'en' | 'ms' | 'zh'];
+  const overrideMessage = override?.message?.[locale as 'en' | 'ms' | 'zh'];
+  
+  const finalMessage = overrideMessage
+    ? overrideMessage 
+    : (customConditionMsg 
+        ? customConditionMsg.replace('{condition}', title)
+        : tw("conditionMessage", { condition: title }));
+
+  const whatsappUrl = getWhatsAppUrl(finalMessage);
 
   const structuredData = {
     "@context": "https://schema.org",

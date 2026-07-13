@@ -7,6 +7,7 @@ import { SanityModuleRenderer } from "@/components/SanityModuleRenderer";
 import { getLandingPageBySlug, getLandingPageSlugs } from "@/lib/sanity-queries";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 
 export const revalidate = 86400;
 
@@ -61,6 +62,7 @@ export default async function DynamicLandingPage({
       </main>
       <Footer />
       <FloatingContactPanel />
+      <WhatsAppWidget customMessage={page.whatsappMessage} />
     </div>
   );
 }

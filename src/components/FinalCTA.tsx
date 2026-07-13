@@ -1,12 +1,24 @@
-import { useTranslations } from "next-intl";
+"use client";
+
+import { useTranslations, useLocale } from "next-intl";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { useSiteSettings } from "@/components/SiteSettingsProvider";
 
 export function FinalCTA({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = useTranslations("FinalCTA");
   const tw = useTranslations("WhatsApp");
-  const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
+  const siteSettings = useSiteSettings();
+  const locale = useLocale() as 'en' | 'ms' | 'zh';
+  
+  const defaultMessageObj = siteSettings?.websiteWhatsappMessages?.defaultMessage;
+  const resolvedMessage = typeof defaultMessageObj === 'string' 
+    ? defaultMessageObj 
+    : defaultMessageObj?.[locale];
+    
+  const defaultMessage = resolvedMessage || tw("defaultMessage");
+  const whatsappUrl = getWhatsAppUrl(defaultMessage);
 
   return (
     <section className="bg-brand-teal-deep py-16 lg:py-32 relative overflow-hidden">

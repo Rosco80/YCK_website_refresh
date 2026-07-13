@@ -1,21 +1,34 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { getWhatsAppUrl, ADS_WHATSAPP_NUMBER } from "@/lib/whatsapp";
 import { usePathname } from "next/navigation";
 
-export function WhatsAppWidget() {
+export function WhatsAppWidget({ 
+  customMessage, 
+  isGlobal = false 
+}: { 
+  customMessage?: string | { en?: string, ms?: string, zh?: string };
+  isGlobal?: boolean;
+}) {
   const t = useTranslations("WhatsApp");
+  const locale = useLocale() as 'en' | 'ms' | 'zh';
   const pathname = usePathname();
   const defaultMessage = t("defaultMessage");
+  
+  const localizedCustomMessage = typeof customMessage === 'string' 
+    ? customMessage 
+    : customMessage?.[locale];
   
   const isLandingPage = pathname?.includes("/lp/");
   const isAdminPage = pathname?.includes("/admin");
 
   // Don't render the WhatsApp widget on the CMS / admin dashboard
   if (isAdminPage) return null;
+  // If this is the global widget, don't render it on landing pages (they have their own)
+  if (isGlobal && isLandingPage) return null;
 
-  const whatsappUrl = getWhatsAppUrl(defaultMessage, isLandingPage ? ADS_WHATSAPP_NUMBER : undefined);
+  const whatsappUrl = getWhatsAppUrl(localizedCustomMessage || defaultMessage, isLandingPage ? ADS_WHATSAPP_NUMBER : undefined);
   
   const handleWhatsAppClick = () => {
     const dataLayer = (window as any).dataLayer || [];

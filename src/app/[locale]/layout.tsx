@@ -11,6 +11,8 @@ import { Analytics } from '@vercel/analytics/next';
 
 import { routing } from "@/i18n/routing";
 
+import { SiteSettingsProvider } from "@/components/SiteSettingsProvider";
+
 const bandaRegular = localFont({
   src: "../fonts/Banda.ttf",
   variable: "--font-banda",
@@ -164,10 +166,15 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicJsonLd) }}
         />
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          {children}
-          <WhatsAppWidget />
-        </NextIntlClientProvider>
+        <SiteSettingsProvider settings={siteSettings}>
+          <NextIntlClientProvider messages={messages} locale={locale}>
+            {children}
+            <WhatsAppWidget 
+              isGlobal={true} 
+              customMessage={siteSettings?.websiteWhatsappMessages?.defaultMessage} 
+            />
+          </NextIntlClientProvider>
+        </SiteSettingsProvider>
         <ContactTracker />
         <Analytics />
 
