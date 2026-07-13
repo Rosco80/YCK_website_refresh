@@ -60,10 +60,10 @@ export default async function ConditionDetail({
   const conditionData = getConditionsContent(locale)[slug];
 
   const siteSettings = await getSiteSettings();
-  const override = siteSettings?.websiteWhatsappMessages?.conditionOverrides?.find(
+  const override = siteSettings?.websiteWhatsappMessages?.localizedConditionOverrides?.find(
     (o: any) => o.condition === slug
   );
-  const customConditionMsg = siteSettings?.websiteWhatsappMessages?.conditionMessage?.[locale as 'en' | 'ms' | 'zh'];
+  const customConditionMsg = siteSettings?.websiteWhatsappMessages?.localizedConditionMessage?.[locale as 'en' | 'ms' | 'zh'];
   const overrideMessage = override?.message?.[locale as 'en' | 'ms' | 'zh'];
   
   const finalMessage = overrideMessage

@@ -59,10 +59,10 @@ export function RollingHook({ hideLinks = false }: { hideLinks?: boolean } = {})
 
   const currentSlug = conditionSlugs[index];
   const locale = useLocale() as 'en' | 'ms' | 'zh';
-  const override = siteSettings?.websiteWhatsappMessages?.conditionOverrides?.find(
+  const override = siteSettings?.websiteWhatsappMessages?.localizedConditionOverrides?.find(
     (o: any) => o.condition === currentSlug
   );
-  const conditionTemplate = siteSettings?.websiteWhatsappMessages?.conditionMessage?.[locale];
+  const conditionTemplate = siteSettings?.websiteWhatsappMessages?.localizedConditionMessage?.[locale];
   const overrideMessage = override?.message?.[locale];
   
   const finalMessage = overrideMessage 

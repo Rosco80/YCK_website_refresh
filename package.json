@@ -35,6 +35,7 @@
     "cheerio": "^1.2.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "replace-in-file": "^8.4.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -34,7 +34,7 @@ export default defineType({
       description: 'Used for search engines',
     }),
     defineField({
-      name: 'whatsappMessage',
+      name: 'localizedWhatsappMessage',
       title: 'WhatsApp Message',
       type: 'object',
       description: 'The pre-filled message sent by the user on WhatsApp when they click a button on this landing page.',

@@ -16,7 +16,7 @@ export function Footer() {
   const siteSettings = useSiteSettings();
   const locale = useLocale() as 'en' | 'ms' | 'zh';
   
-  const defaultMessageObj = siteSettings?.websiteWhatsappMessages?.defaultMessage;
+  const defaultMessageObj = siteSettings?.websiteWhatsappMessages?.localizedDefaultMessage;
   const resolvedMessage = typeof defaultMessageObj === 'string' 
     ? defaultMessageObj 
     : defaultMessageObj?.[locale];

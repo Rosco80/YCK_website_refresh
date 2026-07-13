@@ -23,7 +23,7 @@ export function MethodClientPage({
   const locale = useLocale() as 'en' | 'ms' | 'zh';
   const siteSettings = useSiteSettings();
   
-  const defaultMessageObj = siteSettings?.websiteWhatsappMessages?.defaultMessage;
+  const defaultMessageObj = siteSettings?.websiteWhatsappMessages?.localizedDefaultMessage;
   const resolvedMessage = typeof defaultMessageObj === 'string' 
     ? defaultMessageObj 
     : defaultMessageObj?.[locale];

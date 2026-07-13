@@ -62,7 +62,7 @@ export default async function DynamicLandingPage({
       </main>
       <Footer />
       <FloatingContactPanel />
-      <WhatsAppWidget customMessage={page.whatsappMessage} />
+      <WhatsAppWidget customMessage={page.localizedWhatsappMessage} />
     </div>
   );
 }

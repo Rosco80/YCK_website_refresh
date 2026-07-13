@@ -171,7 +171,7 @@ export default async function RootLayout({
             {children}
             <WhatsAppWidget 
               isGlobal={true} 
-              customMessage={siteSettings?.websiteWhatsappMessages?.defaultMessage} 
+              customMessage={siteSettings?.websiteWhatsappMessages?.localizedDefaultMessage} 
             />
           </NextIntlClientProvider>
         </SiteSettingsProvider>

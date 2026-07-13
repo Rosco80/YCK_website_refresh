@@ -36,7 +36,7 @@ export default defineType({
       description: 'Manage the pre-filled WhatsApp messages for various pages across the main website.',
       fields: [
         defineField({
-          name: 'defaultMessage',
+          name: 'localizedDefaultMessage',
           title: 'Default Message',
           type: 'object',
           description: 'The fallback message used if a specific page message is not set (e.g., "Hi YAPCHANKOR, I would like to book an assessment").',
@@ -47,7 +47,7 @@ export default defineType({
           ]
         }),
         defineField({
-          name: 'conditionMessage',
+          name: 'localizedConditionMessage',
           title: 'Condition Message Template',
           type: 'object',
           description: 'Used on condition pages. Use {condition} as a placeholder for the condition name.',
@@ -58,7 +58,7 @@ export default defineType({
           ]
         }),
         defineField({
-          name: 'conditionOverrides',
+          name: 'localizedConditionOverrides',
           title: 'Specific Condition Messages',
           type: 'array',
           description: 'Optional: Provide a specific message for individual conditions. This overrides the Template above.',
