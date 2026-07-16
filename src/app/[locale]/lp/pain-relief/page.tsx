@@ -17,6 +17,7 @@ import { ClinicalResults } from "@/components/ClinicalResults";
 import { FloatingContactPanel } from "@/components/FloatingContactPanel";
 import { LeadForm } from "@/components/LeadForm";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
+import { getSiteSettings } from "@/lib/sanity-queries";
 
 
 export const metadata: Metadata = {
@@ -34,6 +35,8 @@ export default async function PainReliefLandingPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const siteSettings = await getSiteSettings();
 
 
   return (
@@ -62,7 +65,7 @@ export default async function PainReliefLandingPage({
 
       {/* Landing page specific: floating contact panel */}
       <FloatingContactPanel />
-      <WhatsAppWidget />
+      <WhatsAppWidget customMessage={siteSettings?.websiteWhatsappMessages?.localizedPainReliefLandingPageMessage} />
     </div>
   );
 }

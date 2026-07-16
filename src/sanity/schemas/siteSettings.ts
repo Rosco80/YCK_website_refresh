@@ -47,6 +47,17 @@ export default defineType({
           ]
         }),
         defineField({
+          name: 'localizedPainReliefLandingPageMessage',
+          title: 'Pain Relief Landing Page Message',
+          type: 'object',
+          description: 'The pre-filled message sent by the user on WhatsApp when they click the widget on the Pain Relief landing page.',
+          fields: [
+            { name: 'en', title: 'English', type: 'text' },
+            { name: 'ms', title: 'Malay', type: 'text' },
+            { name: 'zh', title: 'Chinese', type: 'text' }
+          ]
+        }),
+        defineField({
           name: 'localizedConditionMessage',
           title: 'Condition Message Template',
           type: 'object',
