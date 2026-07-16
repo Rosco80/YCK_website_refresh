@@ -16,6 +16,7 @@ import { Compatibility } from "@/components/Compatibility";
 import { ClinicalResults } from "@/components/ClinicalResults";
 import { FloatingContactPanel } from "@/components/FloatingContactPanel";
 import { LeadForm } from "@/components/LeadForm";
+import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 
 
 export const metadata: Metadata = {
@@ -61,6 +62,7 @@ export default async function PainReliefLandingPage({
 
       {/* Landing page specific: floating contact panel */}
       <FloatingContactPanel />
+      <WhatsAppWidget />
     </div>
   );
 }
