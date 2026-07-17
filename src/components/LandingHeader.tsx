@@ -8,7 +8,15 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { getWhatsAppUrl, ADS_WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
-export function LandingHeader({ whatsappNumber }: { whatsappNumber?: string }) {
+export function LandingHeader({ 
+  whatsappNumber, 
+  whatsappMessage,
+  primaryCtaDestination = 'form'
+}: { 
+  whatsappNumber?: string;
+  whatsappMessage?: string | { en?: string, ms?: string, zh?: string };
+  primaryCtaDestination?: string;
+}) {
   const t = useTranslations("LandingPage");
   const tNav = useTranslations("Navigation");
   const locale = useLocale();
@@ -16,7 +24,12 @@ export function LandingHeader({ whatsappNumber }: { whatsappNumber?: string }) {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const whatsappUrl = getWhatsAppUrl(t("whatsapp.message"), ADS_WHATSAPP_NUMBER);
+  const localizedCustomMessage = typeof whatsappMessage === 'string' 
+    ? whatsappMessage 
+    : whatsappMessage?.[locale as keyof typeof whatsappMessage];
+  
+  const whatsappUrl = getWhatsAppUrl(localizedCustomMessage || t("whatsapp.message"), whatsappNumber || ADS_WHATSAPP_NUMBER);
+  const ctaHref = primaryCtaDestination === 'whatsapp' ? whatsappUrl : '#booking-form';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,7 +98,7 @@ export function LandingHeader({ whatsappNumber }: { whatsappNumber?: string }) {
               asChild
               className="rounded-full px-4 lg:px-7 h-9 lg:h-11 text-[10px] lg:text-xs text-label bg-brand-teal text-white hover:bg-brand-teal-deep shadow-clinical shrink-0"
             >
-              <a href="#booking-form" rel="noopener noreferrer">
+              <a href={ctaHref} target={primaryCtaDestination === 'whatsapp' ? "_blank" : undefined} rel="noopener noreferrer">
                 {t("whatsapp.button")}
               </a>
             </Button>

@@ -6,7 +6,17 @@ import { ChevronRight } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { useSiteSettings } from "@/components/SiteSettingsProvider";
 
-export function FinalCTA({ hideLinks = false }: { hideLinks?: boolean } = {}) {
+export function FinalCTA({ 
+  hideLinks = false,
+  primaryCtaDestination = 'form',
+  whatsappMessage,
+  whatsappNumber
+}: { 
+  hideLinks?: boolean;
+  primaryCtaDestination?: string;
+  whatsappMessage?: string | { en?: string, ms?: string, zh?: string };
+  whatsappNumber?: string;
+} = {}) {
   const t = useTranslations("FinalCTA");
   const tw = useTranslations("WhatsApp");
   const siteSettings = useSiteSettings();
@@ -18,7 +28,16 @@ export function FinalCTA({ hideLinks = false }: { hideLinks?: boolean } = {}) {
     : defaultMessageObj?.[locale];
     
   const defaultMessage = resolvedMessage || tw("defaultMessage");
-  const whatsappUrl = getWhatsAppUrl(defaultMessage);
+  
+  const localizedCustomMessage = typeof whatsappMessage === 'string' 
+    ? whatsappMessage 
+    : whatsappMessage?.[locale as keyof typeof whatsappMessage];
+    
+  const finalMessage = localizedCustomMessage || defaultMessage;
+  const whatsappUrl = getWhatsAppUrl(finalMessage, whatsappNumber);
+  
+  const ctaHref = hideLinks && primaryCtaDestination !== 'whatsapp' ? '#booking-form' : whatsappUrl;
+  const target = hideLinks && primaryCtaDestination !== 'whatsapp' ? '_self' : '_blank';
 
   return (
     <section className="bg-brand-teal-deep py-16 lg:py-32 relative overflow-hidden">
@@ -43,8 +62,8 @@ export function FinalCTA({ hideLinks = false }: { hideLinks?: boolean } = {}) {
               className="w-full sm:w-auto px-10 sm:px-12 h-14 sm:h-18 text-label text-base lg:text-xl bg-white text-brand-teal-deep hover:bg-white/90 rounded-full shadow-2xl transition-all duration-300 min-w-0 sm:min-w-[320px]"
             >
               <a 
-                href={hideLinks ? "#booking-form" : whatsappUrl}
-                target={hideLinks ? "_self" : "_blank"}
+                href={ctaHref}
+                target={target}
                 rel="noopener noreferrer"
                 id="cta_final_assessment_click"
                 className="inline-flex items-center justify-center"

@@ -51,6 +51,20 @@ export default defineType({
       description: 'Optional. Leave blank to use the default Ads WhatsApp Number. Format: 60123456789 (no spaces or plus signs).',
     }),
     defineField({
+      name: 'primaryCtaDestination',
+      title: 'Primary CTA Destination',
+      type: 'string',
+      description: 'Choose where the main CTA buttons (Header, Final CTA, etc.) should link to.',
+      options: {
+        list: [
+          { title: 'Booking Form (Default)', value: 'form' },
+          { title: 'WhatsApp', value: 'whatsapp' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'form',
+    }),
+    defineField({
       name: 'modules',
       title: 'Page Modules',
       description: 'Build your landing page by adding and ordering sections below.',

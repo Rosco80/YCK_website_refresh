@@ -8,7 +8,17 @@ import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { Button } from "./ui/button";
 import { useSiteSettings } from "./SiteSettingsProvider";
 
-export function RollingHook({ hideLinks = false }: { hideLinks?: boolean } = {}) {
+export function RollingHook({ 
+  hideLinks = false,
+  primaryCtaDestination = 'form',
+  whatsappMessage,
+  whatsappNumber
+}: { 
+  hideLinks?: boolean;
+  primaryCtaDestination?: string;
+  whatsappMessage?: string | { en?: string, ms?: string, zh?: string };
+  whatsappNumber?: string;
+} = {}) {
   const t = useTranslations("RollingHook");
   const tw = useTranslations("WhatsApp");
   const [index, setIndex] = useState(0);
@@ -65,11 +75,21 @@ export function RollingHook({ hideLinks = false }: { hideLinks?: boolean } = {})
   const conditionTemplate = siteSettings?.websiteWhatsappMessages?.localizedConditionMessage?.[locale];
   const overrideMessage = override?.message?.[locale];
   
-  const finalMessage = overrideMessage 
-    ? overrideMessage 
-    : (conditionTemplate 
-        ? conditionTemplate.replace('{condition}', conditions[index])
-        : tw("conditionMessage", { condition: conditions[index] }));
+  const localizedCustomMessage = typeof whatsappMessage === 'string' 
+    ? whatsappMessage 
+    : whatsappMessage?.[locale as keyof typeof whatsappMessage];
+
+  const finalMessage = localizedCustomMessage 
+    ? localizedCustomMessage 
+    : (overrideMessage 
+      ? overrideMessage 
+      : (conditionTemplate 
+          ? conditionTemplate.replace('{condition}', conditions[index])
+          : tw("conditionMessage", { condition: conditions[index] })));
+
+  const whatsappUrl = getWhatsAppUrl(finalMessage, whatsappNumber);
+  const ctaHref = hideLinks && primaryCtaDestination !== 'whatsapp' ? '#booking-form' : whatsappUrl;
+  const target = hideLinks && primaryCtaDestination !== 'whatsapp' ? '_self' : '_blank';
 
   return (
     <section className="bg-brand-bg py-16 lg:py-24 border-y border-brand-teal/5 relative">
@@ -138,7 +158,7 @@ export function RollingHook({ hideLinks = false }: { hideLinks?: boolean } = {})
               asChild
               className="rounded-full px-12 h-14 text-sm uppercase tracking-widest font-bold shadow-brand-premium"
             >
-              <a href={hideLinks ? "#booking-form" : getWhatsAppUrl(finalMessage)} target={hideLinks ? "_self" : "_blank"} rel="noopener noreferrer" id="cta_rolling_hook_click">
+              <a href={ctaHref} target={target} rel="noopener noreferrer" id="cta_rolling_hook_click">
                 {t("cta")}
               </a>
             </Button>

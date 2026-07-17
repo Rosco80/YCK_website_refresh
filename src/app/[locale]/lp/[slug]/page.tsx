@@ -54,7 +54,11 @@ export default async function DynamicLandingPage({
 
   return (
     <div className="min-h-screen flex flex-col">
-      <LandingHeader whatsappNumber={page.whatsappNumber} />
+      <LandingHeader 
+        whatsappNumber={page.whatsappNumber} 
+        whatsappMessage={page.localizedWhatsappMessage}
+        primaryCtaDestination={page.primaryCtaDestination}
+      />
       <main className="grow">
         {page.modules?.map((module: LandingPageModule, index: number) => (
           <SanityModuleRenderer 
@@ -62,6 +66,7 @@ export default async function DynamicLandingPage({
             module={module} 
             whatsappMessage={page.localizedWhatsappMessage} 
             whatsappNumber={page.whatsappNumber}
+            primaryCtaDestination={page.primaryCtaDestination}
           />
         ))}
       </main>

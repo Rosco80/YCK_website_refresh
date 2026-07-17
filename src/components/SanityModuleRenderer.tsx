@@ -17,6 +17,7 @@ interface ModuleProps {
   module: any;
   whatsappMessage?: string;
   whatsappNumber?: string;
+  primaryCtaDestination?: string;
 }
 
 function ConditionContent({ title, content }: { title: string; content: any }) {
@@ -32,7 +33,7 @@ function ConditionContent({ title, content }: { title: string; content: any }) {
   );
 }
 
-export function SanityModuleRenderer({ module, whatsappMessage, whatsappNumber }: ModuleProps) {
+export function SanityModuleRenderer({ module, whatsappMessage, whatsappNumber, primaryCtaDestination }: ModuleProps) {
   const { _type } = module;
 
   switch (_type) {
@@ -54,10 +55,10 @@ export function SanityModuleRenderer({ module, whatsappMessage, whatsappNumber }
         </section>
       );
       
-    case 'predefinedModule':
+      case 'predefinedModule':
       switch (module.sectionType) {
         case 'rollingHook':
-          return <RollingHook hideLinks={true} />;
+          return <RollingHook hideLinks={true} primaryCtaDestination={primaryCtaDestination} whatsappMessage={whatsappMessage} whatsappNumber={whatsappNumber} />;
         case 'differentiation':
           return <Differentiation hideLinks={true} />;
         case 'whyChooseUs':
@@ -75,7 +76,7 @@ export function SanityModuleRenderer({ module, whatsappMessage, whatsappNumber }
         case 'faq':
           return <FAQ />;
         case 'finalCta':
-          return <FinalCTA hideLinks={true} />;
+          return <FinalCTA hideLinks={true} primaryCtaDestination={primaryCtaDestination} whatsappMessage={whatsappMessage} whatsappNumber={whatsappNumber} />;
         default:
           return null;
       }
