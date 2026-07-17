@@ -1,4 +1,5 @@
 import { defineType, defineField } from 'sanity'
+import { PreviewLink } from '../components/PreviewLink'
 
 export default defineType({
   name: 'landingPage',
@@ -20,6 +21,14 @@ export default defineType({
         maxLength: 96,
       },
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'previewLink',
+      title: 'Preview',
+      type: 'string',
+      components: {
+        field: PreviewLink,
+      },
     }),
     defineField({
       name: 'seoTitle',
