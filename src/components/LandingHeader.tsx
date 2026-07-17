@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { getWhatsAppUrl, ADS_WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
-export function LandingHeader() {
+export function LandingHeader({ whatsappNumber }: { whatsappNumber?: string }) {
   const t = useTranslations("LandingPage");
   const tNav = useTranslations("Navigation");
   const locale = useLocale();

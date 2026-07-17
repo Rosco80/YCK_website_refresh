@@ -6,7 +6,7 @@ import { MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "./ui/button";
 import { getWhatsAppUrl, ADS_WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
-export function LandingLocations({ customMessage }: { customMessage?: string }) {
+export function LandingLocations({ customMessage, customNumber }: { customMessage?: string, customNumber?: string }) {
   const t = useTranslations("Branches");
   const tl = useTranslations("LandingPage");
 
@@ -114,7 +114,7 @@ export function LandingLocations({ customMessage }: { customMessage?: string }) 
                     className="w-full bg-brand-teal text-white hover:bg-brand-teal-deep rounded-xl h-10 text-[10px] uppercase font-black tracking-widest"
                   >
                     <a 
-                      href={getWhatsAppUrl(getBranchMessage(branch.name), ADS_WHATSAPP_NUMBER)} 
+                      href={getWhatsAppUrl(getBranchMessage(branch.name), customNumber || ADS_WHATSAPP_NUMBER)} 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >

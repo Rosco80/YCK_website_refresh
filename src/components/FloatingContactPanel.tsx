@@ -5,9 +5,9 @@ import { useTranslations } from "next-intl";
 import { X, Phone, Mail } from "lucide-react";
 import { LeadForm } from "./LeadForm";
 
-const CALL_NUMBER = "+601137689979";
+const DEFAULT_CALL_NUMBER = "+601137689979";
 
-export function FloatingContactPanel() {
+export function FloatingContactPanel({ whatsappNumber }: { whatsappNumber?: string }) {
   const t = useTranslations("LandingPage.floatingPanel");
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [showWhatsAppTag, setShowWhatsAppTag] = useState(true);
@@ -42,6 +42,8 @@ export function FloatingContactPanel() {
     };
   }, [isFormOpen]);
 
+  const callNumber = whatsappNumber ? `+${whatsappNumber.replace(/\+/g, '')}` : DEFAULT_CALL_NUMBER;
+
   return (
     <>
       {/* ===== Right-edge floating buttons ===== */}
@@ -60,12 +62,12 @@ export function FloatingContactPanel() {
 
         {/* Phone Call Button */}
         <a
-          href={`tel:${CALL_NUMBER}`}
+          href={`tel:${callNumber}`}
           onClick={() => {
             const dataLayer = (window as any).dataLayer || [];
             dataLayer.push({
               event: "phone_call_click",
-              phone_number: CALL_NUMBER
+              phone_number: callNumber
             });
           }}
           className="group relative flex items-center justify-center w-12 h-12 bg-white border border-brand-teal/20 rounded-l-xl shadow-xl hover:bg-brand-teal hover:text-white text-brand-teal transition-all duration-300"

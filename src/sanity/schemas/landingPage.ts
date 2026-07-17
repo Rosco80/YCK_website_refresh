@@ -45,11 +45,18 @@ export default defineType({
       ]
     }),
     defineField({
+      name: 'whatsappNumber',
+      title: 'WhatsApp Number (Override)',
+      type: 'string',
+      description: 'Optional. Leave blank to use the default Ads WhatsApp Number. Format: 60123456789 (no spaces or plus signs).',
+    }),
+    defineField({
       name: 'modules',
       title: 'Page Modules',
       description: 'Build your landing page by adding and ordering sections below.',
       type: 'array',
       of: [
+        { type: 'landingHeroModule' },
         { type: 'heroModule' },
         { type: 'conditionModule' },
         { type: 'predefinedModule' },

@@ -1,4 +1,6 @@
 import { Hero } from "@/components/Hero";
+import { LandingHero } from "@/components/LandingHero";
+import { LandingLocations } from "@/components/LandingLocations";
 import { Branches } from "@/components/Branches";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -13,6 +15,8 @@ import { PortableText } from "@portabletext/react";
 
 interface ModuleProps {
   module: any;
+  whatsappMessage?: string;
+  whatsappNumber?: string;
 }
 
 function ConditionContent({ title, content }: { title: string; content: any }) {
@@ -28,12 +32,15 @@ function ConditionContent({ title, content }: { title: string; content: any }) {
   );
 }
 
-export function SanityModuleRenderer({ module }: ModuleProps) {
+export function SanityModuleRenderer({ module, whatsappMessage, whatsappNumber }: ModuleProps) {
   const { _type } = module;
 
   switch (_type) {
     case 'heroModule':
       return <Hero hideLinks={true} customTitle={module.title} customSubtitle={module.subtitle} />;
+
+    case 'landingHeroModule':
+      return <LandingHero />;
       
     case 'conditionModule':
       return <ConditionContent title={module.title} content={module.content} />;
@@ -63,6 +70,8 @@ export function SanityModuleRenderer({ module }: ModuleProps) {
           return <ClinicalResults hideLinks={true} />;
         case 'branches':
           return <Branches hideLinks={true} />;
+        case 'landingLocations':
+          return <LandingLocations customMessage={whatsappMessage} customNumber={whatsappNumber} />;
         case 'faq':
           return <FAQ />;
         case 'finalCta':

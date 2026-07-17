@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { LandingHeader } from "@/components/LandingHeader";
-import { Footer } from "@/components/Footer";
+import { LandingFooter } from "@/components/LandingFooter";
 import { FloatingContactPanel } from "@/components/FloatingContactPanel";
 import { SanityModuleRenderer } from "@/components/SanityModuleRenderer";
 import { getLandingPageBySlug, getLandingPageSlugs } from "@/lib/sanity-queries";
@@ -54,15 +54,20 @@ export default async function DynamicLandingPage({
 
   return (
     <div className="min-h-screen flex flex-col">
-      <LandingHeader />
+      <LandingHeader whatsappNumber={page.whatsappNumber} />
       <main className="grow">
         {page.modules?.map((module: LandingPageModule, index: number) => (
-          <SanityModuleRenderer key={module._key || index} module={module} />
+          <SanityModuleRenderer 
+            key={module._key || index} 
+            module={module} 
+            whatsappMessage={page.localizedWhatsappMessage} 
+            whatsappNumber={page.whatsappNumber}
+          />
         ))}
       </main>
-      <Footer />
-      <FloatingContactPanel />
-      <WhatsAppWidget customMessage={page.localizedWhatsappMessage} />
+      <LandingFooter />
+      <FloatingContactPanel whatsappNumber={page.whatsappNumber} />
+      <WhatsAppWidget customMessage={page.localizedWhatsappMessage} customNumber={page.whatsappNumber} />
     </div>
   );
 }

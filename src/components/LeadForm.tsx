@@ -69,6 +69,11 @@ export function LeadForm({ className }: { className?: string }) {
           branch: data["Branch"],
           lead_source: data["Lead Source"]
         });
+
+        // Explicitly fire Meta Pixel Lead event
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+          (window as any).fbq('track', 'Lead');
+        }
         
         setState("success");
       } else {

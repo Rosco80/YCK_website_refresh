@@ -6,9 +6,11 @@ import { usePathname } from "next/navigation";
 
 export function WhatsAppWidget({ 
   customMessage, 
+  customNumber,
   isGlobal = false 
 }: { 
   customMessage?: string | { en?: string, ms?: string, zh?: string };
+  customNumber?: string;
   isGlobal?: boolean;
 }) {
   const t = useTranslations("WhatsApp");
@@ -28,7 +30,7 @@ export function WhatsAppWidget({
   // If this is the global widget, don't render it on landing pages (they have their own)
   if (isGlobal && isLandingPage) return null;
 
-  const whatsappUrl = getWhatsAppUrl(localizedCustomMessage || defaultMessage, isLandingPage ? ADS_WHATSAPP_NUMBER : undefined);
+  const whatsappUrl = getWhatsAppUrl(localizedCustomMessage || defaultMessage, customNumber || (isLandingPage ? ADS_WHATSAPP_NUMBER : undefined));
   
   const handleWhatsAppClick = () => {
     const dataLayer = (window as any).dataLayer || [];

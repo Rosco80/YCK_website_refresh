@@ -31,6 +31,28 @@ export const heroModule = defineType({
   }
 })
 
+export const landingHeroModule = defineType({
+  name: 'landingHeroModule',
+  title: 'Landing Hero Section',
+  type: 'object',
+  fields: [
+    defineField({
+      name: 'note',
+      title: 'Note',
+      type: 'string',
+      readOnly: true,
+      initialValue: 'This will render the optimized Landing Hero with inline booking form.',
+    }),
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Landing Hero Section (Optimized)',
+      }
+    }
+  }
+})
+
 export const conditionModule = defineType({
   name: 'conditionModule',
   title: 'Condition Content',
@@ -103,6 +125,7 @@ export const predefinedModule = defineType({
           { title: 'Compatibility', value: 'compatibility' },
           { title: 'Clinical Results', value: 'clinicalResults' },
           { title: 'Branches', value: 'branches' },
+          { title: 'Landing Locations', value: 'landingLocations' },
           { title: 'FAQ', value: 'faq' },
           { title: 'Final CTA', value: 'finalCta' },
         ],
@@ -123,6 +146,7 @@ export const predefinedModule = defineType({
         compatibility: 'Compatibility',
         clinicalResults: 'Clinical Results',
         branches: 'Branches',
+        landingLocations: 'Landing Locations (Ad Optimized)',
         faq: 'FAQ',
         finalCta: 'Final CTA',
       };

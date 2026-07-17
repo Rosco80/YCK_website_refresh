@@ -6,7 +6,7 @@ import article from './schemas/article'
 import testimonial from './schemas/testimonial'
 import staticTestimonial from './schemas/staticTestimonial'
 import landingPage from './schemas/landingPage'
-import { heroModule, conditionModule, leadFormModule, predefinedModule } from './schemas/lpModules'
+import { heroModule, landingHeroModule, conditionModule, leadFormModule, predefinedModule } from './schemas/lpModules'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -18,6 +18,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     staticTestimonial,
     landingPage,
     heroModule,
+    landingHeroModule,
     conditionModule,
     leadFormModule,
     predefinedModule
