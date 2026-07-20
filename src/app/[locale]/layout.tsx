@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
+import { notFound } from "next/navigation";
 import localFont from "next/font/local";
 import "../globals.css";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
@@ -46,11 +47,15 @@ const gotham = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://yapchankor.com"),
+  applicationName: "YAPCHANKOR",
   title: {
     template: "%s | YAPCHANKOR",
     default: "YAPCHANKOR | Premium Pain Treatment & Physiotherapy Since 1979",
   },
   description: "YAPCHANKOR specializes in chronic pain resolution using the Shaolin injury medicine method, proprietary clinical formulations, and integrative rehabilitation.",
+  creator: "YAPCHANKOR",
+  publisher: "YAPCHANKOR",
   alternates: {
     canonical: "/",
     languages: {
@@ -58,6 +63,29 @@ export const metadata: Metadata = {
       "ms": "/ms",
       "zh": "/zh",
     },
+  },
+  openGraph: {
+    type: "website",
+    url: "/en",
+    siteName: "YAPCHANKOR",
+    title: "YAPCHANKOR | Premium Pain Treatment & Physiotherapy Since 1979",
+    description: "Chronic pain treatment combining Shaolin injury medicine, proprietary clinical formulations, and modern rehabilitation since 1979.",
+    locale: "en_MY",
+    alternateLocale: ["ms_MY", "zh_MY"],
+    images: [
+      {
+        url: "/images/yck_home_hero.webp",
+        width: 1920,
+        height: 1080,
+        alt: "YAPCHANKOR pain treatment and physiotherapy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "YAPCHANKOR | Premium Pain Treatment & Physiotherapy Since 1979",
+    description: "Chronic pain treatment combining Shaolin injury medicine, proprietary clinical formulations, and modern rehabilitation since 1979.",
+    images: ["/images/yck_home_hero.webp"],
   },
 };
 
@@ -76,6 +104,11 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
+    notFound();
+  }
+
   setRequestLocale(locale);
   const messages = await getMessages();
 
