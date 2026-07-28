@@ -1,12 +1,43 @@
-import { useTranslations } from "next-intl";
+"use client";
+
+import { useTranslations, useLocale } from "next-intl";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { useSiteSettings } from "@/components/SiteSettingsProvider";
 
-export function FinalCTA() {
+export function FinalCTA({ 
+  hideLinks = false,
+  primaryCtaDestination = 'form',
+  whatsappMessage,
+  whatsappNumber
+}: { 
+  hideLinks?: boolean;
+  primaryCtaDestination?: string;
+  whatsappMessage?: string | { en?: string, ms?: string, zh?: string };
+  whatsappNumber?: string;
+} = {}) {
   const t = useTranslations("FinalCTA");
   const tw = useTranslations("WhatsApp");
-  const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
+  const siteSettings = useSiteSettings();
+  const locale = useLocale() as 'en' | 'ms' | 'zh';
+  
+  const defaultMessageObj = siteSettings?.websiteWhatsappMessages?.localizedDefaultMessage;
+  const resolvedMessage = typeof defaultMessageObj === 'string' 
+    ? defaultMessageObj 
+    : defaultMessageObj?.[locale];
+    
+  const defaultMessage = resolvedMessage || tw("defaultMessage");
+  
+  const localizedCustomMessage = typeof whatsappMessage === 'string' 
+    ? whatsappMessage 
+    : whatsappMessage?.[locale as keyof typeof whatsappMessage];
+    
+  const finalMessage = localizedCustomMessage || defaultMessage;
+  const whatsappUrl = getWhatsAppUrl(finalMessage, whatsappNumber);
+  
+  const ctaHref = hideLinks && primaryCtaDestination !== 'whatsapp' ? '#booking-form' : whatsappUrl;
+  const target = hideLinks && primaryCtaDestination !== 'whatsapp' ? '_self' : '_blank';
 
   return (
     <section className="bg-brand-teal-deep py-16 lg:py-32 relative overflow-hidden">
@@ -31,8 +62,8 @@ export function FinalCTA() {
               className="w-full sm:w-auto px-10 sm:px-12 h-14 sm:h-18 text-label text-base lg:text-xl bg-white text-brand-teal-deep hover:bg-white/90 rounded-full shadow-2xl transition-all duration-300 min-w-0 sm:min-w-[320px]"
             >
               <a 
-                href={whatsappUrl}
-                target="_blank"
+                href={ctaHref}
+                target={target}
                 rel="noopener noreferrer"
                 id="cta_final_assessment_click"
                 className="inline-flex items-center justify-center"
@@ -43,7 +74,7 @@ export function FinalCTA() {
             </Button>
 
             <div className="mt-16 lg:mt-20 pt-12 lg:pt-16 border-t border-white/10">
-              <p className="text-label text-white tracking-[0.3em] opacity-40">
+              <p className="text-label text-white/60 tracking-[0.3em]">
                 {t("heritage")}
               </p>
             </div>

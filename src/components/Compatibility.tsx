@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 
-export function Compatibility() {
+export function Compatibility({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = useTranslations("Compatibility");
 
   const trustIcons = [
@@ -23,12 +23,12 @@ export function Compatibility() {
             <div className="text-body-lg text-brand-teal-deep/70 mb-16 space-y-6">
               <p>
                 {t.rich("description", {
-                  link: (chunks) => <Link href="/solutions/post-surgery-rehab" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
+                  link: (chunks) => hideLinks ? <span className="font-bold text-brand-teal">{chunks}</span> : <Link href="/solutions/post-surgery-rehab" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
                 })}
               </p>
               <p>
                 {t.rich("support", {
-                  link: (chunks) => <Link href="/solutions/chronic-pain" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
+                  link: (chunks) => hideLinks ? <span className="font-bold text-brand-teal">{chunks}</span> : <Link href="/solutions/chronic-pain" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
                 })}
               </p>
             </div>
@@ -48,7 +48,7 @@ export function Compatibility() {
                       className="w-14 h-14 object-contain opacity-90 brightness-110 drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)]"
                     />
                   </div>
-                  <span className="text-label text-brand-teal/50">
+                  <span className="text-label text-brand-teal/70">
                     {item.label}
                   </span>
                 </div>

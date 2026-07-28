@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 
-export function ScientificProof() {
+export function ScientificProof({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = useTranslations("ScientificProof");
 
   const findings = [
@@ -108,10 +108,16 @@ export function ScientificProof() {
                 </div>
               </div>
               <p className="text-label text-brand-teal/60 text-center lg:text-left">
-                <Link href="/formulations" className="hover:text-brand-gold transition-colors inline-flex items-center group/link">
-                  {t("graphicCaption")}
-                  <span className="ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
-                </Link>
+                {hideLinks ? (
+                  <span className="inline-flex items-center">
+                    {t("graphicCaption")}
+                  </span>
+                ) : (
+                  <Link href="/formulations" className="hover:text-brand-gold transition-colors inline-flex items-center group/link">
+                    {t("graphicCaption")}
+                    <span className="ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                  </Link>
+                )}
               </p>
             </div>
           </div>

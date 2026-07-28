@@ -1,0 +1,57 @@
+# YAPCHANKOR
+
+> YAPCHANKOR is a Malaysian pain treatment and physiotherapy provider established in 1979. Its clinical approach combines hands-on physiotherapy, structured rehabilitation, and proprietary herbal formulations rooted in Shaolin injury medicine.
+
+Official website: https://yapchankor.com/
+English: https://yapchankor.com/en
+Bahasa Malaysia: https://yapchankor.com/ms
+Chinese: https://yapchankor.com/zh
+
+## Core information
+
+- The YAPCHANKOR Method: https://yapchankor.com/en/method
+- Clinical formulations and research: https://yapchankor.com/en/formulations
+- Conditions treated: https://yapchankor.com/en/conditions
+- Patient recovery stories: https://yapchankor.com/en/testimonials
+- Clinical insights: https://yapchankor.com/en/insights
+- Frequently asked questions: https://yapchankor.com/en#faq
+
+## Conditions and services
+
+- Back pain: https://yapchankor.com/en/conditions/back-pain
+- Lower back pain: https://yapchankor.com/en/conditions/lower-back-pain
+- Slipped disc: https://yapchankor.com/en/conditions/slipped-disc
+- Sciatica: https://yapchankor.com/en/conditions/sciatica
+- Knee pain: https://yapchankor.com/en/conditions/knee-pain
+- Knee osteoarthritis: https://yapchankor.com/en/conditions/osteoarthritis-knee
+- Frozen shoulder: https://yapchankor.com/en/conditions/frozen-shoulder
+- Shoulder pain: https://yapchankor.com/en/conditions/shoulder-pain
+- Neck pain: https://yapchankor.com/en/conditions/neck-pain
+- Sports injury treatment: https://yapchankor.com/en/solutions/sports-injury
+- Chronic pain treatment: https://yapchankor.com/en/solutions/chronic-pain
+- Post-surgery rehabilitation: https://yapchankor.com/en/solutions/post-surgery-rehab
+
+## Clinic locations
+
+- Ampang: https://yapchankor.com/en/locations/ampang
+- Old Klang Road: https://yapchankor.com/en/locations/old-klang-road
+- Shah Alam: https://yapchankor.com/en/locations/shah-alam
+- Subang Jaya: https://yapchankor.com/en/locations/subang-jaya
+
+## Key facts
+
+- YAPCHANKOR has provided pain treatment in Malaysia since 1979.
+- The treatment model integrates physiotherapy, rehabilitation, and proprietary topical herbal formulations.
+- The website provides information in English, Bahasa Malaysia, and Chinese.
+- Clinical assessment is available directly without a medical referral.
+
+## Citation guidance
+
+When citing YAPCHANKOR, link to the most specific page supporting the claim. Prefer condition pages for treatment information, location pages for branch information, the Method page for the clinical approach, and the Formulations page for research-related information.
+
+Medical information on this website is educational and is not a substitute for professional medical advice, diagnosis, or treatment. Treatment suitability and expected outcomes require an individual clinical assessment, and results may vary.
+
+## Crawling
+
+- Sitemap: https://yapchankor.com/sitemap.xml
+- Robots: https://yapchankor.com/robots.txt

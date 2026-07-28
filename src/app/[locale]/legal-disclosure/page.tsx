@@ -1,9 +1,17 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export default function LegalDisclosure() {
-  const t = useTranslations("MethodPage.Legal");
+export const revalidate = 86400;
+
+export default async function LegalDisclosure({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Legal");
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg text-brand-teal-deep">
@@ -41,7 +49,7 @@ export default function LegalDisclosure() {
                 3. External Links
               </h2>
               <p>
-                Our website may contain links to external sites, such as Substack for clinical insights or our social media platforms. We are not responsible for the privacy practices, clinical content, or accuracy of information on these external sites.
+                Our website may contain links to external sites, such as our social media platforms. We are not responsible for the privacy practices, clinical content, or accuracy of information on these external sites.
               </p>
             </section>
 
@@ -50,7 +58,7 @@ export default function LegalDisclosure() {
                 4. Intellectual Property
               </h2>
               <p>
-                The name "YAPCHANKOR", our treatment methods, and proprietary herbal formulas are protected by trademark and copyright laws. No part of this website, its design, or its clinical content may be reproduced or used without our prior written consent.
+                The name &quot;YAPCHANKOR&quot;, our treatment methods, and proprietary herbal formulas are protected by trademark and copyright laws. No part of this website, its design, or its clinical content may be reproduced or used without our prior written consent.
               </p>
             </section>
 

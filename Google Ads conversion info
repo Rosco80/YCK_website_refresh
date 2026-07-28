@@ -1,0 +1,37 @@
+Here is a step-by-step guide on how to configure Google Tag Manager (GTM) to catch the form submissions from your website and send them to Google Ads as a Conversion.
+
+This is the most accurate and recommended method for tracking Google Ads performance.
+
+Step 1: Get your Conversion Details from Google Ads
+First, we need to tell Google Ads to expect a conversion.
+
+Log into your Google Ads account.
+Go to Goals > Conversions > Summary.
+Click + New conversion action and select Website.
+Enter your website domain and scan it. Scroll down and click Add a conversion action manually.
+Set the Goal and action optimization to Submit lead form. Name the conversion (e.g., "Landing Page Lead").
+Set the value and count (usually "One" for leads) and click Done, then Save and continue.
+Under the setup options, select Use Google Tag Manager.
+You will see a Conversion ID and a Conversion Label. Keep this page open; you will need these numbers in Step 3.
+Step 2: Create a Trigger in Google Tag Manager
+Now we tell GTM to "listen" for the specific event our website's code is firing.
+
+Log into Google Tag Manager and select your container (GTM-W5ZSSS8W).
+On the left menu, click Triggers, then click New (top right).
+Click the Trigger Configuration box and select Custom Event.
+Under "Event name", paste exactly this: form_submission_success (This is the exact code we added to the Lead Form).
+Name the trigger at the top left (e.g., "Trigger - Lead Form Success") and click Save.
+Step 3: Create the Google Ads Tag in GTM
+Finally, we connect the Trigger (Step 2) to Google Ads (Step 1).
+
+In GTM, click Tags on the left menu, then click New.
+Click the Tag Configuration box and select Google Ads Conversion Tracking.
+(Note: If you see a warning that says "Conversion Linker tag missing in container", click the "Create" button it provides to quickly add one. It just takes 2 seconds and is required by Google).
+Paste the Conversion ID and Conversion Label you got from Google Ads in Step 1.
+Scroll down to the Triggering box at the bottom and click it.
+Select the "Trigger - Lead Form Success" trigger you created in Step 2.
+Name your tag at the top left (e.g., "Google Ads - Lead Form Conversion") and click Save.
+Step 4: Publish
+You're done! Click the blue Submit button at the top right of GTM, give your version a name (like "Added Google Ads Tracking"), and click Publish.
+
+Whenever someone successfully submits the form, our code pushes form_submission_success, GTM catches it, and immediately fires a signal back to Google Ads telling it that the ad worked!

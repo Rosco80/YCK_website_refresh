@@ -50,7 +50,7 @@ export function ConditionsGrid() {
               >
                 <Link
                   href={`${basePath}/${condition.slug}`}
-                  className="group block h-full p-8 border border-brand-teal/10 rounded-3xl bg-brand-bg/30 hover:bg-brand-teal hover:border-brand-teal transition-all duration-500 text-left"
+                  className="group block h-full p-8 border border-brand-teal/10 rounded-3xl bg-brand-teal/5 hover:bg-brand-teal hover:border-brand-teal transition-all duration-500 text-left"
                 >
                   <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center text-brand-teal group-hover:bg-brand-gold group-hover:text-white mb-6 shadow-sm transition-all duration-500 overflow-hidden p-2">
                     <Image 

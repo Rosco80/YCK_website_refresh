@@ -9,6 +9,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { useSiteSettings } from "@/components/SiteSettingsProvider";
 
 export function Header() {
   const t = useTranslations("Navigation");
@@ -18,8 +19,16 @@ export function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
+  
+  const siteSettings = useSiteSettings();
+  
+  const defaultMessageObj = siteSettings?.websiteWhatsappMessages?.localizedDefaultMessage;
+  const resolvedMessage = typeof defaultMessageObj === 'string' 
+    ? defaultMessageObj 
+    : defaultMessageObj?.[locale as 'en' | 'ms' | 'zh'];
+    
+  const defaultMessage = resolvedMessage || tw("defaultMessage");
+  const whatsappUrl = getWhatsAppUrl(defaultMessage);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,19 +63,19 @@ export function Header() {
     )}>
       <div className={cn(
         "container mx-auto flex items-center justify-between px-6 transition-all duration-500",
-        isScrolled ? "h-20" : "h-44 lg:h-48 pt-4"
+        isScrolled ? "h-20" : "h-40"
       )}>
         {/* Logo */}
         <Link href="/" className="flex items-center relative z-50">
           <Image
-            src="/images/logo/wordmark_vertical.png"
+            src="/images/logo/main_logo.webp"
             alt="YAPCHANKOR Clinic Logo"
-            width={138}
-            height={154}
+            width={180}
+            height={60}
             priority
             className={cn(
               "object-contain transition-all duration-500 hover:scale-[1.03]",
-              isScrolled ? "h-12 lg:h-16 w-auto" : "h-24 sm:h-32 lg:h-38.5 w-auto"
+              isScrolled ? "h-10 lg:h-16 w-auto" : "h-20 lg:h-32 w-auto"
             )}
           />
         </Link>
@@ -96,7 +105,7 @@ export function Header() {
                   "px-2 lg:px-2.5 py-1.5 lg:py-1 rounded text-label text-[10px] transition-all",
                   locale === l 
                     ? "bg-brand-teal text-white shadow-sm" 
-                    : "text-brand-teal-deep/40 hover:text-brand-teal hover:bg-brand-teal/5"
+                    : "text-brand-teal-deep/60 hover:text-brand-teal hover:bg-brand-teal/5"
                 )}
               >
                 {localeLabels[l] ?? l}
@@ -134,7 +143,8 @@ export function Header() {
           closed: { opacity: 0, x: "100%", transitionEnd: { display: "none" } },
         }}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed inset-0 bg-brand-bg flex flex-col pt-52 px-10 pb-10 overflow-y-auto z-40"
+        className="fixed inset-0 bg-brand-bg flex flex-col pt-32 px-10 pb-10 overflow-y-auto z-40"
+        inert={isMobileMenuOpen ? undefined : true}
       >
         <nav className="flex flex-col space-y-8 mb-12">
           {navLinks.map((link) => (

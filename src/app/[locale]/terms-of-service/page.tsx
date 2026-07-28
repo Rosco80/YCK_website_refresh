@@ -1,9 +1,17 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export default function TermsOfService() {
-  const t = useTranslations("MethodPage.Legal");
+export const revalidate = 86400;
+
+export default async function TermsOfService({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Legal");
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg text-brand-teal-deep">
@@ -41,7 +49,7 @@ export default function TermsOfService() {
                 3. Appointments and Cancellations
               </h2>
               <p>
-                Appointments must be booked in advance through our authorized channels. Please provide at least 24 hours' notice for cancellations or rescheduling. Failure to provide adequate notice may result in a cancellation fee, as we allocate professional clinical staff for each session.
+                Appointments must be booked in advance through our authorized channels. Please provide at least 24 hours&apos; notice for cancellations or rescheduling. Failure to provide adequate notice may result in a cancellation fee, as we allocate professional clinical staff for each session.
               </p>
             </section>
 

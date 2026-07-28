@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /en/admin/
+Disallow: /ms/admin/
+Disallow: /zh/admin/
+
+Sitemap: https://yapchankor.com/sitemap.xml

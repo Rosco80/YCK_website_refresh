@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
 
-export function Differentiation() {
+export function Differentiation({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = useTranslations("Differentiation");
 
   const points = [
@@ -29,7 +29,7 @@ export function Differentiation() {
               <div className="text-body-lg text-brand-teal-deep/80 space-y-6 lg:space-y-8">
                 <p>
                   {t.rich("description", {
-                    link: (chunks) => <Link href="/conditions" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
+                    link: (chunks) => hideLinks ? <span className="font-bold text-brand-teal">{chunks}</span> : <Link href="/conditions" className="text-brand-gold font-bold hover:underline">{chunks}</Link>
                   })}
                 </p>
                 

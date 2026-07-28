@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getInsights } from '@/lib/substack';
+import { getInsights } from '@/lib/sanity-insights';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Base URLs

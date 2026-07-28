@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Link } from "@/i18n/routing";
-import { Insight } from "@/lib/substack";
+import { Insight } from "@/lib/sanity-insights";
 
 export function Insights({ latestInsights }: { latestInsights?: Insight[] }) {
   const t = useTranslations("Insights");

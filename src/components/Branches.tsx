@@ -5,13 +5,13 @@ import { Button } from "./ui/button";
 import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import Script from "next/script";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
-import { client } from "@/sanity/lib/client";
+import { getWebsiteImages } from "@/lib/sanity-queries";
 import { urlForImage } from "@/sanity/lib/image";
 
-export async function Branches() {
+export async function Branches({ hideLinks = false }: { hideLinks?: boolean } = {}) {
   const t = await getTranslations("Branches");
   const locale = await getLocale();
-  const websiteImages = await client.fetch(`*[_type == "websiteImages"][0]`);
+  const websiteImages = await getWebsiteImages();
 
   const branches = [
     { 
@@ -83,7 +83,7 @@ export async function Branches() {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       "opens": "09:00",
-      "closes": "20:00"
+      "closes": branch.id === 'okr' ? "20:00" : "17:00"
     }
   }));
 
@@ -123,6 +123,7 @@ export async function Branches() {
               ctaView={t("ctaView")}
               ctaBook={t("ctaBook")}
               ctaDirections={t("ctaDirections")}
+              hideLinks={hideLinks}
             />
           ))}
         </div>
@@ -131,7 +132,7 @@ export async function Branches() {
   );
 }
 
-function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, image, index, ctaView, ctaBook, ctaDirections }: { id: string; name: string; address: string; phone: string; hours: string; wazeUrl: string; googleMapsUrl: string; image: string; index: number; ctaView: string; ctaBook: string; ctaDirections: string }) {
+function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, image, index, ctaView, ctaBook, ctaDirections, hideLinks }: { id: string; name: string; address: string; phone: string; hours: string; wazeUrl: string; googleMapsUrl: string; image: string; index: number; ctaView: string; ctaBook: string; ctaDirections: string; hideLinks?: boolean }) {
   // Pass the generated URLs down if using async/await inside map is tricky, or just use useTranslations if client, but it's a Server Component!
   // Wait, I can just use getTranslations here as long as I make it async. But wait, I'm already inside an async component and the easiest is just making this async.
   // Actually, I will pre-fetch translations to avoid making BranchCard async since it's mapped over.
@@ -143,7 +144,7 @@ function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, i
         <Image src={image || "/images/ampang_new.webp"} alt={name} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
         <div className="absolute inset-0 bg-linear-to-t from-brand-teal-deep to-transparent opacity-60" />
       </div>
-      <div className="p-6 lg:p-10 flex flex-col grow">
+      <div className="p-6 lg:p-6 xl:p-10 flex flex-col grow">
         <h3 className="text-h4 mb-6 lg:mb-8 group-hover:text-brand-gold transition-colors h-14 overflow-hidden">{name}</h3>
         
         <div className="flex flex-col grow">
@@ -163,53 +164,55 @@ function BranchCard({ id, name, address, phone, hours, wazeUrl, googleMapsUrl, i
           </div>
 
           <div className="space-y-4 pt-6 mt-auto border-t border-white/5 pb-8">
-            <span className="text-label text-white/30">{ctaDirections}</span>
-            <div className="flex items-center gap-3">
+            <span className="text-label text-white/60">{ctaDirections}</span>
+            <div className="flex items-center gap-2">
               <a 
                 href={wazeUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-white/5 hover:bg-brand-gold/20 px-5 py-2.5 rounded-xl transition-all border border-white/10 hover:border-brand-gold/40 text-white/50 hover:text-white group/link shadow-lg min-w-25"
+                className="flex-1 min-w-0 flex items-center justify-center bg-white/5 hover:bg-brand-gold/20 px-3 py-2.5 rounded-xl transition-all border border-white/10 hover:border-brand-gold/40 text-white/70 hover:text-white group/link shadow-lg"
               >
-                <span className="text-label">Waze</span>
+                <span className="text-label whitespace-nowrap">Waze</span>
               </a>
               <a 
                 href={googleMapsUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-white/5 hover:bg-brand-gold/20 px-5 py-2.5 rounded-xl transition-all border border-white/10 hover:border-brand-gold/40 text-white/50 hover:text-white group/link shadow-lg min-w-30"
+                className="flex-1 min-w-0 flex items-center justify-center bg-white/5 hover:bg-brand-gold/20 px-3 py-2.5 rounded-xl transition-all border border-white/10 hover:border-brand-gold/40 text-white/70 hover:text-white group/link shadow-lg"
               >
-                <span className="text-label">Google Maps</span>
+                <span className="text-label whitespace-nowrap">Google Maps</span>
               </a>
             </div>
           </div>
         </div>
 
         <div className="space-y-3 pt-4 border-t border-white/5">
-            <WhatsAppBranchButton branchName={name} ctaBook={ctaBook} index={index} />
-          <Link 
-            href={`/locations/${id}`}
-            className="w-full py-2 text-label flex items-center justify-center space-x-2 text-white/30 hover:text-white transition-colors"
-          >
-            <span>{ctaView}</span>
-            <ArrowRight className="w-3 h-3" />
-          </Link>
+            <WhatsAppBranchButton branchName={name} ctaBook={ctaBook} index={index} hideLinks={hideLinks} />
+          {!hideLinks && (
+            <Link 
+              href={`/locations/${id}`}
+              className="w-full py-2 text-label flex items-center justify-center space-x-2 text-white/60 hover:text-white transition-colors"
+            >
+              <span>{ctaView}</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-async function WhatsAppBranchButton({ branchName, ctaBook, index }: { branchName: string; ctaBook: string; index: number }) {
+async function WhatsAppBranchButton({ branchName, ctaBook, index, hideLinks }: { branchName: string; ctaBook: string; index: number; hideLinks?: boolean }) {
   const tw = await getTranslations("WhatsApp");
   const whatsappUrl = getWhatsAppUrl(tw("branchMessage", { branch: branchName }));
   
   return (
     <Button 
       asChild
-      className="w-full bg-brand-gold hover:bg-brand-gold-dark text-white font-bold rounded-xl h-11 lg:h-12 uppercase tracking-widest text-xs"
+      className="w-full bg-brand-gold hover:bg-brand-gold-dark text-brand-teal-deep font-bold rounded-xl h-11 lg:h-12 uppercase tracking-widest text-xs"
     >
-      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" id={`cta_book_branch_${index}_click`}>
+      <a href={hideLinks ? "#booking-form" : whatsappUrl} target={hideLinks ? "_self" : "_blank"} rel="noopener noreferrer" id={`cta_book_branch_${index}_click`}>
         {ctaBook}
       </a>
     </Button>

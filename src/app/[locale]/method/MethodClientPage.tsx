@@ -1,6 +1,7 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { useSiteSettings } from "@/components/SiteSettingsProvider";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { Header } from "@/components/Header";
@@ -19,7 +20,16 @@ export function MethodClientPage({
 }) {
   const t = useTranslations("MethodPage");
   const tw = useTranslations("WhatsApp");
-  const whatsappUrl = getWhatsAppUrl(tw("defaultMessage"));
+  const locale = useLocale() as 'en' | 'ms' | 'zh';
+  const siteSettings = useSiteSettings();
+  
+  const defaultMessageObj = siteSettings?.websiteWhatsappMessages?.localizedDefaultMessage;
+  const resolvedMessage = typeof defaultMessageObj === 'string' 
+    ? defaultMessageObj 
+    : defaultMessageObj?.[locale];
+    
+  const defaultMessage = resolvedMessage || tw("defaultMessage");
+  const whatsappUrl = getWhatsAppUrl(defaultMessage);
   
   const revealVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -58,7 +68,7 @@ export function MethodClientPage({
       
       <main className="grow">
         {/* Section 1: Full-width Hero */}
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
+        <section className="relative pt-24 pb-20 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
           <div className="container mx-auto px-6 relative z-10 text-left">
             <motion.div
               initial="hidden"

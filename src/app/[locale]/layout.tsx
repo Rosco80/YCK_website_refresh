@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
+import { notFound } from "next/navigation";
 import localFont from "next/font/local";
 import "../globals.css";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
-import { client } from "@/sanity/lib/client";
+import { ContactTracker } from "@/components/ContactTracker";
+import { getSiteSettings } from "@/lib/sanity-queries";
 import Script from "next/script";
+import { Analytics } from '@vercel/analytics/next';
+
+import { routing } from "@/i18n/routing";
+
+import { SiteSettingsProvider } from "@/components/SiteSettingsProvider";
 
 const bandaRegular = localFont({
   src: "../fonts/Banda.ttf",
@@ -40,11 +47,15 @@ const gotham = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://yapchankor.com"),
+  applicationName: "YAPCHANKOR",
   title: {
     template: "%s | YAPCHANKOR",
     default: "YAPCHANKOR | Premium Pain Treatment & Physiotherapy Since 1979",
   },
   description: "YAPCHANKOR specializes in chronic pain resolution using the Shaolin injury medicine method, proprietary clinical formulations, and integrative rehabilitation.",
+  creator: "YAPCHANKOR",
+  publisher: "YAPCHANKOR",
   alternates: {
     canonical: "/",
     languages: {
@@ -53,7 +64,37 @@ export const metadata: Metadata = {
       "zh": "/zh",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en",
+    siteName: "YAPCHANKOR",
+    title: "YAPCHANKOR | Premium Pain Treatment & Physiotherapy Since 1979",
+    description: "Chronic pain treatment combining Shaolin injury medicine, proprietary clinical formulations, and modern rehabilitation since 1979.",
+    locale: "en_MY",
+    alternateLocale: ["ms_MY", "zh_MY"],
+    images: [
+      {
+        url: "/images/yck_home_hero.webp",
+        width: 1920,
+        height: 1080,
+        alt: "YAPCHANKOR pain treatment and physiotherapy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "YAPCHANKOR | Premium Pain Treatment & Physiotherapy Since 1979",
+    description: "Chronic pain treatment combining Shaolin injury medicine, proprietary clinical formulations, and modern rehabilitation since 1979.",
+    images: ["/images/yck_home_hero.webp"],
+  },
 };
+
+export const revalidate = 86400;
+export const dynamicParams = true;
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export default async function RootLayout({
   children,
@@ -63,6 +104,12 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   const medicalClinicJsonLd = {
@@ -82,11 +129,14 @@ export default async function RootLayout({
     ]
   };
 
-  const siteSettings = await client.fetch(`*[_type == "siteSettings"][0]`);
+  const siteSettings = await getSiteSettings();
 
   return (
     <html lang={locale}>
       <head>
+        {siteSettings?.googleSiteVerificationId && (
+          <meta name="google-site-verification" content={siteSettings.googleSiteVerificationId} />
+        )}
         {siteSettings?.googleAnalyticsId && (
           <>
             <Script
@@ -149,10 +199,18 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicJsonLd) }}
         />
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          {children}
-          <WhatsAppWidget />
-        </NextIntlClientProvider>
+        <SiteSettingsProvider settings={siteSettings}>
+          <NextIntlClientProvider messages={messages} locale={locale}>
+            {children}
+            <WhatsAppWidget 
+              isGlobal={true} 
+              customMessage={siteSettings?.websiteWhatsappMessages?.localizedDefaultMessage} 
+            />
+          </NextIntlClientProvider>
+        </SiteSettingsProvider>
+        <ContactTracker />
+        <Analytics />
+
       </body>
     </html>
   );

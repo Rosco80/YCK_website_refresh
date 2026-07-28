@@ -1,4 +1,4 @@
-import { getInsights } from '@/lib/substack';
+import { getInsights } from '@/lib/sanity-insights';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Link } from '@/i18n/routing';
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: 'Clinical insights on chronic pain, rehabilitation, and injury management from YAPCHANKOR.'
 };
 
-export const revalidate = 3600; // 1-hour Incremental Static Regeneration cache
+export const revalidate = 86400; // 1-hour Incremental Static Regeneration cache
 
 export default async function InsightsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -32,14 +32,14 @@ export default async function InsightsPage({ params }: { params: Promise<{ local
             <h1 className="text-h2 text-brand-teal-deep mb-6">
               {t('headline')}
             </h1>
-            <p className="text-body-lg text-brand-teal-deep/60">
+            <p className="text-body-lg text-brand-teal-deep/70">
               {t('description')}
             </p>
           </div>
 
           {insights.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-4xl border border-brand-teal/10 shadow-sm">
-              <p className="text-body text-brand-teal-deep/50">No insights available at the moment. Please check back later.</p>
+              <p className="text-body text-brand-teal-deep/70">No insights available at the moment. Please check back later.</p>
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -66,7 +66,7 @@ export default async function InsightsPage({ params }: { params: Promise<{ local
                     <h2 className="text-h4 text-brand-teal-deep mb-4 group-hover:text-brand-teal transition-colors line-clamp-2">
                        {insight.title}
                     </h2>
-                    <p className="text-body text-brand-teal-deep/60 mb-8 grow line-clamp-3">
+                    <p className="text-body text-brand-teal-deep/70 mb-8 grow line-clamp-3">
                       {insight.snippet}
                     </p>
                     <div className="text-label text-brand-teal mt-auto group-hover:text-brand-teal-deep transition-colors flex items-center">

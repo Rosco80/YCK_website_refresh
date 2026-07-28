@@ -25,10 +25,10 @@ export function ConditionTestimonials({ slug }: ConditionTestimonialsProps) {
       <div className="container mx-auto px-6">
         <div className="mb-16">
           <h2 className="text-h3 text-brand-teal mb-4">
-            {t("heroTitle")}
+            {t("title")}
           </h2>
           <p className="text-body text-brand-teal-deep/60">
-            {t("heroSubtitle")}
+            {t("subtitle")}
           </p>
         </div>
 

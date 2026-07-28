@@ -9,11 +9,14 @@ import { Link } from "@/i18n/routing";
 import { conditionSlugs, ConditionSlug, conditionsData } from "@/data/conditions";
 import { getConditionsContent } from "@/data/conditions-content";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { getSiteSettings } from "@/lib/sanity-queries";
 import { ConditionTestimonials } from "@/components/ConditionTestimonials";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedConditions } from "@/components/RelatedConditions";
 
 const SOLUTION_SLUGS = ["sports-injury", "post-surgery-rehab", "chronic-pain"];
+
+export const revalidate = 86400;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string, slug: string }> }) {
   const { locale, slug } = await params;
@@ -58,7 +61,20 @@ export default async function SolutionDetail({
   const desc = t(`list.${slug}.desc`);
   const conditionData = getConditionsContent(locale)[slug];
 
-  const whatsappUrl = getWhatsAppUrl(tw("conditionMessage", { condition: title }));
+  const siteSettings = await getSiteSettings();
+  const override = siteSettings?.websiteWhatsappMessages?.localizedConditionOverrides?.find(
+    (o: any) => o.condition === slug
+  );
+  const customConditionMsg = siteSettings?.websiteWhatsappMessages?.localizedConditionMessage?.[locale as 'en' | 'ms' | 'zh'];
+  const overrideMessage = override?.message?.[locale as 'en' | 'ms' | 'zh'];
+  
+  const finalMessage = overrideMessage 
+    ? overrideMessage 
+    : (customConditionMsg 
+        ? customConditionMsg.replace('{condition}', title)
+        : tw("conditionMessage", { condition: title }));
+
+  const whatsappUrl = getWhatsAppUrl(finalMessage);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -84,7 +100,7 @@ export default async function SolutionDetail({
       
       <main className="grow">
         {/* Solution Hero */}
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
+        <section className="relative pt-24 pb-20 lg:pb-32 overflow-hidden bg-brand-teal-deep text-white">
           <div className="container mx-auto px-6 relative z-10 text-left">
             <Breadcrumbs />
             

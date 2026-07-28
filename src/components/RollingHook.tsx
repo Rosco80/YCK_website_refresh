@@ -1,16 +1,28 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link } from "@/i18n/routing";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { Button } from "./ui/button";
+import { useSiteSettings } from "./SiteSettingsProvider";
 
-export function RollingHook() {
+export function RollingHook({ 
+  hideLinks = false,
+  primaryCtaDestination = 'form',
+  whatsappMessage,
+  whatsappNumber
+}: { 
+  hideLinks?: boolean;
+  primaryCtaDestination?: string;
+  whatsappMessage?: string | { en?: string, ms?: string, zh?: string };
+  whatsappNumber?: string;
+} = {}) {
   const t = useTranslations("RollingHook");
   const tw = useTranslations("WhatsApp");
   const [index, setIndex] = useState(0);
+  const siteSettings = useSiteSettings();
 
   const conditions = [
     t("condition1"),
@@ -21,17 +33,14 @@ export function RollingHook() {
     t("condition6"),
   ];
 
-  const conditionMap: Record<string, string> = {
-    "chronic back pain": "/conditions/back-pain",
-    "knee osteoarthritis": "/conditions/osteoarthritis-knee",
-    "frozen shoulder": "/conditions/frozen-shoulder",
-    "sciatica": "/conditions/sciatica",
-    "slipped disc": "/conditions/slipped-disc",
-    "hip pain": "/conditions/hip-pain",
-    "sports injuries": "/solutions/sports-injury",
-    "post-surgery rehab": "/solutions/post-surgery-rehab",
-    "chronic pain": "/solutions/chronic-pain",
-  };
+  const conditionSlugs = [
+    "back-pain",            // condition1 (chronic back pain)
+    "osteoarthritis-knee",  // condition2 (knee osteoarthritis)
+    "frozen-shoulder",      // condition3 (frozen shoulder)
+    "sciatica",             // condition4 (sciatica)
+    "slipped-disc",         // condition5 (slipped disc)
+    "hip-pain"              // condition6 (hip pain)
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -58,6 +67,30 @@ export function RollingHook() {
     return () => clearInterval(timer);
   }, [conditions.length]);
 
+  const currentSlug = conditionSlugs[index];
+  const locale = useLocale() as 'en' | 'ms' | 'zh';
+  const override = siteSettings?.websiteWhatsappMessages?.localizedConditionOverrides?.find(
+    (o: any) => o.condition === currentSlug
+  );
+  const conditionTemplate = siteSettings?.websiteWhatsappMessages?.localizedConditionMessage?.[locale];
+  const overrideMessage = override?.message?.[locale];
+  
+  const localizedCustomMessage = typeof whatsappMessage === 'string' 
+    ? whatsappMessage 
+    : whatsappMessage?.[locale as keyof typeof whatsappMessage];
+
+  const finalMessage = localizedCustomMessage 
+    ? localizedCustomMessage 
+    : (overrideMessage 
+      ? overrideMessage 
+      : (conditionTemplate 
+          ? conditionTemplate.replace('{condition}', conditions[index])
+          : tw("conditionMessage", { condition: conditions[index] })));
+
+  const whatsappUrl = getWhatsAppUrl(finalMessage, whatsappNumber);
+  const ctaHref = hideLinks && primaryCtaDestination !== 'whatsapp' ? '#booking-form' : whatsappUrl;
+  const target = hideLinks && primaryCtaDestination !== 'whatsapp' ? '_self' : '_blank';
+
   return (
     <section className="bg-brand-bg py-16 lg:py-24 border-y border-brand-teal/5 relative">
       <script
@@ -82,7 +115,7 @@ export function RollingHook() {
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               >
                 <Link
-                  href={conditionMap[conditions[index]] || "/conditions"}
+                  href={`/conditions/${currentSlug}`}
                   className="text-h2 text-brand-teal capitalize leading-tight px-4 hover:text-brand-teal-deep transition-colors"
                 >
                   {conditions[index]}
@@ -125,7 +158,7 @@ export function RollingHook() {
               asChild
               className="rounded-full px-12 h-14 text-sm uppercase tracking-widest font-bold shadow-brand-premium"
             >
-              <a href={getWhatsAppUrl(tw("conditionMessage", { condition: conditions[index] }))} target="_blank" rel="noopener noreferrer" id="cta_rolling_hook_click">
+              <a href={ctaHref} target={target} rel="noopener noreferrer" id="cta_rolling_hook_click">
                 {t("cta")}
               </a>
             </Button>
